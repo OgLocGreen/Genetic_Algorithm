@@ -1,3 +1,4 @@
-/infos
+/infos/
 /src/.idea
-/logs/*
+/src/logs/*
+./.idea/
