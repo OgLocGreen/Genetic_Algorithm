@@ -1,7 +1,4 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-
-
-
 import tensorflow as tf
 from tensorflow.python.keras.callbacks import TensorBoard
 from tensorflow import keras
@@ -11,15 +8,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import PIL
 
-### Variablen
-"""
-learningrate
-dropout
-optimizer
-loss
-epoch
-batch_size
-"""
+
 
 #%%
 ### Daten
@@ -39,20 +28,19 @@ small_train_images, small_test_images, small_train_labels, small_test_labels = t
 ### Model
 
 model = keras.models.Sequential([
-  keras.layers.Flatten(input_shape=(28, 28)),
-  keras.layers.Dense(128, activation='relu'),
-  keras.layers.Dropout(0.2),
-  keras.layers.Dense(10, activation='softmax')
-])
+    keras.layers.Flatten(input_shape=(28, 28)),
+    keras.layers.Dense(128, activation='relu'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Dense(10, activation='softmax')])
 
 
-#%%si
+#%%
 ### Optimizer
-adam = keras.optimizers.Adam(lr=0.001)
+adam = keras.optimizers.Adam(lr=0.005)
 
 model.compile(optimizer=adam,
-              loss='sparse_categorical_crossentropy',
-              metrics=['accuracy'])
+                loss='sparse_categorical_crossentropy',
+                metrics=['accuracy'])
 
 #%%
 ### Tensorboard
@@ -69,6 +57,8 @@ model.fit(small_train_images, small_train_labels, epochs=10,batch_size=64, callb
 
 test_loss, test_acc = model.evaluate(small_test_images, small_test_labels)
 print("test_loss: ",test_loss , "test_acc: ", test_acc)
+
+
 
 #%%
 ### Model predict
