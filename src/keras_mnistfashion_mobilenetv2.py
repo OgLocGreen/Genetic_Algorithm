@@ -26,9 +26,10 @@ batch_size
 
 mnist = keras.datasets.mnist
 
-(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+(train_images, train_labels), (test_images, test_labels) = keras.datasets.fashion_mnist.load_data()
 train_images = train_images / 255.0
 test_images = test_images / 255.0
+
 
 #extra feature um Datenset künstlich zu verkleinern
 small_train_images, small_test_images, small_train_labels, small_test_labels = train_test_split(
@@ -44,7 +45,8 @@ model = keras.models.Sequential([
   keras.layers.Dense(10, activation='softmax')
 ])
 
-#%%
+
+#%%si
 ### Optimizer
 adam = keras.optimizers.Adam(lr=0.001)
 
@@ -76,9 +78,13 @@ print("Predictions: ", predictions[0])
 
 
 class_array = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-#print("test_image as array", small_test_images[0])
-print("class prediction: ", class_array[predictions[0].argmax()])
-print("ground truth: ", small_test_labels[0])
-two_d = (np.reshape(test_images[0], (28, 28)) * 255).astype(np.uint8)
-img = PIL.Image.fromarray(two_d, 'L')
-img.show()
+class_array_real = ["T-Shirt","Trouser","Pullover","Dress","Coat","Sandal","Shirt","Sneaker","Bag","Ankle boot"]
+
+### test 10 Pic and show them
+for i in range(0,10):
+    print("----------------")
+    print("class prediction: ", class_array[predictions[i].argmax()], " = ", class_array_real[class_array[predictions[i].argmax()]])
+    print("ground truth: ", small_test_labels[i], " = ", class_array_real[small_test_labels[i]])
+    two_d = (np.reshape(small_test_images[i], (28, 28)) * 255).astype(np.uint8)
+    img = PIL.Image.fromarray(two_d, 'L')
+    img.show()
