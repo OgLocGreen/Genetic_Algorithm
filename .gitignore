@@ -1,6 +1,8 @@
 
 
-**/infos/
-**/logs/
+**/infos/*
+**/logs/*
 .idea
 *test.foo
+/infos/*
+/src/logs/*
