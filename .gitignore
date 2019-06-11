@@ -1,4 +1,4 @@
 infos
-src/.idea
-src/logs/*
+src/logs/
 .idea
+*test.foo
