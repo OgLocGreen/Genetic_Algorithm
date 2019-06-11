@@ -17,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+              <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -35,8 +35,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2036" />
-    <option name="y" value="182" />
+    <option name="x" value="2214" />
+    <option name="y" value="379" />
     <option name="width" value="1389" />
     <option name="height" value="789" />
   </component>
@@ -65,7 +65,6 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -94,15 +93,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560240044760</updated>
-      <workItem from="1560240048999" duration="799000" />
+      <workItem from="1560240048999" duration="119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="799000" />
+    <option name="totallyTimeSpent" value="128000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2140" y="313" width="1389" height="789" extended-state="0" />
+    <frame x="2036" y="182" width="1389" height="789" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -135,7 +134,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <caret line="3" column="6" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
         </state>
       </provider>
     </entry>
