@@ -50,6 +50,7 @@ class Population(object):
         """
         fitness_sum = 0
         for x in self.individuals:
+            print("individuals: ",x)
             fitness_sum += x.fitness()
 
         pop_fitness = fitness_sum / self.pop_size
@@ -69,7 +70,7 @@ class Population(object):
             Also select a some random non-fittest individuals to help get us out of local maximums
         """
         # Sort individuals by fitness (we use reversed because in this case lower fintess is better)
-        self.individuals = list(reversed(sorted(self.individuals, key=lambda x: x.fitness(), reverse=True)))
+        self.individuals = list(reversed(sorted(self.individuals, key=lambda x: x.fitness(), reverse=False)))
         # Keep the fittest as parents for next gen
         retain_length = self.retain * len(self.individuals)
         self.parents = self.individuals[:int(retain_length)]
