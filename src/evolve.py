@@ -132,7 +132,7 @@ class Population(object):
         self.children = []
 
 if __name__ == "__main__":
-    pop_size = 25
+    pop_size = 30
     mutate_prob = 0.02
     retain = 0.5
     random_retain = 0.05
@@ -140,16 +140,15 @@ if __name__ == "__main__":
     pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
 
     SHOW_PLOT = True
-    GENERATIONS = 5
+    GENERATIONS = 25
     for x in range(GENERATIONS):
         pop.grade(generation=x)
         pop.evolve()
 
         if pop.done:
             print("Finished at generation:", x, ", Population fitness:", pop.fitness_history[-1])
-            print("pop",pop)
-            print("pop.individuals", pop.individuals)
             break
+        print("generation: ",x)
 
     # Plot fitness history
     if SHOW_PLOT:
@@ -159,3 +158,10 @@ if __name__ == "__main__":
         plt.xlabel('Generations')
         plt.title('Fitness - pop_size {} mutate_prob {} retain {} random_retain {}'.format(pop_size, mutate_prob, retain, random_retain))
         plt.show()
+        print("pop", pop)
+        i = 0
+        for x in pop.individuals:
+            print(i)
+            print(x.gene)
+            print(x.var_acc)
+            i = i + 1
