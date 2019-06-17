@@ -71,7 +71,7 @@ class Population(object):
         for x in self.individuals:
             print("individuals: ", i)
             fitness_sum += x.fitness()
-            print("individuals: ", i)
+            print("individual: ", i)
             print("fitness: ",x.var_acc)
             i = i+1
         pop_fitness = fitness_sum / self.pop_size
@@ -134,13 +134,13 @@ class Population(object):
 if __name__ == "__main__":
     pop_size = 30
     mutate_prob = 0.02
-    retain = 0.5
+    retain = 0.3
     random_retain = 0.05
 
     pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
 
     SHOW_PLOT = True
-    GENERATIONS = 25
+    GENERATIONS = 10
     for x in range(GENERATIONS):
         pop.grade(generation=x)
         pop.evolve()
