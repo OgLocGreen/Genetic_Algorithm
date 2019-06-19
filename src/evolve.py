@@ -130,6 +130,22 @@ class Population(object):
         # 3. Reset parents and children
         self.parents = []
         self.children = []
+    
+    def savegens(self):
+        i = 0
+        for x in pop.individuals:
+            y[i] = {
+                "name": i;
+                "learningrate":x.gene[0],
+                "dropout":x.gene[1],
+                "epoch":x.gene[2],
+                "batchsize":x.gene[3],
+                "acc":x.var_acc,
+                "loss":x.var_loss
+            }
+            x.gene)
+            print(x.var_acc)
+            i = i + 1
 
 if __name__ == "__main__":
     pop_size = 30
@@ -143,12 +159,14 @@ if __name__ == "__main__":
     GENERATIONS = 10
     for x in range(GENERATIONS):
         pop.grade(generation=x)
-        pop.evolve()
-
+        pop.savegens()
         if pop.done:
             print("Finished at generation:", x, ", Population fitness:", pop.fitness_history[-1])
             break
-        print("generation: ",x)
+        else:
+            pop.evolve()
+
+
 
     # Plot fitness history
     if SHOW_PLOT:
