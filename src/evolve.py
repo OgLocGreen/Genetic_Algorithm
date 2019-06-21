@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 import random
+import json
 from KNN import train_and_evalu
 
 
@@ -132,10 +133,12 @@ class Population(object):
         self.children = []
     
     def savegens(self):
+        self.grade() #damit alle induviduals noch auf fittnes überprüft werden
         i = 0
+        self.family_tree = []
         for x in pop.individuals:
-            y[i] = {
-                "name": i;
+            generation = {
+                "name": i,
                 "learningrate":x.gene[0],
                 "dropout":x.gene[1],
                 "epoch":x.gene[2],
@@ -143,12 +146,17 @@ class Population(object):
                 "acc":x.var_acc,
                 "loss":x.var_loss
             }
-            x.gene)
-            print(x.var_acc)
-            i = i + 1
+            self.family_tree.append(generation)
+            i+=1
+        with open("data.json","w") as outfile:
+            json.dump(self.family_tree,outfile,indent=2)
+        print("pop with gens")
+        for z in self.family_tree:
+            print(z)
+        print("saved pop gens into data.json")
 
 if __name__ == "__main__":
-    pop_size = 30
+    pop_size = 10
     mutate_prob = 0.02
     retain = 0.3
     random_retain = 0.05
@@ -156,18 +164,16 @@ if __name__ == "__main__":
     pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
 
     SHOW_PLOT = True
-    GENERATIONS = 10
+    GENERATIONS = 2
     for x in range(GENERATIONS):
         pop.grade(generation=x)
-        pop.savegens()
         if pop.done:
-            print("Finished at generation:", x, ", Population fitness:", pop.fitness_history[-1])
+            print("Finished at generation:", x, ", Population fistness:", pop.fitness_history[-1])
             break
         else:
             pop.evolve()
 
-
-
+#%%
     # Plot fitness history
     if SHOW_PLOT:
         print("Showing fitness history graph")
@@ -176,10 +182,8 @@ if __name__ == "__main__":
         plt.xlabel('Generations')
         plt.title('Fitness - pop_size {} mutate_prob {} retain {} random_retain {}'.format(pop_size, mutate_prob, retain, random_retain))
         plt.show()
-        print("pop", pop)
-        i = 0
-        for x in pop.individuals:
-            print(i)
-            print(x.gene)
-            print(x.var_acc)
-            i = i + 1
+
+    pop.savegens()
+    print("FINISCHED!!!")
+
+    
