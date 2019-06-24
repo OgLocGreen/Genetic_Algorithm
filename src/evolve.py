@@ -7,7 +7,7 @@ import random
 import json
 from KNN import train_and_evalu
 
-
+from plotting import plot_winner, plot_all
 
 import psutil
 
@@ -87,6 +87,7 @@ class Population(object):
                 print("Episode", generation, "Population fitness:", pop_fitness)
                 print("----------------------------------------")
                 print("----------------------------------------")
+
     def select_parents(self):
         """
             Select the fittest individuals to be the parents of next generation (lower fitness it better in this case)
@@ -183,6 +184,8 @@ class Population(object):
             print(z)
         print("saved pop gens into data.json")
 
+
+
 if __name__ == "__main__":
     pop_size = 10
     mutate_prob = 0.02
@@ -212,5 +215,6 @@ if __name__ == "__main__":
         plt.show()
 
     pop.save_gens_winner()
+    plot_winner()
     print("FINISCHED!!!")
 
