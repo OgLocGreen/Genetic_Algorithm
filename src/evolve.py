@@ -77,7 +77,7 @@ class Population(object):
             i = i+1
         pop_fitness = fitness_sum / self.pop_size
         self.fitness_history.append(pop_fitness)
-
+        self.save_gens(generation,pop_fitness)
         # Set Done flag if we hit target
         if pop_fitness >= 0.90:
             self.done = True
@@ -131,11 +131,38 @@ class Population(object):
         # 3. Reset parents and children
         self.parents = []
         self.children = []
+
+    def save_gens(self,generations,pop_fitness):
+        with open("./data.json", "r") as f:
+            data = json.load(f)
+        i = 0
+        family_tree ={generations: []}
+        for x in pop.individuals:
+            generation = {
+                "name": i,
+                "learningrate": x.gene[0],
+                "dropout": x.gene[1],
+                "epoch": x.gene[2],
+                "batchsize": x.gene[3],
+                "acc": x.var_acc,
+                "loss": x.var_loss
+            }
+            family_tree[generations].append(generation)
+            i += 1
+        data.update(family_tree)
+        with open("data.json", "w") as outfile:
+            json.dump(data, outfile, indent=2)
+        print("pop with gens")
+        for z in family_tree:
+            print(z)
+        print("saved pop gens into data.json")
     
-    def savegens(self):
+    def save_gens_winner(self):
+        with open("./data.json", "r") as f:
+            data = json.load(f)
         self.grade() #damit alle induviduals noch auf fittnes überprüft werden
         i = 0
-        self.family_tree = []
+        family_tree ={"Winner": []}
         for x in pop.individuals:
             generation = {
                 "name": i,
@@ -146,12 +173,13 @@ class Population(object):
                 "acc":x.var_acc,
                 "loss":x.var_loss
             }
-            self.family_tree.append(generation)
+            family_tree["Winner"].append(generation)
             i+=1
+        data.update(family_tree)
         with open("data.json","w") as outfile:
-            json.dump(self.family_tree,outfile,indent=2)
+            json.dump(data,outfile,indent=2)
         print("pop with gens")
-        for z in self.family_tree:
+        for z in family_tree:
             print(z)
         print("saved pop gens into data.json")
 
@@ -164,7 +192,7 @@ if __name__ == "__main__":
     pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
 
     SHOW_PLOT = True
-    GENERATIONS = 2
+    GENERATIONS = 5
     for x in range(GENERATIONS):
         pop.grade(generation=x)
         if pop.done:
@@ -183,7 +211,6 @@ if __name__ == "__main__":
         plt.title('Fitness - pop_size {} mutate_prob {} retain {} random_retain {}'.format(pop_size, mutate_prob, retain, random_retain))
         plt.show()
 
-    pop.savegens()
+    pop.save_gens_winner()
     print("FINISCHED!!!")
 
-    
