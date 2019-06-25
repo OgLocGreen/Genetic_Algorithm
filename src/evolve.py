@@ -156,10 +156,7 @@ class Population(object):
         data.update(family_tree)
         with open("data.json", "w") as outfile:
             json.dump(data, outfile, indent=2)
-        print("pop with gens")
-        for z in family_tree:
-            print(z)
-        print("saved pop gens into data.json")
+        print("saved population gens into data.json")
     
     def save_gens_winner(self):
         with open("data.json", "r") as f:
@@ -182,10 +179,7 @@ class Population(object):
         data.update(family_tree)
         with open("data.json","w") as outfile:
             json.dump(data,outfile,indent=2)
-        print("pop with gens")
-        for z in family_tree:
-            print(z)
-        print("saved pop gens into data.json")
+        print("saved winnerpopulation gens into data.json")
 
 
 
