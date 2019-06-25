@@ -133,21 +133,24 @@ class Population(object):
         self.children = []
 
     def save_gens(self,generations,pop_fitness):
-        with open("./data.json", "r") as f:
-            data = json.load(f)
+        try :
+            with open("data.json", "r") as f:
+                data = json.load(f)
+        except:
+            data ={}
         i = 0
-        family_tree ={generations: []}
+        family_tree ={generations: {}}
         for x in pop.individuals:
             generation = {
-                "name": i,
-                "learningrate": x.gene[0],
-                "dropout": x.gene[1],
-                "epoch": x.gene[2],
-                "batchsize": x.gene[3],
-                "acc": x.var_acc,
-                "loss": x.var_loss
+            "name": i,
+            "learningrate": x.gene[0],
+            "dropout": x.gene[1],
+            "epoch": x.gene[2],
+            "batchsize": x.gene[3],
+            "acc": x.var_acc,
+            "loss": x.var_loss
             }
-            family_tree[generations].append(generation)
+            family_tree[generations][i] = generation
             i += 1
         data.update(family_tree)
         with open("data.json", "w") as outfile:
@@ -158,11 +161,11 @@ class Population(object):
         print("saved pop gens into data.json")
     
     def save_gens_winner(self):
-        with open("./data.json", "r") as f:
+        with open("data.json", "r") as f:
             data = json.load(f)
         self.grade() #damit alle induviduals noch auf fittnes überprüft werden
         i = 0
-        family_tree ={"Winner": []}
+        family_tree ={"Winner": {}}
         for x in pop.individuals:
             generation = {
                 "name": i,
@@ -173,7 +176,7 @@ class Population(object):
                 "acc":x.var_acc,
                 "loss":x.var_loss
             }
-            family_tree["Winner"].append(generation)
+            family_tree["Winner"][i] = generation
             i+=1
         data.update(family_tree)
         with open("data.json","w") as outfile:
