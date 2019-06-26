@@ -1,0 +1,42 @@
+%\chapter{Einleitung}
+
+\section{Einleitung zum Forschungs Zentrum Informatik}
+\label{sec:FZI}
+\glqq Das FZI Forschungszentrum Informatik am Karlsruher Institut für Technologie ist eine gemeinnützige Einrichtung für Informatik-Anwendungsforschung und Technologietransfer. Es bringt die neuesten wissenschaftlichen Erkenntnisse der Informationstechnologie in Unternehmen und öffentliche Einrichtungen und qualifiziert junge Menschen für eine akademische und wirtschaftliche Karriere oder den Sprung in die Selbstständigkeit.\grqq{} \cite{FZI_info}
+
+\section{Der FZI-Forschungsbereich ESS}
+\label{sec:ESS}
+\glqq Der Forschungsbereich \acf{ESS} beschäftigt sich mit innovativen Technologien, Entwurfsmethoden und Anwendungen für und von eingebetteten Systemen. Von modellbasierten Entwurfsmethoden und -werkzeugen über technologieorientierte Forschung bis hin zu anwendungsorientierten Forschungs- und Entwicklungsprojekten – wir gestalten und entwickeln praxistaugliche Anwendungen rund um eingebettete Systeme und evaluieren diese.
+
+Die breite Technologie- und Systemkompetenz aus Elektronik, Software-Engineering, Optik und Optoelektronik, Mikrosystemtechnik und Sensorik ist ein Alleinstellungsmerkmal des Bereiches. Schwerpunkte der Arbeiten bilden dementsprechend vor allem stark interdisziplinäre, Technologieübergreifende Forschungsprojekte und Anwendungen von eingebetteten Systemen in der Automobilelektronik, der Industrieautomation und im Gesundheits- und Sozialwesen.
+
+Der Bereich ESS deckt mit seinen verfügbaren Kompetenzen dabei das komplette Spektrum der Entwicklung eingebetteter Systeme und Cyber Physical Systems (CPS) mit heterogenen Komponenten aus Mikroelektronik, Mikrooptik, Mikromechanik und Telematik ab.\grqq{}  \cite{ESS}
+
+
+
+
+\newpage
+\section{Einleitung zum Projekt}
+\label{sec:Porjekt}
+
+"Nach einer Studie der Charité aus dem Jahr 2015 sterben in Europa jährlich 23.000 Menschen an den Folgen einer Infektion mit multiresistenten Keimen. Die Tendenz ist dabei steigend. Hauptursache für die Ausbreitung dieser Keime, wie beispielsweise MRSA, ist eine mangelnde Hygiene der Angestellten in den Versorgungseinrichtungen beim Umgang mit den Patienten. Gründe dafür liegen im fehlenden Problembewusstsein, der zu hohen Arbeitsdichte und damit verbundenem Zeitmangel und der mangelnden Qualifikation der beteiligten Pflegekräfte.
+\\
+
+Ziel des Projekts HEIKE ist es neue, technikgestütze Möglichkeiten zu entwickeln, welche die behandelnden Mitarbeiter im Krankenhausumfeld bei Maßnahmen am Patienten unterstützen und dadurch deren Compliance in Bezug auf die Händedesinfektion erhöhen.
+\\
+
+Die Grundlage bilden ein mobiler, vernetzter Desinfektionsspender sowie Augmented-Reality-Technik. Die Technologien werden in dem Projekt weiterentwickelt und in einem System integriert, welches automatisch die durchgeführten Handlungen am Patienten erkennt und basierend darauf zusätzliche Informationen zur Verfügung stellt. Schließlich werden die durchgeführten Maßnahmen automatisch im System dokumentiert, was den Verwaltungsoverhead für das operative Personal verringert." \cite{FZI_Projekt}
+
+
+\newpage
+\section{Meine Aufgaben}
+\label{sec:Aufgaben}
+\begin{figure}[htb]
+  \centering  
+  \includegraphics[scale=0.5]{img/Ablaufdiagramm_Verbandswechsel.jpg}
+  \caption{Ablaufdiagramm Verbandswechsel \cite{AblauffdiagrammVerbandswechsel}}
+  \label{fig:Ablaufdiagramm Verbandswechsel}
+\end{figure}
+
+Nun war die Aufgabe herrauszufinden, welche Möglichkeiten es gibt, diese Aktionen, die per EGO-Perspektiv-Video der Hololens aufgenommen wurden, zu erkennen. Die Wichtigsten Actionen sind hierbei das Desinfizieren und anlegen der Handschuhe. \ref{fig:Ablaufdiagramm Verbandswechsel}
+Hierfür soll ein \acf{KNN} zuhilfe gezogen werden, welches die wichtigen Aktionen erkennt und somit die Fehlerquote, welche durch Vergessen oder Zeitstress entstehen, zu reduzieren. Dazu muss erst ein  Netz, welches für unser Anwendung passt, gefunden und für die oben genannten Anwendungen getestet werden, desweiten muss hierfür ein Datenset mit diesen Aktionen erstellt werden, welche zum Trainieren und Zesten des Netzes notwenig sind. Anschließend soll das Netz noch evaluieren und Verbesserungen vorgenommen werden.

@@ -1,0 +1,93 @@
+%\chapter{Grundlagen}
+\label{sec:grundlagen}
+\section{Grundlagen Neuronaler Netze}
+\label{sec:Grundlagen_Netze}
+\subsection{Basics}
+\begin{figure}[htb]
+  \centering  
+  \includegraphics[scale=0.5]{img/S36_Buildyourown.png}
+  \caption{Neuronales Netz   \cite{rashid2017neuronale}}
+  \label{fig:neural_network}
+\end{figure}
+
+Zu sehen ist ein Künstliches Neuronales Netz mit drei Schichten \ref{fig:neural_network}. Dies wurde dem natürlichen Vorbild der neuronalen Netze im Gehirn nach empfunden. Die Kreise nennt man Neuronen, mehrere Neuronen zusammen ergeben eine Schicht oder auch Layer genannt. Die Verbindungen sind die Gewichte, so kann einem Netz verschiedene Zusammenhänge von Input und Output antrainiert bzw. angelernt werden. Zum Training werden viele Daten benötigt, aus welchen das Netz \glqq Lernt\grqq{}. Dafür ist es wichtig, viele aufbereitete Daten zu besitzen, denn diese Netze brauchen viele Trainingsiterationen, bis das gewünschte Ergebnis zustande kommt. Ein Neuron besteht aus Eingängen, Gewichten und einer Aktivierungfunktion sowie einem Ausgang. Die Vernetzung mehrerer Neuronen lässt ein Neuronales Netz entstehen.
+
+\newpage
+\subsection{Aufbau eines Neurons}
+\begin{figure}[htb]
+  \centering  
+  \includegraphics[scale=0.5]{img/S41_Buildyourown.png}
+  \caption{Aufbau eines Neurons  \cite{rashid2017neuronale}}
+  \label{fig:neuron}
+
+\end{figure}
+\subsubsection{Input}
+Der Input wird mit den einzelnen Gewichten verrechnet, anschließend werden diese zusammen gebracht. Diese Werte werden zufällig initialisiert und per Training verbessert, somit handelt es sich um einen angelernten Werte, welche durch die Backproagation (Fehlerrückführung) verbessert werden.
+
+\subsubsection{Bias}
+Auf diesen Input wird anschließend ein Bias gerechnet, dieser führt zu einem besseren Verhalten beim Trainieren. Bei diesen Werten handelt es sich um angelernte Werte, die per Backpropagation verbessert werden und die Flexibitlität der Netze erhöht.
+
+
+\subsubsection{Activation Function}
+Die Aktivierungsfunktion kann man sich als Schwellwert vorstellen, ab wann das Neuron den Input weiter gibt. Es gibt verschiedene Funktionen, um diesen Schwellwert zu definieren. Bei Klassifizierungen werden heute meist ReLu-Layer oder ein Weakly-ReLu Layer benutzt, diese verhindern das Vanishing- bzw. Exploding- gradientproblem beim Trainieren.
+
+\subsubsection{Output}
+Wenn der Schwellwert überschritten wird, wird am Output durchgeschaltet.
+Von Input nach Output nennt sich ein Single-Forward-Pass. Wie hier beschrieben wird, kann ein Netz verschieden viele Layer besitzen mit verschiedenen Anzahlen von Neuronen.
+
+\subsection{Lossfunction}
+Die Verlustfunktion stellt ein ausgesuchtes Maß der Diskrepanz zwischen den beobachteten und den vorhergesagten Daten dar. Sie bestimmt die Leistungsfähigkeit des neuronalen Netzes während des Trainings und der Ausführung. Ziel ist es, im laufenden Prozess der Modellanpassung, die Verlustfunktion zu minimieren.
+
+\subsection{Backpropagation}
+Um die Fehlerfunktion zu minimieren wird als Tool Gradienten Abstieg benutzt. Im Grunde werden dabei die Gewichte so angepasst, dass ein besseres Ergebnis entsteht und dadurch die Fehlerfunktion verringert wird. Wie das Wort Backpropagation schon sagt, wird von hinten nach vorne verbessert. Es gibt verschiedene Variationen von Gradientenabstiegen, welche verschiedene Vor- und Nachteile haben. Bei dem Trainieren des Netzes wurde der Momentum-Optimizer, welcher aus einem Gradientenabstieg mit Momentum aufgebaut ist.
+
+\subsection{Learning Methods}
+
+\subsubsection{Supervised Learning}
+Überwachtes Lernen wird dafür benutzt, eine Funktion zu finden, Daten einem Wert zuzuweisen. Dennoch müssen dafür alle Daten vorverarbeitet werden und einem Label zugeordnet werden. Damit das Netz auch eine Aussage über das Ergebnis, während des Trainings, geben kann. Anwendungsfälle sind Regression, Klassifikation und Empfehlungen.
+
+\subsubsection{Unsupervised Learning}
+Im Vergleich zum überwachten Lernen liegen hier keine Labelinformationen vor. Weshalb dieser Ansatz eher zum Erkennen von Mustern und Ableiten von Regeln da ist. Für unsupervised Leaning Algorithem sind in der Regel sehr viele Daten nötig. Anwendungsgebiete sind das Clustering und die Dimensionsreduktion.
+
+\subsubsection{Genetic Algorithmen}
+Man kombiniert Genetic Algorithmen mit KNNs, um den Vorteil aus beiden Modulen zu bekommen. Dennoch ist es nicht der praktischste Ansatz. Durch die Genetic Algorithmen müssen die Hyperparameter der KNN nicht vom Programmierer bestimmt werden, sondern werde durch das Training einer ganzer Population von Netzen natürlich ausgewählt. Es gibt viele verschiedene Möglichkeiten, um GA umzusetzen. Eine Möglichkeit ist es, die Netze mit den besten Ergebnissen herraus zufiltern, um sie dann für die nächste Epoche mit einer kleinen zufälligen Mutation zu versehen oder die besten zwei Netze zu kreuzen um somit die nächste Polupation zubekommen. Diese Learning Methoden werden zum Beispiel für Path-Finding-Aufgaben benutzt.
+
+\section{Grundlagen Convolutional Neuronal Network (CNN)}
+
+\begin{figure}[htb]
+  \centering  
+  \includegraphics[scale=0.25]{img/Convolutional_Net_Skizze.png}
+  \caption{Convolutional Network \cite{Convolutional_Net_Skizze}}
+  \label{fig:Convolutional_Net_Skizze}
+\end{figure}
+
+Ein \acl{CNN} hat als Eingabeschicht das Bild als Input. Anschließend folgt je nach Netz und Funktion verschiedene Anordnung von Convolutional und ReLU Layern, sowie den Pooling Layern. Die
+Ausgabeschicht besteht bei Klassifikationaufgaben immer aus einem Fully Connected Layer, welcher die Convolutional Layer mit den Ausgangsklassen verbindet und somit die eigentliche Zusammenhänge ermittelt.
+
+\subsection{Convolutional Layer}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=0.225]{img/Featuremap.png}
+  \caption{Feature Map   \cite{JeffriesDaniel}}
+  \label{fig:Featuremap}
+\end{figure}
+
+Die Convolutional Layer sind im Grunde Feature Extractoren. Sprich, sie erkennen Muster, je nach Größe des Filters(Kernels). Je tiefe der Layer, ist umso detaillierter ist das Muster der Featuremap. Je weiter am Anfang der Layer sich befindet, umso grober werden die Features. Als Aktivierungsfunktion wird hier der Relu-Funktion verwendet.
+
+\subsection{Pooling Layer}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[scale=0.4]{img/Pooling.png}
+  \caption{Pooling \cite{PranjalYadav}}
+  \label{fig:Pooling}
+\end{figure}
+Der Pooling Layer reduziert die Sensibilität des neuronalen Netzwerks im Bezug auf kleine Ortsveränderungen der Merkmale. Außerdem wird die Größe der Feature Map und somit die Komplexität der Struktur reduziert.
+Avarage-pooling ermittelt den Mittelwert, Max-pooling das Maximum jedes betrachteten Ausschnittes und ersetzt diesen durch den ermittelten Wert.
+
+\subsection{Fully Connected Layer}
+Die letzte Schicht des \acs{KNN} ist immer ein Fully Connected Layer. Wie der Name Fully Connected schon sagt, ist dieser Layer mit allen Outputs der vorherigen Layern verbunden. Dieser Layer entscheidet somit über die Ausgabe des Netzes.
+
+\subsection{3D Convolutional Network}
+Ein 3D Convolutional Network ist im Grunde das gleiche wie ein 2D Convolutional Network, nur wurde dieses um eine Dimension ergänzt. Diese Dimension ist bei uns die Zeitachse. Somit ist es möglich nicht nur einzelne Fotos zu klassifizieren, sondern auch Videos von beliebiger Länge, begrenzt nur durch die Rechenleistung des Computers. Dennoch wurde empfohlen die Trainingsvideos zwischen 3 und 4 Sekunden zuhalten, um ein sinnvolles Training des Netzes zuermöglichen.

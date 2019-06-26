@@ -1,0 +1,98 @@
+%% LaTeX template for FZI designed Document
+%% by Matthias Huber and Florian Kuhnt
+%%
+%% version 0.4
+%%
+%% Problems, bugs and comments to
+%% huber@fzi.de
+
+\documentclass[parskip=true]{scrartcl}
+
+
+% Toggle the following two lines to switch between english and german layout
+%\usepackage[english]{babel} % English
+\usepackage[ngerman]{babel} % Neue deutsche Rechtschreibung und Silbentrennung.
+
+%\usepackage{templates/theme}
+
+\usepackage{lipsum}
+\usepackage{todonotes}	
+\usepackage[nolist,nohyperlinks]{acronym}
+
+\newboolean{titel} 
+\setboolean{titel}{true}
+\newboolean{inhalt} 
+\setboolean{inhalt}{true}
+\newboolean{headfoot} 
+\setboolean{headfoot}{true}
+
+% Dokumentangaben
+\newcommand{\dokumenttitel}{[GA]}
+\newcommand{\untertitel}{[Untertitel]}
+\newcommand{\version}{0.1}
+\newcommand{\veroeffentlichung}{1.1.1970}
+\newcommand{\autor}{[Chrisitian Heinzmann]}
+\newcommand{\validfrom}{1.1.1970}
+\newcommand{\state}{-vertraulich-}
+
+%Titelseite?
+%\setboolean{titel}{false} 
+%Inhaltsverzeichnis?
+%\setboolean{inhalt}{false}
+%FZI Kopf- und Fußzeile?
+%\setboolean{headfoot}{false}
+
+%Inhaltsverzeichnis?
+%\setboolean{inhalt}{false}
+%FZI Kopf- und Fußzeile?
+%\setboolean{headfoot}{false}
+
+\begin{document}
+
+%Seiten ohne Kopf- und Fußzeile sowie Seitenzahl
+\pagestyle{empty}
+
+\include{01_titel}
+
+\include{02_danksagungen}
+
+\include{03_zusammenfassung}
+
+% Beendet eine Seite und erzwingt auf den nachfolgenden Seiten die Ausgabe aller Gleitobjekte (z.B. Abbildungen), die bislang definiert, aber noch nicht ausgegeben wurden. Dieser Befehl fügt, falls nötig, eine leere Seite ein, sodaß die nächste Seite nach den Gleitobjekten eine ungerade Seitennummer hat. 
+\cleardoubleoddpage
+
+% pagestyle für gesamtes Dokument aktivieren
+%\pagestyle{fancy}
+
+%Inhaltsverzeichnis
+\tableofcontents
+
+%Verzeichnis aller Bilder
+\listoffigures
+
+%Verzeichnis aller Abkürzungen
+\addsec*{Abkürzungsverzeichnis}
+\begin{acronym}[Bash]
+ \acro{KNN}{Künstliches Neuronales Netz}
+ \acro{Conv}{Convolutional}
+ \acro{ESS}{Embedded Systems and Sensors Engineering}
+ \acro{FZI}{Forschungszentrum Informatik}
+ \acro{CNN}{Convolutional Neuronal Network}
+ \acro{GA}{Genetic Algorithmen}
+\end{acronym}
+
+
+
+\include{04_einleitung}
+
+\include{05_grundlagen}
+
+\include{06_taetigkeitsbericht}
+
+\include{07_ergebnisse}
+
+%Literaturverzeichnis
+\bibliographystyle{unsrtdin}
+\bibliography{Literatur}
+
+\end{document}
