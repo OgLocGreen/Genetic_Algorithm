@@ -10,8 +10,8 @@ def plot_winner():
     y = []
 
     for gen in data["Winner"]:
-        x.append(gen["acc"])
-        y.append(gen["loss"])
+        x.append(data["Winner"][gen]["acc"])
+        y.append(data["Winner"][gen]["loss"])
 
     plt.scatter(x, y, s=80, marker="+")
     plt.xlabel('acc', fontsize=18)
@@ -27,8 +27,8 @@ def plot_all():
         x = []
         y = []
         for gen in data[pop]:
-            x.append(gen["acc"])
-            y.append(gen["loss"])
+            x.append(gen["acc"])    ## hier dürfte noch ein fehler sein
+            y.append(gen["loss"])   ## hier dürfte noch ein feheler sein
         plt.scatter(x, y, s=80, marker="+")
         plt.xlabel('acc', fontsize=18)
         plt.ylabel('loss', fontsize=16)

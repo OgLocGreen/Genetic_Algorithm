@@ -109,7 +109,7 @@ class Population(object):
         """
             Crossover the parents to generate children and new generation of individuals
         """
-        target_children_size = self.pop_size - len(self.parents)
+        target_children_size = self.pop_size #- len(self.parents)
         children = []
         if len(self.parents) > 0:
             while len(children) < target_children_size:
@@ -117,12 +117,13 @@ class Population(object):
                 mother = random.choice(self.parents)
                 if father != mother:
                     child_genes = [random.choice(pixel_pair) for pixel_pair in zip(father.gene, mother.gene)]
-                    child = Individual(child_genes[0], child_genes[1], child_genes[2], child_genes[3])
+                    child = Individual(child_genes[0], child_genes[1], child_genes[2], child_genes[3])   ## Hier noch Mutation mit dazu bringen
                     children.append(child)
                 else:
                     print("father == mother selection new parents")
 
-            self.individuals = self.parents + children
+            #self.individuals = self.parents + children
+            self.individuals = children
 
     def evolve(self):
         # 1. Select fittest
@@ -186,7 +187,7 @@ class Population(object):
 if __name__ == "__main__":
     pop_size = 10
     mutate_prob = 0.02
-    retain = 0.3
+    retain = 0.5
     random_retain = 0.05
 
     pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
