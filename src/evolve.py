@@ -7,7 +7,7 @@ import random
 import json
 from KNN import train_and_evalu
 
-from plotting import plot_winner, plot_all
+from plotting import plot_winner, plot_all, plot_normalverteilung
 
 import psutil
 
@@ -117,7 +117,16 @@ class Population(object):
                 mother = random.choice(self.parents)
                 if father != mother:
                     child_genes = [random.choice(pixel_pair) for pixel_pair in zip(father.gene, mother.gene)]
-                    child = Individual(child_genes[0], child_genes[1], child_genes[2], child_genes[3])   ## Hier noch Mutation mit dazu bringen
+                    for x in range(0, len(child_genes)):
+                        tmp = child_genes[x]
+                        mutation = random.uniform(0, 0.3)
+                        var = random.choice([True, False])
+                        if var == True:
+                            tmp = tmp - (tmp * mutation)
+                        else:
+                            tmp = tmp + (tmp * mutation)
+                        child_genes[x] = round(tmp,5)
+                    child = Individual(child_genes[0], child_genes[1], child_genes[2], child_genes[3])
                     children.append(child)
                 else:
                     print("father == mother selection new parents")
@@ -163,6 +172,7 @@ class Population(object):
         with open("data.json", "r") as f:
             data = json.load(f)
         self.grade() #damit alle induviduals noch auf fittnes überprüft werden
+        self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))
         i = 0
         family_tree ={"Winner": {}}
         for x in pop.individuals:
@@ -185,7 +195,7 @@ class Population(object):
 
 
 if __name__ == "__main__":
-    pop_size = 10
+    pop_size = 25
     mutate_prob = 0.02
     retain = 0.5
     random_retain = 0.05
@@ -193,7 +203,7 @@ if __name__ == "__main__":
     pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
 
     SHOW_PLOT = True
-    GENERATIONS = 5
+    GENERATIONS = 10
     for x in range(GENERATIONS):
         pop.grade(generation=x)
         if pop.done:
@@ -212,7 +222,9 @@ if __name__ == "__main__":
         plt.title('Fitness - pop_size {} mutate_prob {} retain {} random_retain {}'.format(pop_size, mutate_prob, retain, random_retain))
         plt.show()
 
+
     pop.save_gens_winner()
     plot_winner()
+    plot_normalverteilung()
     print("FINISCHED!!!")
 
