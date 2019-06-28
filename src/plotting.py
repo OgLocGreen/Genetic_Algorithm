@@ -1,16 +1,7 @@
-#%%
-import numpy as np
-import matplotlib.pyplot as plt
+
 import json
-
-
 import matplotlib.pyplot as plt
-
-from scipy.stats import norm
-
 import numpy as np
-import pandas as pd
-import scipy
 
 def plot_winner():
     with open("./data.json", "r") as f:

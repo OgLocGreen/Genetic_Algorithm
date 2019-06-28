@@ -1,13 +1,8 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-import tensorflow as tf
-from tensorflow.python.keras.callbacks import TensorBoard
 from tensorflow import keras
-from time import time
 from sklearn.model_selection import train_test_split
 
-import numpy as np
-import PIL
-
+import gc
 
 
 def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size):
@@ -57,4 +52,5 @@ def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size):
 
     test_loss, test_acc = model.evaluate(small_test_images, small_test_labels)
     print("test_loss: ",test_loss , "test_acc: ", test_acc)
+    gc.collect()
     return test_loss, test_acc

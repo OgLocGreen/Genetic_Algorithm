@@ -9,18 +9,15 @@ from KNN import train_and_evalu
 
 from plotting import plot_winner, plot_all, plot_normalverteilung
 
-import psutil
+import gc
 
 
 #%%
 class Individual(object):
-
     def __init__(self, learningrate, dropout, epoch, batchsize):
-
         self.gene = (learningrate, dropout, epoch, batchsize)
         self.var_acc = 0
         self.var_loss = 0
-
     def fitness(self):
         """
             Returns fitness of individual
@@ -60,7 +57,6 @@ class Population(object):
             dropout = random.uniform(0.05, 0.5)
             epoch = random.uniform(5, 10)
             batchsize = random.uniform(32, 64)
-
             self.individuals.append(Individual(learningrate, dropout, epoch, batchsize))
 
     def grade(self, generation=None):
@@ -77,7 +73,7 @@ class Population(object):
             i = i+1
         pop_fitness = fitness_sum / self.pop_size
         self.fitness_history.append(pop_fitness)
-        self.save_gens(generation,pop_fitness)
+        self.save_gens(generation)
         # Set Done flag if we hit target
         if pop_fitness >= 0.90:
             self.done = True
@@ -109,30 +105,41 @@ class Population(object):
         """
             Crossover the parents to generate children and new generation of individuals
         """
-        target_children_size = self.pop_size #- len(self.parents)
+        target_children_size = self.pop_size - 4     ##Auswählen wie viele kinder erstellt 2 werden mit den besten 2 eltern ersetzt
+                                                     ## zwei werden random hinzu gefügtvlt des ganze nicht hart mit 2 sondern mit variablen
         children = []
-        if len(self.parents) > 0:
-            while len(children) < target_children_size:
-                father = random.choice(self.parents)
-                mother = random.choice(self.parents)
-                if father != mother:
+        children.append(self.parents[:int(2)])      ##zwei besten in nächste pop hinzu fügen
+        for i in range(0,2):                        ##zwei random in nächste pop hinzu fügen
+            learningrate = random.uniform(0.0005, 0.1)
+            dropout = random.uniform(0.05, 0.5)
+            epoch = random.uniform(5, 10)
+            batchsize = random.uniform(32, 64)
+            children.append(Individual(learningrate, dropout, epoch, batchsize))
+
+
+        if len(self.parents) > 0:                   ##überprüfen ob eltern vorhanden
+            while len(children) < target_children_size:     ##solange bis gewollte kinder auch da sind
+                father = random.choice(self.parents)        ## vater random aus eltern auswählen
+                mother = random.choice(self.parents)        ## mutte random aus eltern auswählen
+                if father != mother:                           ## wenn vatter nicht gleich mutter
+                    ## kinder gegen werden zufällig aus den genen von Mutter und Vatter ausgewählt
                     child_genes = [random.choice(pixel_pair) for pixel_pair in zip(father.gene, mother.gene)]
+                    ## Mutation der Gene mit einem Faktor
                     for x in range(0, len(child_genes)):
                         tmp = child_genes[x]
-                        mutation = random.uniform(0, 0.3)
-                        var = random.choice([True, False])
-                        if var == True:
+                        mutation = random.uniform(0, self.mutate_prob)       ## Mutationsfaktor mutate prob
+                        var = random.choice([True, False])      ## Funktion um Positive bzw. negative Mutation
+                        if var == True:                         ## Mutation funktioniert in Prozent
                             tmp = tmp - (tmp * mutation)
                         else:
                             tmp = tmp + (tmp * mutation)
-                        child_genes[x] = round(tmp,5)
+                        child_genes[x] = round(tmp,5)          ## anschließend runden auf 5 nachkommastellen
                     child = Individual(child_genes[0], child_genes[1], child_genes[2], child_genes[3])
                     children.append(child)
                 else:
                     print("father == mother selection new parents")
 
-            #self.individuals = self.parents + children
-            self.individuals = children
+            self.individuals = children       ##Kinder werden Individumen für nächste generation
 
     def evolve(self):
         # 1. Select fittest
@@ -143,13 +150,14 @@ class Population(object):
         self.parents = []
         self.children = []
 
-    def save_gens(self,generations,pop_fitness):
+    def save_gens(self,generations):
         try :
             with open("data.json", "r") as f:
                 data = json.load(f)
         except:
             data ={}
         i = 0
+        self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))  ##indiviuen noch mal nach fitness sotierten
         family_tree ={generations: {}}
         for x in pop.individuals:
             generation = {
@@ -196,14 +204,14 @@ class Population(object):
 
 if __name__ == "__main__":
     pop_size = 25
-    mutate_prob = 0.02
+    mutate_prob = 0.
     retain = 0.5
     random_retain = 0.05
 
     pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
 
     SHOW_PLOT = True
-    GENERATIONS = 10
+    GENERATIONS = 5
     for x in range(GENERATIONS):
         pop.grade(generation=x)
         if pop.done:
@@ -211,6 +219,7 @@ if __name__ == "__main__":
             break
         else:
             pop.evolve()
+        gc.collect()
 
 #%%
     # Plot fitness history
