@@ -1,5 +1,4 @@
 ### https://gist.githubusercontent.com/gabrielgarza/377a692eb819d4efdf9a13b03dcb2358/raw/3a0b50435b2269203c3a3992362e76c04f81ad13/evolve.py
-#%%
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
@@ -12,12 +11,13 @@ from plotting import plot_winner, plot_all, plot_normalverteilung
 import gc
 
 
-#%%
+
 class Individual(object):
     def __init__(self, learningrate, dropout, epoch, batchsize):
         self.gene = (learningrate, dropout, epoch, batchsize)
         self.var_acc = 0
         self.var_loss = 0
+
     def fitness(self):
         """
             Returns fitness of individual
@@ -27,7 +27,7 @@ class Individual(object):
         return self.var_acc
 
 
-#%%
+
 class Population(object):
 
     def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03):
@@ -108,7 +108,8 @@ class Population(object):
         target_children_size = self.pop_size - 4     ##Auswählen wie viele kinder erstellt 2 werden mit den besten 2 eltern ersetzt
                                                      ## zwei werden random hinzu gefügtvlt des ganze nicht hart mit 2 sondern mit variablen
         children = []
-        children.append(self.parents[:int(2)])      ##zwei besten in nächste pop hinzu fügen
+        children.append(self.parents[0])      ##zwei besten in nächste pop hinzu fügen
+        children.append((self.parents[1]))
         for i in range(0,2):                        ##zwei random in nächste pop hinzu fügen
             learningrate = random.uniform(0.0005, 0.1)
             dropout = random.uniform(0.05, 0.5)
@@ -200,11 +201,9 @@ class Population(object):
             json.dump(data,outfile,indent=2)
         print("saved winnerpopulation gens into data.json")
 
-
-
 if __name__ == "__main__":
-    pop_size = 25
-    mutate_prob = 0.
+    pop_size = 20
+    mutate_prob = 0.3
     retain = 0.5
     random_retain = 0.05
 
@@ -222,6 +221,7 @@ if __name__ == "__main__":
         gc.collect()
 
 #%%
+    SHOW_PLOT = True
     # Plot fitness history
     if SHOW_PLOT:
         print("Showing fitness history graph")
@@ -230,7 +230,6 @@ if __name__ == "__main__":
         plt.xlabel('Generations')
         plt.title('Fitness - pop_size {} mutate_prob {} retain {} random_retain {}'.format(pop_size, mutate_prob, retain, random_retain))
         plt.show()
-
 
     pop.save_gens_winner()
     plot_winner()

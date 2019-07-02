@@ -20,24 +20,19 @@ Der Bereich ESS deckt mit seinen verfügbaren Kompetenzen dabei das komplette Sp
 \subsection{Einleitung zum Projekt}
 \label{sec:Porjekt}
 
-"Nach einer Studie der Charité aus dem Jahr 2015 sterben in Europa jährlich 23.000 Menschen an den Folgen einer Infektion mit multiresistenten Keimen. Die Tendenz ist dabei steigend. Hauptursache für die Ausbreitung dieser Keime, wie beispielsweise MRSA, ist eine mangelnde Hygiene der Angestellten in den Versorgungseinrichtungen beim Umgang mit den Patienten. Gründe dafür liegen im fehlenden Problembewusstsein, der zu hohen Arbeitsdichte und damit verbundenem Zeitmangel und der mangelnden Qualifikation der beteiligten Pflegekräfte.
-\\
-
-Ziel des Projekts HEIKE ist es neue, technikgestütze Möglichkeiten zu entwickeln, welche die behandelnden Mitarbeiter im Krankenhausumfeld bei Maßnahmen am Patienten unterstützen und dadurch deren Compliance in Bezug auf die Händedesinfektion erhöhen.
-\\
-
+"Nach einer Studie der Charité aus dem Jahr 2015 sterben in Europa jährlich 23.000 Menschen an den Folgen einer Infektion mit multiresistenten Keimen. Die Tendenz ist dabei steigend. Hauptursache für die Ausbreitung dieser Keime, wie beispielsweise MRSA, ist eine mangelnde Hygiene der Angestellten in den Versorgungseinrichtungen beim Umgang mit den Patienten. Gründe dafür liegen im fehlenden Problembewusstsein, der zu hohen Arbeitsdichte und damit verbundenem Zeitmangel und der mangelnden Qualifikation der beteiligten Pflegekräfte.\par
+Ziel des Projekts HEIKE ist es neue, technikgestütze Möglichkeiten zu entwickeln, welche die behandelnden Mitarbeiter im Krankenhausumfeld bei Maßnahmen am Patienten unterstützen und dadurch deren Compliance in Bezug auf die Händedesinfektion erhöhen. \par
 Die Grundlage bilden ein mobiler, vernetzter Desinfektionsspender sowie Augmented-Reality-Technik. Die Technologien werden in dem Projekt weiterentwickelt und in einem System integriert, welches automatisch die durchgeführten Handlungen am Patienten erkennt und basierend darauf zusätzliche Informationen zur Verfügung stellt. Schließlich werden die durchgeführten Maßnahmen automatisch im System dokumentiert, was den Verwaltungsoverhead für das operative Personal verringert." \cite{FZI_Projekt}
-
-
-\newpage
-\subsection{Meine Aufgaben}
-\label{sec:Aufgaben}
 \begin{figure}[htb]
   \centering  
-  \includegraphics[scale=0.5]{img/Ablaufdiagramm_Verbandswechsel.jpg}
+  \includegraphics[scale=0.45]{img/Ablaufdiagramm_Verbandswechsel.jpg}
   \caption{Ablaufdiagramm Verbandswechsel \cite{AblauffdiagrammVerbandswechsel}}
   \label{fig:Ablaufdiagramm Verbandswechsel}
 \end{figure}
 
-Nun war die Aufgabe herrauszufinden, welche Möglichkeiten es gibt, diese Aktionen, die per EGO-Perspektiv-Video der Hololens aufgenommen wurden, zu erkennen. Die Wichtigsten Actionen sind hierbei das Desinfizieren und anlegen der Handschuhe. \ref{fig:Ablaufdiagramm Verbandswechsel}
-Hierfür soll ein \acf{KNN} zuhilfe gezogen werden, welches die wichtigen Aktionen erkennt und somit die Fehlerquote, welche durch Vergessen oder Zeitstress entstehen, zu reduzieren. Dazu muss erst ein  Netz, welches für unser Anwendung passt, gefunden und für die oben genannten Anwendungen getestet werden, desweiten muss hierfür ein Datenset mit diesen Aktionen erstellt werden, welche zum Trainieren und Zesten des Netzes notwenig sind. Anschließend soll das Netz noch evaluieren und Verbesserungen vorgenommen werden.
+\newpage
+\subsection{Aufgabenstellung}
+\label{sec:Aufgabenstellung}
+
+Um diese Automatischen System, meist Deep Learning Methoden, zu trainieren braucht es sehr große Datenset und viele verschiedene Parameter, welche irgendwie nach groben ermessen und herum probieren vom Programmier ausgewählt werden. Diese Auszuwählen beansprucht sehr viel Zeit und Mühe. \par
+Um dies dem Benutzer zu vereinfachen soll ein Konzept geschaffen werden, welches diese Vorgänge automatisiert und zusätzlich noch mit einen Optimierungsalgorithmus verbessert.Mit diesem Ansatz kann zum Beispiel die dimensionierung eines Netzes einfacher umgesetzt werden. Ein weiter Anwendungsfall ist die Hyperparameterauswahl. Mit hilfe diesem Werkzeug soll eine einfachere und bessere Auswahl der Hyperparameter erfolgen.\par Diese berechneten Werte sollen gespeicher und anschließend übersichtlich und intuitiv anzeigt werden. Wodurch die idealen Parameter herausbilden. Mit diesen Hyperparameter wird möglicherweise die Richtigkeit des Netzes erhöht, sodass dieses auf ein besseres Ergebnisse kommt. Dieses Werkzeug soll Konzeptioniert und Implementiert werden. Anschließend soll eine Evaluation und Auswertung über die mögliche Verbessung durchgeführt werden. 
