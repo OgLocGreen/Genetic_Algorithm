@@ -9,3 +9,5 @@ src/logs/
 
 
 *.env
+
+*.aux
