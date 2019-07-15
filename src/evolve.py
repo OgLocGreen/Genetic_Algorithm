@@ -11,7 +11,7 @@ from plotting import plot_winner, plot_all, plot_normalverteilung
 import gc
 
 
-
+#%%
 class Individual(object):
     def __init__(self, learningrate, dropout, epoch, batchsize):
         self.gene = (learningrate, dropout, epoch, batchsize)
@@ -202,7 +202,7 @@ class Population(object):
         print("saved winnerpopulation gens into data.json")
 
 if __name__ == "__main__":
-    pop_size = 20
+    pop_size = 30
     mutate_prob = 0.3
     retain = 0.5
     random_retain = 0.05
@@ -210,7 +210,7 @@ if __name__ == "__main__":
     pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
 
     SHOW_PLOT = True
-    GENERATIONS = 5
+    GENERATIONS = 10
     for x in range(GENERATIONS):
         pop.grade(generation=x)
         if pop.done:

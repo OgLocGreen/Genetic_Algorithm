@@ -12,12 +12,14 @@
 % Toggle the following two lines to switch between english and german layout
 %\usepackage[english]{babel} % English
 \usepackage[ngerman]{babel} % Neue deutsche Rechtschreibung und Silbentrennung.
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 %\usepackage{templates/theme}
 
-\usepackage{lipsum}
-\usepackage{todonotes}	
+\usepackage{lipsum, todonotes}	
 \usepackage[nolist,nohyperlinks]{acronym}
+\usepackage{caption}
+\usepackage{float}
+
 
 \newboolean{titel} 
 \setboolean{titel}{true}
@@ -54,9 +56,9 @@
 
 \include{01_titel}
 
-\include{02_danksagungen}
+\include{02_eigen}
 
-\include{03_zusammenfassung}
+\include{03_ausschreibung}
 
 % Beendet eine Seite und erzwingt auf den nachfolgenden Seiten die Ausgabe aller Gleitobjekte (z.B. Abbildungen), die bislang definiert, aber noch nicht ausgegeben wurden. Dieser Befehl fügt, falls nötig, eine leere Seite ein, sodaß die nächste Seite nach den Gleitobjekten eine ungerade Seitennummer hat. 
 \cleardoubleoddpage
@@ -73,7 +75,8 @@
 %Verzeichnis aller Abkürzungen
 \addsec*{Abkürzungsverzeichnis}
 \begin{acronym}[Bash]
- \acro{KNN}{Künstliches Neuronales Netz}
+ \acro{KNN}[KNN]{Künstliches Neuronales Netz}
+ \acro{test} {why no acro}
  \acro{Conv}{Convolutional}
  \acro{ESS}{Embedded Systems and Sensors Engineering}
  \acro{FZI}{Forschungszentrum Informatik}
@@ -98,9 +101,8 @@
 \include{10_ausblick}
 
 
-
 %Literaturverzeichnis
-\bibliographystyle{unsrtdin}
+\bibliographystyle{unsrt}
 \bibliography{Literatur}
 
 \end{document}
