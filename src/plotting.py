@@ -27,15 +27,32 @@ def plot_all():
         x = []
         y = []
         for gen in data[pop]:
-            x.append(gen["acc"])    ## hier dürfte noch ein fehler sein
-            y.append(gen["loss"])   ## hier dürfte noch ein feheler sein
+            x.append(data[pop][gen]["acc"])    ## hier dürfte noch ein fehler sein
+            y.append(data[pop][gen]["loss"])   ## hier dürfte noch ein feheler sein
         plt.scatter(x, y, s=80, marker="+")
         plt.xlabel('acc', fontsize=18)
         plt.ylabel('loss', fontsize=16)
         plt.gca().invert_yaxis()
         plt.show(num=gen)
 
-def plot_normalverteilung():
+def plot_normalverteilung(names,werteliste):
+    num_bins = 10 #bins sind Balken
+    plt.hist(werteliste, num_bins, density=True, facecolor='blue', alpha=0.5)
+
+    # add a 'best fit' line
+    #y = norm(bins, np.mean(learningrate), np.std(learningrate))
+
+    #plt.plot(bins, y, 'r--')
+    plt.xlabel('Smarts')
+    plt.ylabel('Probability')
+    plt.title(names)
+
+    # Tweak spacing to prevent clipping of ylabel
+    plt.subplots_adjust(left=0.15)
+    plt.show()
+
+
+def plot_normalverteilung_all():
     with open("./data.json", "r") as f:
         data = json.load(f)
 
@@ -52,26 +69,19 @@ def plot_normalverteilung():
         epoch.append(data["Winner"][gen]["epoch"])
         anzahl += 1
 
-
-
     print('learningrate mean=%.5f stdv=%.5f' % (np.mean(learningrate), np.std(learningrate)))
+    plot_normalverteilung("learningrate",learningrate)
     print('batchsize mean=%.5f stdv=%.5f' % (np.mean(batchsize), np.std(batchsize)))
+    plot_normalverteilung("batchsize",batchsize)
     print('dropout mean=%.5f stdv=%.5f' % (np.mean(dropout), np.std(dropout)))
+    plot_normalverteilung("dropout",dropout)
     print('epoch mean=%.5f stdv=%.5f' % (np.mean(epoch), np.std(epoch)))
+    plot_normalverteilung("epoch",epoch)
 
 
-    num_bins = 10
-    n, bins, patches = plt.hist(learningrate, num_bins, density=True, facecolor='blue', alpha=0.5)
 
-    # add a 'best fit' line
-    #y = norm(bins, np.mean(learningrate), np.std(learningrate))
+if __name__ == "__main__":
+    plot_winner()
+    plot_normalverteilung_all()
 
-    #plt.plot(bins, y, 'r--')
-    plt.xlabel('Smarts')
-    plt.ylabel('Probability')
-    plt.title(r'Histogram of IQ: $\mu=100$, $\sigma=15$')
-
-    # Tweak spacing to prevent clipping of ylabel
-    plt.subplots_adjust(left=0.15)
-    plt.show()
 

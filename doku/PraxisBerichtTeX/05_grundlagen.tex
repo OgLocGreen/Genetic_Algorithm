@@ -1,21 +1,48 @@
-
 \section{Grundlagen}
 \label{sec:Grundlagen}
 
 
 \subsection{Optimierungsgrundlagen}
-Angenommen es soll ein Neuronales Netz mit k Layern und jNeuronen zur Klassifizierung von einfachen Handgeschrien-Zahlen erstellt werden. Der Entwickler entscheidet sich für ein 3 Layern Netz mit jeweils 3 Neuronen. Nach dem Training hat es die Genauigkeit von 85 Prozent. Ist dies Akzeptabel? Kann man sagen das für k 3 bzw. j 3 die optimale Lösung ist? Um dies zu beurteilen müssen viele Experimente durchgeführt werden. Die Frage ist, wie man den die Besten werte für k und j findet, der die Klassifizierung maximiert. Dies wird als Hyperparameter Optimierung bezeichnet. 
+Angenommen es soll ein Neuronales Netz mit k Layern und jNeuronen zur Klassifizierung von einfachen Handgeschrien-Zahlen erstellt werden. Der Entwickler entscheidet sich für ein 3 Layern Netz mit jeweils 3 Neuronen. Nach dem Training hat es die Genauigkeit von 85 Prozent. Ist dies Akzeptabel? Kann man sagen das für k 3 bzw. j 3 die optimale Lösung ist? Um dies zu beurteilen müssen viele Experimente durchgeführt werden. Die Frage ist, wie man den die Besten werte für k und j findet, der die Klassifizierung maximiert. Dies wird als Hyperparameter Optimierung bezeichnet. Bei der Optimisierung wird mit einem Inizialwert gestartet dieser ist meist nicht der beste. Dieser Inizialwert muss einige male geändert werden um auf einen Optimum zu kommen. Manchmal ist dieses Anpassen/optimieren so Komplex, dass es durch eine Funktion ersetz werden muss.
 
 \subsection{Genetische Algorithmen}
-Genetische Algorithmen sind heuristische Suchansätzem, die auf einer breitenbasis von Optimierungsproblemen angewendet werden können. Diese Flexibiliät macht sie für die Praxis für viele sehr attraktiv. Die Evulution ist Grundlage des Genetischen Aglorithmuses. durch die aktuelle Vielfalt und der Erfolg der Arten ist dies schon alleine ein guter Grund sich diesen Optimierungs Algortihmus näher anzuschauen. Denn sdiese Arten sind in der lage sich an ihre Umgebung anzupassen und sich zu zu komplexen Strukturen zuentwickelen, und somit das überleben in verschiedesten Umgebungen eröglichen. Hierbei ist die Paarung und Entwicklung von Nachkommen eine der Hauptprinipen des Erfolges der Evolution. In diesem Kapitel werden wir die Grundlage der GEnetischen Algorithmen näher anzuschauen. Beginnen wir mit der grundlage das es sich bei den Genetischen Algorithmen um einen Polulations ansatz handelt. Anschließend wird auf die wichtigesten genetischen Operatioren vorstellen darunter gehöhren, Selektion, Crossover und Muttation
+Genetische Algorithmen sind heuristische Suchansätze. Im wesentliche zeichnet sie eine probilistische Eltern selection als primären Suchoperator aus. Als weitern suchoperator kann der Ga noch auf die Mutation zurückgreifen, dieser grantiert eine Erreichbarkeit aller Punkte im suchraum und erhält so die Grunddiversität in der Population. Genetische Algorithmen haben als theoretischen Grundlage die Schama-Therorie. Es gibt zwei verschiedene Grundalgorihmen der Standart-GA (\ref{Standart-GA}). Dieser Tauscht nach einer Generation die komplette Elternpopulation durch die Kinderpopulation aus. Im Gegensatz dazu gibt es  den Steady-State-GA(\ref{Steady-State-GA}) welcher durch seine Überlappende Population auszeichnet. Nun werden wir uns genauer den  Standart-GA \ref{Standart-GA} und seine einzelnen Schritte genauer Betrachten.
+
+\subsection{Standart-GA} \label{Standart-GA}
+Der Standart-GA ist folgende Schritte aufgeteilt und wird anschließend genau besprochen:
+Schritt 1 Inizialisieren einer Population.
+Schritt 2 Fittness brechnen.
+Schritt 3 weiterentwicken hier werden zuerst die passenden Eltern ausgesucht und anschließend mit Crossover und Mutation die Kinder Population erstellt. 
+Schritt 4 Elternpopulation durch die neue Kinderpopulation ausgetauscht.
+Hier noch einamal als Pseudocode.
+
+Algorithm 1 Basic Genetic Algorithm
+1: initialize population
+2: repeat
+3: 		repeat
+4:			fitness computation
+5:			parent selection
+6:			breed
+7:				crossover
+8:				mutation
+9:		until population complete
+10:		selection of parental population
+11: until termination condition
+
+
+
+\iffalse
+Genetische Algorithmen sind im Wesentlichen durch eine probabilistische Eltern selektion und die Rekombination als primären Suchoperator gekennzeichnet.Die Mutation ist meist nur ein Hintergrundoperator, der mit einer geringen Wahrschenlichkeit zur anwendungkommt. Er garantiert die Erreichbarkeit aller Punkte im Suchraum und erhält eine Drunddiversitöt in der Population.
+
+Evolutionäre Algo -- s.128
+
+
+Genetische Algorithmen sind heuristische Suchansätzem, die auf einer breitenbasis von Optimierungsproblemen angewendet werden können. Diese Flexibiliät macht sie für die Praxis für viele sehr attraktiv.Die Evulution ist Grundlage des Genetischen Aglorithmuses. durch die aktuelle Vielfalt und der Erfolg der Arten ist dies schon alleine ein guter Grund sich diesen Optimierungs Algortihmus näher anzuschauen. Denn sdiese Arten sind in der lage sich an ihre Umgebung anzupassen und sich zu zu komplexen Strukturen zuentwickelen, und somit das überleben in verschiedesten Umgebungen eröglichen. Hierbei ist die Paarung und Entwicklung von Nachkommen eine der Hauptprinipen des Erfolges der Evolution. In diesem Kapitel werden wir die Grundlage der GEnetischen Algorithmen näher anzuschauen. Beginnen wir mit der grundlage das es sich bei den Genetischen Algorithmen um einen Polulations ansatz handelt. Anschließend wird auf die wichtigesten genetischen Operatioren vorstellen darunter gehöhren, Selektion, Crossover und Muttation
 
 Seite - 11 Genetic Algorithm Essentials
 
 
-\iffalse
-Algorithmus 1 zeigt den Pseudocode des grundlegenden genetischen Algorithmus, der Folgendes kann
-dienen als Blaupause für viele verwandte Ansätze. Am Anfang eine Reihe von Lösungen,die als Population bezeichnet wird, wird initialisiert. Diese Initialisierung wird empfohlen.um zufällig den gesamten Lösungsraum abzudecken oder um Experten zu modellieren und einzubinden.
-Wissen. Die Darstellung bestimmt den Initialisierungsprozess. Für BitfolgeDarstellungen ist eine zufällige Kombination von Nullen und Einsen sinnvoll, z.B.das anfängliche Zufallschromosom 1001001001001 als typische Bitfolge der Länge 10. Der Hauptgenerationskreislauf des Genetischen Algorithmus erzeugt neue Nachkommen.Kandidatenlösungen mit Crossover und Mutation, bis die Bevölkerung vollständig ist.
+Algorithmus 1 zeigt den Pseudocode des grundlegenden genetischen Algorithmus, der Folgendes kann dienen als Blaupause für viele verwandte Ansätze. Am Anfang eine Reihe von Lösungen,die als Population bezeichnet wird, wird initialisiert. Diese Initialisierung wird empfohlen.um zufällig den gesamten Lösungsraum abzudecken oder um Experten zu modellieren und einzubinden. Wissen. Die Darstellung bestimmt den Initialisierungsprozess. Für BitfolgeDarstellungen ist eine zufällige Kombination von Nullen und Einsen sinnvoll, z.B.das anfängliche Zufallschromosom 1001001001001 als typische Bitfolge der Länge 10. Der Hauptgenerationskreislauf des Genetischen Algorithmus erzeugt neue Nachkommen.Kandidatenlösungen mit Crossover und Mutation, bis die Bevölkerung vollständig ist.
 
 Algorithm 1 Basic Genetic Algorithm
 1: initialize population
@@ -40,7 +67,7 @@ Figure \ref{fig:chromosome} veranschaulicht ein Beispiel, wie eine Population au
 \begin{figure}[H]
   \centering  
   \includegraphics[scale=0.3]{img/Chromsome-s134-PracticalComputerVion.png}
-  \caption{Beispiel einer Polulation mit 4 induviduen (Chromsomen) welche vier binäre Gene besitzen \cite{rashid2017neuronale} }
+  \caption{Beispiel einer Polulation mit 4 induviduen (Chromsomen) welche vier binäre Gene besitzen \cite{Rashid2017} }
   \label{fig:chromosome}
 \end{figure}
 
@@ -58,18 +85,42 @@ Dazu werden aus zwei Elternpaaren ein neues Kind erstellt. Um die Elternpaare au
 Um eine convergenz richtung Optimalem Maximum bzw. Minmum zu schaffen werden die besten Elternteile der geraden bewertenen Generation ausgewählt.
 Für die Auswahl gibt es verschiedene Ansätze, die bedeutesten werden genannt und erläutert.
 \begin{itemize}
-\item \textbf{Auswahl proportional zu Fittnes}, hierbei spielt die im vohrigen Schritt berechnete Fintess eine große Rolle. Die Eltern werden nach dieser Fittness proportional als Elternteil ausgewählt und zum Elternpool hinzugefügt.
+\item \textbf{Auswahl proportional zu Fittnes eng. Fitness Proportonal Selction(FPS)}, hierbei spielt die im vohrigen Schritt berechnete Fintess eine große Rolle. Die Eltern werden nach dieser Fittness proportional als Elternteil ausgewählt und zum Elternpool hinzugefügt.
+
+\iffalse
+Problem hier ist das Individuen die am anfang gut sind schnell die ganz epopulation übernehmmen. Das kann dazuführen das eine mögliche bessere lösung durch den Algorithmus im suchraum nicht gefudnen wird. Ein weiteres Problem ist es wenn die Lösungen nahe bei bei einandern liegen gibt es fast keine selections druck mehr herscht. DIes geschied gegen ende der Optimierung und führt zu einem sehr langsamen verlauf gegen ende. 
+
+introduction to evolutionary comp s80
+\fi
+
+
+
+
+\item \textbf{Ranking Selektion}, diese Selktion wurde als Verbesserung der Fitness Proportonal Selection entwickelt. Dabei werden die Eltern nicht direkt nach ihrer Fittness ausgewählt sondern über die Fitness im vergleich zur gesamt Population. Sprich sie werden in einer Rangliste aufgestellt wobei das beste Individum den Rand y-1 belegt und das schlechteste den Rang 0. Dieses Ranking kann in vielen varianten vorgenommen werden, Linear oder expotenziel umgesetzt werden. 
+
+\iffalse 
+
+intodiction to evolutionary comp s82
+
+
+
+
 \item \textbf{Best 50 prozent},heißt aus der oberen hälfte der alten Generation werden alle Induviduen dem Elternpool hinzugefügt.Aus welchen dann zufällig die einzelnen Elternteile ausgewählt werden. Es mssen natürlich nicht immer 50 prozent sein, es kann sich auch um einen anderen Prozentsatz handeln.
-\item \textbf{Tunier Auswahl}, in diesem Verfahren werden k induviduen der Population ausgewählt. Diese k Induviuen Treten dann wie in einem Tunier gegeneinander an. Das Individum mit dem Besten Fittneswert ein Elternteil ausgewählt. Hierbei wird auf den Elternpool verzichtet und direkt ein Kind aus zwei gewinnern erstellt.
+
+fliegt ganz raus so wird es momentan im code umgesetzt 16.juli -> verschieben in kapitel konzept
+
+\fi
+
+\item \textbf{Tunier selektion}, in diesem Verfahren werden k induviduen der Population ausgewählt. Diese k Induviuen treten dann wie in einem Tunier gegeneinander an. Das Individum mit dem Besten Fittneswert ein Elternteil ausgewählt. Hierbei wird auf den Elternpool verzichtet und direkt ein Kind aus zwei gewinnern erstellt. Eingesetzt wird dies bei eher kleinen Populationen.
 \item \textbf{Comma selction}, Genetic algorithm essentails s.17
 \item \textbf{Pluss selection}, Genetic algorithm essentails s.17
 \end{itemize}
 
 
-Nun wurden die Eltern ausgewählt um nun aus den Elterngeneration eine neue Kindergeneration zu erstellen, dies wird im nächsten Schritt erklärt.
+Nun wurden die Eltern ausgewählt aus der Elterngeneration kann jetzt eine neue Kindergeneration erstelt werden. 
 
 \paragraph{Paarung aka Breed / Variation}
-Aus dem Elternpool werden nun Nachkommen(Kinder) geschaffen. Alleine durch die Paarung(Chrossover) von qualitativ hochwertigen individuen wird erwartet, das die Nachkommen eine bessere Qualität besitzen als die ihrer Eltern.Aber wenn man nur die eigenschaften der Eltern übernimmt gibt es keine Garantie, dass die Kinder eine höhere Qualität erreichen.Es kann sogar dazu kommen, das negative eigenschaften mit übernommen werden. Da dies natürlich nicht gewollt ist gibt es eine einfach Verbesserungs möglichkei. Die Muation, hier wird jedes Gen noch einmal mit einer zufälligen Muation versehen welches ähnliche aber andere Lösungen hervorbringt. Nun gehen wir noch einmal genauer auf Operation Chrossover und Muation ein.
+Aus dem Elternpool/paarungspool werden nun Nachkommen(Kinder) geschaffen. Alleine durch die Paarung(Crossover) von qualitativ hochwertigen Individuen wird erwartet, dass die Nachkommen eine bessere Qualität besitzen als die ihrer Eltern. Dennoch kann es zu negative man nur die Eigenschaften der Eltern übernimmt kann es sogar dazu kommen das negative eigenschaften mit übernommen werden. Da dies natürlich nicht gewollt ist gibt es eine einfach Verbesserungs möglichkeit. Die Muation, hier wird jedes Gen noch einmal mit einer zufälligen Muation versehen welches ähnliche aber andere Lösungen hervorbringt. Nun gehen wir noch einmal genauer auf Operation Chrossover und Muation ein.
 
 
 \iffalse
@@ -79,16 +130,16 @@ Um aus den Einzelnen elternpaaren neue Individuen zu generieren wird das Verfahr
 
 
 \begin{itemize}
-\item \textbf{Crossover}, hierfür werden die Chromosome der Kinder Individuen bestimmt. Dazu werden entweder 50 Prozent des ersten Elternteils und 50 Prozent des zweiten elternteils verwendet wie im Oberenteil von Abbildung \ref{fig:chromoson crossover} zu sehen ist. Es gibt auch den Ansatz das ganz zufällig die Gene ausgewählt werden und dem Kind vererbt werden wie im Unterenteil der Abbildung \ref{fig:chromoson crossover} zu sehen ist. 
+\item \textbf{Crossover}, werden die Chromostränge der Kinder Individuen bestimmt. Beim Crossover gibt es mehrer varianten eine ist die Two-Point-Crossover bei der 50 Prozent des ersten Elternteils und 50 Prozent des zweiten elternteils verwendet, wie es im Oberenteil der Abbildung \ref{fig:chromoson_crossover} zu sehen ist. Ein zweiter Ansatz ist die Uniform-Crossover, hier werden die Gene ganz zufällig und unabhänig von einander ausgewählt, wie im Unterenteil der Abbildung dies nennt man  \ref{fig:chromoson_crossover} zu sehen ist. 
 
 \begin{figure}[H]
   \centering  
   \includegraphics[scale=0.5]{img/crossover.png}
   \caption{crossover anhand eines einfachen binären Chroms. Das erste zeigt eine 50/50 crossover. Das zweite zeigt eine Zufällige auswahl ders Gens.\cite{Rashid2017} }
-  \label{fig:chromoson crossover}
+  \label{fig:chromoson_crossover}
 \end{figure}
 
-\item \textbf{Mutation},hierbei wird jedes gens des Indivium zufällig mit einer zufälligen mutation versehen. Durch diese Mutation wird eine neue Inforamtion/Lösung in die nachfolgende Generation übergeben. 
+\item \textbf{Mutation},hierbei wird jedes gens des Indivium zufällig mit einer zufälligen Mutation versehen. Durch diese Mutation wird eine neue Inforamtion/Lösung in die nachfolgende Generation übergeben. Durch diese Mutation ist es möglich einen größeren Suchraum abzudenken. Es ist auch möglich die Werte genauer anzupassen um so auf die Optimalste Lösung zu kommen. 
 
 \end{itemize}
 
@@ -96,18 +147,24 @@ Um aus den Einzelnen elternpaaren neue Individuen zu generieren wird das Verfahr
   \centering  
   \includegraphics[scale=0.5]{img/mutation.png}
   \caption{Muation eines Genes um höhere vielfältigkeit zubekommen.\cite{Rashid2017} }
-  \label{fig:chromoson mutation}
+  \label{fig:chromoson_mutation}
 \end{figure}
 
 
-\paragraph{Austausch/ Scheife / Exchange}
+\subsubsection{Austausch/ Scheife / Exchange}
 Die neue Generation aus Kindern tauscht nun die alte Generation aus. Nun folgen die gleichen Schritte: Grade, Slection, crossover und mutation. 
 Diese Schleife wird so lange durchegführt bis die Populationsfittnes das zuvor festgelegte Maximum erreicht. Wenn dies geschied gibt es viele Lösungen welche alle sehr ähnlich sein sollten. Aus dieser kann dann das beste Individum ausgesucht werden und als beste Lösung eingesetz werden. 
 
+\subsection{Steady-State-GA} \label{Steady-State-GA}
+Dieser Ansatz unterscheidet sich von dem Standart GA vorallem in der überlappenden Population. Denn hier wir nicht die gesamte Population nach einer generation ausgetauscht sondern nur das schlechteste Indivdum. Auch hierbei gibt es die genannten Elternselectionen, Crossover und Mutation als Auswahl. 
+\noindent%
+\begin{figure}[H]
+  \centering  
+  \includegraphics[scale=0.5]{img/gavssteady-state.png}
+  \caption{Der unterschiedliche ablauf des a GA und des B steady state GA wird jeweils mit einem Ablaufschema verdeutlicht. Evolutionäre algorihmen s.129 }
+  \label{fig:chromosome}
+\end{figure}
 
-\subsection{Verschiedene Arten von GA}
-\subsubsection{Standart-GA}
-\subsubsection{Steady-State-GA}
 \newpage
 
 \subsection{Künstliche Neuronale Netze}
@@ -153,7 +210,9 @@ Von Input nach Output nennt sich ein Single-Forward-Pass. Wie hier beschrieben w
 Die Verlustfunktion stellt ein ausgesuchtes Maß der Diskrepanz zwischen den beobachteten und den vorhergesagten Daten dar. Sie bestimmt die Leistungsfähigkeit des neuronalen Netzes während des Trainings und der Ausführung. Ziel ist es, im laufenden Prozess der Modellanpassung, die Verlustfunktion zu minimieren.
 
 \subsection{Optimierer alt Gradientenabstieg}
-Um die Fehlerfunktion zu minimieren wird als Werkzeug der Gradienten Abstieg benutzt. Diese ist nur möglich da ein Künstliches Neuronales Netz aus verketteten differenzierbaren Gewichte der Neuronen(Tensoroperationen) aufgebaut ist, die es erlauben duch anwendung der Kettenregel die Gradientenfunktion zu finden, die den aktuellen Parametern des Datenstapels werte des Gradienten zuordnet. Es gibt auch hier verschiedene Ansätze von Optimierern, welche die genauen Regeln wie der Gradient der Verlustfunktion zu Aktualisierund der Parameter verwendet wird hier könnte Beispielweise den RMSProp-Optimierer, der die trägheit des Gradientenabstiegsverfahren berücksichtet. Seite 83 - Deep Learning chollet
+Um die Fehlerfunktion zu minimieren wird als Werkzeug der Gradienten Abstieg benutzt. Diese ist nur möglich da ein Künstliches Neuronales Netz aus verketteten differenzierbaren Gewichte der Neuronen(Tensoroperationen) aufgebaut ist, die es erlauben duch anwendung der Kettenregel die Gradientenfunktion zu finden, die den aktuellen Parametern des Datenstapels werte des Gradienten zuordnet. Es gibt auch hier verschiedene Ansätze von Optimierern, welche die genauen Regeln wie der Gradient der Verlustfunktion zu Aktualisierund der Parameter verwendet wird hier könnte Beispielweise den RMSProp-Optimierer, der die trägheit des Gradientenabstiegsverfahren berücksichtet.
+
+Seite 83 - Deep Learning chollet
 
 
 \iffalse
@@ -164,3 +223,13 @@ Um die Fehlerfunktion zu minimieren wird als Werkzeug der Gradienten Abstieg ben
 Als Hyperparameter werden, in Bezug auf KNN's, meist die Anfangsbedingungen bezeichnet. Somit handelt es sich um die Learnrate (eng. Learningrate), der Abdeckunggrad(eng. Dropout), die verlustfunktion oder auch der Optimizer. In selten fällen kann man die Modelachitektur auch als Hyperparameter bezeichen. Für diese Hyperparameter gelten keine universellen Werte, sondern müssen je nach Daten und Funktion(oder KNN), speziell angepasst und verändert werden. Deshalb gibt es nur einige Regeln und grobe abschätzungen in welchem grenzen sich diese Hyperparameter befinden. 
 
 \subsection{Zusammenfassung}
+
+
+
+
+
+\iffalse
+Genetische algorithms ist ein sehr erfolgreiches Oprimiungsverfahren welches es erlaubt auch bei schweren Suchräumen lösungen zu finden. Insbesondere wenn keine gradienten berechnet werden können. In diesem Kapitel wurden die Grundlagen der genetischen Grundlagen zusammengefasst. Sie bassieren auf einer Lösungspopulation, die sich im laufe der iterationen dem Optima annähert. Genetische Operatioren ändern die Lösungen. Cross-overoperatoren kobinieren genome zweier Lösungen. Die Mutation fügt den Lösungen Zufälligkeiten hinzu und sollte somit jenden Ort im Lösungsraum erreichen. Der Genotyp oder Das Chromosom einer Lösing wird auf einen Phänotyp, die reale Lösung, abgebildetet, bevor es mit einer Fintessfunktion ausgewertet werden kann. Diese Fittnesfunktion muss sehr sorgfällig ausgearbeitet werden, da sie einen entscheidenden einfluss auf die Suche hat. Die Lösungen mit der höchsten fittnes sind folglich die Eltern der nächsten generation. Sobald eine Generation eine bestimmte Fintess ereicht sprich genug Optimiert wurde ist die beste Lösung gefunden. Somit wurde ein Algorithmus vorgestellt welcher auf ein breites Spektrum von Probkemen anwendbar ist.
+
+Genectic - algorhmen - essential s.19 
+\fi
