@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.26)  16 JUL 2019 16:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.26)  17 JUL 2019 16:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -994,90 +994,94 @@ LaTeX Warning: Float too large for page by 24.83961pt on input line 7.
 
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 21--33
+
+ []
+
 <img/Chromsome-s134-PracticalComputerVion.png, id=46, 1178.4025pt x 376.40625pt
 >
 File: img/Chromsome-s134-PracticalComputerVion.png Graphic file (type png)
 <use img/Chromsome-s134-PracticalComputerVion.png>
 Package pdftex.def Info: img/Chromsome-s134-PracticalComputerVion.png  used on 
-input line 69.
+input line 76.
 (pdftex.def)             Requested size: 353.52348pt x 112.92273pt.
- [9 <./img/Chromsome-s134-PracticalComputerVion.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 88.
+[9] [10 <./img/Chromsome-s134-PracticalComputerVion.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 97.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 88.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
 
-Overfull \hbox (1.11742pt too wide) in paragraph at lines 88--89
+Overfull \hbox (1.11742pt too wide) in paragraph at lines 97--98
 []\T1/cmr/bx/n/10.95 Auswahl pro-por-tio-nal zu Fitt-nes eng. Fit-ness Pro-por-
 to-nal Selc-ti-on(FPS)\T1/cmr/m/n/10.95 ,
  []
 
-[10]
-<img/crossover.png, id=55, 667.49374pt x 321.2pt>
+[11]
+<img/crossover.png, id=58, 667.49374pt x 321.2pt>
 File: img/crossover.png Graphic file (type png)
 <use img/crossover.png>
-Package pdftex.def Info: img/crossover.png  used on input line 137.
+Package pdftex.def Info: img/crossover.png  used on input line 146.
 (pdftex.def)             Requested size: 333.74606pt x 160.59961pt.
-<img/mutation.png, id=56, 696.6025pt x 224.84pt>
+<img/mutation.png, id=59, 696.6025pt x 224.84pt>
 File: img/mutation.png Graphic file (type png)
 <use img/mutation.png>
-Package pdftex.def Info: img/mutation.png  used on input line 148.
+Package pdftex.def Info: img/mutation.png  used on input line 157.
 (pdftex.def)             Requested size: 348.3004pt x 112.41972pt.
- [11 <./img/crossover.png>]
-<img/gavssteady-state.png, id=61, 673.51625pt x 291.0875pt>
+ [12 <./img/crossover.png> <./img/mutation.png>]
+<img/gavssteady-state.png, id=65, 673.51625pt x 291.0875pt>
 File: img/gavssteady-state.png Graphic file (type png)
 <use img/gavssteady-state.png>
-Package pdftex.def Info: img/gavssteady-state.png  used on input line 163.
+Package pdftex.def Info: img/gavssteady-state.png  used on input line 175.
 (pdftex.def)             Requested size: 336.7573pt x 145.54338pt.
- [12 <./img/mutation.png> <./img/gavssteady-state.png>]
-<img/S36_Buildyourown.png, id=67, 669.50125pt x 462.72874pt>
+ [13 <./img/gavssteady-state.png>]
+<img/S36_Buildyourown.png, id=71, 669.50125pt x 462.72874pt>
 File: img/S36_Buildyourown.png Graphic file (type png)
 <use img/S36_Buildyourown.png>
-Package pdftex.def Info: img/S36_Buildyourown.png  used on input line 174.
+Package pdftex.def Info: img/S36_Buildyourown.png  used on input line 188.
 (pdftex.def)             Requested size: 334.7498pt x 231.3638pt.
- [13 <./img/S36_Buildyourown.png>]
-<img/S41_Buildyourown.png, id=72, 685.56125pt x 348.30125pt>
+ [14 <./img/S36_Buildyourown.png>]
+<img/S41_Buildyourown.png, id=75, 685.56125pt x 348.30125pt>
 File: img/S41_Buildyourown.png Graphic file (type png)
 <use img/S41_Buildyourown.png>
-Package pdftex.def Info: img/S41_Buildyourown.png  used on input line 189.
+Package pdftex.def Info: img/S41_Buildyourown.png  used on input line 210.
 (pdftex.def)             Requested size: 342.77979pt x 174.15019pt.
- [14 <./img/S41_Buildyourown.png>]
-[15]) [16]
+ [15 <./img/S41_Buildyourown.png>]
+[16]) [17]
 \openout2 = `06_standdertechnik.aux'.
 
- (./06_standdertechnik.tex) [17
+ (./06_standdertechnik.tex) [18
 
 
 ]
 \openout2 = `07_konzept.aux'.
 
- (./07_konzept.tex) [18
+ (./07_konzept.tex) [19
 
 
 ]
 \openout2 = `08_implementierung.aux'.
 
 
-(./08_implementierung.tex) [19
+(./08_implementierung.tex) [20
 
 
 ]
 \openout2 = `09_evaluation.aux'.
 
- (./09_evaluation.tex) [20
+ (./09_evaluation.tex) [21
 
 
 ]
 \openout2 = `10_ausblick.aux'.
 
  (./10_ausblick.tex)
-[21
+[22
 
 
-] (./00_Vorlage Abschlussarbeit.bbl) [22
+] (./00_Vorlage Abschlussarbeit.bbl) [23
 
 ] (./00_Vorlage Abschlussarbeit.aux
 (./01_titel.aux) (./02_eigen.aux) (./03_ausschreibung.aux) (./04_einleitung.aux
@@ -1088,10 +1092,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16978 strings out of 494830
- 328708 string characters out of 6177367
+ 16977 strings out of 494830
+ 328701 string characters out of 6177367
  558677 words of memory out of 5000000
- 19908 multiletter control sequences out of 15000+600000
+ 19907 multiletter control sequences out of 15000+600000
  16231 words of font info for 36 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  73i,14n,100p,8839b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1108,10 +1112,10 @@ pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1200.60
 m1200.600pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
 cc1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb>
-Output written on "00_Vorlage Abschlussarbeit.pdf" (22 pages, 639481 bytes).
+Output written on "00_Vorlage Abschlussarbeit.pdf" (23 pages, 641552 bytes).
 PDF statistics:
- 529 PDF objects out of 1000 (max. 8388607)
- 101 compressed objects within 2 object streams
+ 537 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

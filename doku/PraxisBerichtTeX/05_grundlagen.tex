@@ -3,31 +3,33 @@
 
 
 \subsection{Optimierungsgrundlagen}
-Angenommen es soll ein Neuronales Netz mit k Layern und jNeuronen zur Klassifizierung von einfachen Handgeschrien-Zahlen erstellt werden. Der Entwickler entscheidet sich für ein 3 Layern Netz mit jeweils 3 Neuronen. Nach dem Training hat es die Genauigkeit von 85 Prozent. Ist dies Akzeptabel? Kann man sagen das für k 3 bzw. j 3 die optimale Lösung ist? Um dies zu beurteilen müssen viele Experimente durchgeführt werden. Die Frage ist, wie man den die Besten werte für k und j findet, der die Klassifizierung maximiert. Dies wird als Hyperparameter Optimierung bezeichnet. Bei der Optimisierung wird mit einem Inizialwert gestartet dieser ist meist nicht der beste. Dieser Inizialwert muss einige male geändert werden um auf einen Optimum zu kommen. Manchmal ist dieses Anpassen/optimieren so Komplex, dass es durch eine Funktion ersetz werden muss.
+Angenommen es soll ein Künstliches Neuronales Netz mit k Layern und L Neuronen zur Klassifizierung von einfachen handgeschriebenen Zahlen erstellt werden. Der Entwickler entscheidet sich für ein 3 Layern Netz mit jeweils 3 Neuronen. Nach dem Training hat es die Genauigkeit von 85 Prozent. Ist dies Akzeptabel? Kann man sagen, das für k = 3 bzw. j = 3 die optimale Lösung gefunden wurde? Um dies zu beurteilen müssen viele Experimente durchgeführt werden. Die Frage ist, wie man den die besten Werte für k und j finden um die Klassifizierung zu maximieren. Dieser Vorgang wird als Hyperparameter-Optimierung bezeichnet. Bei der Optimisierung wird mit einem Inizialwert gestartet dieser ist in den seltensten Fällen die exacte Lösung. Dieser Inizialwert muss einige male verändert werden um auf einen Optimum zu kommen. Manchmal ist dieses Anpassen/optimieren so Komplex, dass es durch eine Funktion ersetz werden muss.
 
 \subsection{Genetische Algorithmen}
-Genetische Algorithmen sind heuristische Suchansätze. Im wesentliche zeichnet sie eine probilistische Eltern selection als primären Suchoperator aus. Als weitern suchoperator kann der Ga noch auf die Mutation zurückgreifen, dieser grantiert eine Erreichbarkeit aller Punkte im suchraum und erhält so die Grunddiversität in der Population. Genetische Algorithmen haben als theoretischen Grundlage die Schama-Therorie. Es gibt zwei verschiedene Grundalgorihmen der Standart-GA (\ref{Standart-GA}). Dieser Tauscht nach einer Generation die komplette Elternpopulation durch die Kinderpopulation aus. Im Gegensatz dazu gibt es  den Steady-State-GA(\ref{Steady-State-GA}) welcher durch seine Überlappende Population auszeichnet. Nun werden wir uns genauer den  Standart-GA \ref{Standart-GA} und seine einzelnen Schritte genauer Betrachten.
+Genetische Algorithmen sind heuristische Suchansätze. Im wesentliche zeichnet sie eine probilistische Eltern selection als primären Suchoperator aus. Als weitern suchoperator kann noch auf die Mutation zurück gegriefen werden, dieser grantiert eine Erreichbarkeit aller Punkte im Suchraum und erhält die Grunddiversität in der Population.( Genetische Algorithmen haben als theoretischen Grundlage die Schama-Therorie.) Es gibt zwei verschiedene Grundalgorihmen der Standart-GA (\ref{Standart-GA}). Dieser Tauscht nach einer Generation die komplette Elternpopulation durch die Kinderpopulation aus. Im Gegensatz dazu gibt es den Steady-State-GA(\ref{Steady-State-GA}) welcher durch seine Überlappende Population auszeichnet. Nun werden wir uns genauer den  Standart-GA \ref{Standart-GA} und seine einzelnen Schritte genauer Betrachten.
 
+ \newpage
+ 
 \subsection{Standart-GA} \label{Standart-GA}
 Der Standart-GA ist folgende Schritte aufgeteilt und wird anschließend genau besprochen:
 Schritt 1 Inizialisieren einer Population.
 Schritt 2 Fittness brechnen.
-Schritt 3 weiterentwicken hier werden zuerst die passenden Eltern ausgesucht und anschließend mit Crossover und Mutation die Kinder Population erstellt. 
+Schritt 3 Weiterentwicken hier werden zuerst die passenden Eltern ausgesucht und anschließend mit Crossover und Mutation die Kinder Population erstellt. 
 Schritt 4 Elternpopulation durch die neue Kinderpopulation ausgetauscht.
 Hier noch einamal als Pseudocode.
 
-Algorithm 1 Basic Genetic Algorithm
-1: initialize population
-2: repeat
-3: 		repeat
-4:			fitness computation
-5:			parent selection
-6:			breed
-7:				crossover
-8:				mutation
-9:		until population complete
-10:		selection of parental population
-11: until termination condition
+Algorithm 1 Basic Genetic Algorithm \\
+1: initialize population \\
+2: repeat \\
+3: 		repeat \\
+4:			fitness computation \\
+5:			parent selection \\
+6:			breed \\
+7:				crossover \\
+8:				mutation \\
+9:		until population complete \\
+10:		selection of parental population \\
+11: until termination condition \\
 
 
 
@@ -60,8 +62,13 @@ Seite - 11 Genetic Algorithm Essentials
 \fi 
 
 \subsubsection{Initzialisierung der Population}
-Der Klassiche Genetische Algorithmus bassiert auf einer Reihe von Kandidatenlösungen. Dee größe der Populaton ist auch die Anzahl der Lösungen. Jede Lösung kann als einzelnes Induvidum gesehen werden und wird durch ein Chromsone representiert. Es gibt verschiedene möglichkeiten diese Gene dazustellen, wie z.B binär oder Dezimal.
+Der klassiche Genetische Algorithmus bassiert auf einer Reihe von Kandidatenlösungen. Die größe der Populaton ist somit auch die Anzahl der Lösungen. Jede Lösung kann als einzelnes Induvidum gesehen werden und wird durch ein Chromsomenstang oder kurz durch seine Chromsom representiert. Ein Chromsom besteht wiederum aus vielen Genen welche die Parameter repräsentieren. Es gibt verschiedene möglichkeiten diese Gene dazustellen, wie z.B binär oder Dezimal. Um die Grundlagen nahe der später Folgenden Konzepts zuhalten wird alles per Dezimal Genen erklärt.
+Figure \ref{fig:chromosome} veranschaulicht den Aufbau nocheinmal.
+
+\iffalse
 Figure \ref{fig:chromosome} veranschaulicht ein Beispiel, wie eine Population aus vier Individuen(chromosomes)mit je einem Chromosom. Ein Chromso, besitzt wiederum  vier gene. Jedes dieser Gene ist durch eine binären zahl repräsentiert. 
+
+\fi
 
 \noindent%
 \begin{figure}[H]
@@ -84,6 +91,8 @@ Dazu werden aus zwei Elternpaaren ein neues Kind erstellt. Um die Elternpaare au
 \paragraph{Auswahl der Elternpaare aka Select Parents}
 Um eine convergenz richtung Optimalem Maximum bzw. Minmum zu schaffen werden die besten Elternteile der geraden bewertenen Generation ausgewählt.
 Für die Auswahl gibt es verschiedene Ansätze, die bedeutesten werden genannt und erläutert.
+
+
 \begin{itemize}
 \item \textbf{Auswahl proportional zu Fittnes eng. Fitness Proportonal Selction(FPS)}, hierbei spielt die im vohrigen Schritt berechnete Fintess eine große Rolle. Die Eltern werden nach dieser Fittness proportional als Elternteil ausgewählt und zum Elternpool hinzugefügt.
 
@@ -156,6 +165,9 @@ Die neue Generation aus Kindern tauscht nun die alte Generation aus. Nun folgen 
 Diese Schleife wird so lange durchegführt bis die Populationsfittnes das zuvor festgelegte Maximum erreicht. Wenn dies geschied gibt es viele Lösungen welche alle sehr ähnlich sein sollten. Aus dieser kann dann das beste Individum ausgesucht werden und als beste Lösung eingesetz werden. 
 
 \subsection{Steady-State-GA} \label{Steady-State-GA}
+
+vlt weg lassen ?
+
 Dieser Ansatz unterscheidet sich von dem Standart GA vorallem in der überlappenden Population. Denn hier wir nicht die gesamte Population nach einer generation ausgetauscht sondern nur das schlechteste Indivdum. Auch hierbei gibt es die genannten Elternselectionen, Crossover und Mutation als Auswahl. 
 \noindent%
 \begin{figure}[H]
@@ -169,6 +181,8 @@ Dieser Ansatz unterscheidet sich von dem Standart GA vorallem in der überlappen
 
 \subsection{Künstliche Neuronale Netze}
 
+Künstliche Neuronale Netze sind dem natürlichen Vorbild der neuronalen Netze im Gehirn nach empfunden. Beide Netze setzen sich aus einzelnen Neuronen zusammen, welche mit einandern verbunden sind.Wie man in Figure \ref{fig:neural_network} sieht ist jede Schicht ist aus einzelnen Neuronen aufgebaut welche mit den Neuronen der nächsten Schicht verbunden sind, diese Verbindungen repräsentieren die Gewichte, über diese kann einem Netz verschiedene Zusammenhänge von Input und Output antrainiert bzw. angelernt werden.
+
 \begin{figure}[htb]
   \centering  
   \includegraphics[scale=0.5]{img/S36_Buildyourown.png}
@@ -177,13 +191,20 @@ Dieser Ansatz unterscheidet sich von dem Standart GA vorallem in der überlappen
 \end{figure}
 
 
-Hier zu sehen ist ein Künstliches Neuronales Netz mit drei Schichten \ref{fig:neural_network}. Dies wurde dem natürlichen Vorbild der neuronalen Netze im Gehirn nach empfunden. Die Kreise nennt man Neuronen oder auch Perseptron, mehrere Neuronen zusammen ergeben eine Schicht oder auch Layer genannt. Die Verbindungen repräsentieren die Gewichte, über diese kann einem Netz verschiedene Zusammenhänge von Input und Output antrainiert bzw. angelernt werden. Zum Training werden viele Daten benötigt, aus welchen das Netz \glqq Lernt\grqq{}. Dafür ist es wichtig, viele aufbereitete Daten zu besitzen, denn diese Netze brauchen viele Trainingsiterationen, bis das gewünschte Ergebnis zustande kommt. Ein Neuron besteht aus Eingängen, Gewichten und einer Aktivierungfunktion sowie einem Ausgang. Die Vernetzung mehrerer Neuronenschichten lässt ein Neuronales Netz entstehen.
+Im folgenden Kapitel wird zu erst der Aufbau eines Neurons erklärt. Anschließend wird auf den Stukturellen aufbau eines  Künstlichen Neuronalen Netzes nähergebrach. Zum Schluss werden noch wichtge eigenschaften wie die Verlustfunktion und der Gradienten abstieg eingegangen sowie auf die Hyperparameter welche für die nachfolgenden kapitel wichtig sind.
+
+
+
+Grundlagen aus dem buch ArificalNeuroalNetworks s.11 
 
 \newpage
 
 
 
 \subsection{Aufbau eines Neurons}
+
+
+
 \begin{figure}[htb]
   \centering  
   \includegraphics[scale=0.5]{img/S41_Buildyourown.png}
@@ -195,7 +216,7 @@ Hier zu sehen ist ein Künstliches Neuronales Netz mit drei Schichten \ref{fig:n
 \subsubsection{Eingang aka Input}
 Bei dem Input handelt es sich um einfache xxxFloatwert dieser wird mit den einzelnen Gewichten verrechnet. Ein Neuron hat meist mehrere Eingangsgrößen, welche alle zusammen mit den Gewichten aufsummiert werden. Diese Werte werden zufällig initialisiert und per Training verbessert, somit handelt es sich um einen angelernten Werte, welche durch die Backproagation(Fehlerrückführung) verbessert werden.
 
-\subsubsection{Offset aka bias}
+\subsubsection{Schwellwert aka bias}
 Auf dieses Aufsummiertes Ergebniss wird anschließend ein Bias gerechnet, dieser führt zu einem besseren Verhalten beim Trainieren. Bei diesen Werten handelt es sich um angelernte Werte, die per Backpropagation verbessert werden und die Flexibitlität der Netze erhöht.
 
 
@@ -205,6 +226,16 @@ Die Aktivierungsfunktion kann man sich als Schwellwert vorstellen, ab wann das N
 \subsubsection{Ausgang aka Output}
 Wenn der Schwellwert überschritten wird, wird am Output durchgeschaltet. Dieser Output kann entweder mit einer nen Schicht Neronen verbundne sein oder direkt als Ausgang gesehen werden. Über welchen man anhand von xxxVariabelenwerten/Kommawerten die 
 Von Input nach Output nennt sich ein Single-Forward-Pass. Wie hier beschrieben wird, kann ein Netz verschieden viele Layer besitzen mit verschiedenen Anzahlen von Neuronen.
+
+\subsection{Struktureller Aufbau eines Neuronalen Netzes}
+
+Wie kann ich Neuronen zusammenbauen usw.
+
+\subsubsection{Input Layer}
+
+\subsubsection{Hidden Layer}
+
+\subsubsection{Output Layer}
 
 \subsection{Verlustfunktion aka lossfunktion}
 Die Verlustfunktion stellt ein ausgesuchtes Maß der Diskrepanz zwischen den beobachteten und den vorhergesagten Daten dar. Sie bestimmt die Leistungsfähigkeit des neuronalen Netzes während des Trainings und der Ausführung. Ziel ist es, im laufenden Prozess der Modellanpassung, die Verlustfunktion zu minimieren.
@@ -219,8 +250,23 @@ Seite 83 - Deep Learning chollet
  Im Grunde werden dabei die Gewichte so angepasst, dass ein besseres Ergebnis entsteht und dadurch die Fehlerfunktion verringert wird. Wie das Wort Backpropagation schon sagt, wird von hinten nach vorne verbessert. Es gibt verschiedene Variationen von Gradientenabstiegen, welche verschiedene Vor- und Nachteile haben. Bei dem Trainieren des Netzes wurde der Momentum-Optimizer, welcher aus einem Gradientenabstieg mit Momentum aufgebaut ist.
 \fi
 
+
 \subsection{Hyperparameter}
-Als Hyperparameter werden, in Bezug auf KNN's, meist die Anfangsbedingungen bezeichnet. Somit handelt es sich um die Learnrate (eng. Learningrate), der Abdeckunggrad(eng. Dropout), die verlustfunktion oder auch der Optimizer. In selten fällen kann man die Modelachitektur auch als Hyperparameter bezeichen. Für diese Hyperparameter gelten keine universellen Werte, sondern müssen je nach Daten und Funktion(oder KNN), speziell angepasst und verändert werden. Deshalb gibt es nur einige Regeln und grobe abschätzungen in welchem grenzen sich diese Hyperparameter befinden. 
+Als Hyperparameter werden, in Bezug auf KNN's, meist die Anfangsbedingungen bezeichnet.
+Für diese Hyperparameter gelten keine universellen Werte sondern müssen je nach Daten und Funktion bzw. künstliches Neuroales Netz speziell angepasst und verändert werden. Deshalb gibt es nur einige Regeln und grobe Abschätzungen in welchen grenzen sich diese Hyperparameter befinden. Zu diesen Hyperparameter gehören folgdende:
+\begin{itemize}
+\item \textbf{Learningrate},blabalaa
+\item \textbf{Dropout}
+\item \textbf{Lossfunktion}
+\item \textbf{Optimizer}
+\item \textbf{Model Achitektur}
+\end{itemize}
+
+\iffalse
+Als Hyperparameter werden, in Bezug auf KNN's, meist die Anfangsbedingungen bezeichnet.
+Dabei handelt es sich um die Learnrate (eng. Learningrate), der Abdeckunggrad(eng. Dropout), die Verlustfunktion oder auch der Optimizer. In selten Fällen kann die selbst Modelachitektur als Hyperparameter bezeicht werden. Für diese Hyperparameter gelten keine universellen Werte sondern müssen je nach Daten und Funktion bzw. künstliches Neuroales Netz speziell angepasst und verändert werden. Deshalb gibt es nur einige Regeln und grobe Abschätzungen in welchen grenzen sich diese Hyperparameter befinden. 
+\fi
+
 
 \subsection{Zusammenfassung}
 
