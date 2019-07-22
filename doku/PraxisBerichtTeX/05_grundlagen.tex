@@ -1,22 +1,44 @@
 \section{Grundlagen}
 \label{sec:Grundlagen}
+In diesem Kapitel werden die theroretischen Grundlagen, die zum Verständnis der vorliegende Arbeit wichtig sind, beschrieben. Zubeginn erfolgt eine kurze erklärung der Optimierungsgrundlagen. Dann folgt die Einführund in die Grundlagen der Genetischen Algortihmen. Anschließend werden die witigen Grundlagen der Künstlichen Neuronalen Netzen erklärt. Zum Schluss wird kurz auf die Hyperparameter eingeangen.
 
 
 \subsection{Optimierungsgrundlagen}
 Angenommen es soll ein Künstliches Neuronales Netz mit k Layern und L Neuronen zur Klassifizierung von einfachen handgeschriebenen Zahlen erstellt werden. Der Entwickler entscheidet sich für ein 3 Layern Netz mit jeweils 3 Neuronen. Nach dem Training hat es die Genauigkeit von 85 Prozent. Ist dies Akzeptabel? Kann man sagen, das für k = 3 bzw. j = 3 die optimale Lösung gefunden wurde? Um dies zu beurteilen müssen viele Experimente durchgeführt werden. Die Frage ist, wie man den die besten Werte für k und j finden um die Klassifizierung zu maximieren. Dieser Vorgang wird als Hyperparameter-Optimierung bezeichnet. Bei der Optimisierung wird mit einem Inizialwert gestartet dieser ist in den seltensten Fällen die exacte Lösung. Dieser Inizialwert muss einige male verändert werden um auf einen Optimum zu kommen. Manchmal ist dieses Anpassen/optimieren so Komplex, dass es durch eine Funktion ersetz werden muss.
 
-\subsection{Genetische Algorithmen}
-Genetische Algorithmen sind heuristische Suchansätze. Im wesentliche zeichnet sie eine probilistische Eltern selection als primären Suchoperator aus. Als weitern suchoperator kann noch auf die Mutation zurück gegriefen werden, dieser grantiert eine Erreichbarkeit aller Punkte im Suchraum und erhält die Grunddiversität in der Population.( Genetische Algorithmen haben als theoretischen Grundlage die Schama-Therorie.) Es gibt zwei verschiedene Grundalgorihmen der Standart-GA (\ref{Standart-GA}). Dieser Tauscht nach einer Generation die komplette Elternpopulation durch die Kinderpopulation aus. Im Gegensatz dazu gibt es den Steady-State-GA(\ref{Steady-State-GA}) welcher durch seine Überlappende Population auszeichnet. Nun werden wir uns genauer den  Standart-GA \ref{Standart-GA} und seine einzelnen Schritte genauer Betrachten.
 
- \newpage
- 
-\subsection{Standart-GA} \label{Standart-GA}
-Der Standart-GA ist folgende Schritte aufgeteilt und wird anschließend genau besprochen:
+\subsection{Genetische Algorithmen}
+
+Die Inhalte des folgenden Abschnittes sind, sofern nicht anderweitig angeführt aus den Gurndlagen büchern xxxx und xxxx übernommen. 
+
+Genetische Algorithmen sind heuristische Suchansätze. Im wesentliche zeichnet sie eine probilistische Eltern selection als primären Suchoperator aus. Als weitern suchoperator kann noch auf die Mutation zurück gegriefen werden, dieser grantiert eine Erreichbarkeit aller Punkte im Suchraum und erhält die Grunddiversität in der Population. Es gibt zwei verschiedene Grundalgorihmen der Standart-GA tauscht nach einer Generation die komplette Elternpopulation durch die Kinderpopulation aus. Und besteht in der Regele immer aus fünf gleichen Schritten wie in Abb. \ref{fig:Ablauf_kurz} zusehen ist. Im Gegensatz dazu gibt es den Steady-State-GA welcher durch seine Überlappende Population auszeichnet, dieser Algorithmus wird in der Arbeit nicht verwendet und wird deswegen nicht weiter erklärt. 
+
+\noindent%
+\begin{figure}[H]
+  \centering  
+  \includegraphics[scale=0.5]{img/Ablauf_kurz.png}
+  \caption{Ablaufdiagramm eines Genetischen Algorithmuses mit 5 Schritten}
+  \label{fig:Ablauf_kurz}
+\end{figure}
+
+Der Standart Genetische Algortithmus \ref{fig:Ablauf_kurz} besteht aus folgenden 5 Schritte:
+Schritt 1, Inizialisieren einer Population.
+Schritt 2, Fittness brechnen mit hilfe der Fitnessfunktion.
+Schritt 3, Selektieren der Eltern.
+Schritt 4, Vermehren durch Crossover und Mutation.
+Schritt 5, Austauch der Populationen.
+In den nachfolgenden Unterkaptiteln werden auf die einzelnen Schritte genauer eingegangen.
+
+\iffalse
+oder 
+
+Der Standart Genetische Algortithmus \ref{Alorthm 1}besteht meist aus immer den gleichen Schritte:
 Schritt 1 Inizialisieren einer Population.
-Schritt 2 Fittness brechnen.
-Schritt 3 Weiterentwicken hier werden zuerst die passenden Eltern ausgesucht und anschließend mit Crossover und Mutation die Kinder Population erstellt. 
+Schritt 2 Fittness brechnen mit hilfe der Fitnessfunktion.
+Schritt 3 Evolution (Weiterentwicken), hier werden zuerst die passenden Eltern ausgesucht und anschließend mit Crossover und Mutation die Kinder Population erstellt. 
 Schritt 4 Elternpopulation durch die neue Kinderpopulation ausgetauscht.
 Hier noch einamal als Pseudocode.
+
 
 Algorithm 1 Basic Genetic Algorithm \\
 1: initialize population \\
@@ -25,13 +47,13 @@ Algorithm 1 Basic Genetic Algorithm \\
 4:			fitness computation \\
 5:			parent selection \\
 6:			breed \\
-7:				crossover \\
-8:				mutation \\
-9:		until population complete \\
-10:		selection of parental population \\
-11: until termination condition \\
+7:		until population complete \\
+8:		selection of parental population \\
+9: until termination condition \\
 
+Im nachfolgenden Unterkaptitel wird auf diese einzelnen Schritte genauer eingegangen.
 
+\fi
 
 \iffalse
 Genetische Algorithmen sind im Wesentlichen durch eine probabilistische Eltern selektion und die Rekombination als primären Suchoperator gekennzeichnet.Die Mutation ist meist nur ein Hintergrundoperator, der mit einer geringen Wahrschenlichkeit zur anwendungkommt. Er garantiert die Erreichbarkeit aller Punkte im Suchraum und erhält eine Drunddiversitöt in der Population.
@@ -61,9 +83,9 @@ Algorithm 1 Basic Genetic Algorithm
 Seite - 11 Genetic Algorithm Essentials
 \fi 
 
-\subsubsection{Initzialisierung der Population}
-Der klassiche Genetische Algorithmus bassiert auf einer Reihe von Kandidatenlösungen. Die größe der Populaton ist somit auch die Anzahl der Lösungen. Jede Lösung kann als einzelnes Induvidum gesehen werden und wird durch ein Chromsomenstang oder kurz durch seine Chromsom representiert. Ein Chromsom besteht wiederum aus vielen Genen welche die Parameter repräsentieren. Es gibt verschiedene möglichkeiten diese Gene dazustellen, wie z.B binär oder Dezimal. Um die Grundlagen nahe der später Folgenden Konzepts zuhalten wird alles per Dezimal Genen erklärt.
-Figure \ref{fig:chromosome} veranschaulicht den Aufbau nocheinmal.
+\subsubsection{Aufbau und Initzialisierung einer Population}
+Der klassiche Genetische Algorithmus bassiert auf einer Reihe von Kandidatenlösungen. Die größe der Populaton ist somit auch die Anzahl der Lösungen. Jede Lösung kann als einzelnes Induvidum gesehen werden und wird durch ein Chromsomenstang oder kurz durch seine Chromsom representiert. Ein Chromsom besteht wiederum aus vielen Genen, welche die Parameter/hyperparameter repräsentieren. Der aufbau ist Grafisch in Figure \ref{fig:chromosome} gut zu erkennen. Es gibt verschiedene möglichkeiten diese Gene dazustellen, wie z.B Binär oder Dezimal,um die Grundlagen nahe des später folgenden Konzepts zuhalten, wird der Ablauf per Dezimal-Genen erklärt.
+
 
 \iffalse
 Figure \ref{fig:chromosome} veranschaulicht ein Beispiel, wie eine Population aus vier Individuen(chromosomes)mit je einem Chromosom. Ein Chromso, besitzt wiederum  vier gene. Jedes dieser Gene ist durch eine binären zahl repräsentiert. 
@@ -78,23 +100,51 @@ Figure \ref{fig:chromosome} veranschaulicht ein Beispiel, wie eine Population au
   \label{fig:chromosome}
 \end{figure}
 
-Diese anfangs Poulation wird meißt Zufällig inizialisiert. Hier durch ist es möglich die größte abdeckung des Suchsraums zu gewähren. Dadurch besitzt die erste Generation eine sehr geringe Fittness dies verbessert sich aber im Lauf des Trainings. Durch Selection werde die nicht unnötigen/Contra-produktiven Individumen aussotiert. Bevor dies passiert muss aber erst die Bewertung durchgeführt werden.
+Diese Anfangspopulation(Generation 0) wird Zufällig inizialisiert, um die größt mögliche Abdeckung des Suchsraums zu gewähren. 
 
 
-\subsubsection{Bewertung aka Grade / Fittnesfunktion}
-Nun besteht die erste Generation(Generation 0) aus einer Population mit völlig zufälligen Induviduen. Diese werden anhand einer für sine anwendung speizellen Fitnessfunktion bewerte. Dabei werden nicht einzelnen Gene bewertet sondern das ganze Genom/Chromoson/Idividum. Es wird also nicht berücksichtigt welches Gene sich positiv bzw. negativ auswirklen. Als Rückgabewert gibt die Fittnesfunktion uns einen Fittneswert, dabei steht ein höherer Fittnesswert stehts für eine höher Qualität an Individum. Da nun alle Individuen der Population bewertet wurden kann eine neue Generation erstellt werden.
+
+Die erste Generation besitzt (dadruch) eine sehr geringe Fittness, dies verbessert sich aber im Lauf des Trainings.
+Die erste Generation besitzt eine sehr geringe Fittnes, welche im verlauf des Trainigns stetig steigert bis sie das Maximum erreicht.
+
+--- würde ich weglassen
+Durch Selection werde die nicht unnötigen/Contra-produktiven Individumen oder auch Unfittesten Inidividuen aussotiert.
+Dafür wird die Fittneswert benötig, welches im nächsten Punkt erklärt wird.
+----
 
 
-\subsubsection{Weiterentwickeln aka Evolve}
-Dazu werden aus zwei Elternpaaren ein neues Kind erstellt. Um die Elternpaare auszusuchen gibt es verschiedene Optionen.Da nun die Eltern fest stehen, wird per Crossover aus den beiden Elternpaaren oder aus dem Elternpool ein neues Kind generiert. Um bei den Genen eine höhere diversität zu gelangen werden die Kindergene noch mit einer Mutation versehen. Somit kann man einen höheren Suchraum(Abdeckungsgrad) abdecken. Nach dem eine neue Kind generation erstellt wurde wird der ganze vorgang so lange wiederhollt bis die geforderte Fintess ereicht wurde.
+\subsubsection{Fittnesfunktion (eng. Fittnesfunction or grade)}
+Die Fittnesfunktion bewertet das Individum anhand seiner Funktionstauglichkeit, bezogen auf die vorhandene Aufgabe. Dabei werden nicht einzelnen Gene bewertet sondern das ganze Genom/Chromoson/Idividum. Es gibt keine universelle Fintessfunktion, diese muss also für jede Anwendung speziell geschrieben werden. Es wird also nicht berücksichtigt welches Gene sich positiv bzw. negativ auswirken. Als Rückgabewert gibt die Fittnesfunktion uns einen dezimalen/float Fittneswert, dabei steht ein höherer Fittnesswert stehts für eine höher Qualität an Individum sprich bessere Lösung.
 
-\paragraph{Auswahl der Elternpaare aka Select Parents}
-Um eine convergenz richtung Optimalem Maximum bzw. Minmum zu schaffen werden die besten Elternteile der geraden bewertenen Generation ausgewählt.
-Für die Auswahl gibt es verschiedene Ansätze, die bedeutesten werden genannt und erläutert.
 
+\iffalse
+Nun besteht die erste Generation(Generation 0) aus einer Population mit völlig zufälligen Induviduen. Es gibt keine universelle funktionierende Fitnessfuntion, diese muss für jeden Algorithmus neu geschrieben werden. Die Fittnesfunktion bewertet das Individum anhand seiner Funktionstauglichkeit bezogen auf die gestellte Aufgabe. Dabei werden nicht einzelnen Gene bewertet sondern das ganze Genom/Chromoson/Idividum. Es wird also nicht berücksichtigt welches Gene sich positiv bzw. negativ auswirken. Als Rückgabewert gibt die Fittnesfunktion uns einen Fittneswert, dabei steht ein höherer Fittnesswert stehts für eine höher Qualität an Individum sprich bessere Lösung.
+
+Da nun alle Individuen der Population bewertet wurden kann eine neue Generation erstellt werden.
+
+\fi
+
+
+\iffalse
+\subsubsection{Evolution (eng. Evolve) Fällt raus}
+
+Bei dem Schritt Evulution geht es darum aus der Alten Population eine neue bessere Population zu erstellen. Dafür muss zu erst einen Elternpool (eng. matingpool), mit hilfe der eltern Selektion, erstellt werden. Aus diesem Elternpool wird mit Crossover und Mutation die neue Generation erstellt. 
+Dazu  werden aus zwei Elternpaaren ein neues Kind erstellt.
+Um die Elternpaare auszusuchen gibt es verschiedene Optionen. Da nun die Eltern fest stehen, wird per Crossover aus den beiden Elternpaaren oder aus dem Elternpool ein neues Kind generiert. Um bei den Genen eine höhere diversität zu gelangen werden die Kindergene noch mit einer Mutation versehen. Somit kann man einen höheren Suchraum(Abdeckungsgrad) abdecken. Nach dem eine neue Kind generation erstellt wurde wird der ganze vorgang so lange wiederhollt bis die geforderte Fintess ereicht wurde.
+
+\fi
+
+\subsubsection{Selektion der Eltern (eng. Select Parents)}
+Bei dem Schritt Selektion geht es darum einen Elternpool zu erstellen aus welchem die neue Generation erstellt wird. Deshalb ist es wichtig ist nur die best geeignetesten Idividuen auszuwählen. Es git verschiedene Ansätze bei der Selektion, die bedeutesten werden genannt und erläutert.
 
 \begin{itemize}
-\item \textbf{Auswahl proportional zu Fittnes eng. Fitness Proportonal Selction(FPS)}, hierbei spielt die im vohrigen Schritt berechnete Fintess eine große Rolle. Die Eltern werden nach dieser Fittness proportional als Elternteil ausgewählt und zum Elternpool hinzugefügt.
+\item \textbf{Auswahl proportional zu Fittnes eng. Fitness Proportonal Selction(FPS)}, hierbei spielt die im vohrigen Schritt berechnete Fintess eine große Rolle. Die Eltern werden nach ihrer Fittness proportional ausgewählt und zum Elternpool hinzugefügt. Wenn $fi$ die fitness des individual $i$ in der Polupation ist, dann ist die Warscheinlichkeit Selektiert/Ausgewählt zu werden:
+\begin{equation}
+	pi = \frac{fi}{\sum_{j=1}^N fi}
+\end{equation}
+wobei N die Anzahl der individuen einer Population ist.
+
+introduction to evolutionary comp s80
 
 \iffalse
 Problem hier ist das Individuen die am anfang gut sind schnell die ganz epopulation übernehmmen. Das kann dazuführen das eine mögliche bessere lösung durch den Algorithmus im suchraum nicht gefudnen wird. Ein weiteres Problem ist es wenn die Lösungen nahe bei bei einandern liegen gibt es fast keine selections druck mehr herscht. DIes geschied gegen ende der Optimierung und führt zu einem sehr langsamen verlauf gegen ende. 
@@ -107,39 +157,24 @@ introduction to evolutionary comp s80
 
 \item \textbf{Ranking Selektion}, diese Selktion wurde als Verbesserung der Fitness Proportonal Selection entwickelt. Dabei werden die Eltern nicht direkt nach ihrer Fittness ausgewählt sondern über die Fitness im vergleich zur gesamt Population. Sprich sie werden in einer Rangliste aufgestellt wobei das beste Individum den Rand y-1 belegt und das schlechteste den Rang 0. Dieses Ranking kann in vielen varianten vorgenommen werden, Linear oder expotenziel umgesetzt werden. 
 
-\iffalse 
-
-intodiction to evolutionary comp s82
-
-
-
-
-\item \textbf{Best 50 prozent},heißt aus der oberen hälfte der alten Generation werden alle Induviduen dem Elternpool hinzugefügt.Aus welchen dann zufällig die einzelnen Elternteile ausgewählt werden. Es mssen natürlich nicht immer 50 prozent sein, es kann sich auch um einen anderen Prozentsatz handeln.
-
-fliegt ganz raus so wird es momentan im code umgesetzt 16.juli -> verschieben in kapitel konzept
-
-\fi
-
 \item \textbf{Tunier selektion}, in diesem Verfahren werden k induviduen der Population ausgewählt. Diese k Induviuen treten dann wie in einem Tunier gegeneinander an. Das Individum mit dem Besten Fittneswert ein Elternteil ausgewählt. Hierbei wird auf den Elternpool verzichtet und direkt ein Kind aus zwei gewinnern erstellt. Eingesetzt wird dies bei eher kleinen Populationen.
-\item \textbf{Comma selction}, Genetic algorithm essentails s.17
-\item \textbf{Pluss selection}, Genetic algorithm essentails s.17
 \end{itemize}
 
 
-Nun wurden die Eltern ausgewählt aus der Elterngeneration kann jetzt eine neue Kindergeneration erstelt werden. 
+\subsubsection{Vermehrung (eng. Breed)}
+Aus dem Elternpool/paarungspool werden nun Nachkommen(Kinder) geschaffen. Alleine durch die Paarung(eng. Crossover) von qualitativ hochwertigen Individuen wird erwartet, dass die Nachkommen eine bessere Qualität besitzen als die ihrer Eltern. Als zweite Verbesserung wird hier noch die Mutation einzelner Gene angewendet. Für Crossover und Mutation gibt es verschiedene Ansätze die nocheinmal genauer erklärt werden.
 
-\paragraph{Paarung aka Breed / Variation}
-Aus dem Elternpool/paarungspool werden nun Nachkommen(Kinder) geschaffen. Alleine durch die Paarung(Crossover) von qualitativ hochwertigen Individuen wird erwartet, dass die Nachkommen eine bessere Qualität besitzen als die ihrer Eltern. Dennoch kann es zu negative man nur die Eigenschaften der Eltern übernimmt kann es sogar dazu kommen das negative eigenschaften mit übernommen werden. Da dies natürlich nicht gewollt ist gibt es eine einfach Verbesserungs möglichkeit. Die Muation, hier wird jedes Gen noch einmal mit einer zufälligen Muation versehen welches ähnliche aber andere Lösungen hervorbringt. Nun gehen wir noch einmal genauer auf Operation Chrossover und Muation ein.
 
 
 \iffalse
+Dennoch kann es zu negative man nur die Eigenschaften der Eltern übernimmt kann es sogar dazu kommen das negative eigenschaften mit übernommen werden. Da dies natürlich nicht gewollt ist gibt es eine einfach Verbesserungs möglichkeit. Die Muation, hier wird jedes Gen noch einmal mit einer zufälligen Muation versehen welches ähnliche aber andere Lösungen hervorbringt. Nun gehen wir noch einmal genauer auf Operation Chrossover und Muation ein.
+
 Somit müsste sich die Finttnes der nächsten generation verbessern. Um dies zu ereichen werden die  Gene noch modifiziert, durch corssover oder mutation. Somit wird der suchraum noch einmal vergrößert aber nur in der nähe der für gut empfunden Individuem bzw. dieser Gene.
 Um aus den Einzelnen elternpaaren neue Individuen zu generieren wird das Verfahren/algorithmus Crossover verwendet. Bei Crossover kann es nun auch verschiedene möglichkeiten geben.
 \fi
 
 
-\begin{itemize}
-\item \textbf{Crossover}, werden die Chromostränge der Kinder Individuen bestimmt. Beim Crossover gibt es mehrer varianten eine ist die Two-Point-Crossover bei der 50 Prozent des ersten Elternteils und 50 Prozent des zweiten elternteils verwendet, wie es im Oberenteil der Abbildung \ref{fig:chromoson_crossover} zu sehen ist. Ein zweiter Ansatz ist die Uniform-Crossover, hier werden die Gene ganz zufällig und unabhänig von einander ausgewählt, wie im Unterenteil der Abbildung dies nennt man  \ref{fig:chromoson_crossover} zu sehen ist. 
+\paragraph{Crossover}, werden die Chromostränge der Kinder Individuen bestimmt. Beim Crossover gibt es mehrer varianten eine ist die Two-Point-Crossover bei der 50 Prozent des ersten Elternteils und 50 Prozent des zweiten elternteils verwendet, wie es im Oberenteil der Abbildung \ref{fig:chromoson_crossover} zu sehen ist. Ein zweiter Ansatz ist die Uniform-Crossover, hier werden die Gene ganz zufällig und unabhänig von einander ausgewählt, wie im Unterenteil der Abbildung dies nennt man  \ref{fig:chromoson_crossover} zu sehen ist. 
 
 \begin{figure}[H]
   \centering  
@@ -148,9 +183,7 @@ Um aus den Einzelnen elternpaaren neue Individuen zu generieren wird das Verfahr
   \label{fig:chromoson_crossover}
 \end{figure}
 
-\item \textbf{Mutation},hierbei wird jedes gens des Indivium zufällig mit einer zufälligen Mutation versehen. Durch diese Mutation wird eine neue Inforamtion/Lösung in die nachfolgende Generation übergeben. Durch diese Mutation ist es möglich einen größeren Suchraum abzudenken. Es ist auch möglich die Werte genauer anzupassen um so auf die Optimalste Lösung zu kommen. 
-
-\end{itemize}
+\paragraph{Mutation},hierbei wird jedes gens des Indivium zufällig mit einer zufälligen Mutation versehen. Durch diese Mutation wird eine höhere Diversität in die nachfolgende Generation übergeben.Diese Mutation macht es möglich einen größeren Suchraum abzudenken und somit die Werte genauer anzupassen, um so auf die Optimalste Lösung zu kommen. 
 
 \begin{figure}[H]
   \centering  
@@ -160,25 +193,11 @@ Um aus den Einzelnen elternpaaren neue Individuen zu generieren wird das Verfahr
 \end{figure}
 
 
-\subsubsection{Austausch/ Scheife / Exchange}
+\subsubsection{Neue Generation}
 Die neue Generation aus Kindern tauscht nun die alte Generation aus. Nun folgen die gleichen Schritte: Grade, Slection, crossover und mutation. 
 Diese Schleife wird so lange durchegführt bis die Populationsfittnes das zuvor festgelegte Maximum erreicht. Wenn dies geschied gibt es viele Lösungen welche alle sehr ähnlich sein sollten. Aus dieser kann dann das beste Individum ausgesucht werden und als beste Lösung eingesetz werden. 
 
-\subsection{Steady-State-GA} \label{Steady-State-GA}
-
-vlt weg lassen ?
-
-Dieser Ansatz unterscheidet sich von dem Standart GA vorallem in der überlappenden Population. Denn hier wir nicht die gesamte Population nach einer generation ausgetauscht sondern nur das schlechteste Indivdum. Auch hierbei gibt es die genannten Elternselectionen, Crossover und Mutation als Auswahl. 
-\noindent%
-\begin{figure}[H]
-  \centering  
-  \includegraphics[scale=0.5]{img/gavssteady-state.png}
-  \caption{Der unterschiedliche ablauf des a GA und des B steady state GA wird jeweils mit einem Ablaufschema verdeutlicht. Evolutionäre algorihmen s.129 }
-  \label{fig:chromosome}
-\end{figure}
-
 \newpage
-
 \subsection{Künstliche Neuronale Netze}
 
 Künstliche Neuronale Netze sind dem natürlichen Vorbild der neuronalen Netze im Gehirn nach empfunden. Beide Netze setzen sich aus einzelnen Neuronen zusammen, welche mit einandern verbunden sind.Wie man in Figure \ref{fig:neural_network} sieht ist jede Schicht ist aus einzelnen Neuronen aufgebaut welche mit den Neuronen der nächsten Schicht verbunden sind, diese Verbindungen repräsentieren die Gewichte, über diese kann einem Netz verschiedene Zusammenhänge von Input und Output antrainiert bzw. angelernt werden.
@@ -197,11 +216,8 @@ Im folgenden Kapitel wird zu erst der Aufbau eines Neurons erklärt. Anschließe
 
 Grundlagen aus dem buch ArificalNeuroalNetworks s.11 
 
-\newpage
 
-
-
-\subsection{Aufbau eines Neurons}
+\subsubsection{Aufbau eines Neurons}
 
 
 
@@ -210,37 +226,36 @@ Grundlagen aus dem buch ArificalNeuroalNetworks s.11
   \includegraphics[scale=0.5]{img/S41_Buildyourown.png}
   \caption{Aufbau eines Neurons \cite{Rashid2017}}
   \label{fig:neuron}
-  
-
 \end{figure}
-\subsubsection{Eingang aka Input}
+
+\paragraph{Eingang}
 Bei dem Input handelt es sich um einfache xxxFloatwert dieser wird mit den einzelnen Gewichten verrechnet. Ein Neuron hat meist mehrere Eingangsgrößen, welche alle zusammen mit den Gewichten aufsummiert werden. Diese Werte werden zufällig initialisiert und per Training verbessert, somit handelt es sich um einen angelernten Werte, welche durch die Backproagation(Fehlerrückführung) verbessert werden.
 
-\subsubsection{Schwellwert aka bias}
+\paragraph{Schwellwert aka bias}
 Auf dieses Aufsummiertes Ergebniss wird anschließend ein Bias gerechnet, dieser führt zu einem besseren Verhalten beim Trainieren. Bei diesen Werten handelt es sich um angelernte Werte, die per Backpropagation verbessert werden und die Flexibitlität der Netze erhöht.
 
 
-\subsubsection{Aktivierungs Funktion}
+\paragraph{Aktivierungs Funktion}
 Die Aktivierungsfunktion kann man sich als Schwellwert vorstellen, ab wann das Neuron den Input weiter gibt. Es gibt verschiedene Funktionen, um diesen Schwellwert zu definieren. Je nach Aufgabe des Neuronalen Netze werden andere Aktivierungsfunktionen verwendet. Bei Klassifizierungen werden heute meist ReLu-Layer oder ein Weakly-ReLu Layer benutzt, diese verhindern das Vanishing- bzw. Exploding- gradientproblem beim Trainieren.
 
-\subsubsection{Ausgang aka Output}
+\paragraph{Ausgang aka Output}
 Wenn der Schwellwert überschritten wird, wird am Output durchgeschaltet. Dieser Output kann entweder mit einer nen Schicht Neronen verbundne sein oder direkt als Ausgang gesehen werden. Über welchen man anhand von xxxVariabelenwerten/Kommawerten die 
 Von Input nach Output nennt sich ein Single-Forward-Pass. Wie hier beschrieben wird, kann ein Netz verschieden viele Layer besitzen mit verschiedenen Anzahlen von Neuronen.
 
-\subsection{Struktureller Aufbau eines Neuronalen Netzes}
+\subsubsection{Struktureller Aufbau eines Neuronalen Netzes}
 
 Wie kann ich Neuronen zusammenbauen usw.
 
-\subsubsection{Input Layer}
+\paragraph{Input Layer}
 
-\subsubsection{Hidden Layer}
+\paragraph{Hidden Layer}
 
-\subsubsection{Output Layer}
+\paragraph{Output Layer}
 
-\subsection{Verlustfunktion aka lossfunktion}
+\subsubsection{Verlustfunktion aka lossfunktion}
 Die Verlustfunktion stellt ein ausgesuchtes Maß der Diskrepanz zwischen den beobachteten und den vorhergesagten Daten dar. Sie bestimmt die Leistungsfähigkeit des neuronalen Netzes während des Trainings und der Ausführung. Ziel ist es, im laufenden Prozess der Modellanpassung, die Verlustfunktion zu minimieren.
 
-\subsection{Optimierer alt Gradientenabstieg}
+\subsubsection{Optimierer alt Gradientenabstieg}
 Um die Fehlerfunktion zu minimieren wird als Werkzeug der Gradienten Abstieg benutzt. Diese ist nur möglich da ein Künstliches Neuronales Netz aus verketteten differenzierbaren Gewichte der Neuronen(Tensoroperationen) aufgebaut ist, die es erlauben duch anwendung der Kettenregel die Gradientenfunktion zu finden, die den aktuellen Parametern des Datenstapels werte des Gradienten zuordnet. Es gibt auch hier verschiedene Ansätze von Optimierern, welche die genauen Regeln wie der Gradient der Verlustfunktion zu Aktualisierund der Parameter verwendet wird hier könnte Beispielweise den RMSProp-Optimierer, der die trägheit des Gradientenabstiegsverfahren berücksichtet.
 
 Seite 83 - Deep Learning chollet
@@ -251,7 +266,7 @@ Seite 83 - Deep Learning chollet
 \fi
 
 
-\subsection{Hyperparameter}
+\subsubsection{Hyperparameter}
 Als Hyperparameter werden, in Bezug auf KNN's, meist die Anfangsbedingungen bezeichnet.
 Für diese Hyperparameter gelten keine universellen Werte sondern müssen je nach Daten und Funktion bzw. künstliches Neuroales Netz speziell angepasst und verändert werden. Deshalb gibt es nur einige Regeln und grobe Abschätzungen in welchen grenzen sich diese Hyperparameter befinden. Zu diesen Hyperparameter gehören folgdende:
 \begin{itemize}
