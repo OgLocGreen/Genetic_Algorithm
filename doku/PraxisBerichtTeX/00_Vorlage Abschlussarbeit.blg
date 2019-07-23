@@ -13,44 +13,46 @@ A level-1 auxiliary file: 09_evaluation.aux
 A level-1 auxiliary file: 10_ausblick.aux
 The style file: unsrt.bst
 Database file #1: Literatur.bib
-You've used 2 entries,
+Warning--empty booktitle in shukla15
+You've used 6 entries,
             1791 wiz_defined-function locations,
-            465 strings with 3893 characters,
-and the built_in function-call counts, 267 in all, are:
-= -- 21
-> -- 5
-< -- 0
-+ -- 3
-- -- 1
-* -- 6
-:= -- 41
-add.period$ -- 5
-call.type$ -- 2
-change.case$ -- 1
+            494 strings with 4729 characters,
+and the built_in function-call counts, 1237 in all, are:
+= -- 116
+> -- 32
+< -- 2
++ -- 14
+- -- 8
+* -- 53
+:= -- 179
+add.period$ -- 19
+call.type$ -- 6
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 15
-empty$ -- 38
-format.name$ -- 1
-if$ -- 64
+cite$ -- 7
+duplicate$ -- 72
+empty$ -- 143
+format.name$ -- 8
+if$ -- 300
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 2
-newline$ -- 11
-num.names$ -- 1
-pop$ -- 11
+int.to.str$ -- 6
+missing$ -- 6
+newline$ -- 31
+num.names$ -- 5
+pop$ -- 31
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 10
+skip$ -- 40
 stack$ -- 0
-substring$ -- 0
-swap$ -- 2
-text.length$ -- 0
+substring$ -- 48
+swap$ -- 21
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 1
-width$ -- 3
-write$ -- 18
+warning$ -- 1
+while$ -- 11
+width$ -- 7
+write$ -- 63
+(There was 1 warning)

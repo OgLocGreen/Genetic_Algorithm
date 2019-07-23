@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.26)  22 JUL 2019 17:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.26)  23 JUL 2019 15:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -887,23 +887,26 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box42
 )
 (./00_Vorlage Abschlussarbeit.aux (./01_titel.aux) (./02_eigen.aux)
-(./03_ausschreibung.aux) (./04_einleitung.aux) (./05_grundlagen.aux)
-(./06_standdertechnik.aux) (./07_konzept.aux) (./08_implementierung.aux)
+(./03_ausschreibung.aux) (./04_einleitung.aux) (./05_grundlagen.aux
+
+LaTeX Warning: Label `fig:roulette_wheel' multiply defined.
+
+) (./06_standdertechnik.aux) (./07_konzept.aux) (./08_implementierung.aux)
 (./09_evaluation.aux) (./10_ausblick.aux))
 \openout1 = `"00_Vorlage Abschlussarbeit.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1061,7 +1064,7 @@ LaTeX Warning: Float too large for page by 24.83961pt on input line 7.
 <img/Ablauf_kurz.png, id=43, 369.38pt x 450.68375pt>
 File: img/Ablauf_kurz.png Graphic file (type png)
 <use img/Ablauf_kurz.png>
-Package pdftex.def Info: img/Ablauf_kurz.png  used on input line 19.
+Package pdftex.def Info: img/Ablauf_kurz.png  used on input line 18.
 (pdftex.def)             Requested size: 184.68954pt x 225.34131pt.
  [8
 
@@ -1072,115 +1075,133 @@ Package pdftex.def Info: img/Ablauf_kurz.png  used on input line 19.
 File: img/Chromsome-s134-PracticalComputerVion.png Graphic file (type png)
 <use img/Chromsome-s134-PracticalComputerVion.png>
 Package pdftex.def Info: img/Chromsome-s134-PracticalComputerVion.png  used on 
-input line 98.
+input line 97.
 (pdftex.def)             Requested size: 353.52348pt x 112.92273pt.
- [9 <./img/Ablauf_kurz.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 141.
+ [9 <./img/Ablauf_kurz.png>] [10 <./img/Chromsome-s134-PracticalComputerVion.pn
+g>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 140.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 141.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 140.
 
-Overfull \hbox (1.12572pt too wide) in paragraph at lines 141--142
-[]\T1/cmr/bx/n/10.95 Auswahl pro-por-tio-nal zu Fitt-nes eng. Fit-ness Pro-por-
-to-nal Selc-ti-on(FPS)\T1/cmr/m/n/10.95 ,
+Overfull \hbox (10.85619pt too wide) in paragraph at lines 140--141
+[]\T1/cmr/bx/n/10.95 Auswahl pro-por-tio-nal zu Fitt-nes (eng. Fit-ness Pro-por
+-to-nal Selc-ti-on(FPS))\T1/cmr/m/n/10.95 ,
  []
 
-[10 <./img/Chromsome-s134-PracticalComputerVion.png>]
-<img/crossover.png, id=56, 667.49374pt x 321.2pt>
-File: img/crossover.png Graphic file (type png)
-<use img/crossover.png>
-Package pdftex.def Info: img/crossover.png  used on input line 181.
-(pdftex.def)             Requested size: 333.74606pt x 160.59961pt.
- [11]
-<img/mutation.png, id=66, 696.6025pt x 224.84pt>
+<img/roulette_wheel.png, id=56, 320.19624pt x 290.08376pt>
+File: img/roulette_wheel.png Graphic file (type png)
+<use img/roulette_wheel.png>
+Package pdftex.def Info: img/roulette_wheel.png  used on input line 149.
+(pdftex.def)             Requested size: 128.07622pt x 116.03143pt.
+[11 <./img/roulette_wheel.png>]
+<img/Tunier.png, id=70, 372.39125pt x 191.71625pt>
+File: img/Tunier.png Graphic file (type png)
+<use img/Tunier.png>
+Package pdftex.def Info: img/Tunier.png  used on input line 189.
+(pdftex.def)             Requested size: 223.43646pt x 115.03062pt.
+ [12 <./img/Tunier.png>]
+<img/Cossover.png, id=75, 463.7325pt x 368.37625pt>
+File: img/Cossover.png Graphic file (type png)
+<use img/Cossover.png>
+Package pdftex.def Info: img/Cossover.png  used on input line 224.
+(pdftex.def)             Requested size: 231.86568pt x 184.18767pt.
+<img/mutation.png, id=76, 696.6025pt x 224.84pt>
 File: img/mutation.png Graphic file (type png)
 <use img/mutation.png>
-Package pdftex.def Info: img/mutation.png  used on input line 190.
+Package pdftex.def Info: img/mutation.png  used on input line 238.
 (pdftex.def)             Requested size: 348.3004pt x 112.41972pt.
- [12 <./img/crossover.png> <./img/mutation.png>]
-<img/S36_Buildyourown.png, id=72, 669.50125pt x 462.72874pt>
+ [13 <./img/Cossover.png (PNG copy)>] [14 <./img/mutation.png>]
+<img/S36_Buildyourown.png, id=85, 669.50125pt x 462.72874pt>
 File: img/S36_Buildyourown.png Graphic file (type png)
 <use img/S36_Buildyourown.png>
-Package pdftex.def Info: img/S36_Buildyourown.png  used on input line 207.
+Package pdftex.def Info: img/S36_Buildyourown.png  used on input line 254.
 (pdftex.def)             Requested size: 334.7498pt x 231.3638pt.
-<img/S41_Buildyourown.png, id=73, 685.56125pt x 348.30125pt>
+<img/S41_Buildyourown.png, id=86, 685.56125pt x 348.30125pt>
 File: img/S41_Buildyourown.png Graphic file (type png)
 <use img/S41_Buildyourown.png>
-Package pdftex.def Info: img/S41_Buildyourown.png  used on input line 226.
+Package pdftex.def Info: img/S41_Buildyourown.png  used on input line 273.
 (pdftex.def)             Requested size: 342.77979pt x 174.15019pt.
- [13 <./img/S36_Buildyourown.png>] [14 <./img/S41_Buildyourown.png>] [15]) [16]
+ [15 <./img/S36_Buildyourown.png>]
+[16 <./img/S41_Buildyourown.png>] [17]) [18]
 \openout2 = `06_standdertechnik.aux'.
 
- (./06_standdertechnik.tex) [17
+ (./06_standdertechnik.tex)
+[19
 
 
 ]
 \openout2 = `07_konzept.aux'.
 
- (./07_konzept.tex)
-[18
+ (./07_konzept.tex) [20
 
 
 ]
 \openout2 = `08_implementierung.aux'.
 
- (./08_implementierung.tex) [19
+ (./08_implementierung.tex) [21
 
 
 ]
 \openout2 = `09_evaluation.aux'.
 
- (./09_evaluation.tex) [20
+
+(./09_evaluation.tex) [22
 
 
 ]
 \openout2 = `10_ausblick.aux'.
 
+ (./10_ausblick.tex) [23
 
-(./10_ausblick.tex) [21
-
-
-] (./00_Vorlage Abschlussarbeit.bbl) [22
 
 ]
-(./00_Vorlage Abschlussarbeit.aux (./01_titel.aux) (./02_eigen.aux)
-(./03_ausschreibung.aux) (./04_einleitung.aux) (./05_grundlagen.aux)
-(./06_standdertechnik.aux) (./07_konzept.aux) (./08_implementierung.aux)
-(./09_evaluation.aux) (./10_ausblick.aux)) ) 
+(./00_Vorlage Abschlussarbeit.bbl) [24
+
+] (./00_Vorlage Abschlussarbeit.aux
+(./01_titel.aux) (./02_eigen.aux) (./03_ausschreibung.aux) (./04_einleitung.aux
+) (./05_grundlagen.aux) (./06_standdertechnik.aux) (./07_konzept.aux)
+(./08_implementierung.aux) (./09_evaluation.aux) (./10_ausblick.aux))
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 17685 strings out of 494830
- 337188 string characters out of 6177367
- 568812 words of memory out of 5000000
- 20583 multiletter control sequences out of 15000+600000
+ 17714 strings out of 494830
+ 337625 string characters out of 6177367
+ 568903 words of memory out of 5000000
+ 20610 multiletter control sequences out of 15000+600000
  18140 words of font info for 45 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 73i,14n,100p,8839b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/green/.texlive2017/texmf-va
-r/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/green/.texlive2017/texmf-v
-ar/fonts/pk/ljfour/jknappen/ec/ecsx1200.600pk> </home/green/.texlive2017/texmf-
-var/fonts/pk/ljfour/jknappen/ec/ecsx1095.600pk> </home/green/.texlive2017/texmf
--var/fonts/pk/ljfour/jknappen/ec/ecsx1440.600pk> </home/green/.texlive2017/texm
-f-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/green/.texlive2017/tex
-mf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/green/.texlive2017/te
-xmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/green/.texlive2017/t
-exmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/green/.texlive2017/
-texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/green/.texlive2017
-/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/green/.texlive201
-7/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb>
-Output written on "00_Vorlage Abschlussarbeit.pdf" (22 pages, 652273 bytes).
+ 73i,14n,100p,8839b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600
+pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1200.60
+0pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1095.6
+00pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1440.
+600pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095
+.600pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm100
+0.600pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx12
+00.600pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1
+095.600pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
+1440.600pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr
+m1200.600pk> </home/green/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
+cc1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb>
+Output written on "00_Vorlage Abschlussarbeit.pdf" (24 pages, 714357 bytes).
 PDF statistics:
- 551 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
+ 590 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

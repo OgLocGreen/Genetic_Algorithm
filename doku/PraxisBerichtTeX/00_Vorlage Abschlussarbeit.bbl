@@ -9,4 +9,29 @@ T.~Rashid.
 \bibitem{FZI_Projekt}
 {Projekt Heike}.
 
+\bibitem{shukla15}
+Anupriya Shukla, Hari Pandey, and Deepti Mehrotra.
+\newblock Comparative review of selection techniques in genetic algorithm.
+\newblock 02 2015.
+
+\bibitem{baker1985adaptive}
+James~Edward Baker.
+\newblock Adaptive selection methods for genetic algorithms.
+\newblock In {\em Proceedings of an International Conference on Genetic
+  Algorithms and their applications}, pages 101--111. Hillsdale, New Jersey,
+  1985.
+
+\bibitem{Syswerda1989}
+Gilbert Syswerda.
+\newblock Uniform crossover in genetic algorithms.
+\newblock In {\em Proceedings of the 3rd International Conference on Genetic
+  Algorithms}, pages 2--9, San Francisco, CA, USA, 1989. Morgan Kaufmann
+  Publishers Inc.
+
+\bibitem{Umbarkar2015}
+Dr.~Anantkumar Umbarkar and P~Sheth.
+\newblock Crossover operators in genetic algorithms: A review.
+\newblock {\em ICTACT Journal on Soft Computing ( Volume: 6 , Issue: 1 )}, 6,
+  10 2015.
+
 \end{thebibliography}
