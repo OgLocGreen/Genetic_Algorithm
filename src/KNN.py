@@ -1,9 +1,20 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
+
 from tensorflow import keras
 from sklearn.model_selection import train_test_split
-
 import gc
+"""
+import tensorflow as tf
 
+config = tf.ConfigProto()
+config.gpu_options.per_process_gpu_memory_fraction = 0.3
+config.gpu_options.allow_growth = False
+session = tf.Session(config=config)
+keras.backend.set_session(session)
+"""
+import os
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size):
     #%%
@@ -44,8 +55,7 @@ def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size):
 
     #%%
     ### Model fit
-
-    model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size))
+    model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2)
 
     #%%
     ### Model evalu

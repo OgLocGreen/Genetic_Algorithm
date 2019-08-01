@@ -8,47 +8,51 @@
 \contentsline {section}{\numberline {2}Grundlagen}{8}
 \contentsline {subsection}{\numberline {2.1}Optimierungsgrundlagen}{8}
 \contentsline {subsection}{\numberline {2.2}Genetische Algorithmen}{8}
-\contentsline {subsubsection}{\numberline {2.2.1}Aufbau und Initzialisierung einer Population}{9}
-\contentsline {subsubsection}{\numberline {2.2.2}Fittnesfunktion (eng. Fittnesfunction or grade)}{10}
-\contentsline {subsubsection}{\numberline {2.2.3}Selektion der Eltern (eng. Select Parents)}{10}
+\contentsline {subsubsection}{\numberline {2.2.1}Aufbau und Initzialisierung der Population}{9}
+\contentsline {subsubsection}{\numberline {2.2.2}Fittnesfunktion}{11}
+\contentsline {subsubsection}{\numberline {2.2.3}Selektion der Eltern}{11}
 \contentsline {subsubsection}{\numberline {2.2.4}Vermehrung (eng. Breed)}{12}
-\contentsline {paragraph}{\nonumberline Crossover}{12}
-\contentsline {paragraph}{\nonumberline Mutation}{13}
-\contentsline {subsubsection}{\numberline {2.2.5}Neue Generation}{14}
-\contentsline {subsection}{\numberline {2.3}K\IeC {\"u}nstliche Neuronale Netze}{15}
-\contentsline {subsubsection}{\numberline {2.3.1}Aufbau eines Neurons}{15}
-\contentsline {paragraph}{\nonumberline Eingang}{15}
-\contentsline {paragraph}{\nonumberline Schwellwert aka bias}{16}
-\contentsline {paragraph}{\nonumberline Aktivierungs Funktion}{16}
-\contentsline {paragraph}{\nonumberline Ausgang aka Output}{16}
-\contentsline {subsubsection}{\numberline {2.3.2}Struktureller Aufbau eines Neuronalen Netzes}{17}
-\contentsline {paragraph}{\nonumberline Input Layer}{17}
-\contentsline {paragraph}{\nonumberline Hidden Layer}{17}
-\contentsline {paragraph}{\nonumberline Output Layer}{17}
-\contentsline {subsubsection}{\numberline {2.3.3}Verlustfunktion aka lossfunktion}{17}
-\contentsline {subsubsection}{\numberline {2.3.4}Optimierer alt Gradientenabstieg}{17}
-\contentsline {subsubsection}{\numberline {2.3.5}Hyperparameter}{17}
-\contentsline {subsection}{\numberline {2.4}Zusammenfassung}{18}
-\contentsline {section}{\numberline {3}Stand der Forschung und Technik}{19}
-\contentsline {subsection}{\numberline {3.1}Forschung}{19}
-\contentsline {subsection}{\numberline {3.2}Anwendung}{19}
-\contentsline {subsection}{\numberline {3.3}Zusammenfassung}{19}
-\contentsline {section}{\numberline {4}Konzept}{20}
-\contentsline {subsection}{\numberline {4.1}Anforderungsanalyse}{20}
-\contentsline {subsection}{\numberline {4.2}Genetischer Algorithmus}{20}
-\contentsline {subsubsection}{\numberline {4.2.1}Eltern auswahl}{20}
-\contentsline {subsection}{\numberline {4.3}Zusammenfassung}{20}
-\contentsline {section}{\numberline {5}Implementierung}{21}
-\contentsline {subsection}{\numberline {5.1}Systemaufbau}{21}
-\contentsline {subsection}{\numberline {5.2}Zusammenfassung}{21}
-\contentsline {section}{\numberline {6}Evaluation und Tests}{22}
-\contentsline {subsection}{\numberline {6.1}Einleitung}{22}
-\contentsline {subsection}{\numberline {6.2}Testszenarien}{22}
-\contentsline {subsection}{\numberline {6.3}Evaluation}{22}
-\contentsline {subsection}{\numberline {6.4}Ergebniss und Interpretation}{22}
-\contentsline {subsection}{\numberline {6.5}Zusammenfassung}{22}
-\contentsline {section}{\numberline {7}Zusammenfassung und Ausblick}{23}
-\contentsline {subsection}{\numberline {7.1}Einleitung}{23}
-\contentsline {subsection}{\numberline {7.2}Zusammenfassung}{23}
-\contentsline {subsection}{\numberline {7.3}Bedeutung der Arbeit}{23}
-\contentsline {subsection}{\numberline {7.4}Ausblick}{23}
+\contentsline {paragraph}{\nonumberline Crossover}{13}
+\contentsline {paragraph}{\nonumberline Mutation}{14}
+\contentsline {subsubsection}{\numberline {2.2.5}Neue Generation}{15}
+\contentsline {subsection}{\numberline {2.3}K\IeC {\"u}nstliche Neuronale Netze}{16}
+\contentsline {subsubsection}{\numberline {2.3.1}Aufbau eines Neurons}{16}
+\contentsline {paragraph}{\nonumberline Eingang}{17}
+\contentsline {paragraph}{\nonumberline Schwellwert}{17}
+\contentsline {paragraph}{\nonumberline Aktivierungsfunktion}{17}
+\contentsline {paragraph}{\nonumberline Ausgang}{18}
+\contentsline {subsubsection}{\numberline {2.3.2}Struktureller Aufbau eines K\IeC {\"u}nstlichen Neuronalen Netzes}{18}
+\contentsline {subsubsection}{\numberline {2.3.3}Verlustfunktion}{19}
+\contentsline {subsubsection}{\numberline {2.3.4}Gradientenabstieg}{19}
+\contentsline {subsubsection}{\numberline {2.3.5}Hyperparameter}{19}
+\contentsline {subsection}{\numberline {2.4}Zusammenfassung}{20}
+\contentsline {section}{\numberline {3}Stand der Forschung und Technik}{21}
+\contentsline {subsection}{\numberline {3.1}Forschung}{21}
+\contentsline {subsubsection}{\numberline {3.1.1}Deep Mind}{21}
+\contentsline {subsubsection}{\numberline {3.1.2}PBT}{21}
+\contentsline {subsection}{\numberline {3.2}Software Testing with Ga}{21}
+\contentsline {subsection}{\numberline {3.3}Travelling Salesman Problem}{22}
+\contentsline {subsection}{\numberline {3.4}Nicht it anwendungen}{22}
+\contentsline {subsection}{\numberline {3.5}Generativ Design}{22}
+\contentsline {subsection}{\numberline {3.6}GLEAM}{23}
+\contentsline {subsection}{\numberline {3.7}Reainforcment learning with GA}{23}
+\contentsline {subsection}{\numberline {3.8}Zusammenfassung}{23}
+\contentsline {section}{\numberline {4}Konzept}{24}
+\contentsline {subsection}{\numberline {4.1}Anforderungsanalyse}{24}
+\contentsline {subsection}{\numberline {4.2}Genetischer Algorithmus}{24}
+\contentsline {subsubsection}{\numberline {4.2.1}Eltern auswahl}{24}
+\contentsline {subsection}{\numberline {4.3}Zusammenfassung}{24}
+\contentsline {section}{\numberline {5}Implementierung}{25}
+\contentsline {subsection}{\numberline {5.1}Systemaufbau}{25}
+\contentsline {subsection}{\numberline {5.2}Zusammenfassung}{25}
+\contentsline {section}{\numberline {6}Evaluation und Tests}{26}
+\contentsline {subsection}{\numberline {6.1}Einleitung}{26}
+\contentsline {subsection}{\numberline {6.2}Testszenarien}{26}
+\contentsline {subsection}{\numberline {6.3}Evaluation}{26}
+\contentsline {subsection}{\numberline {6.4}Ergebniss und Interpretation}{26}
+\contentsline {subsection}{\numberline {6.5}Zusammenfassung}{26}
+\contentsline {section}{\numberline {7}Zusammenfassung und Ausblick}{27}
+\contentsline {subsection}{\numberline {7.1}Einleitung}{27}
+\contentsline {subsection}{\numberline {7.2}Zusammenfassung}{27}
+\contentsline {subsection}{\numberline {7.3}Bedeutung der Arbeit}{27}
+\contentsline {subsection}{\numberline {7.4}Ausblick}{27}

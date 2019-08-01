@@ -34,4 +34,23 @@ Dr.~Anantkumar Umbarkar and P~Sheth.
 \newblock {\em ICTACT Journal on Soft Computing ( Volume: 6 , Issue: 1 )}, 6,
   10 2015.
 
+\bibitem{Keshavarz}
+Sina Keshavarz and Reza Javidan.
+\newblock Software quality control based on genetic algorithm.
+\newblock {\em International Journal of Computer Theory and Engineering}, pages
+  579--584, 01 2011.
+
+\bibitem{Stanislawska1}
+Karolina Stanislawska, Krzysztof Krawiec, and Zbigniew~W. Kundzewicz.
+\newblock Modeling global temperature changes with genetic programming.
+\newblock {\em Comput. Math. Appl.}, 64(12):3717--3728, December 2012.
+
+\bibitem{Stanislawska2}
+Karolina Stanislawska, Krzysztof Krawiec, and Timo Vihma.
+\newblock Genetic programming for estimation of heat flux between the
+  atmosphere and sea ice in polar regions.
+\newblock In {\em Proceedings of the 2015 Annual Conference on Genetic and
+  Evolutionary Computation}, GECCO '15, pages 1279--1286, New York, NY, USA,
+  2015. ACM.
+
 \end{thebibliography}

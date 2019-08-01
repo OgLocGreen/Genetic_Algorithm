@@ -3,10 +3,12 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 import random
+import multiprocessing
 import json
+
 from KNN import train_and_evalu
 
-from plotting import plot_winner, plot_all, plot_normalverteilung
+from plotting import plot_winner, plot_all, plot_histogram_all
 
 import gc
 
@@ -59,18 +61,48 @@ class Population(object):
             batchsize = random.uniform(32, 64)
             self.individuals.append(Individual(learningrate, dropout, epoch, batchsize))
 
-    def grade(self, generation=None):
+    def grade_single(self, generation=None):
         """
             Grade the generation by getting the average fitness of its individuals
         """
         fitness_sum = 0
         i = 0
         for x in self.individuals:
-            print("individuals: ", i)
             fitness_sum += x.fitness()
             print("individual: ", i)
             print("fitness: ",x.var_acc)
             i = i+1
+        pop_fitness = fitness_sum / self.pop_size
+        self.fitness_history.append(pop_fitness)
+        self.save_gens(generation)
+        # Set Done flag if we hit target
+        if pop_fitness >= 0.90:
+            self.done = True
+
+        if generation is not None:
+            if generation % 5 == 0:
+                print("Episode", generation, "Population fitness:", pop_fitness)
+                print("----------------------------------------")
+                print("----------------------------------------")
+
+
+
+    def grade_multi(self, generation=None):
+        """
+            Grade the generation by getting the average fitness of its individuals
+        """
+        fitness_sum = 0
+
+        p = multiprocessing.Pool(processes=2)
+
+        #print(p.map(fitness_multi,self.individuals))
+        accloss = p.map(fitness_multi,self.individuals)
+
+        i=0
+        for x in self.individuals:
+            x.var_acc, x.var_loss  = accloss[i][0], accloss[i][1]
+            fitness_sum += x.var_acc
+            i += 1
         pop_fitness = fitness_sum / self.pop_size
         self.fitness_history.append(pop_fitness)
         self.save_gens(generation)
@@ -130,7 +162,7 @@ class Population(object):
                         tmp = child_genes[x]
                         mutation = random.uniform(0, self.mutate_prob)       ## Mutationsfaktor mutate prob
                         var = random.choice([True, False])      ## Funktion um Positive bzw. negative Mutation
-                        if var == True:                         ## Mutation funktioniert in Prozent
+                        if var is True:                         ## Mutation funktioniert in Prozent
                             tmp = tmp - (tmp * mutation)
                         else:
                             tmp = tmp + (tmp * mutation)
@@ -182,7 +214,7 @@ class Population(object):
     def save_gens_winner(self):
         with open("data.json", "r") as f:
             data = json.load(f)
-        self.grade() #damit alle induviduals noch auf fittnes überprüft werden
+        self.grade_single() #damit alle induviduals noch auf fittnes überprüft werden
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))
         i = 0
         family_tree ={"Winner": {}}
@@ -203,6 +235,15 @@ class Population(object):
             json.dump(data,outfile,indent=2)
         print("saved winnerpopulation gens into data.json")
 
+
+def fitness_multi(individuum):
+    """
+        Returns fitness of individual
+        Fitness is the difference between
+    """
+    var_loss, var_acc = train_and_evalu(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3])
+    return var_acc, var_loss
+
 if __name__ == "__main__":
     pop_size = 30
     mutate_prob = 0.3
@@ -214,7 +255,7 @@ if __name__ == "__main__":
     SHOW_PLOT = True
     GENERATIONS = 10
     for x in range(GENERATIONS):
-        pop.grade(generation=x)
+        pop.grade_multi(generation=x)
         if pop.done:
             print("Finished at generation:", x, ", Population fistness:", pop.fitness_history[-1])
             break
@@ -235,6 +276,5 @@ if __name__ == "__main__":
 
     pop.save_gens_winner()
     plot_winner()
-    plot_normalverteilung()
     print("FINISCHED!!!")
 

@@ -1,9 +1,16 @@
 
 import json
-import matplotlib.pyplot as plt
 import matplotlib.mlab as mlab
 import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 from scipy import stats
+
+sns.set(color_codes=True)
+
+
+
 
 def plot_winner():
     with open("./data.json", "r") as f:
@@ -48,18 +55,15 @@ def plot_all():
         plt.show()
 
 
-def plot_histogram(names,werteliste):
-    num_bins = 50 #bins sind Balken
-    kde = stats.gaussian_kde(werteliste)
+def plot_histogram(title,werteliste):
 
-    #y = mlab.normpdf(num_bins, np.mean(werteliste), np.std(werteliste))
-    n, bins, patches = plt.hist(werteliste, num_bins, density=True, facecolor='blue', alpha=0.5)
+    sns.distplot(werteliste)
+    sns.distplot(werteliste, kde=False, fit=stats.gamma)
+    sns.distplot(werteliste, rug=True, hist=False)
 
-
-    plt.plot(bins, kde, 'r--')
-    plt.xlabel('-')
-    plt.ylabel('Probability')
-    plt.title(names)
+    plt.title(title)
+    #plt.xlabel(x_label)
+    #plt.ylabel(y_label)
     plt.show()
 
 def plot_histogram_all():
@@ -240,5 +244,3 @@ if __name__ == "__main__":
     #plot_all()
     plot_winner()
     plot_histogram_all()
-
-
