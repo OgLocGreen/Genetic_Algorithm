@@ -100,7 +100,7 @@ class Population(object):
 
         i=0
         for x in self.individuals:
-            x.var_acc, x.var_loss  = accloss[i][0], accloss[i][1]
+            x.var_acc, x.var_loss = accloss[i][0], accloss[i][1]
             fitness_sum += x.var_acc
             i += 1
         pop_fitness = fitness_sum / self.pop_size
@@ -190,19 +190,19 @@ class Population(object):
             with open("data.json", "r") as f:
                 data = json.load(f)
         except:
-            data ={}
+            data = {}
         i = 0
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))  ##indiviuen noch mal nach fitness sotierten
         family_tree ={generations: {}}
         for x in pop.individuals:
             generation = {
-            "name": i,
-            "learningrate": x.gene[0],
-            "dropout": x.gene[1],
-            "epoch": x.gene[2],
-            "batchsize": x.gene[3],
-            "acc": x.var_acc,
-            "loss": x.var_loss
+                "name": i,
+                "learningrate": int(x.gene[0]),
+                "dropout": int(x.gene[1]),
+                "epoch": int(x.gene[2]),
+                "batchsize": int(x.gene[3]),
+                "acc": int(x.var_acc),
+                "loss": int(x.var_loss)
             }
             family_tree[generations][i] = generation
             i += 1
@@ -221,18 +221,18 @@ class Population(object):
         for x in pop.individuals:
             generation = {
                 "name": i,
-                "learningrate":x.gene[0],
-                "dropout":x.gene[1],
-                "epoch":x.gene[2],
-                "batchsize":x.gene[3],
-                "acc":x.var_acc,
-                "loss":x.var_loss
+                "learningrate":int( x.gene[0]),
+                "dropout":int(x.gene[1]),
+                "epoch":int(x.gene[2]),
+                "batchsize":int(x.gene[3]),
+                "acc":int(x.var_acc),
+                "loss":int(x.var_loss)
             }
             family_tree["Winner"][i] = generation
             i+=1
         data.update(family_tree)
-        with open("data.json","w") as outfile:
-            json.dump(data,outfile,indent=2)
+        with open("data.json", "w") as outfile:
+            json.dump(data, outfile, indent=2)
         print("saved winnerpopulation gens into data.json")
 
 
@@ -245,7 +245,7 @@ def fitness_multi(individuum):
     return var_acc, var_loss
 
 if __name__ == "__main__":
-    pop_size = 30
+    pop_size = 10
     mutate_prob = 0.3
     retain = 0.5
     random_retain = 0.05
