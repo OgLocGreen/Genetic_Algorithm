@@ -132,8 +132,8 @@ def scatterplot(file,yscale_log=False):
         if pop in ("2", "4", "8", "Winner"):
             for individum in data[pop]:
                 try:
-                    x.append(data[pop][individum]["acc"])  ## hier dürfte noch ein fehler sein
-                    y.append(data[pop][individum]["loss"])  ## hier dürfte noch ein feheler sein
+                    x.append(float(data[pop][individum]["acc"]))  ## hier dürfte noch ein fehler sein
+                    y.append(float(data[pop][individum]["loss"]))  ## hier dürfte noch ein feheler sein
                 except:
                     print("error")
 
@@ -168,8 +168,8 @@ def scatterplot(file,yscale_log=False):
         if pop in ("2", "4", "8", "Winner"):
             for individum in data[pop]:
                 try:
-                    x.append(data[pop][individum]["acc"])  ## hier dürfte noch ein fehler sein
-                    y.append(data[pop][individum]["loss"])  ## hier dürfte noch ein feheler sein
+                    x.append(float(data[pop][individum]["acc"])) ## hier dürfte noch ein fehler sein
+                    y.append(float(data[pop][individum]["loss"]))  ## hier dürfte noch ein feheler sein
                 except:
                     print("error")
 
@@ -205,7 +205,7 @@ def plot_fitness(file):
         acc = 0
         anzahl = 0
         for individum in data[population]:
-            acc += data[population][individum]["acc"]
+            acc += float(data[population][individum]["acc"])
             anzahl += 1
         acc = acc / anzahl
         acc_pop.append(acc)

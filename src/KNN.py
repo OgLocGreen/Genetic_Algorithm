@@ -54,10 +54,15 @@ def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size,optimi
 
     optimizerarray = [adam, Adagrad, RMSprop, SGD]
 
+
+    if round(optimizer) < 0:
+        optimizer = 0
+    elif round(optimizer) > 3:
+        optimizer = 3
+
     model.compile(optimizer=optimizerarray[round(optimizer)],
                   loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
-
     #%%
     ### Tensorboard
 

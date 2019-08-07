@@ -203,16 +203,14 @@ class Population(object):
         for x in pop.individuals:
             generation = {
                 "name": i,
-                "learningrate": x.gene[0],
-                "dropout": x.gene[1],
-                "epoch": x.gene[2],
-                "batchsize": x.gene[3],
-                "optimizer": x.gene[4],
-                "acc": x.var_acc,
-                "loss": x.var_loss
+                "learningrate": str(x.gene[0]),
+                "dropout": str(x.gene[1]),
+                "epoch": str(x.gene[2]),
+                "batchsize": str(x.gene[3]),
+                "optimizer": str(x.gene[4]),
+                "acc": str(x.var_acc),
+                "loss": str(x.var_loss)
             }
-            acc = float(x.var_acc)
-            loss = int(x.var_loss)
             family_tree[generations][i] = generation
             i += 1
         data.update(family_tree)
@@ -230,13 +228,13 @@ class Population(object):
         for x in pop.individuals:
             generation = {
                 "name": i,
-                "learningrate":x.gene[0],
-                "dropout":x.gene[1],
-                "epoch":x.gene[2],
-                "batchsize":x.gene[3],
-                "optimizer": x.gene[4],
-                "acc":x.var_acc,
-                "loss":x.var_loss
+                "learningrate": str(x.gene[0]),
+                "dropout": str(x.gene[1]),
+                "epoch": str(x.gene[2]),
+                "batchsize": str(x.gene[3]),
+                "optimizer": str(x.gene[4]),
+                "acc": str(x.var_acc),
+                "loss": str(x.var_loss)
             }
             family_tree["Winner"][i] = generation
             i+=1
