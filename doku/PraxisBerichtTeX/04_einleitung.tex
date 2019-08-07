@@ -2,20 +2,20 @@
 
 \subsection{Motivation}
 \label{sec:Motivation}
-Nach einer Studie der Charité aus dem Jahr 2015 sterben in Europa jährlich 23.000 Menschen an den Folgen einer Infektion mit multiresistenten Keimen. Die Tendenz ist dabei steigend. Hauptursache für die Ausbreitung dieser Keime, wie beispielsweise MRSA, ist eine mangelnde Hygiene der Angestellten in den Versorgungseinrichtungen beim Umgang mit den Patienten. Ziel des Projekts HEIKE ist es neue, technikgestütze Möglichkeiten zu entwickeln, welche die behandelnden Mitarbeiter im Krankenhausumfeld bei Maßnahmen am Patienten unterstützen. \cite{FZI_Projekt} \par
 
-Um diese Automatischen System, meist Deep Learning Methoden, zu trainieren braucht es sehr große Datensätze und viele individuelle Hyperparameter. Momentan werden diese meist nach groben ermessen des Entwicklers ausgewählt. Das Auswählen und Testen beansprucht sehr viel Zeit und Mühe. 
+Künstliche Neuronale Netze dominieren das Feld des Maschinellen Lernens, aber ihr training und ihr erfolg hängt immer noch von sensibel empiriisch ausgesuchten  Hyperparametern. Zu diesen Hyperparametern können Modelachitekur, Verlustfunktion und optimierungs Algorithmen. \cite{pbt}
+
+Momentan werden diese meist nach groben ermessen des Entwicklers ausgewählt. Das Auswählen und Testen beansprucht sehr viel Zeit und Mühe. Es gibt ansätze wie Random Search und Grid Search welche 
 
 
 \subsection{Aufgabenstellung}
 \label{sec:Aufgabenstellung}
-Ziel der Arbeit ist es,zunächst die Optimierung von Hyperparametern zu vereinfachen. Dazu ist eine Automatiesierter Trainings und Auswerte vorgang nötig. Anschließend sollen die Hyperparameter mit hilfe von Genetischen Algorithmen noch verbessert werden. Um schneller bessere Ergebnisse zu erhalten. Diese Ergebnisse sollen dann einer klassichen Grid Search gegenübergestellt werden. 
+Ziel der Arbeit ist es, zunächst die Optimierung von Hyperparametern zu vereinfachen. Dazu ist eine automatiesierter Trainings- und Auswerte-vorgang nötig. Anschließend sollen die Hyperparameter mit Hilfe von Genetischen Algorithmen noch verbessert werden, um schneller bessere Ergebnisse zu erhalten. Diese Ergebnisse sollen dann einer klassichen Grid Search gegenübergestellt werden.
+
+Um dies zu vereinfachen soll ein Konzept geschaffen werden, welches die Vorgänge automatisiert und Optimiert. Dabei geht es hauptsächlich um den Vorgang der Auswahl von Hyperparameter und die Auswahl der Dimension eines Künstlichen Neuronalen Netzes. Diese berechneten Werte sollen gespeichert und anschließend übersichtlich anzeigt werden, wodurch sich die idealen Parameter herausbilden. Diese Ergebnisse sollen dem momentanen Ansatz gegenübergestellt werden. 
 
 
-Um dies zu vereinfachen soll ein Konzept geschaffen werden, welches die Vorgänge automatisiert und Optimiert. Dabei geht es hauptsächlich um den Vorgang der Auswahl von Hyperparameter und die Auswahl der Dimension eines Künstlichen Neuronalen Netzes. Diese berechneten Werte sollen gespeichert und anschließend übersichtlich anzeigt werden. Wodurch sich die idealen Parameter herausbilden. Diese Ergebnisse sollen dem momentanen Ansatz gegenübergestellt werden. 
-
-
-(Mit diesem Ansatz kann die dimensionierung eines Netzes einfacher umgesetzt werden.) Ein weiter Anwendungsfall ist die Hyperparameterauswahl, mit hilfe dieses Werkzeugs soll eine einfachere und bessere Auswahl der Hyperparameter erfolgen. Diese berechneten Werte sollen gespeicher und anschließend übersichtlich und intuitiv anzeigt werden. Wodurch sich die idealen Parameter herausbilden. Mit diesem Ansatz soll  die Richtigkeit des Netzes erhöht werden, sodass es bessere Ergebnisse liefesert. Dieses Werkzeug soll Konzeptioniert und Implementiert werden. Anschließend soll eine Evaluation und Auswertung über die mögliche Verbessung durchgeführt werden. 
+(Mit diesem Ansatz kann die Dimensionierung eines Netzes einfacher umgesetzt werden.) Ein weiter Anwendungsfall ist die Hyperparameterauswahl. Mit Hilfe dieses Werkzeugs soll eine einfachere und bessere Auswahl der Hyperparameter erfolgen. Diese berechneten Werte sollen gespeicher und anschließend übersichtlich und intuitiv anzeigt werden, wodurch sich die idealen Parameter herausbilden. Mit diesem Ansatz soll  die Richtigkeit des Netzes erhöht werden, sodass es bessere Ergebnisse liefesert. Dieses Werkzeug soll Konzeptioniert und Implementiert werden. Anschließend soll eine Evaluation und Auswertung über die mögliche Verbessung durchgeführt werden. 
 
 
 \subsection{Aufbau der Arbeit}

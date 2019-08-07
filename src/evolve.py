@@ -8,15 +8,16 @@ import json
 
 from KNN import train_and_evalu
 
-from plotting import plot_winner, plot_all, plot_histogram_all
+from plotting import plot_winner, plot_all, plot_histogram_all, scatterplot
 
 import gc
+import datetime
 
 
 #%%
 class Individual(object):
-    def __init__(self, learningrate, dropout, epoch, batchsize):
-        self.gene = (learningrate, dropout, epoch, batchsize)
+    def __init__(self, learningrate, dropout, epoch, batchsize, optimizer):
+        self.gene = (learningrate, dropout, epoch, batchsize, optimizer)
         self.var_acc = 0
         self.var_loss = 0
 
@@ -25,7 +26,7 @@ class Individual(object):
             Returns fitness of individual
             Fitness is the difference between
         """
-        self.var_loss, self.var_acc = train_and_evalu(self.gene[0], self.gene[1], self.gene[2],self.gene[3])
+        self.var_loss, self.var_acc = train_and_evalu(self.gene[0], self.gene[1], self.gene[2], self.gene[3], self.gene[4])
         return self.var_acc
 
 
@@ -45,6 +46,9 @@ class Population(object):
         self.fitness_history = []
         self.parents = []
         self.done = False
+        self.save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
+                                               datetime.datetime.now().month,
+                                               datetime.datetime.now().day)
 
         # Create individuals
         self.individuals = []
@@ -59,7 +63,8 @@ class Population(object):
             dropout = random.uniform(0.05, 0.5)
             epoch = random.uniform(5, 10)
             batchsize = random.uniform(32, 64)
-            self.individuals.append(Individual(learningrate, dropout, epoch, batchsize))
+            optimizer = random.uniform(0, 3)
+            self.individuals.append(Individual(learningrate, dropout, epoch, batchsize, optimizer))
 
     def grade_single(self, generation=None):
         """
@@ -147,7 +152,8 @@ class Population(object):
             dropout = random.uniform(0.05, 0.5)
             epoch = random.uniform(5, 10)
             batchsize = random.uniform(32, 64)
-            children.append(Individual(learningrate, dropout, epoch, batchsize))
+            optimizer = random.uniform(0, 3)
+            children.append(Individual(learningrate, dropout, epoch, batchsize, optimizer))
 
 
         if len(self.parents) > 0:                   ##überprüfen ob eltern vorhanden
@@ -167,7 +173,7 @@ class Population(object):
                         else:
                             tmp = tmp + (tmp * mutation)
                         child_genes[x] = round(tmp,5)          ## anschließend runden auf 5 nachkommastellen
-                    child = Individual(child_genes[0], child_genes[1], child_genes[2], child_genes[3])
+                    child = Individual(child_genes[0], child_genes[1], child_genes[2], child_genes[3], child_genes[4])
                     children.append(child)
                 else:
                     print("father == mother selection new parents")
@@ -187,7 +193,7 @@ class Population(object):
 
     def save_gens(self,generations):
         try :
-            with open("data.json", "r") as f:
+            with open(self.save_file, "r") as f:
                 data = json.load(f)
         except:
             data = {}
@@ -197,22 +203,25 @@ class Population(object):
         for x in pop.individuals:
             generation = {
                 "name": i,
-                "learningrate": int(x.gene[0]),
-                "dropout": int(x.gene[1]),
-                "epoch": int(x.gene[2]),
-                "batchsize": int(x.gene[3]),
-                "acc": int(x.var_acc),
-                "loss": int(x.var_loss)
+                "learningrate": x.gene[0],
+                "dropout": x.gene[1],
+                "epoch": x.gene[2],
+                "batchsize": x.gene[3],
+                "optimizer": x.gene[4],
+                "acc": x.var_acc,
+                "loss": x.var_loss
             }
+            acc = float(x.var_acc)
+            loss = int(x.var_loss)
             family_tree[generations][i] = generation
             i += 1
         data.update(family_tree)
-        with open("data.json", "w") as outfile:
+        with open(self.save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)
-        print("saved population gens into data.json")
+        print("saved population gens into {}".format(self.save_file))
     
     def save_gens_winner(self):
-        with open("data.json", "r") as f:
+        with open(self.save_file, "r") as f:
             data = json.load(f)
         self.grade_single() #damit alle induviduals noch auf fittnes überprüft werden
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))
@@ -221,17 +230,18 @@ class Population(object):
         for x in pop.individuals:
             generation = {
                 "name": i,
-                "learningrate":int( x.gene[0]),
-                "dropout":int(x.gene[1]),
-                "epoch":int(x.gene[2]),
-                "batchsize":int(x.gene[3]),
-                "acc":int(x.var_acc),
-                "loss":int(x.var_loss)
+                "learningrate":x.gene[0],
+                "dropout":x.gene[1],
+                "epoch":x.gene[2],
+                "batchsize":x.gene[3],
+                "optimizer": x.gene[4],
+                "acc":x.var_acc,
+                "loss":x.var_loss
             }
             family_tree["Winner"][i] = generation
             i+=1
         data.update(family_tree)
-        with open("data.json", "w") as outfile:
+        with open(self.save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)
         print("saved winnerpopulation gens into data.json")
 
@@ -241,19 +251,21 @@ def fitness_multi(individuum):
         Returns fitness of individual
         Fitness is the difference between
     """
-    var_loss, var_acc = train_and_evalu(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3])
+    var_loss, var_acc = train_and_evalu(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
     return var_acc, var_loss
 
 if __name__ == "__main__":
-    pop_size = 10
+    pop_size = 25
     mutate_prob = 0.3
     retain = 0.5
     random_retain = 0.05
 
-    pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
-
     SHOW_PLOT = True
     GENERATIONS = 10
+
+
+    pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
+
     for x in range(GENERATIONS):
         pop.grade_multi(generation=x)
         if pop.done:
@@ -275,6 +287,6 @@ if __name__ == "__main__":
         plt.show()
 
     pop.save_gens_winner()
-    plot_winner()
+    scatterplot(pop.save_file)
     print("FINISCHED!!!")
 

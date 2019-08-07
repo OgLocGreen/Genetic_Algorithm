@@ -1,10 +1,10 @@
 \babel@toc {ngerman}{}
 \contentsline {figure}{\numberline {1}{\ignorespaces Ablaufdiagramm eines Genetischen Algorithmuses mit 5 Schritten\relax }}{9}
 \contentsline {figure}{\numberline {2}{\ignorespaces Beispiel einer Population mit 4 Induviduen (Chromsomen) welche 6 dezimale Gene besitzen\relax }}{10}
-\contentsline {figure}{\numberline {3}{\ignorespaces Rouletterad mit Proportinalen Anteil der Individuen anhand ihrere Fitness\relax }}{12}
+\contentsline {figure}{\numberline {3}{\ignorespaces Rouletterad mit proportinalen Anteil der Individuen anhand ihrere Fitness\relax }}{12}
 \contentsline {figure}{\numberline {4}{\ignorespaces Tunier Selektion mit k = 3 Individuen und dem Gewinner Individuum 3\relax }}{13}
-\contentsline {figure}{\numberline {5}{\ignorespaces Wichtigsten drei Crossover Operationen. Oben die One-point Crossover, mitte Two-point Crossover, unten Uniform Crossover. Auf der linken Seite sind Eltern abgebildet und auf der Rechtenseite die neu erzeugten Kinder\relax }}{14}
-\contentsline {figure}{\numberline {6}{\ignorespaces Muation von Genen um eine h\IeC {\"o}here diversit\IeC {\"a}t zu erhalten\relax }}{14}
-\contentsline {figure}{\numberline {7}{\ignorespaces K\IeC {\"u}nstliches Neuronales Netz mit drei Schichten je drei Neuronen \cite {Rashid2017} \relax }}{16}
-\contentsline {figure}{\numberline {8}{\ignorespaces Aufbau eines Neurons \cite {Rashid2017}\relax }}{17}
+\contentsline {figure}{\numberline {5}{\ignorespaces Die Wichtigsten drei Crossover Operationen. Oben die one-point Crossover, mitte two-point Crossover, unten Uniform Crossover. Auf der linken Seite sind Eltern abgebildet und auf der Rechtenseite die neu erzeugten Kinder\relax }}{14}
+\contentsline {figure}{\numberline {6}{\ignorespaces Muation von Genen um eine h\IeC {\"o}here Diversit\IeC {\"a}t zu erhalten\relax }}{15}
+\contentsline {figure}{\numberline {7}{\ignorespaces Aufbau eines Neurons\relax }}{16}
+\contentsline {figure}{\numberline {8}{\ignorespaces K\IeC {\"u}nstliches Neuronales Netz mit drei Schichten je drei Neuronen\relax }}{18}
 \contentsline {figure}{\numberline {9}{\ignorespaces Additives Design \IeC {\"u}ber mehrer Iterationen\relax }}{23}

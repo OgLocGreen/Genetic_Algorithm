@@ -8,10 +8,10 @@
 \contentsline {section}{\numberline {2}Grundlagen}{8}
 \contentsline {subsection}{\numberline {2.1}Optimierungsgrundlagen}{8}
 \contentsline {subsection}{\numberline {2.2}Genetische Algorithmen}{8}
-\contentsline {subsubsection}{\numberline {2.2.1}Aufbau und Initzialisierung der Population}{9}
-\contentsline {subsubsection}{\numberline {2.2.2}Fittnesfunktion}{11}
+\contentsline {subsubsection}{\numberline {2.2.1}Aufbau und Initialisierung der Population}{10}
+\contentsline {subsubsection}{\numberline {2.2.2}Fitnessfunktion}{11}
 \contentsline {subsubsection}{\numberline {2.2.3}Selektion der Eltern}{11}
-\contentsline {subsubsection}{\numberline {2.2.4}Vermehrung (eng. Breed)}{12}
+\contentsline {subsubsection}{\numberline {2.2.4}Vermehrung}{13}
 \contentsline {paragraph}{\nonumberline Crossover}{13}
 \contentsline {paragraph}{\nonumberline Mutation}{14}
 \contentsline {subsubsection}{\numberline {2.2.5}Neue Generation}{15}

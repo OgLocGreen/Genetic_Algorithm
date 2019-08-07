@@ -16,7 +16,7 @@ import os
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size):
+def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
     #%%
     ### Daten
     print("var_learningrate", var_learningrate, "var_dropout", var_dropout, "var_epoch", var_epoch, "var_batch_size", var_batch_size)
@@ -42,9 +42,19 @@ def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size):
 
     #%%si
     ### Optimizer
-    adam = keras.optimizers.Adam(lr=var_learningrate)
 
-    model.compile(optimizer=adam,
+
+
+
+    adam = keras.optimizers.Adam(lr=var_learningrate)
+    Adagrad = keras.optimizers.Adagrad(lr=var_learningrate)
+    RMSprop = keras.optimizers.RMSprop(lr=var_learningrate)
+    SGD = keras.optimizers.SGD(lr=var_learningrate)
+
+
+    optimizerarray = [adam, Adagrad, RMSprop, SGD]
+
+    model.compile(optimizer=optimizerarray[round(optimizer)],
                   loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
 

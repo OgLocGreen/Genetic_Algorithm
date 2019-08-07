@@ -1,13 +1,11 @@
 \begin{thebibliography}{1}
 
-\bibitem{Rashid2017}
-T.~Rashid.
-\newblock {\em Neuronale Netze selbst programmieren: Ein verst{\"a}ndlicher
-  Einstieg mit Python}.
-\newblock Animals. O'Reilly, 2017.
-
-\bibitem{FZI_Projekt}
-{Projekt Heike}.
+\bibitem{pbt}
+Max Jaderberg, Valentin Dalibard, Simon Osindero, Wojciech~M. Czarnecki, Jeff
+  Donahue, Ali Razavi, Oriol Vinyals, Tim Green, Iain Dunning, Karen Simonyan,
+  Chrisantha Fernando, and Koray Kavukcuoglu.
+\newblock Population based training of neural networks.
+\newblock {\em CoRR}, abs/1711.09846, 2017.
 
 \bibitem{shukla15}
 Anupriya Shukla, Hari Pandey, and Deepti Mehrotra.
