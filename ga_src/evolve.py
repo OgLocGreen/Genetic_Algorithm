@@ -61,7 +61,7 @@ class Population(object):
             """
             learningrate = random.uniform(0.0005, 0.1)
             dropout = random.uniform(0.05, 0.5)
-            epoch = random.uniform(5, 10)
+            epoch = random.uniform(50, 100)
             batchsize = random.uniform(32, 64)
             optimizer = random.uniform(0, 3)
             self.individuals.append(Individual(learningrate, dropout, epoch, batchsize, optimizer))
