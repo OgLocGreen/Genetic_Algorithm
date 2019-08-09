@@ -12,7 +12,7 @@ from plotting import plot_winner, plot_all, plot_histogram_all, scatterplot
 
 import gc
 import datetime
-
+import time
 
 #%%
 class Individual(object):
@@ -121,6 +121,17 @@ class Population(object):
 
     def crossover_random(self, father_gene, mother_gene):
         return [random.choice(pixel_pair) for pixel_pair in zip(father_gene, mother_gene)]
+
+    def crossover_onepoint(self, father_gene, mother_gene):
+        size = min(len(father_gene), len(mother_gene))
+        crossoverpoint = random.randint(1, size - 1)
+        ind1[cxpoint:], ind2[cxpoint:] = ind2[cxpoint:], ind1[cxpoint:]
+
+        
+
+
+
+
     
     def mutation_random(self, child_genes):
         for x in range(0, len(child_genes)):
@@ -267,18 +278,20 @@ if __name__ == "__main__":
 
     SHOW_PLOT = True
     GENERATIONS = 5
-    multiprocessing_flag = False
+    multiprocessing_flag = True
 
 
     pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
-
+    start= time.time()
     for x in range(GENERATIONS):
         if multiprocessing_flag:
             pop.grade_multi(generation=x)
         else:
             pop.grade_single(generation=x)
         if pop.done:
+            end = time.time()
             print("Finished at generation:", x, ", Population fistness:", pop.fitness_history[-1])
+            print("Finished after:",end-start," Seconds")
             break
         else:
             pop.evolve()
