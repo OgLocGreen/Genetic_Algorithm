@@ -67,9 +67,9 @@ class Population(object):
             self.individuals.append(Individual(learningrate, dropout, epoch, batchsize, optimizer))
 
     def grade_single(self, generation=None):
-        """
-            Grade the generation by getting the average fitness of its individuals
-        """
+
+        #Grade the generation by getting the average fitness of its individuals
+
         fitness_sum = 0
         i = 0
         for x in self.individuals:
@@ -89,8 +89,6 @@ class Population(object):
                 print("Episode", generation, "Population fitness:", pop_fitness)
                 print("----------------------------------------")
                 print("----------------------------------------")
-
-
 
     def grade_multi(self, generation=None):
         """
@@ -120,6 +118,22 @@ class Population(object):
                 print("Episode", generation, "Population fitness:", pop_fitness)
                 print("----------------------------------------")
                 print("----------------------------------------")
+
+    def crossover_random(self, father_gene, mother_gene):
+        return [random.choice(pixel_pair) for pixel_pair in zip(father_gene, mother_gene)]
+    
+    def mutation_random(self, child_genes):
+        for x in range(0, len(child_genes)):
+            tmp = child_genes[x]
+            mutation = random.uniform(0, self.mutate_prob)       ## Mutationsfaktor mutate prob
+            var = random.choice([True, False])      ## Funktion um Positive bzw. negative Mutation
+            if var is True:                         ## Mutation funktioniert in Prozent
+                tmp = tmp - (tmp * mutation)
+            else:
+                tmp = tmp + (tmp * mutation)
+            child_genes[x] = round(tmp,5)
+        print(child_genes)
+        return child_genes
 
     def select_parents(self):
         """
@@ -162,23 +176,16 @@ class Population(object):
                 mother = random.choice(self.parents)        ## mutte random aus eltern auswählen
                 if father != mother:                           ## wenn vatter nicht gleich mutter
                     ## kinder gegen werden zufällig aus den genen von Mutter und Vatter ausgewählt
-                    child_genes = [random.choice(pixel_pair) for pixel_pair in zip(father.gene, mother.gene)]
+                    child_gene = self.crossover_random(father.gene, mother.gene)
                     ## Mutation der Gene mit einem Faktor
-                    for x in range(0, len(child_genes)):
-                        tmp = child_genes[x]
-                        mutation = random.uniform(0, self.mutate_prob)       ## Mutationsfaktor mutate prob
-                        var = random.choice([True, False])      ## Funktion um Positive bzw. negative Mutation
-                        if var is True:                         ## Mutation funktioniert in Prozent
-                            tmp = tmp - (tmp * mutation)
-                        else:
-                            tmp = tmp + (tmp * mutation)
-                        child_genes[x] = round(tmp,5)          ## anschließend runden auf 5 nachkommastellen
-                    child = Individual(child_genes[0], child_genes[1], child_genes[2], child_genes[3], child_genes[4])
+                    child_gene_new = self.mutation_random(child_gene)
+
+                    child = Individual(child_gene_new[0], child_gene_new[1], child_gene_new[2], child_gene_new[3], child_gene_new[4])
                     children.append(child)
                 else:
                     print("father == mother selection new parents")
 
-            self.individuals = children       ##Kinder werden Individumen für nächste generation
+            self.individuals = children       # Kinder werden Individumen für nächste generation
             del children
             gc.collect()
 
@@ -253,19 +260,23 @@ def fitness_multi(individuum):
     return var_acc, var_loss
 
 if __name__ == "__main__":
-    pop_size = 25
+    pop_size = 10
     mutate_prob = 0.3
     retain = 0.5
     random_retain = 0.05
 
     SHOW_PLOT = True
-    GENERATIONS = 10
+    GENERATIONS = 5
+    multiprocessing_flag = False
 
 
     pop = Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
 
     for x in range(GENERATIONS):
-        pop.grade_multi(generation=x)
+        if multiprocessing_flag:
+            pop.grade_multi(generation=x)
+        else:
+            pop.grade_single(generation=x)
         if pop.done:
             print("Finished at generation:", x, ", Population fistness:", pop.fitness_history[-1])
             break

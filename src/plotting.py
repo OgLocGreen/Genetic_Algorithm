@@ -46,8 +46,8 @@ def plot_all(file):
         y = []
         for individum in data[pop]:
             try:
-                x.append(data[pop][individum]["acc"])    ## hier dürfte noch ein fehler sein
-                y.append(data[pop][individum]["loss"])   ## hier dürfte noch ein feheler sein
+                x.append(float(data[pop][individum]["acc"]))    ## hier dürfte noch ein fehler sein
+                y.append(float(data[pop][individum]["loss"]))   ## hier dürfte noch ein feheler sein
             except:
                 print(pop,individum)
         plt.scatter(x, y, s=80, marker="+")
@@ -85,13 +85,13 @@ def plot_histogram_all(file):
 
     anzahl = 0
     for individum in data["Winner"]:
-        learningrate.append(data["Winner"][individum]["learningrate"])
-        batchsize.append(data["Winner"][individum]["batchsize"])
-        dropout.append(data["Winner"][individum]["dropout"])
-        epoch.append(data["Winner"][individum]["epoch"])
-        optimizer.append(data["Winner"][individum]["optimizer"])
+        learningrate.append(float(data["Winner"][individum]["learningrate"]))
+        batchsize.append(float(data["Winner"][individum]["batchsize"]))
+        dropout.append(float(data["Winner"][individum]["dropout"]))
+        epoch.append(float(data["Winner"][individum]["epoch"]))
+        optimizer.append(float(data["Winner"][individum]["optimizer"]))
         anzahl += 1
-
+    
     print('learningrate mean=%.5f stdv=%.5f' % (np.mean(learningrate), np.std(learningrate)))
     plot_histogram("learningrate",learningrate)
     print('batchsize mean=%.5f stdv=%.5f' % (np.mean(batchsize), np.std(batchsize)))
