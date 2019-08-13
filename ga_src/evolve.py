@@ -270,13 +270,13 @@ def fitness_multi(individuum):
     return var_acc, var_loss
 
 if __name__ == "__main__":
-    pop_size = 10
+    pop_size = 30
     mutate_prob = 0.3
-    retain = 0.5
+    retain = 0.6
     random_retain = 0.05
 
     SHOW_PLOT = True
-    GENERATIONS = 5
+    GENERATIONS = 10
     multiprocessing_flag = True
 
 
