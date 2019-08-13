@@ -2,6 +2,7 @@
 
 **/infos/*
 **/logs/*
+**/.vscode/*
 .idea
 *test.foo
 infos/

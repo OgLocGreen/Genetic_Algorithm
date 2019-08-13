@@ -27,32 +27,32 @@
 \contentsline {subsubsection}{\numberline {2.3.5}Hyperparameter}{19}
 \contentsline {subsection}{\numberline {2.4}Zusammenfassung}{20}
 \contentsline {section}{\numberline {3}Stand der Forschung und Technik}{21}
-\contentsline {subsection}{\numberline {3.1}Forschung}{21}
-\contentsline {subsubsection}{\numberline {3.1.1}Deep Mind}{21}
-\contentsline {subsubsection}{\numberline {3.1.2}PBT}{21}
-\contentsline {subsection}{\numberline {3.2}Software Testing with Ga}{21}
-\contentsline {subsection}{\numberline {3.3}Travelling Salesman Problem}{22}
-\contentsline {subsection}{\numberline {3.4}Nicht it anwendungen}{22}
-\contentsline {subsection}{\numberline {3.5}Generativ Design}{22}
-\contentsline {subsection}{\numberline {3.6}GLEAM}{23}
-\contentsline {subsection}{\numberline {3.7}Reainforcment learning with GA}{23}
-\contentsline {subsection}{\numberline {3.8}Zusammenfassung}{23}
-\contentsline {section}{\numberline {4}Konzept}{24}
-\contentsline {subsection}{\numberline {4.1}Anforderungsanalyse}{24}
-\contentsline {subsection}{\numberline {4.2}Genetischer Algorithmus}{24}
-\contentsline {subsubsection}{\numberline {4.2.1}Eltern auswahl}{24}
-\contentsline {subsection}{\numberline {4.3}Zusammenfassung}{24}
-\contentsline {section}{\numberline {5}Implementierung}{25}
-\contentsline {subsection}{\numberline {5.1}Systemaufbau}{25}
-\contentsline {subsection}{\numberline {5.2}Zusammenfassung}{25}
-\contentsline {section}{\numberline {6}Evaluation und Tests}{26}
-\contentsline {subsection}{\numberline {6.1}Einleitung}{26}
-\contentsline {subsection}{\numberline {6.2}Testszenarien}{26}
-\contentsline {subsection}{\numberline {6.3}Evaluation}{26}
-\contentsline {subsection}{\numberline {6.4}Ergebniss und Interpretation}{26}
-\contentsline {subsection}{\numberline {6.5}Zusammenfassung}{26}
-\contentsline {section}{\numberline {7}Zusammenfassung und Ausblick}{27}
-\contentsline {subsection}{\numberline {7.1}Einleitung}{27}
-\contentsline {subsection}{\numberline {7.2}Zusammenfassung}{27}
-\contentsline {subsection}{\numberline {7.3}Bedeutung der Arbeit}{27}
-\contentsline {subsection}{\numberline {7.4}Ausblick}{27}
+\contentsline {subsection}{\numberline {3.1}Deep Mind}{21}
+\contentsline {subsection}{\numberline {3.2}PopulationBasedTraining}{21}
+\contentsline {subsection}{\numberline {3.3}Software Testing with Ga}{21}
+\contentsline {subsection}{\numberline {3.4}Travelling Salesman Problem}{22}
+\contentsline {subsection}{\numberline {3.5}Temperatur Sch\IeC {\"a}tzungen}{22}
+\contentsline {subsection}{\numberline {3.6}Generativ Design}{22}
+\contentsline {paragraph}{\nonumberline NASA - Antenne}{23}
+\contentsline {subsection}{\numberline {3.7}GLEAM}{23}
+\contentsline {subsection}{\numberline {3.8}Reainforcment learning with GA}{24}
+\contentsline {subsection}{\numberline {3.9}Zusammenfassung}{24}
+\contentsline {section}{\numberline {4}Konzept}{25}
+\contentsline {subsection}{\numberline {4.1}Anforderungsanalyse}{25}
+\contentsline {subsection}{\numberline {4.2}Genetischer Algorithmus}{25}
+\contentsline {subsubsection}{\numberline {4.2.1}Eltern auswahl}{25}
+\contentsline {subsection}{\numberline {4.3}Zusammenfassung}{25}
+\contentsline {section}{\numberline {5}Implementierung}{26}
+\contentsline {subsection}{\numberline {5.1}Systemaufbau}{26}
+\contentsline {subsection}{\numberline {5.2}Zusammenfassung}{26}
+\contentsline {section}{\numberline {6}Evaluation und Tests}{27}
+\contentsline {subsection}{\numberline {6.1}Einleitung}{27}
+\contentsline {subsection}{\numberline {6.2}Testszenarien}{27}
+\contentsline {subsection}{\numberline {6.3}Evaluation}{27}
+\contentsline {subsection}{\numberline {6.4}Ergebniss und Interpretation}{27}
+\contentsline {subsection}{\numberline {6.5}Zusammenfassung}{27}
+\contentsline {section}{\numberline {7}Zusammenfassung und Ausblick}{28}
+\contentsline {subsection}{\numberline {7.1}Einleitung}{28}
+\contentsline {subsection}{\numberline {7.2}Zusammenfassung}{28}
+\contentsline {subsection}{\numberline {7.3}Bedeutung der Arbeit}{28}
+\contentsline {subsection}{\numberline {7.4}Ausblick}{28}

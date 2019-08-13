@@ -98,7 +98,6 @@ class Population(object):
 
         p = multiprocessing.Pool(processes=2)
 
-        #print(p.map(fitness_multi,self.individuals))
         accloss = p.map(fitness_multi,self.individuals)
 
         i=0
@@ -125,7 +124,7 @@ class Population(object):
     def crossover_onepoint(self, father_gene, mother_gene):
         size = min(len(father_gene), len(mother_gene))
         crossoverpoint = random.randint(1, size - 1)
-        ind1[cxpoint:], ind2[cxpoint:] = ind2[cxpoint:], ind1[cxpoint:]
+        father_gene[crossoverpoint:], mother_gene[crossoverpoint:] = mother_gene[crossoverpoint:], father_gene[crossoverpoint:]
 
         
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.7.29)  6 AUG 2019 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.7.29)  13 AUG 2019 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -925,6 +925,9 @@ LaTeX Warning: Label `fig:roulette_wheel' multiply defined.
 
 LaTeX Warning: Label `fig:Ablauf_kurz' multiply defined.
 
+
+LaTeX Warning: Label `fig:Ablauf_kurz' multiply defined.
+
 ) (./07_konzept.aux) (./08_implementierung.aux) (./09_evaluation.aux)
 (./10_ausblick.aux))
 \openout1 = `"00_Vorlage Abschlussarbeit.aux"'.
@@ -1172,49 +1175,56 @@ Package pdftex.def Info: img/mlp.png  used on input line 263.
 <img/Additive.png, id=113, 803.0pt x 401.5pt>
 File: img/Additive.png Graphic file (type png)
 <use img/Additive.png>
-Package pdftex.def Info: img/Additive.png  used on input line 35.
+Package pdftex.def Info: img/Additive.png  used on input line 36.
 (pdftex.def)             Requested size: 240.90186pt x 120.45091pt.
- [22]) [23 <./img/Additive.png>]
+ [22]
+<img/nasa-antenne.png, id=117, 624.3325pt x 292.09125pt>
+File: img/nasa-antenne.png Graphic file (type png)
+<use img/nasa-antenne.png>
+Package pdftex.def Info: img/nasa-antenne.png  used on input line 47.
+(pdftex.def)             Requested size: 312.16548pt x 146.04526pt.
+ [23 <./img/Additive.png> <./img/nasa-antenne.png>]) [24]
 \openout2 = `07_konzept.aux'.
 
- (./07_konzept.tex) [24
+ (./07_konzept.tex) [25
 
 
 ]
 \openout2 = `08_implementierung.aux'.
 
- (./08_implementierung.tex) [25
+
+(./08_implementierung.tex) [26
 
 
 ]
 \openout2 = `09_evaluation.aux'.
 
-
-(./09_evaluation.tex) [26
+ (./09_evaluation.tex) [27
 
 
 ]
 \openout2 = `10_ausblick.aux'.
 
- (./10_ausblick.tex) [27
+ (./10_ausblick.tex)
+[28
 
 
-]
-(./00_Vorlage Abschlussarbeit.bbl) [28
+] (./00_Vorlage Abschlussarbeit.bbl [29
 
-] (./00_Vorlage Abschlussarbeit.aux
-(./01_titel.aux) (./02_eigen.aux) (./03_ausschreibung.aux) (./04_einleitung.aux
-) (./05_grundlagen.aux) (./06_standdertechnik.aux) (./07_konzept.aux)
-(./08_implementierung.aux) (./09_evaluation.aux) (./10_ausblick.aux))
+]) [30]
+(./00_Vorlage Abschlussarbeit.aux (./01_titel.aux) (./02_eigen.aux)
+(./03_ausschreibung.aux) (./04_einleitung.aux) (./05_grundlagen.aux)
+(./06_standdertechnik.aux) (./07_konzept.aux) (./08_implementierung.aux)
+(./09_evaluation.aux) (./10_ausblick.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18297 strings out of 492982
- 346053 string characters out of 6134896
- 583822 words of memory out of 5000000
- 21404 multiletter control sequences out of 15000+600000
+ 18308 strings out of 492982
+ 346244 string characters out of 6134896
+ 583842 words of memory out of 5000000
+ 21414 multiletter control sequences out of 15000+600000
  18905 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,14n,100p,8839b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1236,10 +1246,10 @@ per/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></u
 sr/share/texmf/fonts/type1/public/cm-super/sfsx1095.pfb></usr/share/texmf/fonts
 /type1/public/cm-super/sfsx1200.pfb></usr/share/texmf/fonts/type1/public/cm-sup
 er/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on "00_Vorlage Abschlussarbeit.pdf" (28 pages, 575007 bytes).
+Output written on "00_Vorlage Abschlussarbeit.pdf" (30 pages, 847140 bytes).
 PDF statistics:
- 205 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
+ 213 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 68 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

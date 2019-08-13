@@ -1,14 +1,19 @@
 \section{Stand der Forschung und Technik}
-\subsection{Forschung}
-In der Forschung werden Genetische Algorithmen häufig zufinden. Gerade die großen Unternehmmen in der IT branche erforschen sehr viel.
+Durch die gestiegene Rechenleistung der heutigen Computer ist auch die anwendungshäufigkeit deutlich gestiegen. 
+Es werden nicht nur neue Ansätze von großen Unternehmmen wie Google Deepmind entwickelt. Sondern auch kleiner anwendungen die nicht nur im IT-Bereich ihre anwendungen finden.
 
-\subsubsection{Deep Mind}
- So etwa auch Googles Deep Learning ableger Deep Mind. Welcher für viele bahnbrechende neuerungen im Themenfeld Künstliche Inteligenz bekannt geworden ist. Unteranderem haben sie AlphaGo, die erste Künstliche Intiligenz welche einen Menschen in GO besiegte oder Alpha Start welche einen der Besten Menschen im Computerspiel Starcraft2 besiegte. In all diesen Projekten wurde das von DeepMind entwickelte PBT welches auf den GA aufbaut angewendet.
- 
+\subsection{Deep Mind}
+Den größten Fortschitt der letzen Jahre verzeichnete Googles Deepmind. Google setzt dabie auch auf einen Populations bassierenden Algorithmus welcher auf den Genetischen Algorithmen aufbaut. Zum selbst Algortihmus später mehr. Goolge nutz ihre PopulationBasedTraining vorallem im Bereich der Künstlichen Inteligzenz. So konnten sie bei verschiedene Knns wie AlphaGo(Go)\cite{alphago} und AlphaStar(Starcraft2)\cite{alphastar} deutliche verbesserungen durch das PBT erreichen. Google verwendet PBT nicht nur für Brett- bzw. Computer-spiele sodnern auch für Anwendungen im Bereich des autonomen fahrens in zusammenarbeit mit der Google-Tochter Waymo. 
 
-\subsubsection{PBT} 
-Google Deep Mind ist eine sehr große Forschungsabteilung. 
-Sie verwenden Algorithem die dem GA Sehr ähnlich(weiter entwickelt) ist und zwar das Population bassierende Training (eng. Poulation Based Training short PBT). Sie benutzen PBT auch zum anpassen von Hyperparametern speziel für ihre Reinforcment Learning Models. Deep Minds Variante des GA ist sehr viel komplexer. Sie haben ein Online Learn verfahren in welchem sie die Hyperparameter während des Trainings anpassen können, dies ist durch einen einen Server auf dem die daten gespeichert sind möglich. Dieser gibt ihnen auch die möglichkeit Asynchron und Parallel zu arbeiten. Im Durschnitt kontne sie ihre Ergebnisse noch einmal um bis zu 5 Prozent verbesser. 
+\subsection{PopulationBasedTraining}
+PBT ist eine weiter entwicklung der klassischen Grid- und Randomsearch und wird von den Genetischen Grundlagen stark beinflusst. Dies ist zusehen daran das PBT auch eine Population verwendet, auch werden hier die übernahmme des Fitesten und Muationen verwendet. Zudem ist das Training Asynchron und Parallel möglich.
+Desweitern wurde ein online anpassung der Hyperparameter wärend des Trainings implementiert. Durch dieses Feature, wird viel Rechenleistung eingespaart bzw. das berechnen der Hyperparameter stark beschleunigt. \cite{pbt}
+
+
+\iffalse
+Sie verwenden Algorithem die dem GA Sehr ähnlich(weiter entwickelt) ist und zwar das Population bassierende Training (eng. Poulation Based Training short PBT). Sie benutzen PBT auch zum anpassen von Hyperparametern speziel für ihre Reinforcment Learning Models. Deep Minds Variante des GA ist sehr viel komplexer. 
+Sie haben ein Online-Learn verfahren in welchem sie die Hyperparameter während des Trainings anpassen können, dies ist durch einen einen Server auf dem die daten gespeichert sind möglich. Dieser gibt ihnen auch die möglichkeit Asynchron und Parallel zu arbeiten. Im Durschnitt kontne sie ihre Ergebnisse noch einmal um bis zu 5 Prozent verbessern. 
+\fi
 
 \subsection{Software Testing with Ga}
 Die Softwarebewertung spielt eine entscheidende Rolle im Lebenszyklus eines Software-Produktionssystems. Die Erzeugung geeigneter Daten zum Testen des Verhaltens der Software ist Gegenstand vieler Forschungen im Software-Engineering.  In diesem Beitrag wird die Qualitätskontrolle mit Kriterien zur Abdeckung von Anwendungspfaden betrachtet und ein neues Verfahren auf der Grundlage eines genetischen Algorithmus zur Erzeugung optimaler Testdaten vorgeschlagen. 
@@ -18,16 +23,12 @@ Die Softwarebewertung spielt eine entscheidende Rolle im Lebenszyklus eines Soft
 \subsection{Travelling Salesman Problem}
 Einer der bekanntesten anwendungen ist das Travelling Salesman Problem, in welchem die kürzeste Route für einen Postboten berechnet werden soll. Doch je mehr Briefe der Postbote austragen soll umso mehr Variablen gibt es, sprich es wird wesentlich schwerer für ein fest geschrieben (eng. Hardcoded) Algorithmus den kürzesten weg zu finden. Für den Ga ist dies kein Problem da mit der richtigen Fitnessfunktion eine einfacher Rückgabewert der Funktion zu bekommen ist. Dementsprechend kann die Route einfach optimiert werden.
 
-
-\subsection{Nicht it anwendungen}
-Genetische Algorithem werden nicht nur in der It oder Technik angewendet. Es gibt auch Forschungen zur berechnung von Temperatur verlaufs der Erde  \cite{Stanislawska1} mit Genetischen Algorithmen oder auch für abschätzungen von Wäreme flusses zwischen Athmosphäre und Meereies in Polarregeionen \cite{Stanislawska2} benutzt. 
-
-Die NASA hat eine Weltraumantenne mit hilfe von Genetischen algorithmen entwickelt. Es können also auch Konstruktionen mit hilfe von Genetischen Algortihmen erschaffen werden.
-
+\subsection{Temperatur Schätzungen}
+Es gibt auch Forschungen zur berechnung von Temperaturverläufen der Erde \cite{Stanislawska1}. Vom gleichen Author gibt es auch eine abschätzungen von Wäreme flusses zwischen Athmosphäre und Meereies in Polarregeionen \cite{Stanislawska2}. All diese Berechnungen wurden mithilfe von Genetischen Algorithmen ausgerechnet. In dem die Aufzeichnungen der Temperaturverläufe als Trainingsdaten verwendet werden konnten Lösungen gefunden werden, welche den rellen daten sehr nahe kommen.
 
 \subsection{Generativ Design}
-Heute gibt es in manchen Computer-aided design (CAD) schon implementierungen von Generativen Design Werkzeugen. In dennen über Iterationen neue mögliche Designs auf Basis der Genetischen Evolutio. Sie bauen nicht auf den Genetischen Algorithmen auf sind aber nahe verwante und sollten nicht unterschätzt werden. 
-Mit ihnen ist es möglich Bionische Stukturen für addetive Vertigung zu designen. Und sie speziell auf die Anwendung anpassen. So kann aus einem einfachen Frästeil ein wesentlich Leichtes und material spaarenderes Model entwickelt werden.
+Heute gibt es in viele Computer-aided design(CAD) Programme in welchen es implementierungen von Generativen Design Werkzeugen gibt. In dennen über Iterationen neue mögliche Designs berechnet werden deis passiert auch auf Basis der Genetischen Evolution. Sie bauen nicht auf den Genetischen Algorithmen auf sind aber nahe verwante und sollten nicht unterschätzt werden. 
+Mit ihnen ist es möglich Bionische Stukturen für addetive Vertigung zu designen. Und sie speziell auf die Anwendung anpassen. So kann aus einem einfachen Frästeil ein wesentlich Leichtes und Material spaarenderes Model entwickelt werden.
 
 \noindent%
 \begin{figure}[H]
@@ -37,8 +38,16 @@ Mit ihnen ist es möglich Bionische Stukturen für addetive Vertigung zu designe
   \label{fig:Ablauf_kurz}
 \end{figure}
 
-
-
+\paragraph{NASA - Antenne}
+DIe Nasa hat 2006 eine Weltraumantenne mit hilfe evolutionären Algorithmen entwickelt. Die Entwicklung der Antenne von hand ist sehr zeitaufwändig und arbeitsintehnsiv, zusätzlich braucht man großes wissen in der entsprächenden Domain. Deshalb nutzen die Forscher einen Populations bezogenen Suchansatz, um Umgebungsstrukturen und  elektromagnetischer mit einzubeziehen. Die entwickelte Antenne wurde produziert und auch auf Space Technology 5 mission genutzt.
+\cite{AutomatedAntenna}
+\noindent%
+\begin{figure}[H]
+  \centering  
+  \includegraphics[scale=0.5]{img/nasa-antenne.png}
+  \caption{Foto der Prototypen. Für die Antennen wurden verschiedene Anforderungen als Grundlage gegeben. \cite{AutomatedAntenna}}
+  \label{fig:Ablauf_kurz}
+\end{figure}
 
 
 \subsection{GLEAM}

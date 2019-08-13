@@ -1,4 +1,8 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{AutomatedAntenna}
+Gregory Hornby, Al~Globus, Derek Linden, and Jason Lohn.
+\newblock {\em Automated Antenna Design with Evolutionary Algorithms}.
 
 \bibitem{pbt}
 Max Jaderberg, Valentin Dalibard, Simon Osindero, Wojciech~M. Czarnecki, Jeff
@@ -31,6 +35,20 @@ Dr.~Anantkumar Umbarkar and P~Sheth.
 \newblock Crossover operators in genetic algorithms: A review.
 \newblock {\em ICTACT Journal on Soft Computing ( Volume: 6 , Issue: 1 )}, 6,
   10 2015.
+
+\bibitem{alphago}
+David Silver, Aja Huang, Christopher~J. Maddison, Arthur Guez, Laurent Sifre,
+  George van~den Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda
+  Panneershelvam, Marc Lanctot, Sander Dieleman, Dominik Grewe, John Nham, Nal
+  Kalchbrenner, Ilya Sutskever, Timothy Lillicrap, Madeleine Leach, Koray
+  Kavukcuoglu, Thore Graepel, and Demis Hassabis.
+\newblock Mastering the game of go with deep neural networks and tree search.
+\newblock {\em Nature}, 529:484--503, 2016.
+
+\bibitem{alphastar}
+Kai Arulkumaran, Antoine Cully, and Julian Togelius.
+\newblock Alphastar: An evolutionary computation perspective.
+\newblock {\em CoRR}, abs/1902.01724, 2019.
 
 \bibitem{Keshavarz}
 Sina Keshavarz and Reza Javidan.
