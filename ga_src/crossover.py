@@ -64,3 +64,6 @@ def uniform(father_gene,mother_gene,mutation_prob):
 
     return father_gene, mother_gene
 
+
+def zufall(father_gene, mother_gene):
+        return [random.choice(pixel_pair) for pixel_pair in zip(father_gene, mother_gene)]

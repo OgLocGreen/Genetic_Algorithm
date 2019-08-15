@@ -61,12 +61,4 @@ Karolina Stanislawska, Krzysztof Krawiec, and Zbigniew~W. Kundzewicz.
 \newblock Modeling global temperature changes with genetic programming.
 \newblock {\em Comput. Math. Appl.}, 64(12):3717--3728, December 2012.
 
-\bibitem{Stanislawska2}
-Karolina Stanislawska, Krzysztof Krawiec, and Timo Vihma.
-\newblock Genetic programming for estimation of heat flux between the
-  atmosphere and sea ice in polar regions.
-\newblock In {\em Proceedings of the 2015 Annual Conference on Genetic and
-  Evolutionary Computation}, GECCO '15, pages 1279--1286, New York, NY, USA,
-  2015. ACM.
-
 \end{thebibliography}

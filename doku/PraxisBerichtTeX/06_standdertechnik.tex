@@ -1,30 +1,36 @@
 \section{Stand der Forschung und Technik}
-Durch die gestiegene Rechenleistung der heutigen Computer ist auch die anwendungshäufigkeit deutlich gestiegen. 
-Es werden nicht nur neue Ansätze von großen Unternehmmen wie Google Deepmind entwickelt. Sondern auch kleiner anwendungen die nicht nur im IT-Bereich ihre anwendungen finden.
+Durch die gestiegene Rechenleistung der heutigen Computer ist auch die anwendungshäufigkeit von Genetischen Algorithmen deutlich gestiegen. Es werden nicht nur neue Ansätze erforscht, sondern auch kleiner Anwendungen entwickelt, die nicht nur im IT-Bereich ihre anwendungen finden.
 
 \subsection{Deep Mind}
-Den größten Fortschitt der letzen Jahre verzeichnete Googles Deepmind. Google setzt dabie auch auf einen Populations bassierenden Algorithmus welcher auf den Genetischen Algorithmen aufbaut. Zum selbst Algortihmus später mehr. Goolge nutz ihre PopulationBasedTraining vorallem im Bereich der Künstlichen Inteligzenz. So konnten sie bei verschiedene Knns wie AlphaGo(Go)\cite{alphago} und AlphaStar(Starcraft2)\cite{alphastar} deutliche verbesserungen durch das PBT erreichen. Google verwendet PBT nicht nur für Brett- bzw. Computer-spiele sodnern auch für Anwendungen im Bereich des autonomen fahrens in zusammenarbeit mit der Google-Tochter Waymo. 
+Den größten Fortschitt der letzen Jahre verzeichnete Googles Deepmind. Deepmind setzt dabei auch auf einen Populations bassierenden Algorithmus, welcher auf den Genetischen Algorithmen aufbaut. Goolge nutz ihre PopulationBasedTraining vorallem im Bereich der Künstlichen Inteligzenz. So konnten sie bei verschiedene Künstlichen Neuronalen Netzen wie AlphaGo(Go)\cite{alphago} und AlphaStar(Starcraft2)\cite{alphastar} deutliche verbesserungen durch das PBT erreichen. Das PBT wird nicht nur für Brett- bzw. Computer-spiele genutzt. Sondern auch für Anwendungen im Bereich des autonomen Fahrens. Dort wurde in zusammenarbeit mit der Google-Tochter Waymo eine deutliche Verbesserung der xxxgesamt Leistungxxx ausgearbeitet. 
 
 \subsection{PopulationBasedTraining}
-PBT ist eine weiter entwicklung der klassischen Grid- und Randomsearch und wird von den Genetischen Grundlagen stark beinflusst. Dies ist zusehen daran das PBT auch eine Population verwendet, auch werden hier die übernahmme des Fitesten und Muationen verwendet. Zudem ist das Training Asynchron und Parallel möglich.
+PBT ist eine weiter entwicklung der klassischen Grid- und Randomsearch und wird von den Genetischen Grundlagen stark beinflusst. PBT ist wie Ga ein Populations bassierender such algorithmus es werden hier auch weiter methoden wie survival of the Fitest und Muation übernommen. Desweitern wurde ein online anpassung der Hyperparameter wärend des Trainings implementiert. Durch dieses Feature, wird viel Rechenleistung eingespaart bzw. das berechnen der Hyperparameter stark beschleunigt. \cite{pbt}
+
+\iffalse
+Dies ist zusehen daran das PBT auch eine Population verwendet, auch werden hier die übernahmme des Fitesten und Muationen verwendet. Zudem ist das Training Asynchron und Parallel möglich.
 Desweitern wurde ein online anpassung der Hyperparameter wärend des Trainings implementiert. Durch dieses Feature, wird viel Rechenleistung eingespaart bzw. das berechnen der Hyperparameter stark beschleunigt. \cite{pbt}
 
 
-\iffalse
 Sie verwenden Algorithem die dem GA Sehr ähnlich(weiter entwickelt) ist und zwar das Population bassierende Training (eng. Poulation Based Training short PBT). Sie benutzen PBT auch zum anpassen von Hyperparametern speziel für ihre Reinforcment Learning Models. Deep Minds Variante des GA ist sehr viel komplexer. 
 Sie haben ein Online-Learn verfahren in welchem sie die Hyperparameter während des Trainings anpassen können, dies ist durch einen einen Server auf dem die daten gespeichert sind möglich. Dieser gibt ihnen auch die möglichkeit Asynchron und Parallel zu arbeiten. Im Durschnitt kontne sie ihre Ergebnisse noch einmal um bis zu 5 Prozent verbessern. 
 \fi
 
 \subsection{Software Testing with Ga}
-Die Softwarebewertung spielt eine entscheidende Rolle im Lebenszyklus eines Software-Produktionssystems. Die Erzeugung geeigneter Daten zum Testen des Verhaltens der Software ist Gegenstand vieler Forschungen im Software-Engineering.  In diesem Beitrag wird die Qualitätskontrolle mit Kriterien zur Abdeckung von Anwendungspfaden betrachtet und ein neues Verfahren auf der Grundlage eines genetischen Algorithmus zur Erzeugung optimaler Testdaten vorgeschlagen. 
+Die Softwarebewertung spielt eine entscheidende Rolle im Lebenszyklus eines Software-Produktionssystems. Die Erzeugung geeigneter Daten zum Testen des Verhaltens der Software ist Gegenstand vieler Forschungen im Software-Engineering. In diesem Beitrag wird die Qualitätskontrolle mit Kriterien zur Abdeckung von Anwendungspfaden betrachtet und ein neues Verfahren auf der Grundlage eines genetischen Algorithmus zur Erzeugung optimaler Testdaten vorgeschlagen. 
 \cite{Keshavarz}
 
 
 \subsection{Travelling Salesman Problem}
-Einer der bekanntesten anwendungen ist das Travelling Salesman Problem, in welchem die kürzeste Route für einen Postboten berechnet werden soll. Doch je mehr Briefe der Postbote austragen soll umso mehr Variablen gibt es, sprich es wird wesentlich schwerer für ein fest geschrieben (eng. Hardcoded) Algorithmus den kürzesten weg zu finden. Für den Ga ist dies kein Problem da mit der richtigen Fitnessfunktion eine einfacher Rückgabewert der Funktion zu bekommen ist. Dementsprechend kann die Route einfach optimiert werden.
+Einer der bekanntesten anwendungen für GA ist das Travelling Salesman Problem, in welchem die kürzeste Route beim Austragen von Briefen für einen Postboten berechnet werden soll. Es ist ein Optimales Problem zum Lösen für GA, durch die zurückgelegte steckte kann leichte eine Fitnessfunktion aufgestellt werden. Desweitern wird der Suchbereich mit jedem auszutragenden Brief um einen Expotonenten größer. Und ist somit für gänige Algorothmen nur mit sehr viel Rechnleistung zu bewältigen.
+
+ Doch je mehr Briefe der Postbote austragen soll umso mehr Variablen gibt es, sprich es wird wesentlich schwerer für ein fest geschrieben (eng. Hardcoded) Algorithmus den kürzesten weg zu finden. Für den Ga ist dies kein Problem da mit der richtigen Fitnessfunktion eine einfacher Rückgabewert der Funktion zu bekommen ist. Dementsprechend kann die Route einfach optimiert werden.
 
 \subsection{Temperatur Schätzungen}
-Es gibt auch Forschungen zur berechnung von Temperaturverläufen der Erde \cite{Stanislawska1}. Vom gleichen Author gibt es auch eine abschätzungen von Wäreme flusses zwischen Athmosphäre und Meereies in Polarregeionen \cite{Stanislawska2}. All diese Berechnungen wurden mithilfe von Genetischen Algorithmen ausgerechnet. In dem die Aufzeichnungen der Temperaturverläufe als Trainingsdaten verwendet werden konnten Lösungen gefunden werden, welche den rellen daten sehr nahe kommen.
+--Fällt weg-- wegen GP 
+Es gibt auch Forschungen zur berechnung von Temperaturverläufen der Erde \cite{Stanislawska1}. Vom gleichen Author gibt es auch eine abschätzungen von Wärmeflusses zwischen Athmosphäre und Meereies in Polarregeionen \cite{Stanislawska,2}. All diese Vorraussagen wurden mithilfe von Genetischen Programming ausgerechnet. 
+
+In dem die Aufzeichnungen der Temperaturverläufe als Trainingsdaten verwendet werden konnten Lösungen gefunden werden, welche den rellen daten sehr nahe kommen.
 
 \subsection{Generativ Design}
 Heute gibt es in viele Computer-aided design(CAD) Programme in welchen es implementierungen von Generativen Design Werkzeugen gibt. In dennen über Iterationen neue mögliche Designs berechnet werden deis passiert auch auf Basis der Genetischen Evolution. Sie bauen nicht auf den Genetischen Algorithmen auf sind aber nahe verwante und sollten nicht unterschätzt werden. 
@@ -45,7 +51,7 @@ DIe Nasa hat 2006 eine Weltraumantenne mit hilfe evolutionären Algorithmen entw
 \begin{figure}[H]
   \centering  
   \includegraphics[scale=0.5]{img/nasa-antenne.png}
-  \caption{Foto der Prototypen. Für die Antennen wurden verschiedene Anforderungen als Grundlage gegeben. \cite{AutomatedAntenna}}
+  \caption{Foto der Prototypen für unterschiedliche Anforderungen. \cite{AutomatedAntenna}}
   \label{fig:Ablauf_kurz}
 \end{figure}
 

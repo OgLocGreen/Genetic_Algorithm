@@ -230,6 +230,7 @@ if __name__ == "__main__":
     save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
                                        datetime.datetime.now().month,
                                        datetime.datetime.now().day)
+    save_file = "ergebnisse.json"
 
 
     scatterplot(save_file)

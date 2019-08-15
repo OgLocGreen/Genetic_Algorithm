@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.7.29)  13 AUG 2019 14:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.7.29)  15 AUG 2019 13:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1136,11 +1136,11 @@ File: img/roulette_wheel.png Graphic file (type png)
 Package pdftex.def Info: img/roulette_wheel.png  used on input line 106.
 (pdftex.def)             Requested size: 160.09772pt x 145.04152pt.
 [11]
-<img/tunier.png, id=67, 362.35374pt x 192.72pt>
+<img/tunier.png, id=67, 372.39125pt x 191.71625pt>
 File: img/tunier.png Graphic file (type png)
 <use img/tunier.png>
 Package pdftex.def Info: img/tunier.png  used on input line 132.
-(pdftex.def)             Requested size: 253.64589pt x 134.90306pt.
+(pdftex.def)             Requested size: 260.67209pt x 134.20045pt.
  [12 <./img/roulette_wheel.png>]
 <img/crossover_gene.png, id=75, 563.10374pt x 412.54124pt>
 File: img/crossover_gene.png Graphic file (type png)
@@ -1172,16 +1172,22 @@ Package pdftex.def Info: img/mlp.png  used on input line 263.
 
 
 ]
+
+LaTeX Warning: Citation `Stanislawska' on page 22 undefined on input line 30.
+
+
+LaTeX Warning: Citation `2' on page 22 undefined on input line 30.
+
 <img/Additive.png, id=113, 803.0pt x 401.5pt>
 File: img/Additive.png Graphic file (type png)
 <use img/Additive.png>
-Package pdftex.def Info: img/Additive.png  used on input line 36.
+Package pdftex.def Info: img/Additive.png  used on input line 41.
 (pdftex.def)             Requested size: 240.90186pt x 120.45091pt.
- [22]
+[22]
 <img/nasa-antenne.png, id=117, 624.3325pt x 292.09125pt>
 File: img/nasa-antenne.png Graphic file (type png)
 <use img/nasa-antenne.png>
-Package pdftex.def Info: img/nasa-antenne.png  used on input line 47.
+Package pdftex.def Info: img/nasa-antenne.png  used on input line 52.
 (pdftex.def)             Requested size: 312.16548pt x 146.04526pt.
  [23 <./img/Additive.png> <./img/nasa-antenne.png>]) [24]
 \openout2 = `07_konzept.aux'.
@@ -1192,8 +1198,7 @@ Package pdftex.def Info: img/nasa-antenne.png  used on input line 47.
 ]
 \openout2 = `08_implementierung.aux'.
 
-
-(./08_implementierung.tex) [26
+ (./08_implementierung.tex) [26
 
 
 ]
@@ -1205,25 +1210,28 @@ Package pdftex.def Info: img/nasa-antenne.png  used on input line 47.
 ]
 \openout2 = `10_ausblick.aux'.
 
- (./10_ausblick.tex)
-[28
+
+(./10_ausblick.tex) [28
 
 
-] (./00_Vorlage Abschlussarbeit.bbl [29
+] (./00_Vorlage Abschlussarbeit.bbl) [29
 
-]) [30]
+]
 (./00_Vorlage Abschlussarbeit.aux (./01_titel.aux) (./02_eigen.aux)
 (./03_ausschreibung.aux) (./04_einleitung.aux) (./05_grundlagen.aux)
 (./06_standdertechnik.aux) (./07_konzept.aux) (./08_implementierung.aux)
 (./09_evaluation.aux) (./10_ausblick.aux))
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  18308 strings out of 492982
- 346244 string characters out of 6134896
- 583842 words of memory out of 5000000
+ 346231 string characters out of 6134896
+ 583837 words of memory out of 5000000
  21414 multiletter control sequences out of 15000+600000
  18905 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1246,10 +1254,10 @@ per/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></u
 sr/share/texmf/fonts/type1/public/cm-super/sfsx1095.pfb></usr/share/texmf/fonts
 /type1/public/cm-super/sfsx1200.pfb></usr/share/texmf/fonts/type1/public/cm-sup
 er/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on "00_Vorlage Abschlussarbeit.pdf" (30 pages, 847140 bytes).
+Output written on "00_Vorlage Abschlussarbeit.pdf" (29 pages, 845755 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
+ 210 PDF objects out of 1000 (max. 8388607)
+ 133 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
