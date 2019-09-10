@@ -29,7 +29,7 @@ import population
 if __name__ == "__main__":
     pop_size = 100
     mutate_prob = 0.3
-    retain = 0.6
+    retain = 0.8
     random_retain = 0.05
 
     SHOW_PLOT = True

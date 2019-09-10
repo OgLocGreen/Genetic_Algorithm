@@ -15,26 +15,28 @@
 \contentsline {paragraph}{\nonumberline Crossover}{13}
 \contentsline {paragraph}{\nonumberline Mutation}{14}
 \contentsline {subsubsection}{\numberline {2.2.5}Neue Generation}{15}
-\contentsline {subsection}{\numberline {2.3}K\IeC {\"u}nstliche Neuronale Netze}{16}
-\contentsline {subsubsection}{\numberline {2.3.1}Aufbau eines Neurons}{16}
+\contentsline {subsection}{\numberline {2.3}Random Search}{15}
+\contentsline {subsection}{\numberline {2.4}Bayesian optimisation}{15}
+\contentsline {subsection}{\numberline {2.5}K\IeC {\"u}nstliche Neuronale Netze}{16}
+\contentsline {subsubsection}{\numberline {2.5.1}Aufbau eines Neurons}{16}
 \contentsline {paragraph}{\nonumberline Eingang}{17}
 \contentsline {paragraph}{\nonumberline Schwellwert}{17}
 \contentsline {paragraph}{\nonumberline Aktivierungsfunktion}{17}
 \contentsline {paragraph}{\nonumberline Ausgang}{18}
-\contentsline {subsubsection}{\numberline {2.3.2}Struktureller Aufbau eines K\IeC {\"u}nstlichen Neuronalen Netzes}{18}
-\contentsline {subsubsection}{\numberline {2.3.3}Verlustfunktion}{19}
-\contentsline {subsubsection}{\numberline {2.3.4}Gradientenabstieg}{19}
-\contentsline {subsubsection}{\numberline {2.3.5}Hyperparameter}{19}
-\contentsline {subsection}{\numberline {2.4}Zusammenfassung}{20}
+\contentsline {subsubsection}{\numberline {2.5.2}Struktureller Aufbau eines K\IeC {\"u}nstlichen Neuronalen Netzes}{18}
+\contentsline {subsubsection}{\numberline {2.5.3}Verlustfunktion}{19}
+\contentsline {subsubsection}{\numberline {2.5.4}Gradientenabstieg}{19}
+\contentsline {subsubsection}{\numberline {2.5.5}Hyperparameter}{19}
+\contentsline {subsection}{\numberline {2.6}Zusammenfassung}{20}
 \contentsline {section}{\numberline {3}Stand der Forschung und Technik}{21}
 \contentsline {subsection}{\numberline {3.1}Deep Mind}{21}
 \contentsline {subsection}{\numberline {3.2}PopulationBasedTraining}{21}
-\contentsline {subsection}{\numberline {3.3}Software Testing with Ga}{21}
+\contentsline {subsection}{\numberline {3.3}Software Testing with Ga}{22}
 \contentsline {subsection}{\numberline {3.4}Travelling Salesman Problem}{22}
 \contentsline {subsection}{\numberline {3.5}Temperatur Sch\IeC {\"a}tzungen}{22}
-\contentsline {subsection}{\numberline {3.6}Generativ Design}{22}
+\contentsline {subsection}{\numberline {3.6}Generativ Design}{23}
 \contentsline {paragraph}{\nonumberline NASA - Antenne}{23}
-\contentsline {subsection}{\numberline {3.7}GLEAM}{23}
+\contentsline {subsection}{\numberline {3.7}GLEAM}{24}
 \contentsline {subsection}{\numberline {3.8}Reainforcment learning with GA}{24}
 \contentsline {subsection}{\numberline {3.9}Zusammenfassung}{24}
 \contentsline {section}{\numberline {4}Konzept}{25}

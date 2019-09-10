@@ -58,7 +58,7 @@ def plot_all(file):
 
 
 def plot_histogram(title,werteliste):
-    ax = sns.distplot(werteliste, bins=10, kde=True, fit=stats.norm, rug=True)
+    sns.distplot(werteliste, bins=10, kde=True, fit=stats.norm, rug=True)
     plt.title(title)
 
     # Get the fitted parameters used by sns
@@ -68,10 +68,22 @@ def plot_histogram(title,werteliste):
     plt.ylabel('Frequency')
     plt.legend(["normal dist. fit ($\mu=${0:.2g}, $\sigma=${1:.2f})".format(mu, sigma),
                 "Gaußsche Kerneldichteabchätzung"])
-
-
-
     plt.show()
+
+
+def plot_small_histogram(title, werteliste):
+    sns.distplot(werteliste, bins=10, kde= False)
+    plt.title(title)
+
+    # Get the fitted parameters used by sns
+    (mu, sigma) = stats.norm.fit(werteliste)
+
+    # Legend and labels
+    plt.ylabel('Frequency')
+    plt.legend(["normal dist. fit ($\mu=${0:.2g}, $\sigma=${1:.2f})".format(mu, sigma),
+                "Gaußsche Kerneldichteabchätzung"])
+    plt.show()
+
 
 def plot_histogram_all(file):
     with open(file, "r") as f:
@@ -94,8 +106,10 @@ def plot_histogram_all(file):
     
     print('learningrate mean=%.5f stdv=%.5f' % (np.mean(learningrate), np.std(learningrate)))
     plot_histogram("learningrate",learningrate)
+    plot_small_histogram("learningrate",learningrate)
     print('batchsize mean=%.5f stdv=%.5f' % (np.mean(batchsize), np.std(batchsize)))
     plot_histogram("batchsize",batchsize)
+    plot_small_histogram("batchsize",batchsize)
     print('dropout mean=%.5f stdv=%.5f' % (np.mean(dropout), np.std(dropout)))
     plot_histogram("dropout",dropout)
     print('epoch mean=%.5f stdv=%.5f' % (np.mean(epoch), np.std(epoch)))
@@ -105,19 +119,8 @@ def plot_histogram_all(file):
 
 
 def scatterplot(file,yscale_log=False):
-
-    with open(file, "r") as f:
-        data = json.load(f)
-
-    title ="loss over acc"
     x_label = "acc"
     y_label = "loss"
-
-    xmin = 0.8
-    xmax = 0.9
-    ymin = 0.8
-    ymax = 0.2
-    colorarray=["r","b","g","b"]
 
     # Create the plot object
     _, ax = plt.subplots()
@@ -128,7 +131,6 @@ def scatterplot(file,yscale_log=False):
     for pop in data:
         x = []
         y = []
-        i = 0
         if pop in ("2", "4", "8", "Winner"):
             for individum in data[pop]:
                 try:
@@ -148,13 +150,20 @@ def scatterplot(file,yscale_log=False):
     ax.set_title("Some example Generations and their Accuracy and Loss")
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
-    ax.legend(["2 Ĝeneration", "4 Generation", "8 Generation", "Winner"], loc="upper left")
-    plt.gca().invert_yaxis()
+    ax.legend(["2 Generation", "4 Generation", "8 Generation", "Winner"], loc="upper left")
     axes = plt.gca()
     axes.set_ylim([0, 2])
+    axes.set_xlim([0.5, 0.95])
+    plt.gca().invert_yaxis()
     plt.show()
 
-
+def scatterplot_zoom(file, yscale_log=False):
+    x_label = "acc"
+    y_label = "loss"
+    xmin = 0.8
+    xmax = 0.9
+    ymax= 0.8
+    ymin = 0.2
     # Create the plot object
     _, ax = plt.subplots()
 
@@ -164,7 +173,6 @@ def scatterplot(file,yscale_log=False):
     for pop in data:
         x = []
         y = []
-        i = 0
         if pop in ("2", "4", "8", "Winner"):
             for individum in data[pop]:
                 try:
@@ -185,10 +193,10 @@ def scatterplot(file,yscale_log=False):
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
     ax.legend(["2 Generation", "4 Generation", "8 Generation", "Winner"], loc="upper left")
-    plt.gca().invert_yaxis()
     axes = plt.gca()
     axes.set_xlim([xmin, xmax])
     axes.set_ylim([ymin, ymax])
+    plt.gca().invert_yaxis()
     plt.show()
 
 
@@ -232,7 +240,7 @@ if __name__ == "__main__":
                                        datetime.datetime.now().day)
     save_file = "ergebnisse.json"
 
-
     scatterplot(save_file)
+    scatterplot_zoom(save_file)
     plot_fitness(save_file)
     plot_histogram_all(save_file)

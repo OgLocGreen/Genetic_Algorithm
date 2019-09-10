@@ -81,7 +81,7 @@ param_grid = dict(optimizer=optimizers, epochs=epochs, batch_size=batches, learn
 
 random_search = sklearn.model_selection.RandomizedSearchCV(estimator=model,
                                    param_distributions=param_grid,
-                                   n_iter=n_iter_search)
+                                   n_iter=n_iter_search, n_jobs=4)
 random_search.fit(small_train_images, small_train_labels)
 print("Best: %f using %s" % (random_search.best_score_, random_search.best_params_))
 means = random_search.cv_results_['mean_test_score']
