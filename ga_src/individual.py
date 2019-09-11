@@ -4,7 +4,7 @@ from plotting import plot_winner, plot_all, plot_histogram_all, scatterplot
 import KNN
 import crossover
 import mutation
-import individual
+
 
 
 class Individual(object):
