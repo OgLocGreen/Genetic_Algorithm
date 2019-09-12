@@ -61,10 +61,10 @@ model = KerasClassifier(build_fn=tools.create_model,verbose=1)
 n_iter_search = 10 # Number of parameter settings that are sampled.
 
 optimizers = np.array([0, 1, 2])
-epochs = np.array([20, 40, 60])
-batchsize = np.array([24, 32, 48])
-learningrate = np.array([0.0005, 0.001, 0.005])
-dropout = np.array([0.05, 0.1, 0.2])
+epochs = np.array([50, 75, 100])
+batchsize = np.array([32, 48, 64])
+learningrate = np.array([0.0005, 0.005, 0.01])
+dropout = np.array([0.05, 0.2, 0.5])
 
 param_grid = dict(optimizer=optimizers, epochs=epochs, batch_size=batchsize, learningrate=learningrate, dropout=dropout)
 

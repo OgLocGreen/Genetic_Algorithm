@@ -1,5 +1,5 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-
+import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import train_test_split
 import gc
@@ -16,7 +16,7 @@ import os
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
+def train_and_evalu_CNN(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
     #%%
     ### Daten
     print("var_learningrate", var_learningrate, "var_dropout", var_dropout, "var_epoch", var_epoch, "var_batch_size", var_batch_size)
@@ -31,7 +31,7 @@ def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size,optimi
 
     #%%
     ### Model
-
+    tf.set_random_seed(1)
     model = keras.models.Sequential([
       keras.layers.Flatten(input_shape=(28, 28)),
       keras.layers.Dense(128, activation='relu'),

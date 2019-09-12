@@ -31,7 +31,7 @@ def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size,optimi
 
     #%%
     ### Model
-
+    tf.set_random_seed(1)
     model = keras.models.Sequential([
       keras.layers.Flatten(input_shape=(28, 28)),
       keras.layers.Dense(128, activation='relu'),

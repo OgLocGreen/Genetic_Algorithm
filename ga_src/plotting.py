@@ -114,7 +114,7 @@ def plot_histogram_all(file):
     plot_histogram("dropout",dropout)
     print('epoch mean=%.5f stdv=%.5f' % (np.mean(epoch), np.std(epoch)))
     plot_histogram("epoch",epoch)
-    print('epoch mean=%.5f stdv=%.5f' % (np.mean(optimizer), np.std(optimizer)))
+    print('optimizer mean=%.5f stdv=%.5f' % (np.mean(optimizer), np.std(optimizer)))
     plot_histogram("optimizer", optimizer)
 
 
@@ -238,7 +238,7 @@ if __name__ == "__main__":
     save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
                                        datetime.datetime.now().month,
                                        datetime.datetime.now().day)
-    save_file = "ergebnisse.json"
+    save_file = "2019.9.12.json"
 
     scatterplot(save_file)
     scatterplot_zoom(save_file)

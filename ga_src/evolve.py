@@ -12,7 +12,7 @@ import datetime
 import time
 import os
 
-from KNN import train_and_evalu
+from KNN import train_and_evalu_CNN
 from plotting import plot_winner, plot_all, plot_histogram_all, scatterplot
 import KNN
 import crossover
@@ -27,15 +27,15 @@ import population
 
 
 if __name__ == "__main__":
-    pop_size = 100
-    mutate_prob = 0.3
+    pop_size = 50
+    mutate_prob = 0.1
     retain = 0.8
     random_retain = 0.05
 
     SHOW_PLOT = True
     GENERATIONS = 10
     multiprocessing_flag = True
-    multiprocessing_var = 2
+    multiprocessing_var = 4
 
     pop = population.Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
     start = time.time()
@@ -51,9 +51,11 @@ if __name__ == "__main__":
             break
         else:
             pop.evolve()
+            print("Finished with ",x,"Generation" )
         gc.collect()
 
 #%%
+    end_2 = time.time()
     SHOW_PLOT = True
     # Plot fitness history
     if SHOW_PLOT:
@@ -67,5 +69,5 @@ if __name__ == "__main__":
         pop.save_gens_winner()
         scatterplot(pop.save_file)
         plot_histogram_all(pop.save_file)
-    print("FINISCHED!!!")
+    print("FINISCHED!!! after ", end_2-start, "seconds")
 

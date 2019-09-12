@@ -13,7 +13,7 @@ import KNN
 import crossover
 import mutation
 import individual
-
+import selection
 
 class Population(object):
 
@@ -52,7 +52,7 @@ class Population(object):
             epoch = random.uniform(epoch_min epoch_max)
             batchsize = random.uniform(batchsize_min batchsize_max)
             """
-            learningrate = random.uniform(0.0005, 0.1)
+            learningrate = random.uniform(0.0005, 0.01)
             dropout = random.uniform(0.05, 0.5)
             epoch = random.uniform(50, 100)
             batchsize = random.uniform(32, 64)
@@ -124,6 +124,9 @@ class Population(object):
         # Keep the fittest as parents for next gen
         retain_length = self.retain * len(self.individuals)
         self.parents = self.individuals[:int(retain_length)]
+
+        a = selection.selRoulette(self.individuals,10)
+        print(a)
 
         # Randomly select some from unfittest and add to parents array
         unfittest = self.individuals[int(retain_length):]
@@ -209,6 +212,7 @@ class Population(object):
         with open(self.save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)
         print("saved population gens into {}".format(self.save_file))
+        print(generation)
         gc.collect()
 
     def save_gens_winner(self):
@@ -244,5 +248,5 @@ def fitness_multi(individuum):
         Returns fitness of individual
         Fitness is the difference between
     """
-    var_loss, var_acc = KNN.train_and_evalu(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
+    var_loss, var_acc = KNN.train_and_evalu_CNN(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
     return var_acc, var_loss

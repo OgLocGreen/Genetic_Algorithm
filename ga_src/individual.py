@@ -1,9 +1,5 @@
-
-from KNN import train_and_evalu
-from plotting import plot_winner, plot_all, plot_histogram_all, scatterplot
 import KNN
-import crossover
-import mutation
+
 
 
 
@@ -18,5 +14,5 @@ class Individual(object):
             Returns fitness of individual
             Fitness is the difference between
         """
-        self.var_loss, self.var_acc = train_and_evalu(self.gene[0], self.gene[1], self.gene[2], self.gene[3], self.gene[4])
+        self.var_loss, self.var_acc = KNN.train_and_evalu_CNN(self.gene[0], self.gene[1], self.gene[2], self.gene[3], self.gene[4])
         return self.var_acc
