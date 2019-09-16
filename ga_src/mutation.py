@@ -13,3 +13,13 @@ def zufall(child_genes,mutate_prob):
         child_genes[x] = round(tmp, 5)
     print(child_genes)
     return child_genes
+
+def gauss(child_genes,mutate_prob):
+    for x in range(0,len(child_genes)):
+        tmp = child_genes[x]
+        mutation = random.gauss(0, mutate_prob)  ## Mutationsfaktor mutate prob
+        tmp = tmp + mutation
+        child_genes[x] = round(tmp, 5)
+    print(child_genes)
+    return child_genes
+

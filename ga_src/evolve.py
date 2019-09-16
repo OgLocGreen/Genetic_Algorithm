@@ -1,7 +1,3 @@
-### https://gist.githubusercontent.com/gabrielgarza/377a692eb819d4efdf9a13b03dcb2358/raw/3a0b50435b2269203c3a3992362e76c04f81ad13/evolve.py
-
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import random
@@ -27,15 +23,16 @@ import population
 
 
 if __name__ == "__main__":
-    pop_size = 50
-    mutate_prob = 0.1
+    pop_size = 100
+    mutate_prob = 0.01
     retain = 0.8
     random_retain = 0.05
+    GENERATIONS = 5
 
-    SHOW_PLOT = True
-    GENERATIONS = 10
     multiprocessing_flag = True
     multiprocessing_var = 4
+
+    SHOW_PLOT = True
 
     pop = population.Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
     start = time.time()
@@ -56,7 +53,6 @@ if __name__ == "__main__":
 
 #%%
     end_2 = time.time()
-    SHOW_PLOT = True
     # Plot fitness history
     if SHOW_PLOT:
         print("Showing fitness history graph")

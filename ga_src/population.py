@@ -84,6 +84,7 @@ class Population(object):
                 print("----------------------------------------")
                 print("----------------------------------------")
         gc.collect()
+
     def grade_multi(self, generation=None, multiprocessing_var=2):
         """
             Grade the generation by getting the average fitness of its individuals
@@ -125,9 +126,6 @@ class Population(object):
         retain_length = self.retain * len(self.individuals)
         self.parents = self.individuals[:int(retain_length)]
 
-        a = selection.selRoulette(self.individuals,10)
-        print(a)
-
         # Randomly select some from unfittest and add to parents array
         unfittest = self.individuals[int(retain_length):]
         for unfit in unfittest:
@@ -142,31 +140,27 @@ class Population(object):
             Zusätzlich gibt es noch besonderheiten wie übernehmmen der besten 2 individuen in die nächste pop
 
         """
-        target_children_size = self.pop_size - 4  ##Auswählen wie viele kinder erstellt 2 werden mit den besten 2 eltern ersetzt
+        target_children_size = self.pop_size - 2  ##Auswählen wie viele kinder erstellt 2 werden mit den besten 2 eltern ersetzt
         children = []
         children.append(self.parents[0])  ##zwei besten in nächste pop hinzu fügen
         children.append((self.parents[1]))
-        for i in range(0, 2):  ##zwei random in nächste pop hinzu fügen
-            learningrate = random.uniform(0.0005, 0.1)
-            dropout = random.uniform(0.05, 0.5)
-            epoch = random.uniform(5, 10)
-            batchsize = random.uniform(32, 64)
-            optimizer = random.uniform(0, 3)
-            children.append(individual.Individual(learningrate, dropout, epoch, batchsize, optimizer))
 
         if len(self.parents) > 0:  ##überprüfen ob eltern vorhanden
             while len(children) < target_children_size:  ##solange bis gewollte kinder auch da sind
-                father = random.choice(self.parents)  ## vater random aus eltern auswählen
-                mother = random.choice(self.parents)  ## mutte random aus eltern auswählen
+                father, mother = selection.selRoulette(self.parents,k=2)
                 if father != mother:  ## wenn vatter nicht gleich mutter
-                    ## kinder gegen werden zufällig aus den genen von Mutter und Vatter ausgewählt
-                    child_gene = crossover.zufall(father.gene, mother.gene)
-                    ## Mutation der Gene mit einem Faktor
-                    child_gene_new = mutation.zufall(child_gene, self.mutate_prob)
 
-                    child = individual.Individual(child_gene_new[0], child_gene_new[1], child_gene_new[2], child_gene_new[3],
-                                       child_gene_new[4])
-                    children.append(child)
+                    child_gene_1, child_gene_2 = crossover.twopoint(father.gene, mother.gene)
+                    
+                    child_gene_1 = mutation.gauss(child_gene_1, self.mutate_prob)
+                    child_gene_2 = mutation.gauss(child_gene_2, self.mutate_prob)
+
+                    child_1 = individual.Individual(child_gene_1[0], child_gene_1[1], child_gene_1[2], child_gene_1[3],
+                                       child_gene_1[4])
+                    child_2 = individual.Individual(child_gene_2[0], child_gene_2[1], child_gene_2[2], child_gene_2[3],
+                                       child_gene_2[4])
+                    children.append(child_1)
+                    children.append(child_2)
                 else:
                     print("father == mother selection new parents")
 
@@ -218,7 +212,7 @@ class Population(object):
     def save_gens_winner(self):
         with open(self.save_file, "r") as f:
             data = json.load(f)
-        self.grade_single()  # damit alle induviduals noch auf fittnes überprüft werden
+        self.grade_multi()  # damit alle induviduals noch auf fittnes überprüft werden
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))
         i = 0
         family_tree = {"Winner": {}}

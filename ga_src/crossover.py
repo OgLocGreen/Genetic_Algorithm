@@ -35,14 +35,10 @@ def twopoint(father_gene, mother_gene):
     size = min(len(father_gene), len(mother_gene))
     crossoverpoint1 = random.randint(1, size)
     crossoverpoint2 = random.randint(1, size - 1)
-    print("1",crossoverpoint1)
-    print("2",crossoverpoint2)
     if crossoverpoint2 >= crossoverpoint1:
         crossoverpoint2 +=1
     elif crossoverpoint2 > crossoverpoint1:
         crossoverpoint1, crossoverpoint2 = crossoverpoint2, crossoverpoint1
-    print("1",crossoverpoint1)
-    print("2",crossoverpoint2)
     mother_gene[crossoverpoint1:crossoverpoint2], father_gene[crossoverpoint1:crossoverpoint2] = father_gene[crossoverpoint1:crossoverpoint2], mother_gene[crossoverpoint1:crossoverpoint2]
     return father_gene, mother_gene
 

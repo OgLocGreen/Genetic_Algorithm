@@ -70,4 +70,4 @@ def selRoulette(individuals, k, fit_attr="var_acc"):
                 chosen.append(ind)
                 break
 
-    return chosen
+    return chosen[0],chosen[1]
