@@ -23,7 +23,7 @@ import population
 
 
 if __name__ == "__main__":
-    pop_size = 100
+    pop_size = 10
     mutate_prob = 0.01
     retain = 0.8
     random_retain = 0.05

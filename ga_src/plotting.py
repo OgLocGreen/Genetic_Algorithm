@@ -131,7 +131,7 @@ def scatterplot(file,yscale_log=False):
     for pop in data:
         x = []
         y = []
-        if pop in ("2", "4", "8", "Winner"):
+        if pop in ("1", "2", "3","4", "Winner"):
             for individum in data[pop]:
                 try:
                     x.append(float(data[pop][individum]["acc"]))  ## hier dürfte noch ein fehler sein
@@ -150,7 +150,7 @@ def scatterplot(file,yscale_log=False):
     ax.set_title("Some example Generations and their Accuracy and Loss")
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
-    ax.legend(["2 Generation", "4 Generation", "8 Generation", "Winner"], loc="upper left")
+    ax.legend(["1 Generation", "2 Generation", "3 Generation", "4 Generation", "Winner"], loc="upper left")
     axes = plt.gca()
     axes.set_ylim([0, 2])
     axes.set_xlim([0.5, 0.95])

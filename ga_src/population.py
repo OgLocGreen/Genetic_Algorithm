@@ -164,9 +164,9 @@ class Population(object):
                 else:
                     print("father == mother selection new parents")
 
-            self.individuals = children  # Kinder werden Individumen für nächste generation
-            del children
-            gc.collect()
+        self.individuals = children  # Kinder werden Individumen für nächste generation
+        del children
+        gc.collect()
 
     def evolve(self):
         # 1. Select fittest
