@@ -23,19 +23,20 @@ import population
 
 
 if __name__ == "__main__":
-    pop_size = 10
+    pop_size = 50
     mutate_prob = 0.01
-    retain = 0.8
+    retain = 0.5
     random_retain = 0.05
     GENERATIONS = 5
 
     multiprocessing_flag = True
-    multiprocessing_var = 4
+    multiprocessing_var = 2
 
     SHOW_PLOT = True
 
     pop = population.Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
     start = time.time()
+    round_time = []
     for x in range(GENERATIONS):
         if multiprocessing_flag:
             pop.grade_multi(generation=x, multiprocessing_var=multiprocessing_var)
@@ -50,6 +51,7 @@ if __name__ == "__main__":
             pop.evolve()
             print("Finished with ",x,"Generation" )
         gc.collect()
+        round_time.append(time.time())
 
 #%%
     end_2 = time.time()
@@ -66,4 +68,8 @@ if __name__ == "__main__":
         scatterplot(pop.save_file)
         plot_histogram_all(pop.save_file)
     print("FINISCHED!!! after ", end_2-start, "seconds")
-
+    print(round_time)
+    tmp = start
+    for i in range(0,len(round_time)):
+        print("Round: ", i," Time: ", round_time[i] - tmp )
+        tmp = round_time[i]

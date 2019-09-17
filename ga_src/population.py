@@ -21,7 +21,9 @@ class Population(object):
         """
             Args
                 pop_size: size of population
-                fitness_goal: goal that population will be graded against
+                mutate_pron: standard deviation of random.gauss()
+                retain: parents = polupation[:retain]
+                random_retain: how many of the unfittest are retained
         """
         self.pop_size = pop_size
         self.mutate_prob = mutate_prob
@@ -87,7 +89,7 @@ class Population(object):
 
     def grade_multi(self, generation=None, multiprocessing_var=2):
         """
-            Grade the generation by getting the average fitness of its individuals
+            Grade the generation by getting the average fitness of its individuals with multiprocessing
         """
         fitness_sum = 0
 
@@ -163,7 +165,6 @@ class Population(object):
                     children.append(child_2)
                 else:
                     print("father == mother selection new parents")
-
         self.individuals = children  # Kinder werden Individumen für nächste generation
         del children
         gc.collect()
@@ -239,8 +240,7 @@ class Population(object):
 
 def fitness_multi(individuum):
     """
-        Returns fitness of individual
-        Fitness is the difference between
+        Returns fitness(accuarcy ) and loss of individual
     """
     var_loss, var_acc = KNN.train_and_evalu_CNN(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
     return var_acc, var_loss
