@@ -21,11 +21,10 @@ import population
 
 
 
-
 if __name__ == "__main__":
     pop_size = 50
-    mutate_prob = 0.01
-    retain = 0.5
+    mutate_prob = 0.1 #sigma for random.gauss()
+    retain = 0.8
     random_retain = 0.05
     GENERATIONS = 5
 

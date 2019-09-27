@@ -54,11 +54,11 @@ class Population(object):
             epoch = random.uniform(epoch_min epoch_max)
             batchsize = random.uniform(batchsize_min batchsize_max)
             """
-            learningrate = random.uniform(0.0005, 0.01)
-            dropout = random.uniform(0.05, 0.5)
-            epoch = random.uniform(50, 100)
-            batchsize = random.uniform(32, 64)
-            optimizer = random.uniform(0, 3)
+            learningrate = -1
+            dropout = -1
+            epoch = -1
+            batchsize = -1
+            optimizer = -1
             self.individuals.append(individual.Individual(learningrate, dropout, epoch, batchsize, optimizer))
 
     def grade_single(self, generation=None):

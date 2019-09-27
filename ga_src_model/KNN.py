@@ -1,9 +1,8 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-
+import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import train_test_split
 import gc
-import tensorflow as tf
 """
 import tensorflow as tf
 
@@ -17,7 +16,7 @@ import os
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
+def train_and_evalu_CNN(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
     #%%
     ### Daten
     print("var_learningrate", var_learningrate, "var_dropout", var_dropout, "var_epoch", var_epoch, "var_batch_size", var_batch_size)
@@ -37,6 +36,10 @@ def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size,optimi
       keras.layers.Flatten(input_shape=(28, 28)),
       keras.layers.Dense(128, activation='relu'),
       keras.layers.Dropout(var_dropout),
+      keras.layers.Dense(256, activation='relu'),
+      keras.layers.Dropout(var_dropout),
+      keras.layers.Dense(128, activation='relu'),
+      keras.layers.Dropout(var_dropout),
       keras.layers.Dense(10, activation='softmax')
     ])
 
@@ -53,12 +56,12 @@ def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size,optimi
     SGD = keras.optimizers.SGD(lr=var_learningrate)
 
 
-    optimizerarray = [adam, RMSprop, SGD, Adagrad]
+    optimizerarray = [adam, SGD, RMSprop, Adagrad]
 
 
-    if round(optimizer) < 0:
+    if round(optimizer) < -0.5:
         optimizer = 0
-    elif round(optimizer) > 3:
+    elif round(optimizer) > 3.5:
         optimizer = 3
 
     model.compile(optimizer=optimizerarray[round(optimizer)],
@@ -71,12 +74,13 @@ def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size,optimi
 
     #%%
     ### Model fit
-    model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2)
-
+    #model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2)
+    model.fit(train_images, train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2)
     #%%
     ### Model evalu
 
-    test_loss, test_acc = model.evaluate(small_test_images, small_test_labels)
+    #test_loss, test_acc = model.evaluate(small_test_images, small_test_labels)
+    test_loss, test_acc = model.evaluate(test_images, test_labels)
     print("test_loss: ",test_loss , "test_acc: ", test_acc)
     gc.collect()
     return test_loss, test_acc

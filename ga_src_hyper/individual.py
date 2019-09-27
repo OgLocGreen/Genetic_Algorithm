@@ -3,17 +3,18 @@ import random
 
 class Individual(object):
     def __init__(self, learningrate, dropout, epoch, batchsize, optimizer):
-        if not (0.0005 < learningrate < 0.01):
-            learningrate = random.uniform(0.0005, 0.01)
+        if not (0.0005 < learningrate < 0.1):
+            learningrate = random.uniform(0.0005, 0.1)
         if not (0.05 < dropout < 0.5):
             dropout = random.uniform(0.05, 0.5)
         if not (50 < epoch < 100):
             epoch = random.uniform(50, 100)
         if not (32 < batchsize < 64): 
             batchsize = random.uniform(32, 64)
-        if not (0 < batchsize < 3):
-            optimizer = random.uniform(0, 3)
+        if not (-0.5 < optimizer < 3.5):
+            optimizer = random.uniform(-0.5, 3.5)
         self.gene = [learningrate, dropout, epoch, batchsize, optimizer]
+        print("gene: ", self.gene)
         self.var_acc = 0
         self.var_loss = 0
 

@@ -58,19 +58,19 @@ small_train_images, small_test_images, small_train_labels, small_test_labels = t
 
 
 model = KerasClassifier(build_fn=tools.create_model,verbose=1)
-n_iter_search = 10 # Number of parameter settings that are sampled.
+n_iter_search = 200 # Number of parameter settings that are sampled.
 
-optimizers = np.array([0, 1, 2])
-epochs = np.array([50, 75, 100])
-batchsize = np.array([32, 48, 64])
-learningrate = np.array([0.0005, 0.005, 0.01])
-dropout = np.array([0.05, 0.2, 0.5])
+optimizers = np.array([0, 1, 2, 3])
+epochs = np.array([50, 60, 80, 100])
+batchsize = np.array([32,40,56, 64])
+learningrate = np.array([0.0005, 0.005, 0.01, 0.1])
+dropout = np.array([0.05,0.1, 0.2, 0.5])
 
 param_grid = dict(optimizer=optimizers, epochs=epochs, batch_size=batchsize, learningrate=learningrate, dropout=dropout)
 
 random_search = sklearn.model_selection.RandomizedSearchCV(estimator=model,
                                    param_distributions=param_grid,
-                                   n_iter=n_iter_search, n_jobs=4)
+                                   n_iter=n_iter_search, n_jobs=2)
 random_search.fit(small_train_images, small_train_labels)
 
 print("Best: %f using %s" % (random_search.best_score_, random_search.best_params_))
