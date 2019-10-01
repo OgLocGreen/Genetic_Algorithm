@@ -89,33 +89,27 @@ def plot_histogram_all(file):
     with open(file, "r") as f:
         data = json.load(f)
 
-    learningrate=[]
-    batchsize=[]
-    dropout=[]
-    epoch =[]
-    optimizer = []
+    Neuronen_Layer1 = []
+    Neuronen_Layer2 = []
+    Neuronen_Layer3 = []
+
 
     anzahl = 0
     for individum in data["Winner"]:
-        learningrate.append(float(data["Winner"][individum]["learningrate"]))
-        batchsize.append(float(data["Winner"][individum]["batchsize"]))
-        dropout.append(float(data["Winner"][individum]["dropout"]))
-        epoch.append(float(data["Winner"][individum]["epoch"]))
-        optimizer.append(float(data["Winner"][individum]["optimizer"]))
+        Neuronen_Layer1.append(float(data["Winner"][individum]["Neuronen_Layer1"]))
+        Neuronen_Layer2.append(float(data["Winner"][individum]["Neuronen_Layer2"]))
+        Neuronen_Layer3.append(float(data["Winner"][individum]["Neuronen_Layer3"]))
         anzahl += 1
     
-    print('learningrate mean=%.5f median=%.5f stdv=%.5f' % (np.mean(learningrate),np.median(learningrate), np.std(learningrate)))
-    plot_histogram("learningrate",learningrate)
-    plot_small_histogram("learningrate",learningrate)
-    print('batchsize mean=%.5f median=%.5f stdv=%.5f' % (np.mean(batchsize), np.median(batchsize), np.std(batchsize)))
-    plot_histogram("batchsize",batchsize)
-    plot_small_histogram("batchsize",batchsize)
-    print('dropout mean=%.5f median=%.5f stdv=%.5f' % (np.mean(dropout), np.median(dropout), np.std(dropout)))
-    plot_histogram("dropout",dropout)
-    print('epoch mean=%.5f median=%.5f stdv=%.5f' % (np.mean(epoch), np.median(epoch), np.std(epoch)))
-    plot_histogram("epoch",epoch)
-    print('optimizer mean=%.5f median=%.5f stdv=%.5f' % (np.mean(optimizer), np.median(optimizer), np.std(optimizer)))
-    plot_histogram("optimizer", optimizer)
+    print('Neuronen_Layer1 mean=%.5f median=%.5f stdv=%.5f' % (np.mean(Neuronen_Layer1),np.median(Neuronen_Layer1), np.std(Neuronen_Layer1)))
+    plot_histogram("Neuronen_Layer1",Neuronen_Layer1)
+    plot_small_histogram("Neuronen_Layer1",Neuronen_Layer1)
+    print('Neuronen_Layer2 mean=%.5f median=%.5f stdv=%.5f' % (np.mean(Neuronen_Layer2), np.median(Neuronen_Layer2), np.std(Neuronen_Layer2)))
+    plot_histogram("Neuronen_Layer2",Neuronen_Layer2)
+    plot_small_histogram("Neuronen_Layer2",Neuronen_Layer2)
+    print('Neuronen_Layer3 mean=%.5f median=%.5f stdv=%.5f' % (np.mean(Neuronen_Layer3), np.median(Neuronen_Layer3), np.std(Neuronen_Layer3)))
+    plot_histogram("Neuronen_Layer3",Neuronen_Layer3)
+
 
 
 def scatterplot(file,yscale_log=False):

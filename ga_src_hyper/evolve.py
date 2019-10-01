@@ -46,11 +46,13 @@ if __name__ == "__main__":
             print("Finished at generation:", x, ", Population fistness:", pop.fitness_history[-1])
             print("Finished after:",end-start," Seconds")
             break
+        else if x == 5:
+            print("Breakpoint")
         else:
             pop.evolve()
             print("Finished with ",x,"Generation" )
-        gc.collect()
         round_time.append(time.time())
+        gc.collect()
 
 #%%
     end_2 = time.time()

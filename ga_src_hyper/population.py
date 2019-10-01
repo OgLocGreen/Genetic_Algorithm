@@ -48,18 +48,7 @@ class Population(object):
         # Create individuals
         self.individuals = []
         for x in range(pop_size):
-            """
-            learningrate = random.uniform(learningrate_min, learningrate_max)
-            dropout = random.uniform(dropout_min, dropout_max)
-            epoch = random.uniform(epoch_min epoch_max)
-            batchsize = random.uniform(batchsize_min batchsize_max)
-            """
-            learningrate = -1
-            dropout = -1
-            epoch = -1
-            batchsize = -1
-            optimizer = -1
-            self.individuals.append(individual.Individual(learningrate, dropout, epoch, batchsize, optimizer))
+            self.individuals.append(individual.Individual(learningrate = -1, dropout = -1, epoch= -1, batchsize = -1, optimizer = -1))
 
     def grade_single(self, generation=None):
 
@@ -203,11 +192,12 @@ class Population(object):
             i += 1
         del i
         data.update(family_tree)
-        del family_tree
         with open(self.save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)
         print("saved population gens into {}".format(self.save_file))
         print(generation)
+        del data
+        del family_tree
         gc.collect()
 
     def save_gens_winner(self):
@@ -232,10 +222,11 @@ class Population(object):
             i += 1
         del i
         data.update(family_tree)
-        del family_tree
         with open(self.save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)
         print("saved winnerpopulation gens into data.json")
+        del data
+        del family_tree
         gc.collect()
 
 def fitness_multi(individuum):

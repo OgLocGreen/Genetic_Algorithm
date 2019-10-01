@@ -48,18 +48,10 @@ class Population(object):
         # Create individuals
         self.individuals = []
         for x in range(pop_size):
-            """
-            learningrate = random.uniform(learningrate_min, learningrate_max)
-            dropout = random.uniform(dropout_min, dropout_max)
-            epoch = random.uniform(epoch_min epoch_max)
-            batchsize = random.uniform(batchsize_min batchsize_max)
-            """
-            learningrate = -1
-            dropout = -1
-            epoch = -1
-            batchsize = -1
-            optimizer = -1
-            self.individuals.append(individual.Individual(learningrate, dropout, epoch, batchsize, optimizer))
+            Neuronen_Layer1 = -1 
+            Neuronen_Layer2 = -1 
+            Neuronen_Layer3 = -1
+            self.individuals.append(individual.Individual(Neuronen_Layer1, Neuronen_Layer2, Neuronen_Layer3))
 
     def grade_single(self, generation=None):
 
@@ -157,10 +149,8 @@ class Population(object):
                     child_gene_1 = mutation.gauss(child_gene_1, self.mutate_prob)
                     child_gene_2 = mutation.gauss(child_gene_2, self.mutate_prob)
 
-                    child_1 = individual.Individual(child_gene_1[0], child_gene_1[1], child_gene_1[2], child_gene_1[3],
-                                       child_gene_1[4])
-                    child_2 = individual.Individual(child_gene_2[0], child_gene_2[1], child_gene_2[2], child_gene_2[3],
-                                       child_gene_2[4])
+                    child_1 = individual.Individual(child_gene_1[0], child_gene_1[1], child_gene_1[2])
+                    child_2 = individual.Individual(child_gene_2[0], child_gene_2[1], child_gene_2[2])
                     children.append(child_1)
                     children.append(child_2)
                 else:
@@ -191,11 +181,9 @@ class Population(object):
         for x in self.individuals:
             generation = {
                 "name": i,
-                "learningrate": str(x.gene[0]),
-                "dropout": str(x.gene[1]),
-                "epoch": str(x.gene[2]),
-                "batchsize": str(x.gene[3]),
-                "optimizer": str(x.gene[4]),
+                "Neuronen_Layer1": str(x.gene[0]),
+                "Neuronen_Layer2": str(x.gene[1]),
+                "Neuronen_Layer3": str(x.gene[2]),
                 "acc": str(x.var_acc),
                 "loss": str(x.var_loss)
             }
@@ -220,11 +208,9 @@ class Population(object):
         for x in self.individuals:
             generation = {
                 "name": i,
-                "learningrate": str(x.gene[0]),
-                "dropout": str(x.gene[1]),
-                "epoch": str(x.gene[2]),
-                "batchsize": str(x.gene[3]),
-                "optimizer": str(x.gene[4]),
+                "Neuronen_Layer1": str(x.gene[0]),
+                "Neuronen_Layer2": str(x.gene[1]),
+                "Neuronen_Layer3": str(x.gene[2]),
                 "acc": str(x.var_acc),
                 "loss": str(x.var_loss)
             }
@@ -242,5 +228,5 @@ def fitness_multi(individuum):
     """
         Returns fitness(accuarcy ) and loss of individual
     """
-    var_loss, var_acc = KNN.train_and_evalu_CNN(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
+    var_loss, var_acc = KNN.train_and_evalu_model(individuum.gene[0], individuum.gene[1], individuum.gene[2])
     return var_acc, var_loss

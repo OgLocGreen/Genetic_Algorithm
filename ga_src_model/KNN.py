@@ -16,7 +16,13 @@ import os
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-def train_and_evalu_CNN(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
+def train_and_evalu_model(Neuronen_Layer1,Neuronen_Layer2,Neuronen_Layer3):
+    var_learningrate = 0.05
+    var_dropout = 0.25
+    var_epoch = 20
+    var_batch_size = 32
+    optimizer = 3
+
     #%%
     ### Daten
     print("var_learningrate", var_learningrate, "var_dropout", var_dropout, "var_epoch", var_epoch, "var_batch_size", var_batch_size)
@@ -34,11 +40,11 @@ def train_and_evalu_CNN(var_learningrate,var_dropout,var_epoch,var_batch_size,op
     tf.set_random_seed(1)
     model = keras.models.Sequential([
       keras.layers.Flatten(input_shape=(28, 28)),
-      keras.layers.Dense(128, activation='relu'),
+      keras.layers.Dense(Neuronen_Layer1, activation='relu'),
       keras.layers.Dropout(var_dropout),
-      keras.layers.Dense(256, activation='relu'),
+      keras.layers.Dense(Neuronen_Layer2, activation='relu'),
       keras.layers.Dropout(var_dropout),
-      keras.layers.Dense(128, activation='relu'),
+      keras.layers.Dense(Neuronen_Layer3, activation='relu'),
       keras.layers.Dropout(var_dropout),
       keras.layers.Dense(10, activation='softmax')
     ])
@@ -81,6 +87,7 @@ def train_and_evalu_CNN(var_learningrate,var_dropout,var_epoch,var_batch_size,op
 
     #test_loss, test_acc = model.evaluate(small_test_images, small_test_labels)
     test_loss, test_acc = model.evaluate(test_images, test_labels)
+
     print("test_loss: ",test_loss , "test_acc: ", test_acc)
     gc.collect()
     return test_loss, test_acc

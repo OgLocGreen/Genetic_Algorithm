@@ -8,7 +8,6 @@ import datetime
 import time
 import os
 
-from KNN import train_and_evalu_CNN
 from plotting import plot_winner, plot_all, plot_histogram_all, scatterplot
 import KNN
 import crossover
