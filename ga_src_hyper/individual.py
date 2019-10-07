@@ -11,8 +11,8 @@ class Individual(object):
             epoch = random.randint(50, 100)
         if not (32 < batchsize < 64): 
             batchsize = random.randint(32, 64)
-        if not (0 < optimizer < 4):
-            optimizer = random.randint(0, 4)
+        if not (-0.5 < optimizer < 4):
+            optimizer = random.uniform(-0.5, 3.5)
         self.gene = [learningrate, dropout, epoch, batchsize, optimizer]
         print("gene: ", self.gene)
         self.var_acc = 0

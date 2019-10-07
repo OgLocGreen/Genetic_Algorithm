@@ -13,10 +13,11 @@ class Individual(object):
         print("gene: ", self.gene)
         self.var_acc = 0
         self.var_loss = 0
-
+        self.time_predict = 0
+        self.fitness = 0
         
 
-    def fitness(self):
+    def fitness_function(self):
         """
             Returns fitness of individual
             Fitness is the difference between

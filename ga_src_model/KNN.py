@@ -3,6 +3,7 @@ import tensorflow as tf
 from tensorflow import keras
 from sklearn.model_selection import train_test_split
 import gc
+import time
 """
 import tensorflow as tf
 
@@ -86,8 +87,10 @@ def train_and_evalu_model(Neuronen_Layer1,Neuronen_Layer2,Neuronen_Layer3):
     ### Model evalu
 
     #test_loss, test_acc = model.evaluate(small_test_images, small_test_labels)
+    start = time.time()
     test_loss, test_acc = model.evaluate(test_images, test_labels)
+    t_eval = time.time() - start
 
     print("test_loss: ",test_loss , "test_acc: ", test_acc)
     gc.collect()
-    return test_loss, test_acc
+    return test_loss, test_acc , t_eval

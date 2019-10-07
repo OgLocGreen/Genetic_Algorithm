@@ -87,11 +87,12 @@ class Population(object):
 
         p = multiprocessing.Pool(processes=multiprocessing_var)
 
-        accloss = p.map(fitness_multi, self.individuals)
+        acclosstime = p.map(fitness_multi, self.individuals)
 
         i = 0
         for x in self.individuals:
-            x.var_acc, x.var_loss = accloss[i][0], accloss[i][1]
+            x.var_acc, x.var_loss, x.time_predict = acclosstime[i][0], acclosstime[i][1] , acclosstime[i][2]
+            x.fitness = x.var_acc - 0.5 * x.time_predict
             fitness_sum += x.var_acc
             i += 1
         del i
@@ -141,7 +142,7 @@ class Population(object):
 
         if len(self.parents) > 0:  ##überprüfen ob eltern vorhanden
             while len(children) < target_children_size:  ##solange bis gewollte kinder auch da sind
-                father, mother = selection.selRoulette(self.parents,k=2)
+                father, mother = selection.selRoulette(self.parents,k=2,fit_attr="fitness")
                 if father != mother:  ## wenn vatter nicht gleich mutter
 
                     child_gene_1, child_gene_2 = crossover.twopoint(father.gene, mother.gene)
@@ -149,8 +150,8 @@ class Population(object):
                     child_gene_1 = mutation.gauss(child_gene_1, self.mutate_prob)
                     child_gene_2 = mutation.gauss(child_gene_2, self.mutate_prob)
 
-                    child_1 = individual.Individual(child_gene_1[0], child_gene_1[1], child_gene_1[2])
-                    child_2 = individual.Individual(child_gene_2[0], child_gene_2[1], child_gene_2[2])
+                    child_1 = individual.Individual(int(child_gene_1[0]), int(child_gene_1[1]), int(child_gene_1[2]))
+                    child_2 = individual.Individual(int(child_gene_2[0]), int(child_gene_2[1]), int(child_gene_2[2]))
                     children.append(child_1)
                     children.append(child_2)
                 else:
@@ -185,7 +186,9 @@ class Population(object):
                 "Neuronen_Layer2": str(x.gene[1]),
                 "Neuronen_Layer3": str(x.gene[2]),
                 "acc": str(x.var_acc),
-                "loss": str(x.var_loss)
+                "loss": str(x.var_loss),
+                "time": str(x.fitness),
+                "fittness": str(x.fitness)
             }
             family_tree[generations][i] = generation
             i += 1
@@ -212,7 +215,9 @@ class Population(object):
                 "Neuronen_Layer2": str(x.gene[1]),
                 "Neuronen_Layer3": str(x.gene[2]),
                 "acc": str(x.var_acc),
-                "loss": str(x.var_loss)
+                "loss": str(x.var_loss),
+                "time": str(x.fitness),
+                "fittness": str(x.fitness)
             }
             family_tree["Winner"][i] = generation
             i += 1
@@ -228,5 +233,5 @@ def fitness_multi(individuum):
     """
         Returns fitness(accuarcy ) and loss of individual
     """
-    var_loss, var_acc = KNN.train_and_evalu_model(individuum.gene[0], individuum.gene[1], individuum.gene[2])
-    return var_acc, var_loss
+    var_loss, var_acc, time_eval = KNN.train_and_evalu_model(individuum.gene[0], individuum.gene[1], individuum.gene[2])
+    return var_acc, var_loss, time_eval

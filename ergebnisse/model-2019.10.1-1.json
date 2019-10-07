@@ -1,0 +1,2334 @@
+{
+  "0": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "236",
+      "Neuronen_Layer2": "248",
+      "Neuronen_Layer3": "190",
+      "acc": "0.8939",
+      "loss": "0.3065295602440834"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "254",
+      "Neuronen_Layer2": "131",
+      "Neuronen_Layer3": "217",
+      "acc": "0.8906",
+      "loss": "0.3068497064471245"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "163",
+      "Neuronen_Layer2": "211",
+      "Neuronen_Layer3": "177",
+      "acc": "0.8899",
+      "loss": "0.313145607817173"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "125",
+      "Neuronen_Layer2": "140",
+      "Neuronen_Layer3": "164",
+      "acc": "0.8896",
+      "loss": "0.3122278510570526"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "242",
+      "Neuronen_Layer2": "94",
+      "Neuronen_Layer3": "44",
+      "acc": "0.8891",
+      "loss": "0.3208337229371071"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "217",
+      "Neuronen_Layer2": "127",
+      "Neuronen_Layer3": "217",
+      "acc": "0.8884",
+      "loss": "0.3148039567351341"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "257",
+      "Neuronen_Layer2": "86",
+      "Neuronen_Layer3": "257",
+      "acc": "0.8875",
+      "loss": "0.3133050591468811"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "167",
+      "Neuronen_Layer2": "250",
+      "Neuronen_Layer3": "127",
+      "acc": "0.8875",
+      "loss": "0.3134166534304619"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "231",
+      "Neuronen_Layer2": "150",
+      "Neuronen_Layer3": "68",
+      "acc": "0.8872",
+      "loss": "0.31430046542882917"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "248",
+      "Neuronen_Layer2": "242",
+      "Neuronen_Layer3": "190",
+      "acc": "0.8871",
+      "loss": "0.31887626428604127"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "135",
+      "Neuronen_Layer2": "186",
+      "Neuronen_Layer3": "127",
+      "acc": "0.887",
+      "loss": "0.3163726348280907"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "123",
+      "Neuronen_Layer2": "183",
+      "Neuronen_Layer3": "216",
+      "acc": "0.8869",
+      "loss": "0.32646004914045335"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "147",
+      "Neuronen_Layer2": "99",
+      "Neuronen_Layer3": "136",
+      "acc": "0.8867",
+      "loss": "0.3181402432203293"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "233",
+      "Neuronen_Layer2": "101",
+      "Neuronen_Layer3": "142",
+      "acc": "0.8866",
+      "loss": "0.3203003325819969"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "164",
+      "Neuronen_Layer2": "222",
+      "Neuronen_Layer3": "45",
+      "acc": "0.8865",
+      "loss": "0.31458824580907824"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "244",
+      "Neuronen_Layer2": "75",
+      "Neuronen_Layer3": "256",
+      "acc": "0.8861",
+      "loss": "0.3219420589208603"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "180",
+      "Neuronen_Layer2": "49",
+      "Neuronen_Layer3": "67",
+      "acc": "0.8858",
+      "loss": "0.33314388729333877"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "182",
+      "Neuronen_Layer2": "168",
+      "Neuronen_Layer3": "203",
+      "acc": "0.8851",
+      "loss": "0.32059902955293657"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "228",
+      "Neuronen_Layer2": "44",
+      "Neuronen_Layer3": "45",
+      "acc": "0.885",
+      "loss": "0.32869305162429807"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "185",
+      "Neuronen_Layer2": "103",
+      "Neuronen_Layer3": "170",
+      "acc": "0.8848",
+      "loss": "0.3237983506977558"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "89",
+      "Neuronen_Layer2": "249",
+      "Neuronen_Layer3": "238",
+      "acc": "0.8848",
+      "loss": "0.32386910951137543"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "198",
+      "Neuronen_Layer2": "31",
+      "Neuronen_Layer3": "102",
+      "acc": "0.8839",
+      "loss": "0.32578806264400484"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "95",
+      "Neuronen_Layer2": "187",
+      "Neuronen_Layer3": "116",
+      "acc": "0.883",
+      "loss": "0.3270079008936882"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "98",
+      "Neuronen_Layer2": "168",
+      "Neuronen_Layer3": "237",
+      "acc": "0.8825",
+      "loss": "0.33289286097288134"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "98",
+      "Neuronen_Layer2": "237",
+      "Neuronen_Layer3": "181",
+      "acc": "0.8822",
+      "loss": "0.3248518673181534"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "230",
+      "Neuronen_Layer2": "16",
+      "Neuronen_Layer3": "205",
+      "acc": "0.8816",
+      "loss": "0.3310506365299225"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "184",
+      "Neuronen_Layer2": "106",
+      "Neuronen_Layer3": "173",
+      "acc": "0.8815",
+      "loss": "0.33161770946979524"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "144",
+      "Neuronen_Layer2": "111",
+      "Neuronen_Layer3": "12",
+      "acc": "0.8806",
+      "loss": "0.3471198755145073"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "78",
+      "Neuronen_Layer2": "214",
+      "Neuronen_Layer3": "65",
+      "acc": "0.8804",
+      "loss": "0.3369545815467834"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "89",
+      "Neuronen_Layer2": "143",
+      "Neuronen_Layer3": "67",
+      "acc": "0.8802",
+      "loss": "0.33838395071029664"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "127",
+      "Neuronen_Layer2": "76",
+      "Neuronen_Layer3": "23",
+      "acc": "0.8798",
+      "loss": "0.34059101173877715"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "134",
+      "Neuronen_Layer2": "64",
+      "Neuronen_Layer3": "227",
+      "acc": "0.8793",
+      "loss": "0.3308019199490547"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "85",
+      "Neuronen_Layer2": "60",
+      "Neuronen_Layer3": "29",
+      "acc": "0.8784",
+      "loss": "0.3492152565598488"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "229",
+      "Neuronen_Layer2": "22",
+      "Neuronen_Layer3": "26",
+      "acc": "0.8778",
+      "loss": "0.35276127971410753"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "69",
+      "Neuronen_Layer2": "231",
+      "Neuronen_Layer3": "220",
+      "acc": "0.8776",
+      "loss": "0.3397305879354477"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "81",
+      "Neuronen_Layer2": "236",
+      "Neuronen_Layer3": "31",
+      "acc": "0.8775",
+      "loss": "0.3448145553827286"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "228",
+      "Neuronen_Layer2": "228",
+      "Neuronen_Layer3": "10",
+      "acc": "0.8769",
+      "loss": "0.35931681532859805"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "48",
+      "Neuronen_Layer2": "99",
+      "Neuronen_Layer3": "251",
+      "acc": "0.8763",
+      "loss": "0.3487610857963562"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "78",
+      "Neuronen_Layer2": "84",
+      "Neuronen_Layer3": "30",
+      "acc": "0.8759",
+      "loss": "0.35067866705656053"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "48",
+      "Neuronen_Layer2": "94",
+      "Neuronen_Layer3": "19",
+      "acc": "0.8664",
+      "loss": "0.37926853239536285"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "48",
+      "Neuronen_Layer2": "118",
+      "Neuronen_Layer3": "13",
+      "acc": "0.8611",
+      "loss": "0.3889473021507263"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "41",
+      "Neuronen_Layer2": "12",
+      "Neuronen_Layer3": "45",
+      "acc": "0.8508",
+      "loss": "0.4306134775876999"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "23",
+      "Neuronen_Layer2": "92",
+      "Neuronen_Layer3": "252",
+      "acc": "0.8464",
+      "loss": "0.4214881576538086"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "170",
+      "Neuronen_Layer2": "5",
+      "Neuronen_Layer3": "69",
+      "acc": "0.8375",
+      "loss": "0.4636687374830246"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "197",
+      "Neuronen_Layer2": "122",
+      "Neuronen_Layer3": "3",
+      "acc": "0.8116",
+      "loss": "0.6952780318260193"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "6",
+      "Neuronen_Layer2": "244",
+      "Neuronen_Layer3": "52",
+      "acc": "0.7146",
+      "loss": "0.72388397397995"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "4",
+      "Neuronen_Layer2": "107",
+      "Neuronen_Layer3": "80",
+      "acc": "0.7019",
+      "loss": "0.7852333381652832"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "33",
+      "Neuronen_Layer2": "3",
+      "Neuronen_Layer3": "213",
+      "acc": "0.6738",
+      "loss": "0.7639256591796875"
+    },
+    "48": {
+      "name": 48,
+      "Neuronen_Layer1": "3",
+      "Neuronen_Layer2": "45",
+      "Neuronen_Layer3": "87",
+      "acc": "0.5698",
+      "loss": "1.0887412239074707"
+    },
+    "49": {
+      "name": 49,
+      "Neuronen_Layer1": "1",
+      "Neuronen_Layer2": "189",
+      "Neuronen_Layer3": "246",
+      "acc": "0.322",
+      "loss": "1.5804120111465454"
+    }
+  },
+  "1": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "220.83152",
+      "Neuronen_Layer2": "73.75511",
+      "Neuronen_Layer3": "187.12778",
+      "acc": "0.8898",
+      "loss": "0.3154699746489525"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "202.05666",
+      "Neuronen_Layer2": "226.71678",
+      "Neuronen_Layer3": "249.23493",
+      "acc": "0.8895",
+      "loss": "0.30967039511203764"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "245.26139",
+      "Neuronen_Layer2": "224.43582",
+      "Neuronen_Layer3": "236.70599",
+      "acc": "0.8891",
+      "loss": "0.3097106621146202"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "236.93741",
+      "Neuronen_Layer2": "157.06102",
+      "Neuronen_Layer3": "72.0558",
+      "acc": "0.8888",
+      "loss": "0.30793105850219726"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "197.81128",
+      "Neuronen_Layer2": "130.48678",
+      "Neuronen_Layer3": "188.04862",
+      "acc": "0.8888",
+      "loss": "0.31189127959012986"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "228.27687",
+      "Neuronen_Layer2": "119.37069",
+      "Neuronen_Layer3": "185.56058",
+      "acc": "0.8887",
+      "loss": "0.31315742614269254"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "197.81128",
+      "Neuronen_Layer2": "130.48678",
+      "Neuronen_Layer3": "188.04862",
+      "acc": "0.8885",
+      "loss": "0.3108646888494492"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "129.79628",
+      "Neuronen_Layer2": "163.78134",
+      "Neuronen_Layer3": "179.03017",
+      "acc": "0.8885",
+      "loss": "0.31072900590896607"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "197.94352",
+      "Neuronen_Layer2": "251.21003",
+      "Neuronen_Layer3": "113.61317",
+      "acc": "0.8881",
+      "loss": "0.3124049554646015"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "172.18579",
+      "Neuronen_Layer2": "192.5584",
+      "Neuronen_Layer3": "241.33331",
+      "acc": "0.8878",
+      "loss": "0.312399928689003"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "246.86065",
+      "Neuronen_Layer2": "203.02978",
+      "Neuronen_Layer3": "142.78432",
+      "acc": "0.8877",
+      "loss": "0.31920305007696154"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "138.05067",
+      "Neuronen_Layer2": "255.35991",
+      "Neuronen_Layer3": "39.84823",
+      "acc": "0.8875",
+      "loss": "0.32460405467748643"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "249.08529",
+      "Neuronen_Layer2": "197.60002",
+      "Neuronen_Layer3": "237.72459",
+      "acc": "0.8868",
+      "loss": "0.31520831336975097"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "118.02678",
+      "Neuronen_Layer2": "171.89835",
+      "Neuronen_Layer3": "130.18551",
+      "acc": "0.8861",
+      "loss": "0.3180052575826645"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "121.79934",
+      "Neuronen_Layer2": "157.01718",
+      "Neuronen_Layer3": "231.04109",
+      "acc": "0.8855",
+      "loss": "0.322916470181942"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "183.23682",
+      "Neuronen_Layer2": "230.15348",
+      "Neuronen_Layer3": "161.8147",
+      "acc": "0.8853",
+      "loss": "0.3156438739061356"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "99.59312",
+      "Neuronen_Layer2": "240.38858",
+      "Neuronen_Layer3": "188.98593",
+      "acc": "0.8852",
+      "loss": "0.32016608727574347"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "247",
+      "Neuronen_Layer2": "45.11531",
+      "Neuronen_Layer3": "38.80819",
+      "acc": "0.8848",
+      "loss": "0.32795672644376755"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "137.81607",
+      "Neuronen_Layer2": "105.38386",
+      "Neuronen_Layer3": "153.10146",
+      "acc": "0.8845",
+      "loss": "0.31893501765728"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "111.25518",
+      "Neuronen_Layer2": "90.07799",
+      "Neuronen_Layer3": "211.43522",
+      "acc": "0.8842",
+      "loss": "0.32667628687620165"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "172",
+      "Neuronen_Layer2": "44.31539",
+      "Neuronen_Layer3": "46.84032",
+      "acc": "0.8836",
+      "loss": "0.3289788505911827"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "121.74901",
+      "Neuronen_Layer2": "215.17075",
+      "Neuronen_Layer3": "39.64649",
+      "acc": "0.8836",
+      "loss": "0.3290171074926853"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "233.1854",
+      "Neuronen_Layer2": "44.73538",
+      "Neuronen_Layer3": "45.38636",
+      "acc": "0.8833",
+      "loss": "0.32727404222488404"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "159",
+      "Neuronen_Layer2": "92.92241",
+      "Neuronen_Layer3": "49.34595",
+      "acc": "0.8833",
+      "loss": "0.32154974646568296"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "135.66817",
+      "Neuronen_Layer2": "194.15233",
+      "Neuronen_Layer3": "144.45932",
+      "acc": "0.883",
+      "loss": "0.32897998864650724"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "199.94881",
+      "Neuronen_Layer2": "33.3654",
+      "Neuronen_Layer3": "113.27437",
+      "acc": "0.883",
+      "loss": "0.3267397449970245"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "104.32066",
+      "Neuronen_Layer2": "168.49285",
+      "Neuronen_Layer3": "131.04343",
+      "acc": "0.8829",
+      "loss": "0.3266515480160713"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "76.1903",
+      "Neuronen_Layer2": "247.53209",
+      "Neuronen_Layer3": "222.67986",
+      "acc": "0.8827",
+      "loss": "0.3273044183969498"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "113.25752",
+      "Neuronen_Layer2": "166.44546",
+      "Neuronen_Layer3": "22.045",
+      "acc": "0.8823",
+      "loss": "0.3365939102649689"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "71.73106",
+      "Neuronen_Layer2": "226.13644",
+      "Neuronen_Layer3": "244.40525",
+      "acc": "0.8821",
+      "loss": "0.3284329395532608"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "114.91563",
+      "Neuronen_Layer2": "153.25627",
+      "Neuronen_Layer3": "132.52531",
+      "acc": "0.8818",
+      "loss": "0.3302914319217205"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "90.56736",
+      "Neuronen_Layer2": "213",
+      "Neuronen_Layer3": "207.08544",
+      "acc": "0.8815",
+      "loss": "0.3282027734279633"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "74.33627",
+      "Neuronen_Layer2": "231.42121",
+      "Neuronen_Layer3": "34.88449",
+      "acc": "0.8811",
+      "loss": "0.3365284054040909"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "68.82961",
+      "Neuronen_Layer2": "232.09176",
+      "Neuronen_Layer3": "219.96151",
+      "acc": "0.8808",
+      "loss": "0.33398408961296083"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "153.36672",
+      "Neuronen_Layer2": "117.13742",
+      "Neuronen_Layer3": "156.48128",
+      "acc": "0.8801",
+      "loss": "0.3273166956484318"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "133.20664",
+      "Neuronen_Layer2": "186.84558",
+      "Neuronen_Layer3": "22.34478",
+      "acc": "0.88",
+      "loss": "0.3396627339243889"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "132.89735",
+      "Neuronen_Layer2": "165.29985",
+      "Neuronen_Layer3": "172.37205",
+      "acc": "0.8798",
+      "loss": "0.3295654758095741"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "86.70446",
+      "Neuronen_Layer2": "100.82133",
+      "Neuronen_Layer3": "30.8091",
+      "acc": "0.8797",
+      "loss": "0.341859481716156"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "136.77204",
+      "Neuronen_Layer2": "66.69945",
+      "Neuronen_Layer3": "21.15757",
+      "acc": "0.8795",
+      "loss": "0.345753859102726"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "78.81559",
+      "Neuronen_Layer2": "94.74583",
+      "Neuronen_Layer3": "24.82686",
+      "acc": "0.8791",
+      "loss": "0.3512553624987602"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "159.14986",
+      "Neuronen_Layer2": "100.16362",
+      "Neuronen_Layer3": "12.01243",
+      "acc": "0.8791",
+      "loss": "0.3522219772577286"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "74.28877",
+      "Neuronen_Layer2": "211.25137",
+      "Neuronen_Layer3": "191.50515",
+      "acc": "0.8784",
+      "loss": "0.33500243074893954"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "87.15829",
+      "Neuronen_Layer2": "162.29364",
+      "Neuronen_Layer3": "69.28783",
+      "acc": "0.8782",
+      "loss": "0.33465967794656754"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "215.80637",
+      "Neuronen_Layer2": "197.15786",
+      "Neuronen_Layer3": "8.84877",
+      "acc": "0.8779",
+      "loss": "0.36640157980918886"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "81.88655",
+      "Neuronen_Layer2": "220.28149",
+      "Neuronen_Layer3": "35.3599",
+      "acc": "0.8778",
+      "loss": "0.33812023948431014"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "195.56574",
+      "Neuronen_Layer2": "22.88619",
+      "Neuronen_Layer3": "25.11258",
+      "acc": "0.8768",
+      "loss": "0.3540219084024429"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "215.80637",
+      "Neuronen_Layer2": "197.15786",
+      "Neuronen_Layer3": "8.84877",
+      "acc": "0.875",
+      "loss": "0.39062862281799315"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "44.99151",
+      "Neuronen_Layer2": "93.10632",
+      "Neuronen_Layer3": "236.38832",
+      "acc": "0.8726",
+      "loss": "0.3518384980916977"
+    }
+  },
+  "2": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "201.76984",
+      "Neuronen_Layer2": "227",
+      "Neuronen_Layer3": "146.47345",
+      "acc": "0.8915",
+      "loss": "0.3098064451575279"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "223.08917",
+      "Neuronen_Layer2": "214",
+      "Neuronen_Layer3": "213.83321",
+      "acc": "0.8904",
+      "loss": "0.30839211509227754"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "234.43898",
+      "Neuronen_Layer2": "125.87476",
+      "Neuronen_Layer3": "185.83329",
+      "acc": "0.8897",
+      "loss": "0.3091104296207428"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "179.56588",
+      "Neuronen_Layer2": "74",
+      "Neuronen_Layer3": "124.84982",
+      "acc": "0.8887",
+      "loss": "0.31710429228544235"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "214.07865",
+      "Neuronen_Layer2": "207.66964",
+      "Neuronen_Layer3": "119.56333",
+      "acc": "0.8886",
+      "loss": "0.30783348190784454"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "215.68626",
+      "Neuronen_Layer2": "160.10568",
+      "Neuronen_Layer3": "48.86558",
+      "acc": "0.8885",
+      "loss": "0.3172889064669609"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "220.83152",
+      "Neuronen_Layer2": "73.75511",
+      "Neuronen_Layer3": "187.12778",
+      "acc": "0.8881",
+      "loss": "0.31956382014751433"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "120.21068",
+      "Neuronen_Layer2": "158.26299",
+      "Neuronen_Layer3": "176.40651",
+      "acc": "0.8881",
+      "loss": "0.32265987451076505"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "224.89895",
+      "Neuronen_Layer2": "194.24311",
+      "Neuronen_Layer3": "148.36699",
+      "acc": "0.888",
+      "loss": "0.3130072860479355"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "145",
+      "Neuronen_Layer2": "230.61007",
+      "Neuronen_Layer3": "245.37694",
+      "acc": "0.8879",
+      "loss": "0.3125820321917534"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "207.5881",
+      "Neuronen_Layer2": "45.69195",
+      "Neuronen_Layer3": "43.09271",
+      "acc": "0.8879",
+      "loss": "0.32168316848278045"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "227.03309",
+      "Neuronen_Layer2": "41.28032",
+      "Neuronen_Layer3": "45.30859",
+      "acc": "0.8878",
+      "loss": "0.3207149911761284"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "149.09922",
+      "Neuronen_Layer2": "113.86292",
+      "Neuronen_Layer3": "203.44396",
+      "acc": "0.8876",
+      "loss": "0.3231077291727066"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "173.70678",
+      "Neuronen_Layer2": "206.44733",
+      "Neuronen_Layer3": "132.07142",
+      "acc": "0.8873",
+      "loss": "0.320332788002491"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "168.37173",
+      "Neuronen_Layer2": "117.04488",
+      "Neuronen_Layer3": "39.37471",
+      "acc": "0.8871",
+      "loss": "0.32392125322818754"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "99",
+      "Neuronen_Layer2": "228.24453",
+      "Neuronen_Layer3": "255.03271",
+      "acc": "0.8866",
+      "loss": "0.3219485674381256"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "197.7878",
+      "Neuronen_Layer2": "26.71839",
+      "Neuronen_Layer3": "226.32419",
+      "acc": "0.8865",
+      "loss": "0.3235620049715042"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "170.73559",
+      "Neuronen_Layer2": "214.27048",
+      "Neuronen_Layer3": "50.78649",
+      "acc": "0.8865",
+      "loss": "0.32128610097169874"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "184.05227",
+      "Neuronen_Layer2": "91",
+      "Neuronen_Layer3": "104.96756",
+      "acc": "0.8859",
+      "loss": "0.31973501671552657"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "252.83236",
+      "Neuronen_Layer2": "172.7312",
+      "Neuronen_Layer3": "209.35463",
+      "acc": "0.8858",
+      "loss": "0.3153418947100639"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "173.70678",
+      "Neuronen_Layer2": "206.44733",
+      "Neuronen_Layer3": "132.07142",
+      "acc": "0.8857",
+      "loss": "0.3161412586569786"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "141.86758",
+      "Neuronen_Layer2": "251.59821",
+      "Neuronen_Layer3": "44.29117",
+      "acc": "0.8856",
+      "loss": "0.3173171792387962"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "147.06248",
+      "Neuronen_Layer2": "133.5137",
+      "Neuronen_Layer3": "177.53749",
+      "acc": "0.8856",
+      "loss": "0.31673893637657163"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "142.94462",
+      "Neuronen_Layer2": "155.81419",
+      "Neuronen_Layer3": "225.10167",
+      "acc": "0.8855",
+      "loss": "0.32190130326747896"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "207.73023",
+      "Neuronen_Layer2": "29.92434",
+      "Neuronen_Layer3": "115.21543",
+      "acc": "0.8849",
+      "loss": "0.32735937477350235"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "117.72362",
+      "Neuronen_Layer2": "123.61272",
+      "Neuronen_Layer3": "21.36442",
+      "acc": "0.8845",
+      "loss": "0.33722417838573454"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "187.33924",
+      "Neuronen_Layer2": "47.41839",
+      "Neuronen_Layer3": "51.81511",
+      "acc": "0.8841",
+      "loss": "0.3253624618411064"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "140.3815",
+      "Neuronen_Layer2": "98.58767",
+      "Neuronen_Layer3": "136.45207",
+      "acc": "0.8838",
+      "loss": "0.32424098213911057"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "171.06543",
+      "Neuronen_Layer2": "112.19457",
+      "Neuronen_Layer3": "44.03944",
+      "acc": "0.8837",
+      "loss": "0.32562051744461057"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "193.09562",
+      "Neuronen_Layer2": "26.07474",
+      "Neuronen_Layer3": "138.3425",
+      "acc": "0.8836",
+      "loss": "0.3261724521160126"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "143.31102",
+      "Neuronen_Layer2": "233.2546",
+      "Neuronen_Layer3": "255.45655",
+      "acc": "0.8835",
+      "loss": "0.31628193113803865"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "148.38381",
+      "Neuronen_Layer2": "171.35087",
+      "Neuronen_Layer3": "105.89086",
+      "acc": "0.8833",
+      "loss": "0.32285855065584185"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "75.16405",
+      "Neuronen_Layer2": "202.67229",
+      "Neuronen_Layer3": "112.5329",
+      "acc": "0.8832",
+      "loss": "0.32974545900821683"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "210.89811",
+      "Neuronen_Layer2": "30.62835",
+      "Neuronen_Layer3": "118.98007",
+      "acc": "0.8829",
+      "loss": "0.326155123090744"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "196.89202",
+      "Neuronen_Layer2": "125.62876",
+      "Neuronen_Layer3": "44.808",
+      "acc": "0.8827",
+      "loss": "0.32730419970750807"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "82.9315",
+      "Neuronen_Layer2": "119.40935",
+      "Neuronen_Layer3": "134.62205",
+      "acc": "0.8823",
+      "loss": "0.3259478249192238"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "79.53219",
+      "Neuronen_Layer2": "184.4382",
+      "Neuronen_Layer3": "139.34119",
+      "acc": "0.8821",
+      "loss": "0.33270849447250367"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "110.77209",
+      "Neuronen_Layer2": "155.50921",
+      "Neuronen_Layer3": "109.10744",
+      "acc": "0.8816",
+      "loss": "0.3243191464662552"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "108.04978",
+      "Neuronen_Layer2": "174.16603",
+      "Neuronen_Layer3": "23.67387",
+      "acc": "0.8813",
+      "loss": "0.33784737507104873"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "110.26858",
+      "Neuronen_Layer2": "208.2807",
+      "Neuronen_Layer3": "98",
+      "acc": "0.881",
+      "loss": "0.3309866117358208"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "122",
+      "Neuronen_Layer2": "103.93131",
+      "Neuronen_Layer3": "186.08707",
+      "acc": "0.8806",
+      "loss": "0.3326278549075127"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "126.33967",
+      "Neuronen_Layer2": "47.09446",
+      "Neuronen_Layer3": "138.25263",
+      "acc": "0.88",
+      "loss": "0.33690220413208005"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "150.53073",
+      "Neuronen_Layer2": "112.16836",
+      "Neuronen_Layer3": "36.68714",
+      "acc": "0.8799",
+      "loss": "0.3376185173392296"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "192.71922",
+      "Neuronen_Layer2": "23",
+      "Neuronen_Layer3": "41.29996",
+      "acc": "0.8795",
+      "loss": "0.33929300885200503"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "73.26415",
+      "Neuronen_Layer2": "235.96926",
+      "Neuronen_Layer3": "44.05755",
+      "acc": "0.8787",
+      "loss": "0.3368251178026199"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "70.94316",
+      "Neuronen_Layer2": "177.5145",
+      "Neuronen_Layer3": "145.52592",
+      "acc": "0.8781",
+      "loss": "0.3343900686144829"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "170.50118",
+      "Neuronen_Layer2": "150",
+      "Neuronen_Layer3": "6",
+      "acc": "0.8741",
+      "loss": "0.4322260117530823"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "28",
+      "Neuronen_Layer2": "103.77532",
+      "Neuronen_Layer3": "215.91389",
+      "acc": "0.8584",
+      "loss": "0.3937586822271347"
+    }
+  },
+  "3": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "201.76984",
+      "Neuronen_Layer2": "227",
+      "Neuronen_Layer3": "146.47345",
+      "acc": "0.8929",
+      "loss": "0.31022464886009693"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "221.90547",
+      "Neuronen_Layer2": "150.4709",
+      "Neuronen_Layer3": "213.63335",
+      "acc": "0.8904",
+      "loss": "0.3129771795392036"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "145.89575",
+      "Neuronen_Layer2": "126.12247",
+      "Neuronen_Layer3": "194.95255",
+      "acc": "0.8896",
+      "loss": "0.3185215518474579"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "148.49679",
+      "Neuronen_Layer2": "226.70911",
+      "Neuronen_Layer3": "248.34407",
+      "acc": "0.8894",
+      "loss": "0.3116256097316742"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "175.22995",
+      "Neuronen_Layer2": "68.5454",
+      "Neuronen_Layer3": "190.78172",
+      "acc": "0.8893",
+      "loss": "0.31765293629169467"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "173.41575",
+      "Neuronen_Layer2": "178.44142",
+      "Neuronen_Layer3": "111.32613",
+      "acc": "0.8887",
+      "loss": "0.31743169741630556"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "234.03096",
+      "Neuronen_Layer2": "127.71542",
+      "Neuronen_Layer3": "172.16565",
+      "acc": "0.8885",
+      "loss": "0.31586312346458434"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "239.63154",
+      "Neuronen_Layer2": "129.98385",
+      "Neuronen_Layer3": "38.93426",
+      "acc": "0.8884",
+      "loss": "0.33098670417070386"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "138.54579",
+      "Neuronen_Layer2": "217.45792",
+      "Neuronen_Layer3": "226.96881",
+      "acc": "0.8879",
+      "loss": "0.31736066848635675"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "169.00577",
+      "Neuronen_Layer2": "133.28449",
+      "Neuronen_Layer3": "41.37857",
+      "acc": "0.8876",
+      "loss": "0.3198012843489647"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "123.59826",
+      "Neuronen_Layer2": "215.89211",
+      "Neuronen_Layer3": "159.3416",
+      "acc": "0.8875",
+      "loss": "0.3186808305978775"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "226.91745",
+      "Neuronen_Layer2": "230.68507",
+      "Neuronen_Layer3": "36.5812",
+      "acc": "0.8874",
+      "loss": "0.32302768375873564"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "166.35709",
+      "Neuronen_Layer2": "116.98777",
+      "Neuronen_Layer3": "196.45079",
+      "acc": "0.8872",
+      "loss": "0.32132980085611346"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "109.55717",
+      "Neuronen_Layer2": "178.08325",
+      "Neuronen_Layer3": "194.73027",
+      "acc": "0.887",
+      "loss": "0.31972096647024156"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "221.57011",
+      "Neuronen_Layer2": "111.6244",
+      "Neuronen_Layer3": "179.04266",
+      "acc": "0.887",
+      "loss": "0.3133335772812367"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "99.27997",
+      "Neuronen_Layer2": "196.54426",
+      "Neuronen_Layer3": "144.81779",
+      "acc": "0.8869",
+      "loss": "0.3129986920952797"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "171.11288",
+      "Neuronen_Layer2": "174.22481",
+      "Neuronen_Layer3": "130.2116",
+      "acc": "0.8868",
+      "loss": "0.3126155898571014"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "182.17599",
+      "Neuronen_Layer2": "204.91195",
+      "Neuronen_Layer3": "132.97828",
+      "acc": "0.8858",
+      "loss": "0.31878173677921295"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "155.04719",
+      "Neuronen_Layer2": "168.42034",
+      "Neuronen_Layer3": "101.05168",
+      "acc": "0.8855",
+      "loss": "0.3200397496461868"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "204.6865",
+      "Neuronen_Layer2": "31.08601",
+      "Neuronen_Layer3": "137.66726",
+      "acc": "0.8855",
+      "loss": "0.32174055585861205"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "126.34538",
+      "Neuronen_Layer2": "126.17995",
+      "Neuronen_Layer3": "233.13449",
+      "acc": "0.8854",
+      "loss": "0.32369108070135116"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "133.55768",
+      "Neuronen_Layer2": "242.78624",
+      "Neuronen_Layer3": "201.92278",
+      "acc": "0.8853",
+      "loss": "0.3236049611568451"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "94.15191",
+      "Neuronen_Layer2": "127.82543",
+      "Neuronen_Layer3": "131.19446",
+      "acc": "0.8852",
+      "loss": "0.3219271220803261"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "143.04985",
+      "Neuronen_Layer2": "154.73636",
+      "Neuronen_Layer3": "238.39553",
+      "acc": "0.885",
+      "loss": "0.3260601620912552"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "121.67365",
+      "Neuronen_Layer2": "250.41079",
+      "Neuronen_Layer3": "20.36472",
+      "acc": "0.8848",
+      "loss": "0.33757670389413835"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "203.16079",
+      "Neuronen_Layer2": "65",
+      "Neuronen_Layer3": "221.56215",
+      "acc": "0.8841",
+      "loss": "0.32356446859240534"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "154.15264",
+      "Neuronen_Layer2": "111.62589",
+      "Neuronen_Layer3": "42.59768",
+      "acc": "0.884",
+      "loss": "0.32598075518608094"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "127.24018",
+      "Neuronen_Layer2": "233.61275",
+      "Neuronen_Layer3": "20.83176",
+      "acc": "0.884",
+      "loss": "0.3365615285038948"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "152.11621",
+      "Neuronen_Layer2": "121.13513",
+      "Neuronen_Layer3": "193.60613",
+      "acc": "0.8838",
+      "loss": "0.32072577630281446"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "224.06941",
+      "Neuronen_Layer2": "136.8104",
+      "Neuronen_Layer3": "43.80735",
+      "acc": "0.8837",
+      "loss": "0.3253266731977463"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "113.05129",
+      "Neuronen_Layer2": "227.46915",
+      "Neuronen_Layer3": "50.3741",
+      "acc": "0.8837",
+      "loss": "0.3295457394361496"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "254.8908",
+      "Neuronen_Layer2": "119.72356",
+      "Neuronen_Layer3": "126",
+      "acc": "0.8835",
+      "loss": "0.3185180735170841"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "124.59573",
+      "Neuronen_Layer2": "115.34991",
+      "Neuronen_Layer3": "215.32599",
+      "acc": "0.8834",
+      "loss": "0.3242535268425941"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "114.5711",
+      "Neuronen_Layer2": "134.16374",
+      "Neuronen_Layer3": "244.93363",
+      "acc": "0.8832",
+      "loss": "0.32166502771377564"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "203.16079",
+      "Neuronen_Layer2": "293.87153",
+      "Neuronen_Layer3": "221.56215",
+      "acc": "0.8825",
+      "loss": "0.31924512583613396"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "136.184",
+      "Neuronen_Layer2": "106.52561",
+      "Neuronen_Layer3": "38.61145",
+      "acc": "0.8816",
+      "loss": "0.3278760021209717"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "197.47369",
+      "Neuronen_Layer2": "135.64964",
+      "Neuronen_Layer3": "17.55501",
+      "acc": "0.8816",
+      "loss": "0.33486901458501817"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "141.8049",
+      "Neuronen_Layer2": "43.2572",
+      "Neuronen_Layer3": "40.91157",
+      "acc": "0.8815",
+      "loss": "0.3359076737165451"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "160.55831",
+      "Neuronen_Layer2": "33.42109",
+      "Neuronen_Layer3": "118.49249",
+      "acc": "0.8813",
+      "loss": "0.3325196218967438"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "179.24123",
+      "Neuronen_Layer2": "92",
+      "Neuronen_Layer3": "19.56052",
+      "acc": "0.8813",
+      "loss": "0.3354290114045143"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "97.34701",
+      "Neuronen_Layer2": "125.86845",
+      "Neuronen_Layer3": "138.14156",
+      "acc": "0.881",
+      "loss": "0.3372531872272491"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "90.44042",
+      "Neuronen_Layer2": "223.19089",
+      "Neuronen_Layer3": "109.18605",
+      "acc": "0.8803",
+      "loss": "0.3354960188150406"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "211.08314",
+      "Neuronen_Layer2": "22.76247",
+      "Neuronen_Layer3": "128.61075",
+      "acc": "0.8802",
+      "loss": "0.32769666361808775"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "87.93768",
+      "Neuronen_Layer2": "186.0814",
+      "Neuronen_Layer3": "125.07169",
+      "acc": "0.8801",
+      "loss": "0.3231023721218109"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "97.56392",
+      "Neuronen_Layer2": "184.39798",
+      "Neuronen_Layer3": "132.78657",
+      "acc": "0.8791",
+      "loss": "0.33520970101356506"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "172.4702",
+      "Neuronen_Layer2": "43",
+      "Neuronen_Layer3": "20.89601",
+      "acc": "0.8762",
+      "loss": "0.34632150228619574"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "81.01399",
+      "Neuronen_Layer2": "120.81211",
+      "Neuronen_Layer3": "117.63739",
+      "acc": "0.8759",
+      "loss": "0.3413165258049965"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "58",
+      "Neuronen_Layer2": "45.03106",
+      "Neuronen_Layer3": "47.37713",
+      "acc": "0.8652",
+      "loss": "0.369545014834404"
+    }
+  },
+  "4": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "149.45894",
+      "Neuronen_Layer2": "250.62261",
+      "Neuronen_Layer3": "219.80789",
+      "acc": "0.891",
+      "loss": "0.3121915418148041"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "230.54804",
+      "Neuronen_Layer2": "109.11402",
+      "Neuronen_Layer3": "130.18693",
+      "acc": "0.8902",
+      "loss": "0.3089718629479408"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "256.04394",
+      "Neuronen_Layer2": "142.20579",
+      "Neuronen_Layer3": "42.18433",
+      "acc": "0.8901",
+      "loss": "0.3093705723524094"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "197.87938",
+      "Neuronen_Layer2": "158.34071",
+      "Neuronen_Layer3": "244.18174",
+      "acc": "0.8897",
+      "loss": "0.313410291492939"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "250.77518",
+      "Neuronen_Layer2": "121.75559",
+      "Neuronen_Layer3": "156.6044",
+      "acc": "0.8897",
+      "loss": "0.31083739802837373"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "205.37529",
+      "Neuronen_Layer2": "204",
+      "Neuronen_Layer3": "163.07189",
+      "acc": "0.8897",
+      "loss": "0.31045816521048547"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "197.87938",
+      "Neuronen_Layer2": "158.34071",
+      "Neuronen_Layer3": "244.18174",
+      "acc": "0.8893",
+      "loss": "0.31429434882998464"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "179.11703",
+      "Neuronen_Layer2": "141.05531",
+      "Neuronen_Layer3": "86.54702",
+      "acc": "0.8886",
+      "loss": "0.31573885142803193"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "201.76984",
+      "Neuronen_Layer2": "227",
+      "Neuronen_Layer3": "146.47345",
+      "acc": "0.8882",
+      "loss": "0.3087437894523144"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "148.10631",
+      "Neuronen_Layer2": "211.26125",
+      "Neuronen_Layer3": "193.42349",
+      "acc": "0.8879",
+      "loss": "0.31418927031755445"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "105.45934",
+      "Neuronen_Layer2": "256.22607",
+      "Neuronen_Layer3": "135.96709",
+      "acc": "0.8878",
+      "loss": "0.31744073350429536"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "150.28033",
+      "Neuronen_Layer2": "137.47444",
+      "Neuronen_Layer3": "207.63126",
+      "acc": "0.8878",
+      "loss": "0.31688965150117876"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "135.70683",
+      "Neuronen_Layer2": "144.95867",
+      "Neuronen_Layer3": "244.22731",
+      "acc": "0.8875",
+      "loss": "0.3159800703763962"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "190.3793",
+      "Neuronen_Layer2": "227.84866",
+      "Neuronen_Layer3": "43.43851",
+      "acc": "0.8873",
+      "loss": "0.32287173879146575"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "167.99506",
+      "Neuronen_Layer2": "191.26012",
+      "Neuronen_Layer3": "125.42719",
+      "acc": "0.8872",
+      "loss": "0.3235190974354744"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "146.47091",
+      "Neuronen_Layer2": "150.65617",
+      "Neuronen_Layer3": "206.29513",
+      "acc": "0.8871",
+      "loss": "0.32008924124240873"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "159.59086",
+      "Neuronen_Layer2": "124.61091",
+      "Neuronen_Layer3": "38.17529",
+      "acc": "0.887",
+      "loss": "0.3215458400845528"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "149.93958",
+      "Neuronen_Layer2": "106.99746",
+      "Neuronen_Layer3": "182.79145",
+      "acc": "0.887",
+      "loss": "0.3189152032136917"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "205.67445",
+      "Neuronen_Layer2": "150.83004",
+      "Neuronen_Layer3": "84.11683",
+      "acc": "0.8868",
+      "loss": "0.3165570540547371"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "230.75091",
+      "Neuronen_Layer2": "132.18502",
+      "Neuronen_Layer3": "44.92186",
+      "acc": "0.8867",
+      "loss": "0.3241933410257101"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "214.88988",
+      "Neuronen_Layer2": "179.42508",
+      "Neuronen_Layer3": "37.3331",
+      "acc": "0.8863",
+      "loss": "0.3213228740155697"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "148.93849",
+      "Neuronen_Layer2": "217.85312",
+      "Neuronen_Layer3": "214.45264",
+      "acc": "0.8863",
+      "loss": "0.3190316067099571"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "118.36644",
+      "Neuronen_Layer2": "199.75699",
+      "Neuronen_Layer3": "135.38904",
+      "acc": "0.8859",
+      "loss": "0.3179554594993591"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "105.73842",
+      "Neuronen_Layer2": "234.49268",
+      "Neuronen_Layer3": "166.27234",
+      "acc": "0.8854",
+      "loss": "0.3163326427519321"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "135.85001",
+      "Neuronen_Layer2": "147.60072",
+      "Neuronen_Layer3": "237.25576",
+      "acc": "0.8854",
+      "loss": "0.3196942767560482"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "122.5046",
+      "Neuronen_Layer2": "143.18195",
+      "Neuronen_Layer3": "237.55795",
+      "acc": "0.885",
+      "loss": "0.3165231696367264"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "164.15966",
+      "Neuronen_Layer2": "157.72328",
+      "Neuronen_Layer3": "36.72508",
+      "acc": "0.8845",
+      "loss": "0.3234390615463257"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "122.50171",
+      "Neuronen_Layer2": "166.62563",
+      "Neuronen_Layer3": "234",
+      "acc": "0.8844",
+      "loss": "0.3225198624610901"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "213.73888",
+      "Neuronen_Layer2": "139.43438",
+      "Neuronen_Layer3": "35.63524",
+      "acc": "0.8842",
+      "loss": "0.3237243971049786"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "167.74411",
+      "Neuronen_Layer2": "55.97449",
+      "Neuronen_Layer3": "195.69552",
+      "acc": "0.8839",
+      "loss": "0.3327920786380768"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "128.982",
+      "Neuronen_Layer2": "158.09064",
+      "Neuronen_Layer3": "40.05645",
+      "acc": "0.8838",
+      "loss": "0.32992326812148093"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "126.188",
+      "Neuronen_Layer2": "116.84253",
+      "Neuronen_Layer3": "37.75801",
+      "acc": "0.8837",
+      "loss": "0.3282245811700821"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "113.01988",
+      "Neuronen_Layer2": "96.71525",
+      "Neuronen_Layer3": "169.37296",
+      "acc": "0.8835",
+      "loss": "0.3271185871839523"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "102.85423",
+      "Neuronen_Layer2": "197.03423",
+      "Neuronen_Layer3": "174.94679",
+      "acc": "0.8832",
+      "loss": "0.32537837829589844"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "99.7233",
+      "Neuronen_Layer2": "134.86647",
+      "Neuronen_Layer3": "137.89656",
+      "acc": "0.8832",
+      "loss": "0.3284889719247818"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "126.93441",
+      "Neuronen_Layer2": "123.17263",
+      "Neuronen_Layer3": "256.88327",
+      "acc": "0.8831",
+      "loss": "0.32011049888134"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "186.97455",
+      "Neuronen_Layer2": "55.51281",
+      "Neuronen_Layer3": "210.49811",
+      "acc": "0.8824",
+      "loss": "0.3329134171962738"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "162.17436",
+      "Neuronen_Layer2": "118.35159",
+      "Neuronen_Layer3": "223.80377",
+      "acc": "0.882",
+      "loss": "0.33004853631258013"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "163.34517",
+      "Neuronen_Layer2": "169",
+      "Neuronen_Layer3": "228.6932",
+      "acc": "0.8819",
+      "loss": "0.32722654049396516"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "125.85094",
+      "Neuronen_Layer2": "132.32028",
+      "Neuronen_Layer3": "24.30739",
+      "acc": "0.8818",
+      "loss": "0.33356180645227435"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "98.714",
+      "Neuronen_Layer2": "216.01924",
+      "Neuronen_Layer3": "47.6005",
+      "acc": "0.8813",
+      "loss": "0.3344454550623894"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "148.27058",
+      "Neuronen_Layer2": "39.8331",
+      "Neuronen_Layer3": "219.50885",
+      "acc": "0.8813",
+      "loss": "0.32991131670475005"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "112.50199",
+      "Neuronen_Layer2": "132.39791",
+      "Neuronen_Layer3": "46.13647",
+      "acc": "0.8803",
+      "loss": "0.3321342140197754"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "103.59461",
+      "Neuronen_Layer2": "184.23974",
+      "Neuronen_Layer3": "139.89805",
+      "acc": "0.8797",
+      "loss": "0.3313214705467224"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "150.36655",
+      "Neuronen_Layer2": "40.69903",
+      "Neuronen_Layer3": "96",
+      "acc": "0.879",
+      "loss": "0.33960547211170194"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "90.54211",
+      "Neuronen_Layer2": "148.37886",
+      "Neuronen_Layer3": "26.77823",
+      "acc": "0.8789",
+      "loss": "0.3385480282187462"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "172.25123",
+      "Neuronen_Layer2": "127.3412",
+      "Neuronen_Layer3": "37.65905",
+      "acc": "0.8788",
+      "loss": "0.33659415808916093"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "108.32672",
+      "Neuronen_Layer2": "242.30734",
+      "Neuronen_Layer3": "36.48971",
+      "acc": "0.8763",
+      "loss": "0.3384676017522812"
+    }
+  },
+  "Winner": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "181.05701",
+      "Neuronen_Layer2": "146.36941",
+      "Neuronen_Layer3": "126.90733",
+      "acc": "0.8909",
+      "loss": "0.30522618399858475"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "149.45894",
+      "Neuronen_Layer2": "250.62261",
+      "Neuronen_Layer3": "219.80789",
+      "acc": "0.8888",
+      "loss": "0.31328100773096085"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "191.3668",
+      "Neuronen_Layer2": "195.61263",
+      "Neuronen_Layer3": "173.58074",
+      "acc": "0.8888",
+      "loss": "0.31201732876300814"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "227.61929",
+      "Neuronen_Layer2": "240.89493",
+      "Neuronen_Layer3": "160.36891",
+      "acc": "0.8887",
+      "loss": "0.31246860969662665"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "161",
+      "Neuronen_Layer2": "143.91747",
+      "Neuronen_Layer3": "47.41901",
+      "acc": "0.8887",
+      "loss": "0.31939268770217893"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "190.88951",
+      "Neuronen_Layer2": "197.86335",
+      "Neuronen_Layer3": "153.77264",
+      "acc": "0.8886",
+      "loss": "0.31811629500985145"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "201.78747",
+      "Neuronen_Layer2": "191.08178",
+      "Neuronen_Layer3": "161.9124",
+      "acc": "0.8884",
+      "loss": "0.3145589165210724"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "142.96576",
+      "Neuronen_Layer2": "177.67093",
+      "Neuronen_Layer3": "238.59955",
+      "acc": "0.888",
+      "loss": "0.3123835798501968"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "117.54389",
+      "Neuronen_Layer2": "178.85112",
+      "Neuronen_Layer3": "160.93993",
+      "acc": "0.8878",
+      "loss": "0.3227891884803772"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "212.58431",
+      "Neuronen_Layer2": "148.38178",
+      "Neuronen_Layer3": "197.81795",
+      "acc": "0.8876",
+      "loss": "0.31081903775930403"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "196.10897",
+      "Neuronen_Layer2": "138.71704",
+      "Neuronen_Layer3": "93.40235",
+      "acc": "0.8876",
+      "loss": "0.31231475385427476"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "217.74764",
+      "Neuronen_Layer2": "138.71126",
+      "Neuronen_Layer3": "214.15071",
+      "acc": "0.8874",
+      "loss": "0.31065503833293917"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "255.77287",
+      "Neuronen_Layer2": "169.80243",
+      "Neuronen_Layer3": "37.97693",
+      "acc": "0.8871",
+      "loss": "0.3234064979314804"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "145",
+      "Neuronen_Layer2": "114.2459",
+      "Neuronen_Layer3": "159.25873",
+      "acc": "0.8867",
+      "loss": "0.31511542744636534"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "177.78337",
+      "Neuronen_Layer2": "101.98135",
+      "Neuronen_Layer3": "223.04746",
+      "acc": "0.8867",
+      "loss": "0.3155290114462376"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "214.45615",
+      "Neuronen_Layer2": "96.43573",
+      "Neuronen_Layer3": "237.35551",
+      "acc": "0.8867",
+      "loss": "0.31261783331632614"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "230.54804",
+      "Neuronen_Layer2": "109.11402",
+      "Neuronen_Layer3": "130.18693",
+      "acc": "0.8863",
+      "loss": "0.3165359430849552"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "204.74827",
+      "Neuronen_Layer2": "114.55166",
+      "Neuronen_Layer3": "43.66612",
+      "acc": "0.8861",
+      "loss": "0.3222508832931519"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "162.88784",
+      "Neuronen_Layer2": "155.91821",
+      "Neuronen_Layer3": "182.60611",
+      "acc": "0.8858",
+      "loss": "0.3161619610905647"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "142.79761",
+      "Neuronen_Layer2": "137.0912",
+      "Neuronen_Layer3": "183.57946",
+      "acc": "0.8854",
+      "loss": "0.3189600701332092"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "149.99066",
+      "Neuronen_Layer2": "87.63706",
+      "Neuronen_Layer3": "209.75563",
+      "acc": "0.8852",
+      "loss": "0.323820403277874"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "96.83095",
+      "Neuronen_Layer2": "176.32082",
+      "Neuronen_Layer3": "167.34851",
+      "acc": "0.8851",
+      "loss": "0.31982004387378693"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "105.89255",
+      "Neuronen_Layer2": "196.42437",
+      "Neuronen_Layer3": "160.65617",
+      "acc": "0.885",
+      "loss": "0.3205893241405487"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "122.42201",
+      "Neuronen_Layer2": "137.89346",
+      "Neuronen_Layer3": "61",
+      "acc": "0.885",
+      "loss": "0.3210610931515694"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "99.8256",
+      "Neuronen_Layer2": "233",
+      "Neuronen_Layer3": "149.49328",
+      "acc": "0.8849",
+      "loss": "0.323472857606411"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "126.0548",
+      "Neuronen_Layer2": "145.35581",
+      "Neuronen_Layer3": "169.98327",
+      "acc": "0.8845",
+      "loss": "0.3169940604090691"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "110.36624",
+      "Neuronen_Layer2": "111.80466",
+      "Neuronen_Layer3": "250.38805",
+      "acc": "0.8841",
+      "loss": "0.3230277375876904"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "134.97326",
+      "Neuronen_Layer2": "152.36377",
+      "Neuronen_Layer3": "118.42891",
+      "acc": "0.8841",
+      "loss": "0.32543826138973236"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "138.05512",
+      "Neuronen_Layer2": "153.0065",
+      "Neuronen_Layer3": "119.26981",
+      "acc": "0.8841",
+      "loss": "0.32229589252471924"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "138.46087",
+      "Neuronen_Layer2": "123.27885",
+      "Neuronen_Layer3": "42.89783",
+      "acc": "0.884",
+      "loss": "0.33705470662117004"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "189.98627",
+      "Neuronen_Layer2": "132.1229",
+      "Neuronen_Layer3": "78.34846",
+      "acc": "0.884",
+      "loss": "0.3229115579009056"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "136.69847",
+      "Neuronen_Layer2": "113.91926",
+      "Neuronen_Layer3": "221.66091",
+      "acc": "0.8839",
+      "loss": "0.32823907432556154"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "94.80454",
+      "Neuronen_Layer2": "143.66376",
+      "Neuronen_Layer3": "141.81202",
+      "acc": "0.8838",
+      "loss": "0.3313156185030937"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "112.78889",
+      "Neuronen_Layer2": "148",
+      "Neuronen_Layer3": "166.24081",
+      "acc": "0.8837",
+      "loss": "0.31587315326929094"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "177.03231",
+      "Neuronen_Layer2": "138.83358",
+      "Neuronen_Layer3": "80.28466",
+      "acc": "0.8837",
+      "loss": "0.3163237438201904"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "98.05548",
+      "Neuronen_Layer2": "163.83261",
+      "Neuronen_Layer3": "243.81333",
+      "acc": "0.8836",
+      "loss": "0.32532096540927885"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "128.12205",
+      "Neuronen_Layer2": "139.82694",
+      "Neuronen_Layer3": "254",
+      "acc": "0.8835",
+      "loss": "0.32311252695322035"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "149.38782",
+      "Neuronen_Layer2": "112.19453",
+      "Neuronen_Layer3": "36.48287",
+      "acc": "0.8834",
+      "loss": "0.3233084338784218"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "99.38707",
+      "Neuronen_Layer2": "139.3548",
+      "Neuronen_Layer3": "137.246",
+      "acc": "0.8833",
+      "loss": "0.32824039137363437"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "164.18102",
+      "Neuronen_Layer2": "160.71026",
+      "Neuronen_Layer3": "187.34206",
+      "acc": "0.8833",
+      "loss": "0.32332938064932826"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "127.79589",
+      "Neuronen_Layer2": "157.29956",
+      "Neuronen_Layer3": "30.10001",
+      "acc": "0.8825",
+      "loss": "0.33480385801792145"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "135.16813",
+      "Neuronen_Layer2": "51.09576",
+      "Neuronen_Layer3": "32.65305",
+      "acc": "0.8816",
+      "loss": "0.3397298426747322"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "87.32233",
+      "Neuronen_Layer2": "146.60788",
+      "Neuronen_Layer3": "176.66739",
+      "acc": "0.8809",
+      "loss": "0.3299199984431267"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "101.62623",
+      "Neuronen_Layer2": "153.29456",
+      "Neuronen_Layer3": "250.8507",
+      "acc": "0.8804",
+      "loss": "0.3253641110777855"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "104.19925",
+      "Neuronen_Layer2": "195",
+      "Neuronen_Layer3": "163.56474",
+      "acc": "0.8803",
+      "loss": "0.3366666828632355"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "103.89358",
+      "Neuronen_Layer2": "138.1264",
+      "Neuronen_Layer3": "34.39193",
+      "acc": "0.8801",
+      "loss": "0.34125853115320204"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "105.49162",
+      "Neuronen_Layer2": "39",
+      "Neuronen_Layer3": "145.62371",
+      "acc": "0.8791",
+      "loss": "0.3392537062525749"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "167.92835",
+      "Neuronen_Layer2": "115.87753",
+      "Neuronen_Layer3": "37.63882",
+      "acc": "0.877",
+      "loss": "0.34274937090277674"
+    }
+  }
+}

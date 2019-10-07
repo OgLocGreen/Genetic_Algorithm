@@ -21,7 +21,7 @@ import population
 
 
 if __name__ == "__main__":
-    pop_size = 50
+    pop_size = 100
     mutate_prob = 0.1 #sigma for random.gauss()
     retain = 0.8
     random_retain = 0.05
@@ -40,6 +40,8 @@ if __name__ == "__main__":
             pop.grade_multi(generation=x, multiprocessing_var=multiprocessing_var)
         else:
             pop.grade_single(generation=x)
+        if x == 2:
+            print("break")
         if pop.done:
             end = time.time()
             print("Finished at generation:", x, ", Population fistness:", pop.fitness_history[-1])
