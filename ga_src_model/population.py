@@ -92,7 +92,7 @@ class Population(object):
         i = 0
         for x in self.individuals:
             x.var_acc, x.var_loss, x.time_predict = acclosstime[i][0], acclosstime[i][1] , acclosstime[i][2]
-            x.fitness = x.var_acc - 0.5 * x.time_predict
+            x.fitness = x.var_acc - (0.5 * x.time_predict)
             fitness_sum += x.var_acc
             i += 1
         del i
@@ -116,7 +116,7 @@ class Population(object):
             Also select a some random non-fittest individuals to help get us out of local maximums
         """
         # Sort individuals by fitness (we use reversed because in this case lower fintess is better)
-        self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))
+        self.individuals = list(sorted(self.individuals, key=lambda x: x.fitness, reverse=True))
         # Keep the fittest as parents for next gen
         retain_length = self.retain * len(self.individuals)
         self.parents = self.individuals[:int(retain_length)]
@@ -187,7 +187,7 @@ class Population(object):
                 "Neuronen_Layer3": str(x.gene[2]),
                 "acc": str(x.var_acc),
                 "loss": str(x.var_loss),
-                "time": str(x.fitness),
+                "time": str(x.time_predict),
                 "fittness": str(x.fitness)
             }
             family_tree[generations][i] = generation
@@ -216,7 +216,7 @@ class Population(object):
                 "Neuronen_Layer3": str(x.gene[2]),
                 "acc": str(x.var_acc),
                 "loss": str(x.var_loss),
-                "time": str(x.fitness),
+                "time": str(x.time_predict),
                 "fittness": str(x.fitness)
             }
             family_tree["Winner"][i] = generation
