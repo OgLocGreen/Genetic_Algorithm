@@ -7,9 +7,9 @@ class Individual(object):
             learningrate = random.uniform(0.0005, 0.1)
         if not (0.05 < dropout < 0.5):
             dropout = random.uniform(0.05, 0.5)
-        if not (50 < epoch < 100):
+        if not (75 < epoch < 125):
             epoch = random.randint(50, 100)
-        if not (32 < batchsize < 64): 
+        if not (16 < batchsize < 64): 
             batchsize = random.randint(32, 64)
         if not (-0.5 < optimizer < 4):
             optimizer = random.uniform(-0.5, 3.5)
@@ -17,6 +17,7 @@ class Individual(object):
         print("gene: ", self.gene)
         self.var_acc = 0
         self.var_loss = 0
+        self.variables = 0
 
     
 
@@ -25,5 +26,5 @@ class Individual(object):
             Returns fitness of individual
             Fitness is the difference between
         """
-        self.var_loss, self.var_acc = KNN.train_and_evalu_CNN(self.gene[0], self.gene[1], self.gene[2], self.gene[3], self.gene[4])
-        return self.var_acc
+        self.var_loss, self.var_acc = KNN.train_and_evalu_cifar10_mean(self.gene[0], self.gene[1], self.gene[2], self.gene[3], self.gene[4])
+        return self.var_loss, self.var_acc

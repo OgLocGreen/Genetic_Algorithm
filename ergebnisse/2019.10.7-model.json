@@ -1,0 +1,2914 @@
+{
+  "0": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "240",
+      "Neuronen_Layer2": "106",
+      "Neuronen_Layer3": "241",
+      "acc": "0.8897",
+      "loss": "0.31208633385896684",
+      "time": "0.5336368083953857",
+      "fittness": "0.6228815913200378"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "203",
+      "Neuronen_Layer2": "248",
+      "Neuronen_Layer3": "48",
+      "acc": "0.8892",
+      "loss": "0.31618229875564574",
+      "time": "0.406160831451416",
+      "fittness": "0.686119556427002"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "166",
+      "Neuronen_Layer2": "116",
+      "Neuronen_Layer3": "63",
+      "acc": "0.8888",
+      "loss": "0.3189428126871586",
+      "time": "0.5311257839202881",
+      "fittness": "0.623237133026123"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "183",
+      "Neuronen_Layer2": "217",
+      "Neuronen_Layer3": "117",
+      "acc": "0.8884",
+      "loss": "0.31627926781177523",
+      "time": "0.502894401550293",
+      "fittness": "0.636952817440033"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "163",
+      "Neuronen_Layer2": "256",
+      "Neuronen_Layer3": "107",
+      "acc": "0.8884",
+      "loss": "0.31240003401041033",
+      "time": "0.7810666561126709",
+      "fittness": "0.497866690158844"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "129",
+      "Neuronen_Layer2": "247",
+      "Neuronen_Layer3": "109",
+      "acc": "0.8882",
+      "loss": "0.3199836017251015",
+      "time": "0.6429862976074219",
+      "fittness": "0.5667068362236023"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "191",
+      "Neuronen_Layer2": "253",
+      "Neuronen_Layer3": "81",
+      "acc": "0.8876",
+      "loss": "0.3169634789824486",
+      "time": "0.4686439037322998",
+      "fittness": "0.6532780528068542"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "210",
+      "Neuronen_Layer2": "186",
+      "Neuronen_Layer3": "116",
+      "acc": "0.8876",
+      "loss": "0.31729023740291595",
+      "time": "0.4686427116394043",
+      "fittness": "0.653278648853302"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "188",
+      "Neuronen_Layer2": "160",
+      "Neuronen_Layer3": "198",
+      "acc": "0.8875",
+      "loss": "0.31072780266404154",
+      "time": "0.3436758518218994",
+      "fittness": "0.7156620621681213"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "247",
+      "Neuronen_Layer2": "217",
+      "Neuronen_Layer3": "43",
+      "acc": "0.8875",
+      "loss": "0.32123256384730337",
+      "time": "0.7372190952301025",
+      "fittness": "0.5188904404640198"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "140",
+      "Neuronen_Layer2": "165",
+      "Neuronen_Layer3": "100",
+      "acc": "0.887",
+      "loss": "0.32190507678985597",
+      "time": "0.34668660163879395",
+      "fittness": "0.7136567234992981"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "192",
+      "Neuronen_Layer2": "173",
+      "Neuronen_Layer3": "112",
+      "acc": "0.887",
+      "loss": "0.31676992979049684",
+      "time": "0.5663852691650391",
+      "fittness": "0.6038073897361755"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "118",
+      "Neuronen_Layer2": "232",
+      "Neuronen_Layer3": "142",
+      "acc": "0.8869",
+      "loss": "0.3214907530426979",
+      "time": "0.6247439384460449",
+      "fittness": "0.5745280385017395"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "255",
+      "Neuronen_Layer2": "152",
+      "Neuronen_Layer3": "230",
+      "acc": "0.8861",
+      "loss": "0.32688200069665907",
+      "time": "0.30082082748413086",
+      "fittness": "0.7356895804405212"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "197",
+      "Neuronen_Layer2": "53",
+      "Neuronen_Layer3": "116",
+      "acc": "0.8851",
+      "loss": "0.3257439306020737",
+      "time": "0.2655634880065918",
+      "fittness": "0.752318263053894"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "188",
+      "Neuronen_Layer2": "105",
+      "Neuronen_Layer3": "184",
+      "acc": "0.8845",
+      "loss": "0.3209589705824852",
+      "time": "0.406156063079834",
+      "fittness": "0.6814219951629639"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "232",
+      "Neuronen_Layer2": "136",
+      "Neuronen_Layer3": "36",
+      "acc": "0.8844",
+      "loss": "0.3332901273787022",
+      "time": "0.7518436908721924",
+      "fittness": "0.5084781646728516"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "115",
+      "Neuronen_Layer2": "152",
+      "Neuronen_Layer3": "153",
+      "acc": "0.8842",
+      "loss": "0.32666718000173567",
+      "time": "0.28118419647216797",
+      "fittness": "0.7436078786849976"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "164",
+      "Neuronen_Layer2": "101",
+      "Neuronen_Layer3": "117",
+      "acc": "0.8839",
+      "loss": "0.3181710776925087",
+      "time": "0.6248507499694824",
+      "fittness": "0.5714746117591858"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "201",
+      "Neuronen_Layer2": "202",
+      "Neuronen_Layer3": "118",
+      "acc": "0.8839",
+      "loss": "0.3177605425834656",
+      "time": "0.6596107482910156",
+      "fittness": "0.5540946125984192"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "179",
+      "Neuronen_Layer2": "20",
+      "Neuronen_Layer3": "79",
+      "acc": "0.8838",
+      "loss": "0.33347684210538864",
+      "time": "0.5190191268920898",
+      "fittness": "0.6242904663085938"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "135",
+      "Neuronen_Layer2": "166",
+      "Neuronen_Layer3": "25",
+      "acc": "0.8837",
+      "loss": "0.342573096370697",
+      "time": "0.29680728912353516",
+      "fittness": "0.735296368598938"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "177",
+      "Neuronen_Layer2": "46",
+      "Neuronen_Layer3": "64",
+      "acc": "0.8836",
+      "loss": "0.33443435928821563",
+      "time": "0.3471860885620117",
+      "fittness": "0.7100069522857666"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "109",
+      "Neuronen_Layer2": "186",
+      "Neuronen_Layer3": "91",
+      "acc": "0.8835",
+      "loss": "0.32695566993951797",
+      "time": "0.4252924919128418",
+      "fittness": "0.6708537340164185"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "109",
+      "Neuronen_Layer2": "225",
+      "Neuronen_Layer3": "55",
+      "acc": "0.8833",
+      "loss": "0.3309007768392563",
+      "time": "0.7548396587371826",
+      "fittness": "0.5058801770210266"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "223",
+      "Neuronen_Layer2": "28",
+      "Neuronen_Layer3": "81",
+      "acc": "0.8829",
+      "loss": "0.32708882204294204",
+      "time": "0.5502607822418213",
+      "fittness": "0.6077696084976196"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "106",
+      "Neuronen_Layer2": "101",
+      "Neuronen_Layer3": "113",
+      "acc": "0.8828",
+      "loss": "0.3315213494420052",
+      "time": "0.4061548709869385",
+      "fittness": "0.6797225475311279"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "220",
+      "Neuronen_Layer2": "91",
+      "Neuronen_Layer3": "9",
+      "acc": "0.882",
+      "loss": "0.3599406845331192",
+      "time": "0.5663855075836182",
+      "fittness": "0.5988072752952576"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "144",
+      "Neuronen_Layer2": "252",
+      "Neuronen_Layer3": "61",
+      "acc": "0.882",
+      "loss": "0.3308056285977364",
+      "time": "0.749823808670044",
+      "fittness": "0.5070881247520447"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "161",
+      "Neuronen_Layer2": "55",
+      "Neuronen_Layer3": "27",
+      "acc": "0.8815",
+      "loss": "0.3383642050087452",
+      "time": "0.3124258518218994",
+      "fittness": "0.7252870798110962"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "92",
+      "Neuronen_Layer2": "212",
+      "Neuronen_Layer3": "44",
+      "acc": "0.8812",
+      "loss": "0.33401050415039063",
+      "time": "0.37491345405578613",
+      "fittness": "0.6937432885169983"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "113",
+      "Neuronen_Layer2": "125",
+      "Neuronen_Layer3": "13",
+      "acc": "0.8806",
+      "loss": "0.35217031037807467",
+      "time": "0.6122453212738037",
+      "fittness": "0.5744773149490356"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "176",
+      "Neuronen_Layer2": "115",
+      "Neuronen_Layer3": "198",
+      "acc": "0.8805",
+      "loss": "0.332019293320179",
+      "time": "0.4061622619628906",
+      "fittness": "0.6774188876152039"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "136",
+      "Neuronen_Layer2": "54",
+      "Neuronen_Layer3": "33",
+      "acc": "0.8796",
+      "loss": "0.3411693083167076",
+      "time": "0.28118443489074707",
+      "fittness": "0.7390077710151672"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "109",
+      "Neuronen_Layer2": "251",
+      "Neuronen_Layer3": "127",
+      "acc": "0.8794",
+      "loss": "0.3371387120008469",
+      "time": "0.4061572551727295",
+      "fittness": "0.6763213872909546"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "66",
+      "Neuronen_Layer2": "189",
+      "Neuronen_Layer3": "60",
+      "acc": "0.8784",
+      "loss": "0.3486328889608383",
+      "time": "0.5311260223388672",
+      "fittness": "0.612837016582489"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "173",
+      "Neuronen_Layer2": "44",
+      "Neuronen_Layer3": "230",
+      "acc": "0.8771",
+      "loss": "0.33453659501075744",
+      "time": "0.8109471797943115",
+      "fittness": "0.4716264009475708"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "67",
+      "Neuronen_Layer2": "53",
+      "Neuronen_Layer3": "105",
+      "acc": "0.8709",
+      "loss": "0.3577004699468613",
+      "time": "0.6560964584350586",
+      "fittness": "0.5428517460823059"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "41",
+      "Neuronen_Layer2": "78",
+      "Neuronen_Layer3": "119",
+      "acc": "0.8687",
+      "loss": "0.37011935827732084",
+      "time": "0.5155050754547119",
+      "fittness": "0.6109474897384644"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "39",
+      "Neuronen_Layer2": "135",
+      "Neuronen_Layer3": "188",
+      "acc": "0.8671",
+      "loss": "0.36522063601016996",
+      "time": "0.29680633544921875",
+      "fittness": "0.7186968326568604"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "34",
+      "Neuronen_Layer2": "117",
+      "Neuronen_Layer3": "181",
+      "acc": "0.8666",
+      "loss": "0.3717071141242981",
+      "time": "0.42177557945251465",
+      "fittness": "0.6557121872901917"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "39",
+      "Neuronen_Layer2": "97",
+      "Neuronen_Layer3": "127",
+      "acc": "0.8659",
+      "loss": "0.36613902349472044",
+      "time": "0.5405826568603516",
+      "fittness": "0.595608651638031"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "195",
+      "Neuronen_Layer2": "93",
+      "Neuronen_Layer3": "5",
+      "acc": "0.8648",
+      "loss": "0.41747465329170225",
+      "time": "0.5155117511749268",
+      "fittness": "0.6070441007614136"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "158",
+      "Neuronen_Layer2": "8",
+      "Neuronen_Layer3": "20",
+      "acc": "0.8558",
+      "loss": "0.4370632459163666",
+      "time": "0.6395111083984375",
+      "fittness": "0.5360444188117981"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "13",
+      "Neuronen_Layer2": "58",
+      "Neuronen_Layer3": "53",
+      "acc": "0.8442",
+      "loss": "0.4570904501914978",
+      "time": "0.2030775547027588",
+      "fittness": "0.7426612377166748"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "15",
+      "Neuronen_Layer2": "124",
+      "Neuronen_Layer3": "86",
+      "acc": "0.8291",
+      "loss": "0.4684994462966919",
+      "time": "0.28118896484375",
+      "fittness": "0.6885055303573608"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "13",
+      "Neuronen_Layer2": "19",
+      "Neuronen_Layer3": "42",
+      "acc": "0.8141",
+      "loss": "0.5522962790489196",
+      "time": "0.31243228912353516",
+      "fittness": "0.657883882522583"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "9",
+      "Neuronen_Layer2": "94",
+      "Neuronen_Layer3": "73",
+      "acc": "0.8075",
+      "loss": "0.5707206084251404",
+      "time": "0.5299038887023926",
+      "fittness": "0.5425480604171753"
+    },
+    "48": {
+      "name": 48,
+      "Neuronen_Layer1": "2",
+      "Neuronen_Layer2": "176",
+      "Neuronen_Layer3": "183",
+      "acc": "0.4959",
+      "loss": "1.1668583807945252",
+      "time": "0.5623698234558105",
+      "fittness": "0.21471509337425232"
+    },
+    "49": {
+      "name": 49,
+      "Neuronen_Layer1": "182",
+      "Neuronen_Layer2": "1",
+      "Neuronen_Layer3": "74",
+      "acc": "0.3868",
+      "loss": "1.3572264081954957",
+      "time": "0.48426389694213867",
+      "fittness": "0.14466804265975952"
+    }
+  },
+  "1": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "196",
+      "Neuronen_Layer2": "142",
+      "Neuronen_Layer3": "93",
+      "acc": "0.89",
+      "loss": "0.31658478150367736",
+      "time": "0.43707871437072754",
+      "fittness": "0.6714606285095215"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "206",
+      "Neuronen_Layer2": "109",
+      "Neuronen_Layer3": "183",
+      "acc": "0.8899",
+      "loss": "0.3166083993911743",
+      "time": "0.8971006870269775",
+      "fittness": "0.44134968519210815"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "206",
+      "Neuronen_Layer2": "85",
+      "Neuronen_Layer3": "152",
+      "acc": "0.8895",
+      "loss": "0.31513633230924604",
+      "time": "0.7654447555541992",
+      "fittness": "0.5067776441574097"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "173",
+      "Neuronen_Layer2": "232",
+      "Neuronen_Layer3": "116",
+      "acc": "0.8894",
+      "loss": "0.31790509345531465",
+      "time": "0.7167904376983643",
+      "fittness": "0.531004786491394"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "178",
+      "Neuronen_Layer2": "213",
+      "Neuronen_Layer3": "46",
+      "acc": "0.8879",
+      "loss": "0.3213641974329948",
+      "time": "1.0294744968414307",
+      "fittness": "0.37316274642944336"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "197",
+      "Neuronen_Layer2": "222",
+      "Neuronen_Layer3": "48",
+      "acc": "0.8877",
+      "loss": "0.31740840854644775",
+      "time": "0.49988245964050293",
+      "fittness": "0.6377587914466858"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "250",
+      "Neuronen_Layer2": "79",
+      "Neuronen_Layer3": "117",
+      "acc": "0.8876",
+      "loss": "0.31552397605180743",
+      "time": "1.0366003513336182",
+      "fittness": "0.36929982900619507"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "247",
+      "Neuronen_Layer2": "167",
+      "Neuronen_Layer3": "215",
+      "acc": "0.8872",
+      "loss": "0.3172777225255966",
+      "time": "0.7342023849487305",
+      "fittness": "0.5200988054275513"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "158",
+      "Neuronen_Layer2": "113",
+      "Neuronen_Layer3": "186",
+      "acc": "0.887",
+      "loss": "0.31699918358325957",
+      "time": "0.5779886245727539",
+      "fittness": "0.5980057120323181"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "212",
+      "Neuronen_Layer2": "187",
+      "Neuronen_Layer3": "110",
+      "acc": "0.8869",
+      "loss": "0.3176072964549065",
+      "time": "0.9857621192932129",
+      "fittness": "0.3940189480781555"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "133",
+      "Neuronen_Layer2": "240",
+      "Neuronen_Layer3": "139",
+      "acc": "0.8867",
+      "loss": "0.3175649679064751",
+      "time": "0.48426151275634766",
+      "fittness": "0.6445692181587219"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "101",
+      "Neuronen_Layer2": "195",
+      "Neuronen_Layer3": "88",
+      "acc": "0.8865",
+      "loss": "0.3223626314163208",
+      "time": "0.299318790435791",
+      "fittness": "0.7368406057357788"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "129",
+      "Neuronen_Layer2": "255",
+      "Neuronen_Layer3": "129",
+      "acc": "0.8862",
+      "loss": "0.3190377475976944",
+      "time": "0.7185807228088379",
+      "fittness": "0.5269096493721008"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "176",
+      "Neuronen_Layer2": "222",
+      "Neuronen_Layer3": "41",
+      "acc": "0.8858",
+      "loss": "0.31779043511152266",
+      "time": "0.9073364734649658",
+      "fittness": "0.4321317672729492"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "149",
+      "Neuronen_Layer2": "47",
+      "Neuronen_Layer3": "72",
+      "acc": "0.8857",
+      "loss": "0.3232380829632282",
+      "time": "0.720771074295044",
+      "fittness": "0.525314450263977"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "199.91693",
+      "Neuronen_Layer2": "57.85575",
+      "Neuronen_Layer3": "102.37199",
+      "acc": "0.8856",
+      "loss": "0.3205443762242794",
+      "time": "0.24936699867248535",
+      "fittness": "0.7609164714813232"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "123",
+      "Neuronen_Layer2": "231",
+      "Neuronen_Layer3": "121",
+      "acc": "0.8852",
+      "loss": "0.3203619058966637",
+      "time": "1.2237651348114014",
+      "fittness": "0.27331745624542236"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "115",
+      "Neuronen_Layer2": "152",
+      "Neuronen_Layer3": "153",
+      "acc": "0.8848",
+      "loss": "0.3240178943157196",
+      "time": "0.32007431983947754",
+      "fittness": "0.7247628569602966"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "199",
+      "Neuronen_Layer2": "57",
+      "Neuronen_Layer3": "102",
+      "acc": "0.8844",
+      "loss": "0.318282785820961",
+      "time": "0.3124265670776367",
+      "fittness": "0.7281867265701294"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "220",
+      "Neuronen_Layer2": "114",
+      "Neuronen_Layer3": "28",
+      "acc": "0.884",
+      "loss": "0.3278107354104519",
+      "time": "0.6716248989105225",
+      "fittness": "0.5481875538825989"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "136",
+      "Neuronen_Layer2": "234",
+      "Neuronen_Layer3": "97",
+      "acc": "0.8836",
+      "loss": "0.3218116321563721",
+      "time": "0.42177557945251465",
+      "fittness": "0.6727122068405151"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "144",
+      "Neuronen_Layer2": "116",
+      "Neuronen_Layer3": "58",
+      "acc": "0.8835",
+      "loss": "0.32299140083789823",
+      "time": "0.5311224460601807",
+      "fittness": "0.617938756942749"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "142",
+      "Neuronen_Layer2": "44",
+      "Neuronen_Layer3": "66",
+      "acc": "0.8835",
+      "loss": "0.3284273801803589",
+      "time": "0.870009183883667",
+      "fittness": "0.44849538803100586"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "154",
+      "Neuronen_Layer2": "172",
+      "Neuronen_Layer3": "23",
+      "acc": "0.8828",
+      "loss": "0.33556952008008956",
+      "time": "0.3798952102661133",
+      "fittness": "0.6928523778915405"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "114",
+      "Neuronen_Layer2": "135",
+      "Neuronen_Layer3": "115",
+      "acc": "0.8827",
+      "loss": "0.32455971986055376",
+      "time": "0.35998988151550293",
+      "fittness": "0.7027050852775574"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "145",
+      "Neuronen_Layer2": "191",
+      "Neuronen_Layer3": "119",
+      "acc": "0.8823",
+      "loss": "0.3265717586159706",
+      "time": "0.4998958110809326",
+      "fittness": "0.6323521137237549"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "142",
+      "Neuronen_Layer2": "51",
+      "Neuronen_Layer3": "35",
+      "acc": "0.8818",
+      "loss": "0.3345505896806717",
+      "time": "0.7700529098510742",
+      "fittness": "0.49677354097366333"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "217",
+      "Neuronen_Layer2": "92",
+      "Neuronen_Layer3": "35",
+      "acc": "0.8812",
+      "loss": "0.33392462520599364",
+      "time": "0.6203582286834717",
+      "fittness": "0.5710209012031555"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "105",
+      "Neuronen_Layer2": "92",
+      "Neuronen_Layer3": "65",
+      "acc": "0.8809",
+      "loss": "0.3339018210887909",
+      "time": "0.48426151275634766",
+      "fittness": "0.638769268989563"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "107",
+      "Neuronen_Layer2": "96",
+      "Neuronen_Layer3": "55",
+      "acc": "0.8805",
+      "loss": "0.3302415718793869",
+      "time": "0.3592989444732666",
+      "fittness": "0.7008505463600159"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "65",
+      "Neuronen_Layer2": "212",
+      "Neuronen_Layer3": "108",
+      "acc": "0.8786",
+      "loss": "0.33663875027894974",
+      "time": "0.8403575420379639",
+      "fittness": "0.4584212303161621"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "107",
+      "Neuronen_Layer2": "35",
+      "Neuronen_Layer3": "74",
+      "acc": "0.8785",
+      "loss": "0.3406405869603157",
+      "time": "0.5467462539672852",
+      "fittness": "0.6051268577575684"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "123",
+      "Neuronen_Layer2": "253",
+      "Neuronen_Layer3": "12",
+      "acc": "0.8773",
+      "loss": "0.3539126306056976",
+      "time": "0.3124268054962158",
+      "fittness": "0.7210866212844849"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "149",
+      "Neuronen_Layer2": "178",
+      "Neuronen_Layer3": "12",
+      "acc": "0.8771",
+      "loss": "0.3548810086607933",
+      "time": "0.4373972415924072",
+      "fittness": "0.658401370048523"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "76",
+      "Neuronen_Layer2": "24",
+      "Neuronen_Layer3": "145",
+      "acc": "0.8763",
+      "loss": "0.3537066337108612",
+      "time": "0.6676509380340576",
+      "fittness": "0.5424745082855225"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "94",
+      "Neuronen_Layer2": "53",
+      "Neuronen_Layer3": "45",
+      "acc": "0.8755",
+      "loss": "0.3496719135522842",
+      "time": "0.44381284713745117",
+      "fittness": "0.6535935997962952"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "63",
+      "Neuronen_Layer2": "189",
+      "Neuronen_Layer3": "103",
+      "acc": "0.8746",
+      "loss": "0.3486132228374481",
+      "time": "0.40616393089294434",
+      "fittness": "0.6715180277824402"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "40",
+      "Neuronen_Layer2": "108",
+      "Neuronen_Layer3": "183",
+      "acc": "0.8704",
+      "loss": "0.3574032210111618",
+      "time": "0.31243252754211426",
+      "fittness": "0.7141837477684021"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "148",
+      "Neuronen_Layer2": "64",
+      "Neuronen_Layer3": "8",
+      "acc": "0.8686",
+      "loss": "0.40020629291534426",
+      "time": "0.4106781482696533",
+      "fittness": "0.6632609367370605"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "38",
+      "Neuronen_Layer2": "82",
+      "Neuronen_Layer3": "98",
+      "acc": "0.8663",
+      "loss": "0.3720337108135223",
+      "time": "0.6404061317443848",
+      "fittness": "0.546096920967102"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "39",
+      "Neuronen_Layer2": "108",
+      "Neuronen_Layer3": "49",
+      "acc": "0.8646",
+      "loss": "0.3662916697740555",
+      "time": "0.22070050239562988",
+      "fittness": "0.7542497515678406"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "192",
+      "Neuronen_Layer2": "81",
+      "Neuronen_Layer3": "5",
+      "acc": "0.864",
+      "loss": "0.41488402585983275",
+      "time": "0.7292273044586182",
+      "fittness": "0.49938637018203735"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "31",
+      "Neuronen_Layer2": "163",
+      "Neuronen_Layer3": "152",
+      "acc": "0.8614",
+      "loss": "0.3765151347637177",
+      "time": "0.328047513961792",
+      "fittness": "0.6973762512207031"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "32",
+      "Neuronen_Layer2": "89",
+      "Neuronen_Layer3": "124",
+      "acc": "0.8563",
+      "loss": "0.39643601002693174",
+      "time": "0.5431232452392578",
+      "fittness": "0.5847383737564087"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "14",
+      "Neuronen_Layer2": "210",
+      "Neuronen_Layer3": "49",
+      "acc": "0.8334",
+      "loss": "0.4854752851009369",
+      "time": "0.42177271842956543",
+      "fittness": "0.6225136518478394"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "15",
+      "Neuronen_Layer2": "91",
+      "Neuronen_Layer3": "75",
+      "acc": "0.8318",
+      "loss": "0.47794681787490845",
+      "time": "0.42177581787109375",
+      "fittness": "0.6209120750427246"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "12",
+      "Neuronen_Layer2": "57",
+      "Neuronen_Layer3": "98",
+      "acc": "0.83",
+      "loss": "0.5004947866916657",
+      "time": "0.31594061851501465",
+      "fittness": "0.6720296740531921"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "12",
+      "Neuronen_Layer2": "21",
+      "Neuronen_Layer3": "156",
+      "acc": "0.7477",
+      "loss": "0.6624811436653137",
+      "time": "0.2649555206298828",
+      "fittness": "0.6152222156524658"
+    }
+  },
+  "2": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "245",
+      "Neuronen_Layer2": "169",
+      "Neuronen_Layer3": "199",
+      "acc": "0.8924",
+      "loss": "0.30611689097881317",
+      "time": "0.6070661544799805",
+      "fittness": "0.5888669490814209"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "246",
+      "Neuronen_Layer2": "164",
+      "Neuronen_Layer3": "105",
+      "acc": "0.8898",
+      "loss": "0.3061934959948063",
+      "time": "0.5936093330383301",
+      "fittness": "0.5929953455924988"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "189",
+      "Neuronen_Layer2": "87",
+      "Neuronen_Layer3": "134",
+      "acc": "0.8892",
+      "loss": "0.3175809681415558",
+      "time": "0.5936105251312256",
+      "fittness": "0.5923947095870972"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "170",
+      "Neuronen_Layer2": "228",
+      "Neuronen_Layer3": "47",
+      "acc": "0.8887",
+      "loss": "0.31704015922546386",
+      "time": "0.3593018054962158",
+      "fittness": "0.7090491056442261"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "159",
+      "Neuronen_Layer2": "192",
+      "Neuronen_Layer3": "151",
+      "acc": "0.8887",
+      "loss": "0.310674677836895",
+      "time": "0.3749120235443115",
+      "fittness": "0.7012439966201782"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "167",
+      "Neuronen_Layer2": "232",
+      "Neuronen_Layer3": "46",
+      "acc": "0.8884",
+      "loss": "0.3203672322511673",
+      "time": "0.8148391246795654",
+      "fittness": "0.48098045587539673"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "201",
+      "Neuronen_Layer2": "116",
+      "Neuronen_Layer3": "185",
+      "acc": "0.8881",
+      "loss": "0.31496531430482866",
+      "time": "0.3930540084838867",
+      "fittness": "0.6915730237960815"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "203",
+      "Neuronen_Layer2": "144",
+      "Neuronen_Layer3": "85",
+      "acc": "0.8878",
+      "loss": "0.3187260769844055",
+      "time": "1.059852123260498",
+      "fittness": "0.35787391662597656"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "109",
+      "Neuronen_Layer2": "244",
+      "Neuronen_Layer3": "120",
+      "acc": "0.8871",
+      "loss": "0.3190563318490982",
+      "time": "1.1252763271331787",
+      "fittness": "0.32446181774139404"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "169",
+      "Neuronen_Layer2": "75",
+      "Neuronen_Layer3": "35",
+      "acc": "0.887",
+      "loss": "0.32272180757522584",
+      "time": "0.6742339134216309",
+      "fittness": "0.5498830676078796"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "129",
+      "Neuronen_Layer2": "87",
+      "Neuronen_Layer3": "139",
+      "acc": "0.8866",
+      "loss": "0.3239513102054596",
+      "time": "0.42114925384521484",
+      "fittness": "0.676025390625"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "134",
+      "Neuronen_Layer2": "229",
+      "Neuronen_Layer3": "95",
+      "acc": "0.8864",
+      "loss": "0.31550125414133073",
+      "time": "0.3749241828918457",
+      "fittness": "0.6989378929138184"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "110",
+      "Neuronen_Layer2": "251",
+      "Neuronen_Layer3": "126",
+      "acc": "0.8855",
+      "loss": "0.32152198297977447",
+      "time": "0.5155031681060791",
+      "fittness": "0.627748429775238"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "193",
+      "Neuronen_Layer2": "61",
+      "Neuronen_Layer3": "63",
+      "acc": "0.8854",
+      "loss": "0.32676474185585974",
+      "time": "0.43739771842956543",
+      "fittness": "0.6667011380195618"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "209",
+      "Neuronen_Layer2": "86",
+      "Neuronen_Layer3": "55",
+      "acc": "0.8848",
+      "loss": "0.3226854187607765",
+      "time": "0.36229896545410156",
+      "fittness": "0.7036505341529846"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "193.73964",
+      "Neuronen_Layer2": "61.15027",
+      "Neuronen_Layer3": "63.22034",
+      "acc": "0.8846",
+      "loss": "0.3242983810663223",
+      "time": "0.20307588577270508",
+      "fittness": "0.7830620408058167"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "159",
+      "Neuronen_Layer2": "172",
+      "Neuronen_Layer3": "24",
+      "acc": "0.8841",
+      "loss": "0.3347232846736908",
+      "time": "0.4686543941497803",
+      "fittness": "0.6497728228569031"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "155",
+      "Neuronen_Layer2": "123",
+      "Neuronen_Layer3": "59",
+      "acc": "0.884",
+      "loss": "0.3224678342938423",
+      "time": "0.8314480781555176",
+      "fittness": "0.4682759642601013"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "147",
+      "Neuronen_Layer2": "68",
+      "Neuronen_Layer3": "45",
+      "acc": "0.8838",
+      "loss": "0.32902726663351056",
+      "time": "0.6013569831848145",
+      "fittness": "0.5831215381622314"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "201",
+      "Neuronen_Layer2": "77",
+      "Neuronen_Layer3": "31",
+      "acc": "0.8836",
+      "loss": "0.3298272664546967",
+      "time": "0.720311164855957",
+      "fittness": "0.523444414138794"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "175",
+      "Neuronen_Layer2": "42",
+      "Neuronen_Layer3": "77",
+      "acc": "0.8828",
+      "loss": "0.3329370499610901",
+      "time": "0.38845157623291016",
+      "fittness": "0.6885741949081421"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "155",
+      "Neuronen_Layer2": "41",
+      "Neuronen_Layer3": "181",
+      "acc": "0.8821",
+      "loss": "0.3303246940612793",
+      "time": "0.32805705070495605",
+      "fittness": "0.718071460723877"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "102",
+      "Neuronen_Layer2": "203",
+      "Neuronen_Layer3": "83",
+      "acc": "0.8819",
+      "loss": "0.3297808637857437",
+      "time": "0.80649733543396",
+      "fittness": "0.47865134477615356"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "122",
+      "Neuronen_Layer2": "82",
+      "Neuronen_Layer3": "118",
+      "acc": "0.8812",
+      "loss": "0.3328453788995743",
+      "time": "0.6697137355804443",
+      "fittness": "0.5463431477546692"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "140",
+      "Neuronen_Layer2": "72",
+      "Neuronen_Layer3": "50",
+      "acc": "0.8812",
+      "loss": "0.3339827110350132",
+      "time": "0.6014614105224609",
+      "fittness": "0.5804693102836609"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "115",
+      "Neuronen_Layer2": "96",
+      "Neuronen_Layer3": "46",
+      "acc": "0.8809",
+      "loss": "0.33492297958135603",
+      "time": "0.5467469692230225",
+      "fittness": "0.6075265407562256"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "73",
+      "Neuronen_Layer2": "210",
+      "Neuronen_Layer3": "46",
+      "acc": "0.88",
+      "loss": "0.33755654628276827",
+      "time": "0.2811923027038574",
+      "fittness": "0.7394038438796997"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "123",
+      "Neuronen_Layer2": "75",
+      "Neuronen_Layer3": "57",
+      "acc": "0.88",
+      "loss": "0.33791109393835067",
+      "time": "0.5971314907073975",
+      "fittness": "0.5814342498779297"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "108",
+      "Neuronen_Layer2": "247",
+      "Neuronen_Layer3": "13",
+      "acc": "0.878",
+      "loss": "0.34905105950832366",
+      "time": "0.3749244213104248",
+      "fittness": "0.6905378103256226"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "92",
+      "Neuronen_Layer2": "54",
+      "Neuronen_Layer3": "102",
+      "acc": "0.8778",
+      "loss": "0.3447054176449776",
+      "time": "0.28118252754211426",
+      "fittness": "0.7372087240219116"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "60",
+      "Neuronen_Layer2": "186",
+      "Neuronen_Layer3": "51",
+      "acc": "0.8765",
+      "loss": "0.34320525752305986",
+      "time": "0.4721524715423584",
+      "fittness": "0.6404237747192383"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "73",
+      "Neuronen_Layer2": "20",
+      "Neuronen_Layer3": "139",
+      "acc": "0.8747",
+      "loss": "0.3581460240364075",
+      "time": "0.3749101161956787",
+      "fittness": "0.6872449517250061"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "66",
+      "Neuronen_Layer2": "171",
+      "Neuronen_Layer3": "46",
+      "acc": "0.8738",
+      "loss": "0.3455331106543541",
+      "time": "0.359295129776001",
+      "fittness": "0.6941524147987366"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "44.57819",
+      "Neuronen_Layer2": "114.23479",
+      "Neuronen_Layer3": "56.39328",
+      "acc": "0.8732",
+      "loss": "0.3577118499994278",
+      "time": "0.23432064056396484",
+      "fittness": "0.7560396790504456"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "109",
+      "Neuronen_Layer2": "88",
+      "Neuronen_Layer3": "9",
+      "acc": "0.8721",
+      "loss": "0.3870503648757935",
+      "time": "0.5780057907104492",
+      "fittness": "0.5830971002578735"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "111",
+      "Neuronen_Layer2": "38",
+      "Neuronen_Layer3": "11",
+      "acc": "0.8715",
+      "loss": "0.37805664274692535",
+      "time": "0.5623691082000732",
+      "fittness": "0.5903154611587524"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "40",
+      "Neuronen_Layer2": "110",
+      "Neuronen_Layer3": "48",
+      "acc": "0.8703",
+      "loss": "0.3691644292473793",
+      "time": "0.3280487060546875",
+      "fittness": "0.7062756419181824"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "113",
+      "Neuronen_Layer2": "40",
+      "Neuronen_Layer3": "12",
+      "acc": "0.8695",
+      "loss": "0.38122220158576964",
+      "time": "0.3779308795928955",
+      "fittness": "0.6805345416069031"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "44",
+      "Neuronen_Layer2": "114",
+      "Neuronen_Layer3": "56",
+      "acc": "0.8685",
+      "loss": "0.36732769436836243",
+      "time": "0.49988269805908203",
+      "fittness": "0.6185586452484131"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "38",
+      "Neuronen_Layer2": "102",
+      "Neuronen_Layer3": "70",
+      "acc": "0.8679",
+      "loss": "0.3769276031851769",
+      "time": "0.2968153953552246",
+      "fittness": "0.7194923162460327"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "36",
+      "Neuronen_Layer2": "75",
+      "Neuronen_Layer3": "108",
+      "acc": "0.8654",
+      "loss": "0.37469339485168457",
+      "time": "0.3280453681945801",
+      "fittness": "0.7013773322105408"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "33",
+      "Neuronen_Layer2": "92",
+      "Neuronen_Layer3": "149",
+      "acc": "0.8652",
+      "loss": "0.38158790090084077",
+      "time": "0.35929083824157715",
+      "fittness": "0.685554563999176"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "31",
+      "Neuronen_Layer2": "145",
+      "Neuronen_Layer3": "56",
+      "acc": "0.8628",
+      "loss": "0.377499500477314",
+      "time": "0.5779893398284912",
+      "fittness": "0.5738053321838379"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "30",
+      "Neuronen_Layer2": "159",
+      "Neuronen_Layer3": "157",
+      "acc": "0.8599",
+      "loss": "0.38440985226631164",
+      "time": "0.35929083824157715",
+      "fittness": "0.6802545785903931"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "12",
+      "Neuronen_Layer2": "206",
+      "Neuronen_Layer3": "46",
+      "acc": "0.8321",
+      "loss": "0.47711220149993894",
+      "time": "0.5648829936981201",
+      "fittness": "0.549658477306366"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "12",
+      "Neuronen_Layer2": "226",
+      "Neuronen_Layer3": "49",
+      "acc": "0.8213",
+      "loss": "0.4941726101398468",
+      "time": "0.4061548709869385",
+      "fittness": "0.6182225942611694"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "10",
+      "Neuronen_Layer2": "54",
+      "Neuronen_Layer3": "106",
+      "acc": "0.7956",
+      "loss": "0.6034358099937439",
+      "time": "0.39052796363830566",
+      "fittness": "0.6003360152244568"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "11",
+      "Neuronen_Layer2": "141",
+      "Neuronen_Layer3": "46",
+      "acc": "0.7891",
+      "loss": "0.5495652557373046",
+      "time": "0.5410416126251221",
+      "fittness": "0.5185791850090027"
+    }
+  },
+  "3": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "159",
+      "Neuronen_Layer2": "182",
+      "Neuronen_Layer3": "53",
+      "acc": "0.8899",
+      "loss": "0.3155002943754196",
+      "time": "0.3436760902404785",
+      "fittness": "0.7180619835853577"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "136",
+      "Neuronen_Layer2": "201",
+      "Neuronen_Layer3": "159",
+      "acc": "0.8897",
+      "loss": "0.3139070658802986",
+      "time": "0.5311236381530762",
+      "fittness": "0.6241381764411926"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "237",
+      "Neuronen_Layer2": "176",
+      "Neuronen_Layer3": "202",
+      "acc": "0.8895",
+      "loss": "0.30501281554698945",
+      "time": "0.971200704574585",
+      "fittness": "0.4038996696472168"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "142",
+      "Neuronen_Layer2": "119",
+      "Neuronen_Layer3": "45",
+      "acc": "0.8872",
+      "loss": "0.32091306027173994",
+      "time": "0.5769414901733398",
+      "fittness": "0.5987292528152466"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "168.9227",
+      "Neuronen_Layer2": "59.03712",
+      "Neuronen_Layer3": "68.29776",
+      "acc": "0.8865",
+      "loss": "0.3225175030708313",
+      "time": "0.2811858654022217",
+      "fittness": "0.7459070682525635"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "150",
+      "Neuronen_Layer2": "245",
+      "Neuronen_Layer3": "89",
+      "acc": "0.8861",
+      "loss": "0.32040355664491654",
+      "time": "0.624859094619751",
+      "fittness": "0.5736704468727112"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "160",
+      "Neuronen_Layer2": "100",
+      "Neuronen_Layer3": "45",
+      "acc": "0.886",
+      "loss": "0.3230766633749008",
+      "time": "0.5334751605987549",
+      "fittness": "0.6192623972892761"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "154",
+      "Neuronen_Layer2": "190",
+      "Neuronen_Layer3": "147",
+      "acc": "0.886",
+      "loss": "0.3154536118149757",
+      "time": "0.5341410636901855",
+      "fittness": "0.6189294457435608"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "148",
+      "Neuronen_Layer2": "188",
+      "Neuronen_Layer3": "51",
+      "acc": "0.885",
+      "loss": "0.32034065732955935",
+      "time": "0.671729564666748",
+      "fittness": "0.5491352081298828"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "168",
+      "Neuronen_Layer2": "59",
+      "Neuronen_Layer3": "68",
+      "acc": "0.884",
+      "loss": "0.3298137095689774",
+      "time": "0.5155365467071533",
+      "fittness": "0.6262317299842834"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "206",
+      "Neuronen_Layer2": "150",
+      "Neuronen_Layer3": "57",
+      "acc": "0.8835",
+      "loss": "0.32263152164816855",
+      "time": "0.3310713768005371",
+      "fittness": "0.7179642915725708"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "143",
+      "Neuronen_Layer2": "74",
+      "Neuronen_Layer3": "100",
+      "acc": "0.8835",
+      "loss": "0.32027302358150483",
+      "time": "0.6099977493286133",
+      "fittness": "0.5785011053085327"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "187",
+      "Neuronen_Layer2": "83",
+      "Neuronen_Layer3": "46",
+      "acc": "0.8834",
+      "loss": "0.33209281482696534",
+      "time": "0.29680585861206055",
+      "fittness": "0.7349970936775208"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "157",
+      "Neuronen_Layer2": "69",
+      "Neuronen_Layer3": "94",
+      "acc": "0.8828",
+      "loss": "0.32627150973081587",
+      "time": "0.6903622150421143",
+      "fittness": "0.53761887550354"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "158",
+      "Neuronen_Layer2": "125",
+      "Neuronen_Layer3": "48",
+      "acc": "0.8825",
+      "loss": "0.3345691091775894",
+      "time": "0.39838242530822754",
+      "fittness": "0.6833087801933289"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "173",
+      "Neuronen_Layer2": "203",
+      "Neuronen_Layer3": "53",
+      "acc": "0.882",
+      "loss": "0.32140816236734393",
+      "time": "0.39054155349731445",
+      "fittness": "0.6867292523384094"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "169",
+      "Neuronen_Layer2": "31",
+      "Neuronen_Layer3": "67",
+      "acc": "0.8816",
+      "loss": "0.33166075263023376",
+      "time": "0.4795815944671631",
+      "fittness": "0.6418092250823975"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "166",
+      "Neuronen_Layer2": "39",
+      "Neuronen_Layer3": "63",
+      "acc": "0.8813",
+      "loss": "0.33549896380901334",
+      "time": "0.2499387264251709",
+      "fittness": "0.7563306093215942"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "122",
+      "Neuronen_Layer2": "108",
+      "Neuronen_Layer3": "69",
+      "acc": "0.8808",
+      "loss": "0.3341778577566147",
+      "time": "0.45302867889404297",
+      "fittness": "0.6542856693267822"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "154",
+      "Neuronen_Layer2": "90",
+      "Neuronen_Layer3": "60",
+      "acc": "0.8808",
+      "loss": "0.33098330764770506",
+      "time": "0.5156066417694092",
+      "fittness": "0.6229966878890991"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "120",
+      "Neuronen_Layer2": "108",
+      "Neuronen_Layer3": "75",
+      "acc": "0.8807",
+      "loss": "0.3294037504911423",
+      "time": "0.35929107666015625",
+      "fittness": "0.7010544538497925"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "103",
+      "Neuronen_Layer2": "73",
+      "Neuronen_Layer3": "48",
+      "acc": "0.8793",
+      "loss": "0.3395578697681427",
+      "time": "0.4841625690460205",
+      "fittness": "0.637218713760376"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "91",
+      "Neuronen_Layer2": "79",
+      "Neuronen_Layer3": "46",
+      "acc": "0.8789",
+      "loss": "0.34253734447956086",
+      "time": "0.4580118656158447",
+      "fittness": "0.6498940587043762"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "67.78742",
+      "Neuronen_Layer2": "137.9598",
+      "Neuronen_Layer3": "21.1544",
+      "acc": "0.8775",
+      "loss": "0.3543128927826881",
+      "time": "0.2655646800994873",
+      "fittness": "0.7447176575660706"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "69",
+      "Neuronen_Layer2": "199",
+      "Neuronen_Layer3": "51",
+      "acc": "0.877",
+      "loss": "0.3476502438008785",
+      "time": "0.5444746017456055",
+      "fittness": "0.6047626733779907"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "67",
+      "Neuronen_Layer2": "137",
+      "Neuronen_Layer3": "21",
+      "acc": "0.8753",
+      "loss": "0.3512778623580933",
+      "time": "0.5023951530456543",
+      "fittness": "0.6241024136543274"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "46",
+      "Neuronen_Layer2": "103",
+      "Neuronen_Layer3": "49",
+      "acc": "0.8752",
+      "loss": "0.35298158805370333",
+      "time": "0.2811880111694336",
+      "fittness": "0.7346059679985046"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "120",
+      "Neuronen_Layer2": "48",
+      "Neuronen_Layer3": "13",
+      "acc": "0.8745",
+      "loss": "0.3629775258421898",
+      "time": "0.3592984676361084",
+      "fittness": "0.694850742816925"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "73",
+      "Neuronen_Layer2": "20",
+      "Neuronen_Layer3": "132",
+      "acc": "0.872",
+      "loss": "0.3626054134249687",
+      "time": "0.6861026287078857",
+      "fittness": "0.5289486646652222"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "41",
+      "Neuronen_Layer2": "91",
+      "Neuronen_Layer3": "52",
+      "acc": "0.8714",
+      "loss": "0.3691174864768982",
+      "time": "0.4247932434082031",
+      "fittness": "0.6590033769607544"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "117",
+      "Neuronen_Layer2": "47",
+      "Neuronen_Layer3": "11",
+      "acc": "0.8711",
+      "loss": "0.38032138502597806",
+      "time": "0.3935539722442627",
+      "fittness": "0.6743230223655701"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "50",
+      "Neuronen_Layer2": "141",
+      "Neuronen_Layer3": "24",
+      "acc": "0.8707",
+      "loss": "0.3707782143473625",
+      "time": "0.4555320739746094",
+      "fittness": "0.6429339647293091"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "33",
+      "Neuronen_Layer2": "125",
+      "Neuronen_Layer3": "75",
+      "acc": "0.8694",
+      "loss": "0.3697963943719864",
+      "time": "0.23431873321533203",
+      "fittness": "0.7522406578063965"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "39",
+      "Neuronen_Layer2": "148",
+      "Neuronen_Layer3": "53",
+      "acc": "0.8677",
+      "loss": "0.3726657008886337",
+      "time": "0.6248652935028076",
+      "fittness": "0.555267333984375"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "65",
+      "Neuronen_Layer2": "51",
+      "Neuronen_Layer3": "53",
+      "acc": "0.8677",
+      "loss": "0.35814736816883086",
+      "time": "0.6903548240661621",
+      "fittness": "0.5225225687026978"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "29",
+      "Neuronen_Layer2": "51",
+      "Neuronen_Layer3": "164",
+      "acc": "0.8662",
+      "loss": "0.3859146867275238",
+      "time": "0.48467397689819336",
+      "fittness": "0.6238629817962646"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "32",
+      "Neuronen_Layer2": "105",
+      "Neuronen_Layer3": "155",
+      "acc": "0.8646",
+      "loss": "0.3739045387983322",
+      "time": "0.43740153312683105",
+      "fittness": "0.64589923620224"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "42",
+      "Neuronen_Layer2": "106",
+      "Neuronen_Layer3": "87",
+      "acc": "0.8643",
+      "loss": "0.37221000707149504",
+      "time": "0.23432016372680664",
+      "fittness": "0.7471399307250977"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "34",
+      "Neuronen_Layer2": "95",
+      "Neuronen_Layer3": "131",
+      "acc": "0.8634",
+      "loss": "0.3763064163446426",
+      "time": "0.26556849479675293",
+      "fittness": "0.7306157350540161"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "28",
+      "Neuronen_Layer2": "49",
+      "Neuronen_Layer3": "172",
+      "acc": "0.8628",
+      "loss": "0.39478079924583437",
+      "time": "0.49985361099243164",
+      "fittness": "0.6128731966018677"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "33",
+      "Neuronen_Layer2": "190",
+      "Neuronen_Layer3": "159",
+      "acc": "0.8623",
+      "loss": "0.38049301414489745",
+      "time": "0.5624086856842041",
+      "fittness": "0.5810956358909607"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "33",
+      "Neuronen_Layer2": "52",
+      "Neuronen_Layer3": "148",
+      "acc": "0.8615",
+      "loss": "0.38115184655189516",
+      "time": "0.2998173236846924",
+      "fittness": "0.711591362953186"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "35",
+      "Neuronen_Layer2": "60",
+      "Neuronen_Layer3": "52",
+      "acc": "0.86",
+      "loss": "0.38604367299079895",
+      "time": "0.45402073860168457",
+      "fittness": "0.6329896450042725"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "30",
+      "Neuronen_Layer2": "122",
+      "Neuronen_Layer3": "58",
+      "acc": "0.8594",
+      "loss": "0.3854266005754471",
+      "time": "0.22070932388305664",
+      "fittness": "0.7490453124046326"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "12",
+      "Neuronen_Layer2": "208",
+      "Neuronen_Layer3": "54",
+      "acc": "0.8303",
+      "loss": "0.4636802872657776",
+      "time": "0.3592984676361084",
+      "fittness": "0.6506507396697998"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "13",
+      "Neuronen_Layer2": "99",
+      "Neuronen_Layer3": "55",
+      "acc": "0.8204",
+      "loss": "0.49987178020477296",
+      "time": "0.3953700065612793",
+      "fittness": "0.6227149963378906"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "12",
+      "Neuronen_Layer2": "29",
+      "Neuronen_Layer3": "61",
+      "acc": "0.7878",
+      "loss": "0.5777846590042114",
+      "time": "0.7302207946777344",
+      "fittness": "0.42268961668014526"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "9",
+      "Neuronen_Layer2": "48",
+      "Neuronen_Layer3": "127",
+      "acc": "0.7768",
+      "loss": "0.6172254939079285",
+      "time": "0.3197352886199951",
+      "fittness": "0.6169323325157166"
+    }
+  },
+  "4": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "133",
+      "Neuronen_Layer2": "185",
+      "Neuronen_Layer3": "178",
+      "acc": "0.8901",
+      "loss": "0.3135571286916733",
+      "time": "0.6248548030853271",
+      "fittness": "0.5776726007461548"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "196",
+      "Neuronen_Layer2": "166",
+      "Neuronen_Layer3": "68",
+      "acc": "0.8875",
+      "loss": "0.3180017057061195",
+      "time": "0.6717188358306885",
+      "fittness": "0.5516405701637268"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "172",
+      "Neuronen_Layer2": "242",
+      "Neuronen_Layer3": "59",
+      "acc": "0.8863",
+      "loss": "0.3181258176088333",
+      "time": "0.5163593292236328",
+      "fittness": "0.6281203627586365"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "164",
+      "Neuronen_Layer2": "39",
+      "Neuronen_Layer3": "66",
+      "acc": "0.885",
+      "loss": "0.3307046384572983",
+      "time": "0.3436741828918457",
+      "fittness": "0.713162899017334"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "160",
+      "Neuronen_Layer2": "110",
+      "Neuronen_Layer3": "69",
+      "acc": "0.8849",
+      "loss": "0.3250487998247147",
+      "time": "0.2655649185180664",
+      "fittness": "0.7521175146102905"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "172",
+      "Neuronen_Layer2": "36",
+      "Neuronen_Layer3": "55",
+      "acc": "0.8849",
+      "loss": "0.32947822618484496",
+      "time": "0.3905348777770996",
+      "fittness": "0.6896325349807739"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "154",
+      "Neuronen_Layer2": "135",
+      "Neuronen_Layer3": "53",
+      "acc": "0.8848",
+      "loss": "0.3273668025016785",
+      "time": "0.3436698913574219",
+      "fittness": "0.7129650712013245"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "112",
+      "Neuronen_Layer2": "199",
+      "Neuronen_Layer3": "58",
+      "acc": "0.8847",
+      "loss": "0.32303101556301117",
+      "time": "0.45302557945251465",
+      "fittness": "0.658187210559845"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "125",
+      "Neuronen_Layer2": "134",
+      "Neuronen_Layer3": "63",
+      "acc": "0.8847",
+      "loss": "0.3272073276281357",
+      "time": "0.4061851501464844",
+      "fittness": "0.6816074252128601"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "164",
+      "Neuronen_Layer2": "51",
+      "Neuronen_Layer3": "49",
+      "acc": "0.8845",
+      "loss": "0.32189474805593493",
+      "time": "0.6873400211334229",
+      "fittness": "0.5408300161361694"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "168",
+      "Neuronen_Layer2": "105",
+      "Neuronen_Layer3": "45",
+      "acc": "0.8838",
+      "loss": "0.330416761302948",
+      "time": "0.5173690319061279",
+      "fittness": "0.6251155138015747"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "156",
+      "Neuronen_Layer2": "34",
+      "Neuronen_Layer3": "60",
+      "acc": "0.8835",
+      "loss": "0.3272665102720261",
+      "time": "0.4542114734649658",
+      "fittness": "0.6563942432403564"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "147",
+      "Neuronen_Layer2": "59",
+      "Neuronen_Layer3": "39",
+      "acc": "0.8835",
+      "loss": "0.33388328740596773",
+      "time": "0.5623784065246582",
+      "fittness": "0.6023107767105103"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "153",
+      "Neuronen_Layer2": "72",
+      "Neuronen_Layer3": "39",
+      "acc": "0.8833",
+      "loss": "0.33367135236859324",
+      "time": "0.687349796295166",
+      "fittness": "0.5396251082420349"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "121",
+      "Neuronen_Layer2": "46",
+      "Neuronen_Layer3": "136",
+      "acc": "0.8828",
+      "loss": "0.33108823729753495",
+      "time": "0.4686393737792969",
+      "fittness": "0.6484802961349487"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "199",
+      "Neuronen_Layer2": "74",
+      "Neuronen_Layer3": "51",
+      "acc": "0.8826",
+      "loss": "0.3293751136302948",
+      "time": "0.46964120864868164",
+      "fittness": "0.6477794051170349"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "165",
+      "Neuronen_Layer2": "31",
+      "Neuronen_Layer3": "66",
+      "acc": "0.8823",
+      "loss": "0.33509472017288205",
+      "time": "0.2968018054962158",
+      "fittness": "0.7338991165161133"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "85",
+      "Neuronen_Layer2": "229",
+      "Neuronen_Layer3": "70",
+      "acc": "0.882",
+      "loss": "0.3252483788609505",
+      "time": "0.477708101272583",
+      "fittness": "0.6431459784507751"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "129",
+      "Neuronen_Layer2": "81",
+      "Neuronen_Layer3": "59",
+      "acc": "0.8816",
+      "loss": "0.327456734251976",
+      "time": "0.35555100440979004",
+      "fittness": "0.703824520111084"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "73",
+      "Neuronen_Layer2": "222",
+      "Neuronen_Layer3": "80",
+      "acc": "0.8815",
+      "loss": "0.3307501617193222",
+      "time": "0.29680609703063965",
+      "fittness": "0.7330969572067261"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "85",
+      "Neuronen_Layer2": "87",
+      "Neuronen_Layer3": "43",
+      "acc": "0.8815",
+      "loss": "0.3394304122149944",
+      "time": "0.5155682563781738",
+      "fittness": "0.623715877532959"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "156",
+      "Neuronen_Layer2": "103",
+      "Neuronen_Layer3": "42",
+      "acc": "0.8811",
+      "loss": "0.33208418754935265",
+      "time": "0.45302534103393555",
+      "fittness": "0.6545873284339905"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "123",
+      "Neuronen_Layer2": "129",
+      "Neuronen_Layer3": "19",
+      "acc": "0.8811",
+      "loss": "0.3423237389802933",
+      "time": "0.5780220031738281",
+      "fittness": "0.5920889973640442"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "127",
+      "Neuronen_Layer2": "130",
+      "Neuronen_Layer3": "82",
+      "acc": "0.881",
+      "loss": "0.3319214912056923",
+      "time": "0.21742033958435059",
+      "fittness": "0.7722898125648499"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "71",
+      "Neuronen_Layer2": "186",
+      "Neuronen_Layer3": "77",
+      "acc": "0.8803",
+      "loss": "0.3307092662453651",
+      "time": "0.48416590690612793",
+      "fittness": "0.638217031955719"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "156.51956",
+      "Neuronen_Layer2": "34.4358",
+      "Neuronen_Layer3": "60.89181",
+      "acc": "0.8802",
+      "loss": "0.3446781017780304",
+      "time": "0.2537393569946289",
+      "fittness": "0.7533303499221802"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "86",
+      "Neuronen_Layer2": "82",
+      "Neuronen_Layer3": "70",
+      "acc": "0.88",
+      "loss": "0.3386560234069824",
+      "time": "0.5155036449432373",
+      "fittness": "0.6222481727600098"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "151",
+      "Neuronen_Layer2": "52",
+      "Neuronen_Layer3": "13",
+      "acc": "0.8783",
+      "loss": "0.3546189037680626",
+      "time": "0.5488049983978271",
+      "fittness": "0.6038975119590759"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "67",
+      "Neuronen_Layer2": "122",
+      "Neuronen_Layer3": "10",
+      "acc": "0.8694",
+      "loss": "0.3931594712495804",
+      "time": "0.5486447811126709",
+      "fittness": "0.595077633857727"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "41",
+      "Neuronen_Layer2": "75",
+      "Neuronen_Layer3": "49",
+      "acc": "0.8691",
+      "loss": "0.3652216656446457",
+      "time": "0.3280491828918457",
+      "fittness": "0.7050753831863403"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "52",
+      "Neuronen_Layer2": "95",
+      "Neuronen_Layer3": "23",
+      "acc": "0.8681",
+      "loss": "0.3646573272705078",
+      "time": "0.21870017051696777",
+      "fittness": "0.7587499022483826"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "39",
+      "Neuronen_Layer2": "54",
+      "Neuronen_Layer3": "68",
+      "acc": "0.8675",
+      "loss": "0.3789440643548965",
+      "time": "0.5633702278137207",
+      "fittness": "0.585814893245697"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "44",
+      "Neuronen_Layer2": "73",
+      "Neuronen_Layer3": "37",
+      "acc": "0.8664",
+      "loss": "0.3744859879255295",
+      "time": "0.45302772521972656",
+      "fittness": "0.6398861408233643"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "37.07157",
+      "Neuronen_Layer2": "110.02691",
+      "Neuronen_Layer3": "48.13397",
+      "acc": "0.8663",
+      "loss": "0.3794518544912338",
+      "time": "0.20991754531860352",
+      "fittness": "0.7613412141799927"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "40",
+      "Neuronen_Layer2": "92",
+      "Neuronen_Layer3": "46",
+      "acc": "0.8663",
+      "loss": "0.3759282177209854",
+      "time": "0.3436698913574219",
+      "fittness": "0.6944650411605835"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "38",
+      "Neuronen_Layer2": "213",
+      "Neuronen_Layer3": "201",
+      "acc": "0.8662",
+      "loss": "0.3693040297269821",
+      "time": "0.5623764991760254",
+      "fittness": "0.5850117206573486"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "34",
+      "Neuronen_Layer2": "114",
+      "Neuronen_Layer3": "44",
+      "acc": "0.8661",
+      "loss": "0.3770441742897034",
+      "time": "0.7412207126617432",
+      "fittness": "0.4954896569252014"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "41",
+      "Neuronen_Layer2": "57",
+      "Neuronen_Layer3": "49",
+      "acc": "0.8648",
+      "loss": "0.375610176718235",
+      "time": "0.2655644416809082",
+      "fittness": "0.7320177555084229"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "37",
+      "Neuronen_Layer2": "110",
+      "Neuronen_Layer3": "48",
+      "acc": "0.864",
+      "loss": "0.37874416778087616",
+      "time": "0.6404850482940674",
+      "fittness": "0.5437574982643127"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "27",
+      "Neuronen_Layer2": "101",
+      "Neuronen_Layer3": "163",
+      "acc": "0.8632",
+      "loss": "0.39035857462882995",
+      "time": "0.5467555522918701",
+      "fittness": "0.5898222327232361"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "38",
+      "Neuronen_Layer2": "68",
+      "Neuronen_Layer3": "46",
+      "acc": "0.8629",
+      "loss": "0.37542628782987597",
+      "time": "0.30503225326538086",
+      "fittness": "0.7103838920593262"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "35",
+      "Neuronen_Layer2": "124",
+      "Neuronen_Layer3": "20",
+      "acc": "0.8604",
+      "loss": "0.392152290225029",
+      "time": "0.6092324256896973",
+      "fittness": "0.5557838082313538"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "36",
+      "Neuronen_Layer2": "48",
+      "Neuronen_Layer3": "20",
+      "acc": "0.8565",
+      "loss": "0.4053077012062073",
+      "time": "0.43776845932006836",
+      "fittness": "0.6376157999038696"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "34",
+      "Neuronen_Layer2": "101",
+      "Neuronen_Layer3": "36",
+      "acc": "0.8557",
+      "loss": "0.4005072036743164",
+      "time": "0.5613021850585938",
+      "fittness": "0.5750489234924316"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "29",
+      "Neuronen_Layer2": "53",
+      "Neuronen_Layer3": "146",
+      "acc": "0.8555",
+      "loss": "0.3999358250379562",
+      "time": "0.28118395805358887",
+      "fittness": "0.7149080038070679"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "32",
+      "Neuronen_Layer2": "50",
+      "Neuronen_Layer3": "10",
+      "acc": "0.8493",
+      "loss": "0.44104312686920166",
+      "time": "0.2655642032623291",
+      "fittness": "0.7165179252624512"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "11",
+      "Neuronen_Layer2": "85",
+      "Neuronen_Layer3": "57",
+      "acc": "0.8106",
+      "loss": "0.5256437831878662",
+      "time": "0.39053869247436523",
+      "fittness": "0.6153306365013123"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "13",
+      "Neuronen_Layer2": "91",
+      "Neuronen_Layer3": "61",
+      "acc": "0.7992",
+      "loss": "0.5265156662940979",
+      "time": "0.4383964538574219",
+      "fittness": "0.5800017714500427"
+    }
+  },
+  "Winner": {
+    "0": {
+      "name": 0,
+      "Neuronen_Layer1": "167",
+      "Neuronen_Layer2": "220",
+      "Neuronen_Layer3": "57",
+      "acc": "0.8891",
+      "loss": "0.3136611109018326",
+      "time": "0.6485183238983154",
+      "fittness": "0.5648408532142639"
+    },
+    "1": {
+      "name": 1,
+      "Neuronen_Layer1": "227",
+      "Neuronen_Layer2": "32",
+      "Neuronen_Layer3": "51",
+      "acc": "0.8854",
+      "loss": "0.32523000915050504",
+      "time": "0.7012526988983154",
+      "fittness": "0.5347736477851868"
+    },
+    "2": {
+      "name": 2,
+      "Neuronen_Layer1": "144",
+      "Neuronen_Layer2": "105",
+      "Neuronen_Layer3": "55",
+      "acc": "0.8853",
+      "loss": "0.3264449497818947",
+      "time": "0.43303561210632324",
+      "fittness": "0.6687821745872498"
+    },
+    "3": {
+      "name": 3,
+      "Neuronen_Layer1": "160",
+      "Neuronen_Layer2": "95",
+      "Neuronen_Layer3": "59",
+      "acc": "0.8851",
+      "loss": "0.32753053100109103",
+      "time": "0.5012016296386719",
+      "fittness": "0.634499192237854"
+    },
+    "4": {
+      "name": 4,
+      "Neuronen_Layer1": "171",
+      "Neuronen_Layer2": "106",
+      "Neuronen_Layer3": "53",
+      "acc": "0.885",
+      "loss": "0.3306357543230057",
+      "time": "0.6326062679290771",
+      "fittness": "0.5686968564987183"
+    },
+    "5": {
+      "name": 5,
+      "Neuronen_Layer1": "167",
+      "Neuronen_Layer2": "108",
+      "Neuronen_Layer3": "52",
+      "acc": "0.8849",
+      "loss": "0.32324199810028076",
+      "time": "0.43995046615600586",
+      "fittness": "0.6649247407913208"
+    },
+    "6": {
+      "name": 6,
+      "Neuronen_Layer1": "190",
+      "Neuronen_Layer2": "68",
+      "Neuronen_Layer3": "46",
+      "acc": "0.8844",
+      "loss": "0.3248100754022598",
+      "time": "0.5544314384460449",
+      "fittness": "0.6071842908859253"
+    },
+    "7": {
+      "name": 7,
+      "Neuronen_Layer1": "191",
+      "Neuronen_Layer2": "102",
+      "Neuronen_Layer3": "47",
+      "acc": "0.8843",
+      "loss": "0.3263470583319664",
+      "time": "0.39054441452026367",
+      "fittness": "0.6890277862548828"
+    },
+    "8": {
+      "name": 8,
+      "Neuronen_Layer1": "103",
+      "Neuronen_Layer2": "195",
+      "Neuronen_Layer3": "42",
+      "acc": "0.8838",
+      "loss": "0.3221965924024582",
+      "time": "0.6793694496154785",
+      "fittness": "0.5441153049468994"
+    },
+    "9": {
+      "name": 9,
+      "Neuronen_Layer1": "107.58199",
+      "Neuronen_Layer2": "130.66868",
+      "Neuronen_Layer3": "81.65163",
+      "acc": "0.8836",
+      "loss": "0.32841040838360785",
+      "time": "0.3586728572845459",
+      "fittness": "0.7042635679244995"
+    },
+    "10": {
+      "name": 10,
+      "Neuronen_Layer1": "124",
+      "Neuronen_Layer2": "104",
+      "Neuronen_Layer3": "64",
+      "acc": "0.8835",
+      "loss": "0.3272356497049332",
+      "time": "0.5623681545257568",
+      "fittness": "0.6023159027099609"
+    },
+    "11": {
+      "name": 11,
+      "Neuronen_Layer1": "134",
+      "Neuronen_Layer2": "42",
+      "Neuronen_Layer3": "141",
+      "acc": "0.8834",
+      "loss": "0.32660164717435836",
+      "time": "0.3319721221923828",
+      "fittness": "0.7174139618873596"
+    },
+    "12": {
+      "name": 12,
+      "Neuronen_Layer1": "149",
+      "Neuronen_Layer2": "100",
+      "Neuronen_Layer3": "58",
+      "acc": "0.8832",
+      "loss": "0.32996517469882963",
+      "time": "0.5306594371795654",
+      "fittness": "0.6178702712059021"
+    },
+    "13": {
+      "name": 13,
+      "Neuronen_Layer1": "151",
+      "Neuronen_Layer2": "46",
+      "Neuronen_Layer3": "44",
+      "acc": "0.8826",
+      "loss": "0.338657015144825",
+      "time": "0.5623886585235596",
+      "fittness": "0.601405680179596"
+    },
+    "14": {
+      "name": 14,
+      "Neuronen_Layer1": "177",
+      "Neuronen_Layer2": "62",
+      "Neuronen_Layer3": "55",
+      "acc": "0.8826",
+      "loss": "0.32591910675764085",
+      "time": "0.25954294204711914",
+      "fittness": "0.7528285384178162"
+    },
+    "15": {
+      "name": 15,
+      "Neuronen_Layer1": "124",
+      "Neuronen_Layer2": "111",
+      "Neuronen_Layer3": "50",
+      "acc": "0.8824",
+      "loss": "0.3334765702009201",
+      "time": "0.5623695850372314",
+      "fittness": "0.6012151837348938"
+    },
+    "16": {
+      "name": 16,
+      "Neuronen_Layer1": "92",
+      "Neuronen_Layer2": "92",
+      "Neuronen_Layer3": "61",
+      "acc": "0.8824",
+      "loss": "0.333710448551178",
+      "time": "0.4852931499481201",
+      "fittness": "0.6397534012794495"
+    },
+    "17": {
+      "name": 17,
+      "Neuronen_Layer1": "142",
+      "Neuronen_Layer2": "34",
+      "Neuronen_Layer3": "54",
+      "acc": "0.8823",
+      "loss": "0.3329353569507599",
+      "time": "0.38533902168273926",
+      "fittness": "0.6896305084228516"
+    },
+    "18": {
+      "name": 18,
+      "Neuronen_Layer1": "201",
+      "Neuronen_Layer2": "35",
+      "Neuronen_Layer3": "53",
+      "acc": "0.8821",
+      "loss": "0.33720969724655153",
+      "time": "0.4543006420135498",
+      "fittness": "0.6549496650695801"
+    },
+    "19": {
+      "name": 19,
+      "Neuronen_Layer1": "77",
+      "Neuronen_Layer2": "182",
+      "Neuronen_Layer3": "71",
+      "acc": "0.882",
+      "loss": "0.32994311839342116",
+      "time": "0.39054441452026367",
+      "fittness": "0.6867278218269348"
+    },
+    "20": {
+      "name": 20,
+      "Neuronen_Layer1": "107",
+      "Neuronen_Layer2": "130",
+      "Neuronen_Layer3": "81",
+      "acc": "0.882",
+      "loss": "0.32750774137973787",
+      "time": "0.6388332843780518",
+      "fittness": "0.5625833868980408"
+    },
+    "21": {
+      "name": 21,
+      "Neuronen_Layer1": "111",
+      "Neuronen_Layer2": "185",
+      "Neuronen_Layer3": "48",
+      "acc": "0.8817",
+      "loss": "0.3341130000591278",
+      "time": "0.3905320167541504",
+      "fittness": "0.6864339709281921"
+    },
+    "22": {
+      "name": 22,
+      "Neuronen_Layer1": "127",
+      "Neuronen_Layer2": "31",
+      "Neuronen_Layer3": "47",
+      "acc": "0.8812",
+      "loss": "0.3368145962715149",
+      "time": "0.4945378303527832",
+      "fittness": "0.6339311003684998"
+    },
+    "23": {
+      "name": 23,
+      "Neuronen_Layer1": "131",
+      "Neuronen_Layer2": "84",
+      "Neuronen_Layer3": "55",
+      "acc": "0.8812",
+      "loss": "0.3367625409245491",
+      "time": "0.8395791053771973",
+      "fittness": "0.4614104628562927"
+    },
+    "24": {
+      "name": 24,
+      "Neuronen_Layer1": "84",
+      "Neuronen_Layer2": "101",
+      "Neuronen_Layer3": "177",
+      "acc": "0.8809",
+      "loss": "0.3327545138001442",
+      "time": "0.6603107452392578",
+      "fittness": "0.5507446527481079"
+    },
+    "25": {
+      "name": 25,
+      "Neuronen_Layer1": "78",
+      "Neuronen_Layer2": "70",
+      "Neuronen_Layer3": "59",
+      "acc": "0.8804",
+      "loss": "0.3419883552670479",
+      "time": "0.49141383171081543",
+      "fittness": "0.6346930861473083"
+    },
+    "26": {
+      "name": 26,
+      "Neuronen_Layer1": "74",
+      "Neuronen_Layer2": "198",
+      "Neuronen_Layer3": "65",
+      "acc": "0.8787",
+      "loss": "0.34450438253879545",
+      "time": "0.6014482975006104",
+      "fittness": "0.577975869178772"
+    },
+    "27": {
+      "name": 27,
+      "Neuronen_Layer1": "72",
+      "Neuronen_Layer2": "245",
+      "Neuronen_Layer3": "76",
+      "acc": "0.8786",
+      "loss": "0.3373447918176651",
+      "time": "0.4530189037322998",
+      "fittness": "0.6520905494689941"
+    },
+    "28": {
+      "name": 28,
+      "Neuronen_Layer1": "76",
+      "Neuronen_Layer2": "64",
+      "Neuronen_Layer3": "48",
+      "acc": "0.8747",
+      "loss": "0.3497562125325203",
+      "time": "0.663743257522583",
+      "fittness": "0.542828381061554"
+    },
+    "29": {
+      "name": 29,
+      "Neuronen_Layer1": "73",
+      "Neuronen_Layer2": "246",
+      "Neuronen_Layer3": "74",
+      "acc": "0.8701",
+      "loss": "0.3441278509378433",
+      "time": "0.6169915199279785",
+      "fittness": "0.5616042613983154"
+    },
+    "30": {
+      "name": 30,
+      "Neuronen_Layer1": "58",
+      "Neuronen_Layer2": "45",
+      "Neuronen_Layer3": "26",
+      "acc": "0.8682",
+      "loss": "0.37052572356462476",
+      "time": "0.6847443580627441",
+      "fittness": "0.5258278250694275"
+    },
+    "31": {
+      "name": 31,
+      "Neuronen_Layer1": "51",
+      "Neuronen_Layer2": "93",
+      "Neuronen_Layer3": "28",
+      "acc": "0.8679",
+      "loss": "0.3766995427131653",
+      "time": "0.531933069229126",
+      "fittness": "0.601933479309082"
+    },
+    "32": {
+      "name": 32,
+      "Neuronen_Layer1": "37",
+      "Neuronen_Layer2": "56",
+      "Neuronen_Layer3": "77",
+      "acc": "0.8676",
+      "loss": "0.37264214115142824",
+      "time": "0.36571359634399414",
+      "fittness": "0.6847432255744934"
+    },
+    "33": {
+      "name": 33,
+      "Neuronen_Layer1": "38",
+      "Neuronen_Layer2": "95",
+      "Neuronen_Layer3": "59",
+      "acc": "0.8673",
+      "loss": "0.37483020324707034",
+      "time": "0.6233258247375488",
+      "fittness": "0.5556370615959167"
+    },
+    "34": {
+      "name": 34,
+      "Neuronen_Layer1": "41",
+      "Neuronen_Layer2": "48",
+      "Neuronen_Layer3": "55",
+      "acc": "0.8669",
+      "loss": "0.3771680817842484",
+      "time": "0.5233581066131592",
+      "fittness": "0.6052209734916687"
+    },
+    "35": {
+      "name": 35,
+      "Neuronen_Layer1": "51",
+      "Neuronen_Layer2": "62",
+      "Neuronen_Layer3": "24",
+      "acc": "0.8649",
+      "loss": "0.3763090115070343",
+      "time": "0.37491369247436523",
+      "fittness": "0.6774431467056274"
+    },
+    "36": {
+      "name": 36,
+      "Neuronen_Layer1": "41",
+      "Neuronen_Layer2": "101",
+      "Neuronen_Layer3": "52",
+      "acc": "0.8648",
+      "loss": "0.3746992381095886",
+      "time": "0.6324903964996338",
+      "fittness": "0.5485547780990601"
+    },
+    "37": {
+      "name": 37,
+      "Neuronen_Layer1": "38",
+      "Neuronen_Layer2": "53",
+      "Neuronen_Layer3": "72",
+      "acc": "0.8645",
+      "loss": "0.3829932520866394",
+      "time": "0.5640697479248047",
+      "fittness": "0.5824651122093201"
+    },
+    "38": {
+      "name": 38,
+      "Neuronen_Layer1": "37",
+      "Neuronen_Layer2": "79",
+      "Neuronen_Layer3": "66",
+      "acc": "0.8644",
+      "loss": "0.3766530390501022",
+      "time": "0.5759086608886719",
+      "fittness": "0.5764456987380981"
+    },
+    "39": {
+      "name": 39,
+      "Neuronen_Layer1": "31",
+      "Neuronen_Layer2": "117",
+      "Neuronen_Layer3": "58",
+      "acc": "0.8617",
+      "loss": "0.3867768583774567",
+      "time": "0.8860442638397217",
+      "fittness": "0.4186778664588928"
+    },
+    "40": {
+      "name": 40,
+      "Neuronen_Layer1": "38",
+      "Neuronen_Layer2": "52",
+      "Neuronen_Layer3": "14",
+      "acc": "0.8616",
+      "loss": "0.39880117263793946",
+      "time": "0.7329554557800293",
+      "fittness": "0.4951222538948059"
+    },
+    "41": {
+      "name": 41,
+      "Neuronen_Layer1": "31",
+      "Neuronen_Layer2": "132",
+      "Neuronen_Layer3": "69",
+      "acc": "0.8604",
+      "loss": "0.39334746754169464",
+      "time": "0.4061543941497803",
+      "fittness": "0.6573228240013123"
+    },
+    "42": {
+      "name": 42,
+      "Neuronen_Layer1": "37",
+      "Neuronen_Layer2": "87",
+      "Neuronen_Layer3": "51",
+      "acc": "0.8603",
+      "loss": "0.3803952089548111",
+      "time": "0.3436703681945801",
+      "fittness": "0.6884648203849792"
+    },
+    "43": {
+      "name": 43,
+      "Neuronen_Layer1": "27",
+      "Neuronen_Layer2": "54",
+      "Neuronen_Layer3": "65",
+      "acc": "0.8601",
+      "loss": "0.38981188926696775",
+      "time": "0.5546388626098633",
+      "fittness": "0.5827805399894714"
+    },
+    "44": {
+      "name": 44,
+      "Neuronen_Layer1": "31.05304",
+      "Neuronen_Layer2": "117.3616",
+      "Neuronen_Layer3": "58.80515",
+      "acc": "0.859",
+      "loss": "0.3862188880443573",
+      "time": "0.34638094902038574",
+      "fittness": "0.6858095526695251"
+    },
+    "45": {
+      "name": 45,
+      "Neuronen_Layer1": "34",
+      "Neuronen_Layer2": "81",
+      "Neuronen_Layer3": "20",
+      "acc": "0.8582",
+      "loss": "0.40020296726226806",
+      "time": "0.5125007629394531",
+      "fittness": "0.6019496321678162"
+    },
+    "46": {
+      "name": 46,
+      "Neuronen_Layer1": "35",
+      "Neuronen_Layer2": "98",
+      "Neuronen_Layer3": "47",
+      "acc": "0.8552",
+      "loss": "0.3986591210126877",
+      "time": "0.4854919910430908",
+      "fittness": "0.6124539971351624"
+    },
+    "47": {
+      "name": 47,
+      "Neuronen_Layer1": "11",
+      "Neuronen_Layer2": "88",
+      "Neuronen_Layer3": "51",
+      "acc": "0.8206",
+      "loss": "0.5125898145198822",
+      "time": "0.5995914936065674",
+      "fittness": "0.520804226398468"
+    }
+  }
+}

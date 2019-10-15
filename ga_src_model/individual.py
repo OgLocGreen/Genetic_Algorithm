@@ -15,6 +15,7 @@ class Individual(object):
         self.var_loss = 0
         self.time_predict = 0
         self.fitness = 0
+        self.trainable_var = 0
         
 
     def fitness_function(self):
@@ -22,5 +23,5 @@ class Individual(object):
             Returns fitness of individual
             Fitness is the difference between
         """
-        self.var_loss, self.var_acc = KNN.train_and_evalu_model(self.gene[0], self.gene[1], self.gene[2])
-        return self.var_acc
+        self.var_loss, self.var_acc, self.time_predict, self.trainable_var = KNN.train_and_evalu_model_mean(self.gene[0], self.gene[1], self.gene[2])
+        return self.var_loss, self.var_acc, self.time_predict,self.trainable_var

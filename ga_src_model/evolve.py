@@ -21,13 +21,13 @@ import population
 
 
 if __name__ == "__main__":
-    pop_size = 50
+    pop_size = 10
     mutate_prob = 0.1 #sigma for random.gauss()
     retain = 0.8
     random_retain = 0.05
     GENERATIONS = 5
 
-    multiprocessing_flag = True
+    multiprocessing_flag = False
     multiprocessing_var = 2
 
     SHOW_PLOT = True

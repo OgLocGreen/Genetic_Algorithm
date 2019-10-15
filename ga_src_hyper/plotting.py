@@ -238,10 +238,7 @@ if __name__ == "__main__":
     save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
                                        datetime.datetime.now().month,
                                        datetime.datetime.now().day)
-    save_file = "2019.9.19-7.json"
+    save_file = "2019.8.14-2.json"
 
-    scatterplot(save_file)
-
-    scatterplot_zoom(save_file)
     plot_fitness(save_file)
-    plot_histogram_all(save_file)
+

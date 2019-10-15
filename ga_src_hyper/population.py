@@ -17,7 +17,7 @@ import selection
 
 class Population(object):
 
-    def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03):
+    def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03, generations=5):
         """
             Args
                 pop_size: size of population
@@ -26,6 +26,7 @@ class Population(object):
                 random_retain: how many of the unfittest are retained
         """
         self.pop_size = pop_size
+        self.generations = generations
         self.mutate_prob = mutate_prob
         self.retain = retain
         self.random_retain = random_retain
@@ -45,6 +46,17 @@ class Population(object):
                 if os.path.isfile(self.save_file) == False:
                     break
 
+        self.save_file_log = "{}.{}.{}-log.txt".format(datetime.datetime.now().year,
+                                                datetime.datetime.now().month,
+                                                datetime.datetime.now().day)        
+        if os.path.isfile(self.save_file_log):
+            for i in range(1, 10):
+                self.save_file_log = "{}.{}.{}-{}-log.txt".format(datetime.datetime.now().year,
+                                                           datetime.datetime.now().month,
+                                                           datetime.datetime.now().day,
+                                                           i)
+                if os.path.isfile(self.save_file_log)== False:
+                    break
         # Create individuals
         self.individuals = []
         for x in range(pop_size):
@@ -57,7 +69,9 @@ class Population(object):
         fitness_sum = 0
         i = 0
         for x in self.individuals:
-            fitness_sum += x.fitness()
+            accloss = x.fitness()
+            self.var_loss, self.var_acc = accloss[0], accloss[1]
+            fitness_sum += self.var_acc
             print("individual: ", i)
             print("fitness: ", x.var_acc)
             i = i + 1
@@ -76,7 +90,7 @@ class Population(object):
                 print("----------------------------------------")
         gc.collect()
 
-    def grade_multi(self, generation=None, multiprocessing_var=2):
+    def grade_multi(self, mean_flag=False, generation=None, multiprocessing_var=2):
         """
             Grade the generation by getting the average fitness of its individuals with multiprocessing
         """
@@ -84,7 +98,7 @@ class Population(object):
 
         p = multiprocessing.Pool(processes=multiprocessing_var)
 
-        accloss = p.map(fitness_multi, self.individuals)
+        accloss = p.map(fitness_multi,self.individuals)
 
         i = 0
         for x in self.individuals:
@@ -95,7 +109,7 @@ class Population(object):
         pop_fitness = fitness_sum / self.pop_size
         self.fitness_history.append(pop_fitness)
         self.save_gens(generation)
-        # Set Done flag if we hit target
+        # Set Done flag if we hit target2
         if pop_fitness >= 0.90:
             self.done = True
 
@@ -186,7 +200,8 @@ class Population(object):
                 "batchsize": str(x.gene[3]),
                 "optimizer": str(x.gene[4]),
                 "acc": str(x.var_acc),
-                "loss": str(x.var_loss)
+                "loss": str(x.var_loss),
+                "variables" : str(x.variables)
             }
             family_tree[generations][i] = generation
             i += 1
@@ -216,7 +231,8 @@ class Population(object):
                 "batchsize": str(x.gene[3]),
                 "optimizer": str(x.gene[4]),
                 "acc": str(x.var_acc),
-                "loss": str(x.var_loss)
+                "loss": str(x.var_loss),
+                "variables" : str(x.variables)
             }
             family_tree["Winner"][i] = generation
             i += 1
@@ -229,9 +245,30 @@ class Population(object):
         del family_tree
         gc.collect()
 
+    def log_file(self,round_time):
+        file = open(self.save_file_log,"w")
+        file.write("Population Size"+ str(self.pop_size)+"\n")
+        file.write("Generations" + str(self.generations)+"\n")
+        file.write("Muationrate"+ str(self.mutate_prob)+"\n")
+        file.write("Retain" + str(self.retain)+"\n")
+        file.write("Jasonfile" + str(self.save_file)+"\n")
+        tmp = 0
+        for i in range(0,len(round_time)):
+            file.write("Round: " + str(i) +" Time: " + str(round_time[i] - tmp)+"\n")
+        tmp = round_time[i]
+        for i in range(0,len(self.fitness_history)):
+            file.write("Generation: "+ str(i) +" Fitness: "+ str(self.fitness_history[i])+"\n")
+        file.close()
+
 def fitness_multi(individuum):
+    mean_flag = False
     """
         Returns fitness(accuarcy ) and loss of individual
     """
-    var_loss, var_acc = KNN.train_and_evalu_CNN(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
-    return var_acc, var_loss
+    if mean_flag == 1:
+        var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu_cifar10_mean(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
+        return var_loss_mean, var_acc_mean
+    else:
+        var_loss, var_acc, variables_mean = KNN.train_and_evalu_cifar10(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
+        return var_acc, var_loss, variables_mean
+

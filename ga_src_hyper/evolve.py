@@ -8,7 +8,6 @@ import datetime
 import time
 import os
 
-from KNN import train_and_evalu_CNN
 from plotting import plot_winner, plot_all, plot_histogram_all, scatterplot
 import KNN
 import crossover
@@ -22,23 +21,24 @@ import population
 
 
 if __name__ == "__main__":
-    pop_size = 50
+    pop_size = 4
     mutate_prob = 0.1 #sigma for random.gauss()
     retain = 0.8
     random_retain = 0.05
-    GENERATIONS = 5
+    GENERATIONS = 1
 
     multiprocessing_flag = True
     multiprocessing_var = 2
 
+    mean_flag = True
     SHOW_PLOT = True
 
-    pop = population.Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain)
+    pop = population.Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain,generations=GENERATIONS)
     start = time.time()
     round_time = []
     for x in range(GENERATIONS):
         if multiprocessing_flag:
-            pop.grade_multi(generation=x, multiprocessing_var=multiprocessing_var)
+            pop.grade_multi(generation=x,mean_flag= mean_flag, multiprocessing_var=multiprocessing_var)
         else:
             pop.grade_single(generation=x)
         if pop.done:
@@ -46,8 +46,6 @@ if __name__ == "__main__":
             print("Finished at generation:", x, ", Population fistness:", pop.fitness_history[-1])
             print("Finished after:",end-start," Seconds")
             break
-        else if x == 5:
-            print("Breakpoint")
         else:
             pop.evolve()
             print("Finished with ",x,"Generation" )
@@ -74,3 +72,6 @@ if __name__ == "__main__":
     for i in range(0,len(round_time)):
         print("Round: ", i," Time: ", round_time[i] - tmp )
         tmp = round_time[i]
+    pop.log_file(round_time)
+
+    

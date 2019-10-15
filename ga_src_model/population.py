@@ -22,7 +22,7 @@ class Population(object):
             Args
                 pop_size: size of population
                 mutate_pron: standard deviation of random.gauss()
-                retain: parents = polupation[:retain]
+                retain: parents = polupation[retain:]
                 random_retain: how many of the unfittest are retained
         """
         self.pop_size = pop_size
@@ -60,9 +60,9 @@ class Population(object):
         fitness_sum = 0
         i = 0
         for x in self.individuals:
-            fitness_sum += x.fitness()
-            print("individual: ", i)
-            print("fitness: ", x.var_acc)
+            x.fitness_function()
+            x.fitness = x.var_acc - (0.5 * x.time_predict) ### Fitnessfunction
+            fitness_sum += x.fitness
             i = i + 1
         del i
         pop_fitness = fitness_sum / self.pop_size
@@ -91,8 +91,8 @@ class Population(object):
 
         i = 0
         for x in self.individuals:
-            x.var_acc, x.var_loss, x.time_predict = acclosstime[i][0], acclosstime[i][1] , acclosstime[i][2]
-            x.fitness = x.var_acc - (0.5 * x.time_predict)
+            x.var_acc, x.var_loss, x.time_predict, x.trainable_var = acclosstime[i][0], acclosstime[i][1] , acclosstime[i][2], acclosstime[i][3]
+            x.fitness = x.var_acc - (0.5 * x.time_predict) ### Fitnessfunction
             fitness_sum += x.var_acc
             i += 1
         del i
@@ -188,7 +188,8 @@ class Population(object):
                 "acc": str(x.var_acc),
                 "loss": str(x.var_loss),
                 "time": str(x.time_predict),
-                "fittness": str(x.fitness)
+                "fittness": str(x.fitness),
+                "trainable_var": str(x.trainable_var)
             }
             family_tree[generations][i] = generation
             i += 1
@@ -217,7 +218,8 @@ class Population(object):
                 "acc": str(x.var_acc),
                 "loss": str(x.var_loss),
                 "time": str(x.time_predict),
-                "fittness": str(x.fitness)
+                "fittness": str(x.fitness),
+                "trainable_var": str(x.trainable_var)
             }
             family_tree["Winner"][i] = generation
             i += 1
@@ -233,5 +235,5 @@ def fitness_multi(individuum):
     """
         Returns fitness(accuarcy ) and loss of individual
     """
-    var_loss, var_acc, time_eval = KNN.train_and_evalu_model(individuum.gene[0], individuum.gene[1], individuum.gene[2])
-    return var_acc, var_loss, time_eval
+    var_loss, var_acc, time_eval, time_predict  = KNN.train_and_evalu_model_mean(individuum.gene[0], individuum.gene[1], individuum.gene[2])
+    return var_acc, var_loss, time_eval, time_predict
