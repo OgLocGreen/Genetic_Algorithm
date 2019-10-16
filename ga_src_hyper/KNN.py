@@ -334,10 +334,10 @@ def train_and_evalu_cifar100_mean(var_learningrate,var_dropout,var_epoch,var_bat
     if(mean == 1):
         for i in range(0,mean_var):
             if small_dataset is True:
-                model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2)
+                model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2, verbose=0)
                 test_loss, test_acc = model.evaluate(small_test_images, small_test_labels)
             else:
-                model.fit(train_images, train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2)
+                model.fit(train_images, train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2, verbose=0)
                 test_loss, test_acc = model.evaluate(test_images, test_labels)
             test_loss_all += test_loss
             test_acc_all += test_acc 
@@ -345,10 +345,10 @@ def train_and_evalu_cifar100_mean(var_learningrate,var_dropout,var_epoch,var_bat
         test_acc_mean = test_acc /mean_var
     else: ## wird eh nicht gebraucht
         if small_dataset is True:
-            model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2)
+            model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2, verbose=0)
             test_loss, test_acc = model.evaluate(small_test_images, small_test_labels)
         else:
-            model.fit(train_images, train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2)
+            model.fit(train_images, train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2, verbose=0)
             test_loss, test_acc = model.evaluate(test_images, test_labels)
 
     print("test_loss: ",test_loss , "test_acc: ", test_acc)

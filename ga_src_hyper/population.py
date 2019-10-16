@@ -102,7 +102,7 @@ class Population(object):
 
         i = 0
         for x in self.individuals:
-            x.var_acc, x.var_loss = accloss[i][0], accloss[i][1]
+            x.var_acc, x.var_loss, x.variables = accloss[i][0], accloss[i][1], accloss[i][2]
             fitness_sum += x.var_acc
             i += 1
         del i
@@ -247,11 +247,11 @@ class Population(object):
 
     def log_file(self,round_time):
         file = open(self.save_file_log,"w")
-        file.write("Population Size"+ str(self.pop_size)+"\n")
-        file.write("Generations" + str(self.generations)+"\n")
-        file.write("Muationrate"+ str(self.mutate_prob)+"\n")
-        file.write("Retain" + str(self.retain)+"\n")
-        file.write("Jasonfile" + str(self.save_file)+"\n")
+        file.write("Population Size "+ str(self.pop_size)+"\n")
+        file.write("Generations " + str(self.generations)+"\n")
+        file.write("Muationrate "+ str(self.mutate_prob)+"\n")
+        file.write("Retain " + str(self.retain)+"\n")
+        file.write("Jasonfile " + str(self.save_file)+"\n")
         tmp = 0
         for i in range(0,len(round_time)):
             file.write("Round: " + str(i) +" Time: " + str(round_time[i] - tmp)+"\n")
@@ -267,8 +267,8 @@ def fitness_multi(individuum):
     """
     if mean_flag == 1:
         var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu_cifar10_mean(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
-        return var_loss_mean, var_acc_mean
+        return var_loss_mean, var_acc_mean, variables_mean
     else:
-        var_loss, var_acc, variables_mean = KNN.train_and_evalu_cifar10(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
-        return var_acc, var_loss, variables_mean
+        var_loss, var_acc, variables = KNN.train_and_evalu_cifar10(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
+        return var_acc, var_loss, variables
 
