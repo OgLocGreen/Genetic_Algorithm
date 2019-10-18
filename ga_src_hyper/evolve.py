@@ -1,3 +1,4 @@
+#%%
 import numpy as np
 import matplotlib.pyplot as plt
 import random
@@ -21,7 +22,7 @@ import population
 
 
 if __name__ == "__main__":
-    pop_size = 4
+    pop_size = 5
     mutate_prob = 0.1 #sigma for random.gauss()
     retain = 0.8
     random_retain = 0.05
@@ -30,11 +31,12 @@ if __name__ == "__main__":
     multiprocessing_flag = True
     multiprocessing_var = 2
 
-    mean_flag = True
-    SHOW_PLOT = True
+    mean_flag = False
+    SHOW_PLOT = False
 
     pop = population.Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain,generations=GENERATIONS)
     start = time.time()
+    lastround = start
     round_time = []
     for x in range(GENERATIONS):
         if multiprocessing_flag:
@@ -44,16 +46,22 @@ if __name__ == "__main__":
         if pop.done:
             end = time.time()
             print("Finished at generation:", x, ", Population fistness:", pop.fitness_history[-1])
-            print("Finished after:",end-start," Seconds")
             break
         else:
             pop.evolve()
             print("Finished with ",x,"Generation" )
-        round_time.append(time.time())
+        newround = time.time()
+        round_time.append(newround - lastround)
+        lastround = newround
         gc.collect()
 
-#%%
     end_2 = time.time()
+    pop.save_gens_winner()
+    for i in range(0,len(round_time)):
+        print("Round: ", i," Time: ", round_time[i])
+    pop.log_file(round_time)
+
+#%%
     # Plot fitness history
     if SHOW_PLOT:
         print("Showing fitness history graph")
@@ -63,15 +71,11 @@ if __name__ == "__main__":
         plt.title('Fitness - pop_size {} mutate_prob {} retain {} random_retain {}'.format(pop_size, mutate_prob, retain, random_retain))
         plt.show()
 
-        pop.save_gens_winner()
         scatterplot(pop.save_file)
         plot_histogram_all(pop.save_file)
     print("FINISCHED!!! after ", end_2-start, "seconds")
     print(round_time)
-    tmp = start
-    for i in range(0,len(round_time)):
-        print("Round: ", i," Time: ", round_time[i] - tmp )
-        tmp = round_time[i]
-    pop.log_file(round_time)
-
     
+    
+
+

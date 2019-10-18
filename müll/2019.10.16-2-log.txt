@@ -1,0 +1,5 @@
+Population Size 4
+Generations 1
+Muationrate 0.1
+Retain 0.8
+Jasonfile 2019.10.16-2.json

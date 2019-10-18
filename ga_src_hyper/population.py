@@ -94,15 +94,16 @@ class Population(object):
         """
             Grade the generation by getting the average fitness of its individuals with multiprocessing
         """
-        fitness_sum = 0
+        
 
         p = multiprocessing.Pool(processes=multiprocessing_var)
 
         accloss = p.map(fitness_multi,self.individuals)
 
         i = 0
+        fitness_sum = 0
         for x in self.individuals:
-            x.var_acc, x.var_loss, x.variables = accloss[i][0], accloss[i][1], accloss[i][2]
+            x.var_loss, x.var_acc, x.variables = accloss[i][0], accloss[i][1], accloss[i][2]
             fitness_sum += x.var_acc
             i += 1
         del i
@@ -215,10 +216,10 @@ class Population(object):
         del family_tree
         gc.collect()
 
-    def save_gens_winner(self):
+    def save_gens_winner(self,multiprocessing_var=2):
         with open(self.save_file, "r") as f:
             data = json.load(f)
-        self.grade_multi()  # damit alle induviduals noch auf fittnes überprüft werden
+        self.grade_multi(multiprocessing_var=multiprocessing_var)  # damit alle induviduals noch auf fittnes überprüft werden
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))
         i = 0
         family_tree = {"Winner": {}}
@@ -240,7 +241,7 @@ class Population(object):
         data.update(family_tree)
         with open(self.save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)
-        print("saved winnerpopulation gens into data.json")
+        print("saved winnerpopulation gens into",self.save_file)
         del data
         del family_tree
         gc.collect()
@@ -252,18 +253,19 @@ class Population(object):
         file.write("Muationrate "+ str(self.mutate_prob)+"\n")
         file.write("Retain " + str(self.retain)+"\n")
         file.write("Jasonfile " + str(self.save_file)+"\n")
-        tmp = 0
+        i = 0
         for i in range(0,len(round_time)):
-            file.write("Round: " + str(i) +" Time: " + str(round_time[i] - tmp)+"\n")
-        tmp = round_time[i]
+            file.write("Round: " + str(i) +" Time: " + str(round_time[i])+"\n")
+            all_time += round_time
+        file.write("Time for all: " + str(i) +" Time: " + str(all_time)+"\n")
         for i in range(0,len(self.fitness_history)):
             file.write("Generation: "+ str(i) +" Fitness: "+ str(self.fitness_history[i])+"\n")
         file.close()
 
 def fitness_multi(individuum):
     mean_flag = False
-    """
-        Returns fitness(accuarcy ) and loss of individual
+    # Mean wird in KNN in dem einzelnen Netz umgesetzt da bei den Netzen nur die Gene(Hyperparameter) übergeben werden sollen
+    # Returns fitness(accuarcy ) and loss of individual
     """
     if mean_flag == 1:
         var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu_cifar10_mean(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
@@ -271,4 +273,7 @@ def fitness_multi(individuum):
     else:
         var_loss, var_acc, variables = KNN.train_and_evalu_cifar10(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
         return var_acc, var_loss, variables
+    """
+    var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu_cifar100(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
+    return var_loss_mean, var_acc_mean, variables_mean
 

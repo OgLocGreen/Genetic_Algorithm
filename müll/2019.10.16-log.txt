@@ -1,0 +1,16 @@
+Population Size 50
+Generations 5
+Muationrate 0.1
+Retain 0.8
+Jasonfile 2019.10.16-5.json
+Round: 0 Time: 1571241881.0020556
+Round: 1 Time: 4716.267267942429
+Round: 2 Time: 4912.139862060547
+Round: 3 Time: 5114.062594175339
+Round: 4 Time: 5277.45960187912
+Generation: 0 Fitness: 0.675527999252081
+Generation: 1 Fitness: 0.7541120001673698
+Generation: 2 Fitness: 0.779794000685215
+Generation: 3 Fitness: 0.7765160030126572
+Generation: 4 Fitness: 0.8084639951586723
+Generation: 5 Fitness: 0.7957080006599426

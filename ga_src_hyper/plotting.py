@@ -96,6 +96,10 @@ def plot_histogram_all(file):
     optimizer = []
 
     anzahl = 0
+
+    #plott all individuums
+
+    """
     for individum in data["Winner"]:
         learningrate.append(float(data["Winner"][individum]["learningrate"]))
         batchsize.append(float(data["Winner"][individum]["batchsize"]))
@@ -103,7 +107,32 @@ def plot_histogram_all(file):
         epoch.append(float(data["Winner"][individum]["epoch"]))
         optimizer.append(float(data["Winner"][individum]["optimizer"]))
         anzahl += 1
-    
+    print('learningrate mean=%.5f median=%.5f stdv=%.5f' % (np.mean(learningrate),np.median(learningrate), np.std(learningrate)))
+    plot_histogram("learningrate",learningrate)
+    plot_small_histogram("learningrate",learningrate)
+    print('batchsize mean=%.5f median=%.5f stdv=%.5f' % (np.mean(batchsize), np.median(batchsize), np.std(batchsize)))
+    plot_histogram("batchsize",batchsize)
+    plot_small_histogram("batchsize",batchsize)
+    print('dropout mean=%.5f median=%.5f stdv=%.5f' % (np.mean(dropout), np.median(dropout), np.std(dropout)))
+    plot_histogram("dropout",dropout)
+    print('epoch mean=%.5f median=%.5f stdv=%.5f' % (np.mean(epoch), np.median(epoch), np.std(epoch)))
+    plot_histogram("epoch",epoch)
+    print('optimizer mean=%.5f median=%.5f stdv=%.5f' % (np.mean(optimizer), np.median(optimizer), np.std(optimizer)))
+    plot_histogram("optimizer", optimizer)
+    """
+
+    #plot only these who are close to the best Acc
+    for individum in data["Winner"]:
+        best_acc = float(data["Winner"][individum]["acc"])
+        break
+    for individum in data["Winner"]:
+        if float(data["Winner"][individum]["acc"]) >= (best_acc*0.8):
+            learningrate.append(float(data["Winner"][individum]["learningrate"]))
+            batchsize.append(float(data["Winner"][individum]["batchsize"]))
+            dropout.append(float(data["Winner"][individum]["dropout"]))
+            epoch.append(float(data["Winner"][individum]["epoch"]))
+            optimizer.append(float(data["Winner"][individum]["optimizer"]))
+        anzahl += 1
     print('learningrate mean=%.5f median=%.5f stdv=%.5f' % (np.mean(learningrate),np.median(learningrate), np.std(learningrate)))
     plot_histogram("learningrate",learningrate)
     plot_small_histogram("learningrate",learningrate)
@@ -232,13 +261,11 @@ def plot_fitness(file):
 
 if __name__ == "__main__":
 
-
-
-
     save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
                                        datetime.datetime.now().month,
                                        datetime.datetime.now().day)
-    save_file = "2019.8.14-2.json"
+    save_file = "ergebnisse_hyper.json"
 
     plot_fitness(save_file)
+    plot_histogram_all(save_file)
 
