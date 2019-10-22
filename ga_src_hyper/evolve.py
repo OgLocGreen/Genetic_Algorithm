@@ -22,11 +22,11 @@ import population
 
 
 if __name__ == "__main__":
-    pop_size = 5
+    pop_size = 50
     mutate_prob = 0.1 #sigma for random.gauss()
     retain = 0.8
     random_retain = 0.05
-    GENERATIONS = 1
+    GENERATIONS = 5
 
     multiprocessing_flag = True
     multiprocessing_var = 2
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     pop.save_gens_winner()
     for i in range(0,len(round_time)):
         print("Round: ", i," Time: ", round_time[i])
-    pop.log_file(round_time)
+    pop.log_file(round_time,multiprocessing_var)
 
 #%%
     # Plot fitness history

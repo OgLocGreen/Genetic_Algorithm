@@ -1,8 +1,14 @@
 from tensorflow import keras
 from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 import json
+import tensorflow as tf
+
 
 def create_model(optimizer,learningrate, dropout):
+    try:
+        tf.set_random_seed(1)
+    except:
+        tf.random.set_seed(1)
     model = keras.Sequential([
       keras.layers.Flatten(input_shape=(28, 28)),
       keras.layers.Dense(128, activation='relu'),

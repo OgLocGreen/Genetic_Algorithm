@@ -7,11 +7,11 @@ class Individual(object):
             learningrate = random.uniform(0.0005, 0.1)
         if not (0.05 < dropout < 0.5):
             dropout = random.uniform(0.05, 0.5)
-        if not (75 < epoch < 125):
+        if not (50 < epoch < 100):
             epoch = random.randint(50, 100)
         if not (16 < batchsize < 64): 
             batchsize = random.randint(32, 64)
-        if not (-0.5 < optimizer < 4):
+        if not (-0.5 < optimizer < 3.5):
             optimizer = random.uniform(-0.5, 3.5)
         self.gene = [learningrate, dropout, epoch, batchsize, optimizer]
         print("gene: ", self.gene)

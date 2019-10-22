@@ -8,7 +8,7 @@ import gc
 import datetime
 import os
 
-
+import socket
 import KNN
 import crossover
 import mutation
@@ -246,14 +246,18 @@ class Population(object):
         del family_tree
         gc.collect()
 
-    def log_file(self,round_time):
+    def log_file(self,round_time,multiprocessing_var):
         file = open(self.save_file_log,"w")
-        file.write("Population Size "+ str(self.pop_size)+"\n")
-        file.write("Generations " + str(self.generations)+"\n")
-        file.write("Muationrate "+ str(self.mutate_prob)+"\n")
-        file.write("Retain " + str(self.retain)+"\n")
-        file.write("Jasonfile " + str(self.save_file)+"\n")
+        file.write("GA\n")
+        file.write("Population Size: "+ str(self.pop_size)+"\n")
+        file.write("Generations: " + str(self.generations)+"\n")
+        file.write("Muationrate: "+ str(self.mutate_prob)+"\n")
+        file.write("Retain: " + str(self.retain)+"\n")
+        file.write("Jasonfile: " + str(self.save_file)+"\n")
+        file.write("PC-name: "+ str(socket.gethostname()+"\n"))
+        file.write("Multiprocess: "+ str(multiprocessing_var)+"\n")
         i = 0
+        all_time= 0
         for i in range(0,len(round_time)):
             file.write("Round: " + str(i) +" Time: " + str(round_time[i])+"\n")
             all_time += round_time
@@ -274,6 +278,6 @@ def fitness_multi(individuum):
         var_loss, var_acc, variables = KNN.train_and_evalu_cifar10(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
         return var_acc, var_loss, variables
     """
-    var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu_cifar100(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
+    var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu_fashion_mnist(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
     return var_loss_mean, var_acc_mean, variables_mean
 
