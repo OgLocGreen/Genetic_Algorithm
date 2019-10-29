@@ -1,4 +1,4 @@
-
+# coding=utf-8
 import numpy as np
 import matplotlib.pyplot as plt
 import random
@@ -17,7 +17,8 @@ import selection
 
 class Population(object):
 
-    def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03, generations=5,dataset="mnist_fashion",knn_size = "small",small_dataset=False, gpu = False):
+    def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03,
+            generations=5,dataset="mnist_fashion",knn_size = "small",small_dataset=False, gpu = False):
         """
             Args
                 pop_size: size of population

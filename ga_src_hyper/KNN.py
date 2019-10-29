@@ -1,3 +1,4 @@
+# coding=utf-8
 from __future__ import absolute_import, division, print_function, unicode_literals
 import tensorflow as tf
 from tensorflow import keras
@@ -22,7 +23,7 @@ import os
 
 def train_and_evalu(gene,dataset,knn_size = "small" ,small_dataset = False ,gpu = False):
 
-    if gpu == True:
+    if gpu == False:
         os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
@@ -36,7 +37,7 @@ def train_and_evalu(gene,dataset,knn_size = "small" ,small_dataset = False ,gpu 
     if dataset == "mnist_fashion": 
         (train_images, train_labels), (test_images, test_labels) = keras.datasets.fashion_mnist.load_data()
         fully = True
-    elif dataset == "minst_digits":
+    elif dataset == "mnist_digits":
         (train_images, train_labels), (test_images, test_labels) = keras.datasets.mnist.load_data()
         fully = True
     elif dataset == "cifar10":

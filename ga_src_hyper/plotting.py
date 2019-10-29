@@ -1,4 +1,4 @@
-
+# coding=utf-8
 import json
 import matplotlib.mlab as mlab
 import numpy as np
@@ -8,6 +8,9 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 import datetime
+
+
+
 
 sns.set(color_codes=True)
 
