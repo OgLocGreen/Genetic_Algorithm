@@ -138,10 +138,6 @@ def train_and_evalu(gene,dataset,knn_size = "small" ,small_dataset = False ,gpu 
         model.compile(loss='categorical_crossentropy',
               optimizer=optimizerarray[round(optimizer)],
               metrics=['accuracy'])
-    #%%
-    ### Tensorboard
-
-    #tensorboard = TensorBoard(log_dir="logs/{}".format(time()))
 
     #%%
     ### Model fit and Evaluate
@@ -156,7 +152,7 @@ def train_and_evalu(gene,dataset,knn_size = "small" ,small_dataset = False ,gpu 
     gc.collect()
     return test_loss, test_acc, variables
 
-
+"""
 def train_and_evalu_mnist_fashion(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
     ### Daten
     print("var_learningrate", var_learningrate, "var_dropout", var_dropout, "var_epoch", var_epoch, "var_batch_size", var_batch_size, "optimizer", optimizer)
@@ -224,7 +220,6 @@ def train_and_evalu_mnist_fashion(var_learningrate,var_dropout,var_epoch,var_bat
     print("test_loss: ",test_loss , "test_acc: ", test_acc, "variables",variables)
     gc.collect()
     return test_loss, test_acc, variables
-
 
 def train_and_evalu_cifar10(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
     small_dataset = False
@@ -316,7 +311,6 @@ def train_and_evalu_cifar10(var_learningrate,var_dropout,var_epoch,var_batch_siz
     gc.collect()
     return test_loss_mean, test_acc_mean , variables_mean
 
-"""
 def train_and_evalu_cifar10_mean(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
 
     small_dataset = False
@@ -415,7 +409,6 @@ def train_and_evalu_cifar10_mean(var_learningrate,var_dropout,var_epoch,var_batc
     print("test_loss: ",test_loss , "test_acc: ", test_acc,"variabkes_mean: ",variables_mean)
     gc.collect()
     return test_loss_mean, test_acc_mean, variables_mean
-"""
 
 def train_and_evalu_cifar100(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
     small_dataset = False
@@ -508,7 +501,6 @@ def train_and_evalu_cifar100(var_learningrate,var_dropout,var_epoch,var_batch_si
     return test_loss_mean, test_acc_mean , variables_mean
 
 
-"""
 def train_and_evalu_cifar100_mean(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
 
     small_dataset = False
@@ -600,7 +592,6 @@ def train_and_evalu_cifar100_mean(var_learningrate,var_dropout,var_epoch,var_bat
     gc.collect()
     return test_loss_mean, test_acc_mean
 """
-
 
 if __name__ == "__main__":
     data = train_and_evalu_cifar10(var_learningrate = 0.05,var_dropout=0.25,var_epoch=100,var_batch_size=16,optimizer=3)

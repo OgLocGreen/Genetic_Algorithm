@@ -54,14 +54,6 @@ small_train_images, small_test_images, small_train_labels, small_test_labels = t
     train_images, train_labels, test_size=0.9, shuffle=False)
 
 
-#X_train = small_train_images.reshape(small_train_images.shape[0], 784)
-#X_test = small_test_images.reshape(small_test_images.shape[0], 784)
-#X_train = X_train.astype('float32')
-#X_test = X_test.astype('float32')
-#X_train /= 255
-#X_test /= 255
-#Y_train = keras.utils.to_categorical(small_train_labels, nb_classes)
-#Y_test = keras.utils.to_categorical(small_test_labels, nb_classes)
 
 model = KerasClassifier(build_fn=tools.create_model,verbose=0,use_multiprocessing=True, workers=2)
  # Number of parameter settings that are sampled.
