@@ -71,12 +71,12 @@ def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size,optimi
 
     #%%
     ### Model fit
-    model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2)
-
+    #model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2)
+    model.fit(train_images, train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2)
     #%%
     ### Model evalu
 
-    test_loss, test_acc = model.evaluate(small_test_images, small_test_labels)
+    test_loss, test_acc = model.evaluate(test_images, test_labels)
     print("test_loss: ",test_loss , "test_acc: ", test_acc)
     gc.collect()
     return test_loss, test_acc

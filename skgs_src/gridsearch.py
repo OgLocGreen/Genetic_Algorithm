@@ -18,6 +18,7 @@ start_time = time.time()
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
+n_iter_search = 50
 nb_classes = 5
 multiprocessing_var = 2
 
@@ -62,11 +63,11 @@ small_train_images, small_test_images, small_train_labels, small_test_labels = t
 #Y_test = keras.utils.to_categorical(small_test_labels, nb_classes)
 
 model = KerasClassifier(build_fn=tools.create_model,verbose=0,use_multiprocessing=True, workers=2)
-n_iter_search = 250 # Number of parameter settings that are sampled.
+ # Number of parameter settings that are sampled.
 
 optimizers = np.array([0, 1, 2, 3])
 epochs = np.array([50, 60, 80, 100])
-batchsize = np.array([32,40,56, 64])
+batchsize = np.array([32, 40, 56, 64])
 learningrate = np.array([0.0005, 0.005, 0.01, 0.1])
 dropout = np.array([0.05,0.1, 0.2, 0.5])
 

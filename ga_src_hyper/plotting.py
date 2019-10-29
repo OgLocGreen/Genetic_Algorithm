@@ -228,7 +228,6 @@ def scatterplot_zoom(file, yscale_log=False):
     plt.gca().invert_yaxis()
     plt.show()
 
-
 def plot_fitness(file):
     with open(file, "r") as f:
         data = json.load(f)

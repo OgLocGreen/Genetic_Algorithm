@@ -20,7 +20,7 @@ def create_model(optimizer,learningrate, dropout):
     RMSprop = keras.optimizers.RMSprop(lr=learningrate)
     SGD = keras.optimizers.SGD(lr=learningrate)
 
-    optimizerarray = [adam, Adagrad, RMSprop, SGD]
+    optimizerarray = [adam, RMSprop, SGD,Adagrad]
 
     if round(optimizer) < 0:
         optimizer = 0

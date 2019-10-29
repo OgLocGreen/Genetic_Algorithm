@@ -1,0 +1,6 @@
+RandomSearch
+Iterations 50
+Jasonfile 2019.10.23-1.json
+Time for all: 692.0324289798737
+PC-name: ess-altovar
+Multiprocess: 2

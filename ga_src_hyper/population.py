@@ -17,7 +17,7 @@ import selection
 
 class Population(object):
 
-    def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03, generations=5):
+    def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03, generations=5,dataset="mnist_fashion",knn_size = "small",small_dataset=False, gpu = False):
         """
             Args
                 pop_size: size of population
@@ -25,7 +25,9 @@ class Population(object):
                 retain: parents = polupation[:retain]
                 random_retain: how many of the unfittest are retained
         """
+        self.gpu = gpu
         self.pop_size = pop_size
+        self.knn_size = knn_size
         self.generations = generations
         self.mutate_prob = mutate_prob
         self.retain = retain
@@ -33,6 +35,8 @@ class Population(object):
         self.fitness_history = []
         self.parents = []
         self.done = False
+        self.small_dataset = False
+        self.dataset = dataset
         self.save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
                                                 datetime.datetime.now().month,
                                                 datetime.datetime.now().day)
@@ -90,18 +94,18 @@ class Population(object):
                 print("----------------------------------------")
         gc.collect()
 
-    def grade_multi(self, mean_flag=False, generation=None, multiprocessing_var=2):
+    def grade_multi(self, generation=None, multiprocessing_var=2):
         """
             Grade the generation by getting the average fitness of its individuals with multiprocessing
         """
-        
-
         p = multiprocessing.Pool(processes=multiprocessing_var)
-
-        accloss = p.map(fitness_multi,self.individuals)
+        
+        
+        accloss = p.map(self.fitness_multi, self.individuals)
 
         i = 0
         fitness_sum = 0
+
         for x in self.individuals:
             x.var_loss, x.var_acc, x.variables = accloss[i][0], accloss[i][1], accloss[i][2]
             fitness_sum += x.var_acc
@@ -246,9 +250,10 @@ class Population(object):
         del family_tree
         gc.collect()
 
-    def log_file(self,round_time,multiprocessing_var):
+    def log_file_beginn(self, multiprocessing_var):
         file = open(self.save_file_log,"w")
         file.write("GA\n")
+        file.write("Datenset: " + self.dataset)
         file.write("Population Size: "+ str(self.pop_size)+"\n")
         file.write("Generations: " + str(self.generations)+"\n")
         file.write("Muationrate: "+ str(self.mutate_prob)+"\n")
@@ -256,28 +261,35 @@ class Population(object):
         file.write("Jasonfile: " + str(self.save_file)+"\n")
         file.write("PC-name: "+ str(socket.gethostname()+"\n"))
         file.write("Multiprocess: "+ str(multiprocessing_var)+"\n")
+        file.close()
+
+    def log_file_end(self,round_time):
+        file = open(self.save_file_log,"w")
         i = 0
         all_time= 0
         for i in range(0,len(round_time)):
             file.write("Round: " + str(i) +" Time: " + str(round_time[i])+"\n")
             all_time += round_time
-        file.write("Time for all: " + str(i) +" Time: " + str(all_time)+"\n")
+        file.write("Time for all: "+str(all_time)+"\n")
         for i in range(0,len(self.fitness_history)):
             file.write("Generation: "+ str(i) +" Fitness: "+ str(self.fitness_history[i])+"\n")
         file.close()
-
-def fitness_multi(individuum):
-    mean_flag = False
-    # Mean wird in KNN in dem einzelnen Netz umgesetzt da bei den Netzen nur die Gene(Hyperparameter) übergeben werden sollen
-    # Returns fitness(accuarcy ) and loss of individual
-    """
-    if mean_flag == 1:
-        var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu_cifar10_mean(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
-        return var_loss_mean, var_acc_mean, variables_mean
-    else:
-        var_loss, var_acc, variables = KNN.train_and_evalu_cifar10(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
+  
+    def fitness_multi(self,individuum):
+        var_loss, var_acc, variables = KNN.train_and_evalu(gene=individuum.gene, dataset=self.dataset, knn_size=self.knn_size, small_dataset=self.small_dataset, gpu = self.gpu)
         return var_acc, var_loss, variables
+
+"""
+    def fitness_multi(self,individuum):
+        if self.dataset == "cifar10":
+            var_loss, var_acc, variables = KNN.train_and_evalu_cifar10(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
+            return var_acc, var_loss, variables
+        elif self.dataset == "mnist_fashion":
+            var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu_mnist_fashion(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
+            return var_loss_mean, var_acc_mean, variables_mean
+        elif dataset == "mnist_digits":
+            var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
+            return var_loss_mean, var_acc_mean, variables_mean
     """
-    var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu_fashion_mnist(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
-    return var_loss_mean, var_acc_mean, variables_mean
+
 

@@ -1,0 +1,18 @@
+GA
+Population Size: 50
+Generations: 5
+Muationrate: 0.1
+Retain: 0.8
+Jasonfile: 2019.10.22.json
+PC-name: ess-altovar
+Multiprocess: 2
+Round:  0  Time:  4397.232510328293
+Round:  1  Time:  3651.522542953491
+Round:  2  Time:  3930.074385881424
+Round:  3  Time:  3832.6258568763733
+Round:  4  Time:  4249.971935272217
+
+fashiondataset + 1 Layer 128 Neuronen
+
+
+

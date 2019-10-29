@@ -26,5 +26,5 @@ class Individual(object):
             Returns fitness of individual
             Fitness is the difference between
         """
-        self.var_loss, self.var_acc = KNN.train_and_evalu_cifar10_mean(self.gene[0], self.gene[1], self.gene[2], self.gene[3], self.gene[4])
+        self.var_loss, self.var_acc = KNN.train_and_evalu_cifar10(self.gene[0], self.gene[1], self.gene[2], self.gene[3], self.gene[4])
         return self.var_loss, self.var_acc
