@@ -19,8 +19,6 @@ keras.backend.set_session(session)
 
 
 import os
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 def train_and_evalu(gene,dataset,knn_size = "small" ,small_dataset = False ,gpu = False):
 
