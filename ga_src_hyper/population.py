@@ -18,7 +18,7 @@ import selection
 class Population(object):
 
     def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03,
-            generations=5,dataset="mnist_fashion",knn_size = "small",small_dataset=False, gpu = False):
+            generations=5,dataset="mnist_fashion",knn_size = "small",small_dataset=False, gpu = False, multiprocessing = 2):
         """
             Args
                 pop_size: size of population
@@ -38,6 +38,7 @@ class Population(object):
         self.done = False
         self.small_dataset = False
         self.dataset = dataset
+        self.multiprocessing = multiprocessing
         self.save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
                                                 datetime.datetime.now().month,
                                                 datetime.datetime.now().day)
@@ -95,11 +96,11 @@ class Population(object):
                 print("----------------------------------------")
         gc.collect()
 
-    def grade_multi(self, generation=None, multiprocessing_var=2):
+    def grade_multi(self, generation=None):
         """
             Grade the generation by getting the average fitness of its individuals with multiprocessing
         """
-        p = multiprocessing.Pool(processes=multiprocessing_var)
+        p = multiprocessing.Pool(processes= self.multiprocessing)
         
         
         accloss = p.map(self.fitness_multi, self.individuals)
@@ -187,15 +188,15 @@ class Population(object):
         self.parents = []
         self.children = []
 
-    def save_gens(self, generations):
+    def save_gens(self,generations):
         try:
             with open(self.save_file, "r") as f:
                 data = json.load(f)
         except:
             data = {}
-        i = 0
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc,
                                        reverse=True))  ##indiviuen noch mal nach fitness sotierten
+        i = 0
         family_tree = {generations: {}}
         for x in self.individuals:
             generation = {
@@ -212,7 +213,7 @@ class Population(object):
             family_tree[generations][i] = generation
             i += 1
         del i
-        data.update(family_tree)
+        data["generation"].update(family_tree)
         with open(self.save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)
         print("saved population gens into {}".format(self.save_file))
@@ -221,10 +222,10 @@ class Population(object):
         del family_tree
         gc.collect()
 
-    def save_gens_winner(self,multiprocessing_var=2):
+    def save_gens_winner(self):
         with open(self.save_file, "r") as f:
             data = json.load(f)
-        self.grade_multi(multiprocessing_var=multiprocessing_var)  # damit alle induviduals noch auf fittnes überprüft werden
+        self.grade_multi()  # damit alle induviduals noch auf fittnes überprüft werden
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))
         i = 0
         family_tree = {"Winner": {}}
@@ -243,39 +244,57 @@ class Population(object):
             family_tree["Winner"][i] = generation
             i += 1
         del i
-        data.update(family_tree)
+        data["generation"].update(family_tree)
         with open(self.save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)
-        print("saved winnerpopulation gens into",self.save_file)
+        print("saved population gens into {}".format(self.save_file))
+        print(generation)
         del data
         del family_tree
         gc.collect()
 
-    def log_file_beginn(self, multiprocessing_var):
-        file = open(self.save_file_log,"w")
-        file.write("GA\n")
-        file.write("Datenset: " + self.dataset)
-        file.write("Population Size: "+ str(self.pop_size)+"\n")
-        file.write("Generations: " + str(self.generations)+"\n")
-        file.write("Muationrate: "+ str(self.mutate_prob)+"\n")
-        file.write("Retain: " + str(self.retain)+"\n")
-        file.write("Jasonfile: " + str(self.save_file)+"\n")
-        file.write("PC-name: "+ str(socket.gethostname()+"\n"))
-        file.write("Multiprocess: "+ str(multiprocessing_var)+"\n")
-        file.close()
+    def save_init_data(self):
+        try:
+            with open(self.save_file, "r") as f:
+                data = json.load(f)
+        except:
+            data = {}
 
-    def log_file_end(self,round_time):
-        file = open(self.save_file_log,"w")
-        i = 0
-        all_time= 0
-        for i in range(0,len(round_time)):
-            file.write("Round: " + str(i) +" Time: " + str(round_time[i])+"\n")
-            all_time += round_time
-        file.write("Time for all: "+str(all_time)+"\n")
-        for i in range(0,len(self.fitness_history)):
-            file.write("Generation: "+ str(i) +" Fitness: "+ str(self.fitness_history[i])+"\n")
-        file.close()
-  
+        configurations = { "config": {
+            
+            "dataset" : self.dataset,
+            "knn_size" : self.knn_size,
+            "small_dataset" : self.small_dataset,
+            "pop_size": self.pop_size,
+            "Muationrate": self.mutate_prob,
+            "Retain":self.retain,
+            "random_retain" : self.random_retain,
+            "generations" : self.generations,
+            "PC_name":  socket.gethostname(),
+            "Multiprocessing" : self.multiprocessing,
+            "gpu" : self.gpu}
+        }
+        generation = {"generation":{}}
+        round_time = {"round_time":{}}
+        data.update(configurations)
+        data.update(generation)
+        data.update(round_time)
+        with open(self.save_file, "w") as outfile:
+            json.dump(data, outfile, indent=2)
+        del configurations
+        del generation
+    
+    def save_end_data(self,round_time):
+        try:
+            with open(self.save_file, "r") as f:
+                data = json.load(f)
+        except:
+            data = {}
+        data["round_time"] = round_time
+        data["fitness_history"] = self.fitness_history
+        with open(self.save_file, "w") as outfile:
+            json.dump(data, outfile, indent=2)
+
     def fitness_multi(self,individuum):
         var_loss, var_acc, variables = KNN.train_and_evalu(gene=individuum.gene, dataset=self.dataset, knn_size=self.knn_size, small_dataset=self.small_dataset, gpu = self.gpu)
         return var_acc, var_loss, variables

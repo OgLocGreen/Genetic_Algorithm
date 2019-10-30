@@ -30,21 +30,21 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,pop_size_arg = 50
     knn_size = knn_size_arg
 
     multiprocessing_flag = True
-    multiprocessing_var = 2
+    multiprocessing_var = multiprocessing_arg
     SHOW_PLOT = False
 
     if multiprocessing == 0:
         multiprocessing_flag = False
 
     pop = population.Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain,
-                                        generations=GENERATIONS,dataset=dataset,small_dataset=small_dataset,knn_size=knn_size, gpu=gpu)
+                                        generations=GENERATIONS,dataset=dataset,small_dataset=small_dataset,knn_size=knn_size, gpu=gpu , multiprocessing= multiprocessing_var)
     start = time.time()
     lastround = start
     round_time = []
-    pop.log_file_beginn(multiprocessing_var)
+    pop.save_init_data()
     for x in range(GENERATIONS):
         if multiprocessing_flag:
-            pop.grade_multi(generation=x, multiprocessing_var=multiprocessing_var)
+            pop.grade_multi(generation=x)
         else:
             pop.grade_single(generation=x)
         if pop.done:
@@ -63,7 +63,7 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,pop_size_arg = 50
     pop.save_gens_winner()
     for i in range(0,len(round_time)):
         print("Round: ", i," Time: ", round_time[i])
-    pop.log_file_end(round_time)
+    pop.save_end_data(round_time)
 
 #%%
     # Plot fitness history
