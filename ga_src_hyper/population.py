@@ -276,6 +276,7 @@ class Population(object):
         }
         generation = {"generation":{}}
         round_time = {"round_time":{}}
+        round_time = {"fitness_history":{}}
         data.update(configurations)
         data.update(generation)
         data.update(round_time)

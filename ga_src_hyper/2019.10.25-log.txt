@@ -1,8 +1,0 @@
-GA
-Datenset: cifar10Population Size: 25
-Generations: 2
-Muationrate: 0.1
-Retain: 0.8
-Jasonfile: 2019.10.25.json
-PC-name: ess-altovar
-Multiprocess: 2
