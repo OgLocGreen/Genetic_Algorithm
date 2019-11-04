@@ -15,7 +15,8 @@ import crossover
 import mutation
 import individual
 import population
-import argparse
+import argparse 
+import sys
 
 
 def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,pop_size_arg = 50, generations_arg = 5 ,gpu_arg = False, multiprocessing_arg = 2):

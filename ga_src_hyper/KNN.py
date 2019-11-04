@@ -21,7 +21,7 @@ keras.backend.set_session(session)
 
 import os
 
-def train_and_evalu(gene,dataset,knn_size = "small" ,small_dataset = False ,gpu = False):
+def train_and_evalu(gene,dataset = "mnist_fashion",knn_size = "small" ,small_dataset = False ,gpu = False):
 
     if gpu == False:
         os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
@@ -147,6 +147,8 @@ def train_and_evalu(gene,dataset,knn_size = "small" ,small_dataset = False ,gpu 
     else:
         model.fit(train_images, train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2,verbose=0)
         test_loss, test_acc = model.evaluate(test_images, test_labels,verbose=0)
+    variables = 0
+    print(variables)
     variables = np.sum([np.prod(v.get_shape().as_list()) for v in tf.compat.v1.trainable_variables()])
     print("test_loss: ",test_loss , "test_acc: ", test_acc, "variables",variables)
     gc.collect()
@@ -594,5 +596,11 @@ def train_and_evalu_cifar100_mean(var_learningrate,var_dropout,var_epoch,var_bat
 """
 
 if __name__ == "__main__":
-    data = train_and_evalu_cifar10(var_learningrate = 0.05,var_dropout=0.25,var_epoch=100,var_batch_size=16,optimizer=3)
+    #gene = [var_learningrate = 0.05,var_dropout=0.25,var_epoch=100,var_batch_size=16,optimizer=3]
+    gene= [0.05,0.25,100,16,3]
+    data = train_and_evalu(gene)
+    print(data)
+    data = train_and_evalu(gene)
+    print(data)
+    data = train_and_evalu(gene)
     print(data)

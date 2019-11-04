@@ -14,6 +14,10 @@ import crossover
 import mutation
 import individual
 import selection
+import sys 
+
+sys.path.append('../')
+from src_evaluation.evaluation import write_cell
 
 class Population(object):
 
@@ -230,6 +234,8 @@ class Population(object):
         i = 0
         family_tree = {"Winner": {}}
         for x in self.individuals:
+            if i == 0:
+                write_cell(path_to_file ="evaluation.xlsx" ,small_dataset = self.small_dataset, dataset = self.dataset, knn_size = self.knn_size,iterations = (self.generations * self.pop_size), algorithmus = "GA", acc = x.var_acc)
             generation = {
                 "name": i,
                 "learningrate": str(x.gene[0]),

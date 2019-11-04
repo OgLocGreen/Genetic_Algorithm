@@ -1,36 +1,75 @@
 # coding=utf-8
 import pandas as pd
 import os
+import openpyxl
 from openpyxl import load_workbook
 
-def excel_file(sheet="mnist_fashion",iterations= 50 , knn_size = "small"):
-
-    path_to_file = os.path.join(os.path.dirname(os.path.abspath(__file__))+ "/evaluation.xlsx")
+def write_cell(path_to_file,dataset,iterations,knn_size,small_dataset,algorithmus,acc):
     book = load_workbook(path_to_file)
-    writer = pd.ExcelWriter(path_to_file, engine = 'openpyxl')
-    writer.book = book
+    #sheetX = book.active
+    if small_dataset == True:
+        dataset = str(dataset + "_small")
 
-    
     if os.path.isfile(path_to_file):
-        xls = pd.ExcelFile(path_to_file)
+        for sheet in book:   
+            if sheet.title ==  dataset:
+                if iterations == 50:
+                    if knn_size == "small":
+                        if algorithmus == "GA":
+                            sheet["B3"] = acc
+                        else:
+                            sheet["B4"] = acc
+                    elif knn_size == "medium":
+                        if algorithmus == "GA":
+                            sheet["C3"] = acc
+                        else:
+                            sheet["C4"] = acc
+                    elif knn_size == "big":
+                        if algorithmus == "GA":
+                            sheet["D3"] = acc
+                        else:
+                            sheet["D4"] = acc
+                elif iterations == 250:
+                    if knn_size == "small":
+                        if algorithmus == "GA":
+                            sheet["E3"] = acc
+                        else:
+                            sheet["E4"] = acc
+                    elif knn_size == "medium":
+                        if algorithmus == "GA":
+                            sheet["F3"] = acc
+                        else:
+                            sheet["F4"] = acc
+                    elif knn_size == "big":
+                        if algorithmus == "GA":
+                            sheet["G3"] = acc
+                        else:
+                            sheet["G4"] = acc
+                elif iterations == 500:
+                    if knn_size == "small":
+                        if algorithmus == "GA":
+                            sheet["H3"] = acc
+                        else:
+                            sheet["H4"] = acc
+                    elif knn_size == "medium":
+                        if algorithmus == "GA":
+                            sheet["I3"] = acc
+                        else:
+                            sheet["I4"] = acc
+                    elif knn_size == "big":
+                        if algorithmus == "GA":
+                           sheet["J3"] = acc
+                        else:
+                            sheet["J4"] = acc
 
-        sheetX = xls.parse(sheet)
-        print(sheetX)
-        if sheet == "mnist_fashion":
-            for i in ["aaa","bbb","ccc","ddd","eee","fff","ggg","hhh","jjj"]:
-                var1 = sheetX.ix[:,i]
-                if var1[0] == iterations:
-                    if var1[1] == knn_size:
-                        var1[2] = 0.2
-                        var1[3] = 0.3
-                sheetX.ix[:,i] = var1
-        sheetX.to_excel(path_to_file, sheet_name=sheetX,index=False)
-        writer.save()
-        writer.close()
-        print(var1)
-
+        book.save(filename=path_to_file)
 
 
 if __name__ == "__main__":
 
-    excel_file(sheet="mnist_fashion")
+    excel_file = "/evaluation.xlsx"
+    dataset = "mnist_fashion"
+    path_to_file = os.path.join(os.path.dirname(os.path.abspath(__file__))+ excel_file)
+
+    #excel_file(path_to_file = path_to_file, sheet="mnist_fashion")
+    write_cell(path_to_file= path_to_file,dataset= dataset, iterations = 250, knn_size = "small", algorithmus= "GA", acc = 0.9)
