@@ -297,7 +297,7 @@ class Population(object):
 
     def fitness_multi(self,individuum):
         var_loss, var_acc, variables = KNN.train_and_evalu(gene=individuum.gene, dataset=self.dataset, knn_size=self.knn_size, small_dataset=self.small_dataset, gpu = self.gpu)
-        return var_acc, var_loss, variables
+        return var_loss, var_acc, variables
 
 """
     def fitness_multi(self,individuum):
