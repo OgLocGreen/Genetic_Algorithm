@@ -1,8 +1,0 @@
-GA
-Population Size: 10
-Generations: 1
-Muationrate: 0.1
-Retain: 0.8
-Jasonfile: 2019.10.23.json
-PC-name: ess-altovar
-Multiprocess: <module 'multiprocessing' from 'C:\\Users\\heinzman\\.conda\\envs\\Ga\\lib\\multiprocessing\\__init__.py'>
