@@ -5,20 +5,16 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import matplotlib.mlab as mlab
+import matplotlib as mpl
 from scipy import stats
 
 import datetime
 
-
-
-
 sns.set(color_codes=True)
 
-
-
-
-def plot_winner(file):
-    with open(file, "r") as f:
+def plot_winner(save_file):
+    with open(save_file, "r") as f:
         data = json.load(f)
     x = []
     y = []
@@ -27,9 +23,9 @@ def plot_winner(file):
     ymin = 0.8
     ymax = 0.2
 
-    for gen in data["Winner"]:
-        x.append(data["Winner"][gen]["acc"])
-        y.append(data["Winner"][gen]["loss"])
+    for gen in data["generation"]["Winner"]:
+        x.append(data["generation"]["Winner"][gen]["acc"])
+        y.append(data["generation"]["Winner"][gen]["loss"])
 
     plt.scatter(x, y, s=80, marker="+")
     plt.xlabel('acc', fontsize=18)
@@ -39,26 +35,6 @@ def plot_winner(file):
     axes.set_xlim([xmin, xmax])
     axes.set_ylim([ymin, ymax])
     plt.show()
-
-def plot_all(file):
-    with open(file, "r") as f:
-        data = json.load(f)
-
-    for pop in data:
-        x = []
-        y = []
-        for individum in data[pop]:
-            try:
-                x.append(float(data[pop][individum]["acc"]))    ## hier dürfte noch ein fehler sein
-                y.append(float(data[pop][individum]["loss"]))   ## hier dürfte noch ein feheler sein
-            except:
-                print(pop,individum)
-        plt.scatter(x, y, s=80, marker="+")
-        plt.xlabel('acc', fontsize=18)
-        plt.ylabel('loss', fontsize=16)
-        plt.gca().invert_yaxis()
-        plt.show()
-
 
 def plot_histogram(title,werteliste):
     sns.distplot(werteliste, bins=10, kde=True, fit=stats.norm, rug=True)
@@ -88,68 +64,6 @@ def plot_small_histogram(title, werteliste):
     plt.show()
 
 
-def plot_histogram_all(file):
-    with open(file, "r") as f:
-        data = json.load(f)
-
-    learningrate=[]
-    batchsize=[]
-    dropout=[]
-    epoch =[]
-    optimizer = []
-
-    anzahl = 0
-
-    #plott all individuums
-
-    """
-    for individum in data["Winner"]:
-        learningrate.append(float(data["Winner"][individum]["learningrate"]))
-        batchsize.append(float(data["Winner"][individum]["batchsize"]))
-        dropout.append(float(data["Winner"][individum]["dropout"]))
-        epoch.append(float(data["Winner"][individum]["epoch"]))
-        optimizer.append(float(data["Winner"][individum]["optimizer"]))
-        anzahl += 1
-    print('learningrate mean=%.5f median=%.5f stdv=%.5f' % (np.mean(learningrate),np.median(learningrate), np.std(learningrate)))
-    plot_histogram("learningrate",learningrate)
-    plot_small_histogram("learningrate",learningrate)
-    print('batchsize mean=%.5f median=%.5f stdv=%.5f' % (np.mean(batchsize), np.median(batchsize), np.std(batchsize)))
-    plot_histogram("batchsize",batchsize)
-    plot_small_histogram("batchsize",batchsize)
-    print('dropout mean=%.5f median=%.5f stdv=%.5f' % (np.mean(dropout), np.median(dropout), np.std(dropout)))
-    plot_histogram("dropout",dropout)
-    print('epoch mean=%.5f median=%.5f stdv=%.5f' % (np.mean(epoch), np.median(epoch), np.std(epoch)))
-    plot_histogram("epoch",epoch)
-    print('optimizer mean=%.5f median=%.5f stdv=%.5f' % (np.mean(optimizer), np.median(optimizer), np.std(optimizer)))
-    plot_histogram("optimizer", optimizer)
-    """
-
-    #plot only these who are close to the best Acc
-    for individum in data["Winner"]:
-        best_acc = float(data["Winner"][individum]["acc"])
-        break
-    for individum in data["Winner"]:
-        if float(data["Winner"][individum]["acc"]) >= (best_acc*0.8):
-            learningrate.append(float(data["Winner"][individum]["learningrate"]))
-            batchsize.append(float(data["Winner"][individum]["batchsize"]))
-            dropout.append(float(data["Winner"][individum]["dropout"]))
-            epoch.append(float(data["Winner"][individum]["epoch"]))
-            optimizer.append(float(data["Winner"][individum]["optimizer"]))
-        anzahl += 1
-    print('learningrate mean=%.5f median=%.5f stdv=%.5f' % (np.mean(learningrate),np.median(learningrate), np.std(learningrate)))
-    plot_histogram("learningrate",learningrate)
-    plot_small_histogram("learningrate",learningrate)
-    print('batchsize mean=%.5f median=%.5f stdv=%.5f' % (np.mean(batchsize), np.median(batchsize), np.std(batchsize)))
-    plot_histogram("batchsize",batchsize)
-    plot_small_histogram("batchsize",batchsize)
-    print('dropout mean=%.5f median=%.5f stdv=%.5f' % (np.mean(dropout), np.median(dropout), np.std(dropout)))
-    plot_histogram("dropout",dropout)
-    print('epoch mean=%.5f median=%.5f stdv=%.5f' % (np.mean(epoch), np.median(epoch), np.std(epoch)))
-    plot_histogram("epoch",epoch)
-    print('optimizer mean=%.5f median=%.5f stdv=%.5f' % (np.mean(optimizer), np.median(optimizer), np.std(optimizer)))
-    plot_histogram("optimizer", optimizer)
-
-
 def scatterplot(file,yscale_log=False):
     x_label = "acc"
     y_label = "loss"
@@ -160,18 +74,18 @@ def scatterplot(file,yscale_log=False):
     with open(file, "r") as f:
         data = json.load(f)
 
-    for pop in data:
+    for pop in data["generation"]:
         x = []
         y = []
-        if pop in ("1", "2", "3","4", "Winner"):
-            for individum in data[pop]:
+        if pop in ("2", "4", "8", "Winner"):
+            for individum in data["generation"][pop]:
                 try:
-                    x.append(float(data[pop][individum]["acc"]))  ## hier dürfte noch ein fehler sein
-                    y.append(float(data[pop][individum]["loss"]))  ## hier dürfte noch ein feheler sein
+                    x.append(float(data["generation"][pop][individum]["acc"])) ## hier dürfte noch ein fehler sein
+                    y.append(float(data["generation"][pop][individum]["loss"]))  ## hier dürfte noch ein feheler sein
                 except:
                     print("error")
 
-            # Plot the data, set the size (s), color and transparency (alpha)
+           # Plot the data, set the size (s), color and transparency (alpha)
             # of the points
             ax.scatter(x, y, s=60, alpha=0.7)
 
@@ -202,14 +116,14 @@ def scatterplot_zoom(file, yscale_log=False):
     with open(file, "r") as f:
         data = json.load(f)
 
-    for pop in data:
+    for pop in data["generation"]:
         x = []
         y = []
         if pop in ("2", "4", "8", "Winner"):
-            for individum in data[pop]:
+            for individum in data["generation"][pop]:
                 try:
-                    x.append(float(data[pop][individum]["acc"])) ## hier dürfte noch ein fehler sein
-                    y.append(float(data[pop][individum]["loss"]))  ## hier dürfte noch ein feheler sein
+                    x.append(float(data["generation"][pop][individum]["acc"])) ## hier dürfte noch ein fehler sein
+                    y.append(float(data["generation"][pop][individum]["loss"]))  ## hier dürfte noch ein feheler sein
                 except:
                     print("error")
 
@@ -240,11 +154,11 @@ def plot_fitness(file):
     y_label = "Fitness"
     acc_pop =[]
 
-    for population in data:
+    for population in data["generation"]:
         acc = 0
         anzahl = 0
-        for individum in data[population]:
-            acc += float(data[population][individum]["acc"])
+        for individum in data["generation"][population]:
+            acc += float(data["generation"][population][individum]["acc"])
             anzahl += 1
         acc = acc / anzahl
         acc_pop.append(acc)
@@ -261,13 +175,109 @@ def plot_fitness(file):
     plt.ylabel(y_label)
     plt.show()
 
+def joint_plot(save_file):
+    with open(save_file, "r") as f:
+        data = json.load(f)
+    learningrate = []
+    dropout = []
+    epoch = []
+    batchsize = []
+    optimizer = []
+    acc = []
+    loss = []
+    variables = []
+
+    for i in data["generation"]["Winner"]:
+        learningrate.append(float(data["generation"]["Winner"][i]["learningrate"]))
+        dropout.append(float(data["generation"]["Winner"][i]["dropout"]))
+        epoch.append(float(data["generation"]["Winner"][i]["epoch"]))
+        batchsize.append(float(data["generation"]["Winner"][i]["batchsize"]))
+        optimizer.append(float(data["generation"]["Winner"][i]["optimizer"]))
+        acc.append(float(data["generation"]["Winner"][i]["acc"]))
+        loss.append(float(data["generation"]["Winner"][i]["loss"]))
+        variables.append(float(data["generation"]["Winner"][i]["variables"]))
+  
+    auswertungsdaten = {"learningrate":learningrate,
+                        "dropout":dropout,
+                        "epoch":epoch,
+                        "batchsize":batchsize,
+                        "optimizer":optimizer,
+                        "acc": acc,
+                        "loss":loss,
+                        "variables": variables
+                        }
+
+    df = pd.DataFrame(auswertungsdaten,columns = ["learningrate","dropout","epoch","batchsize","optimizer"
+                            ,"acc","loss","variables"])
+
+    g = (sns.jointplot("acc", "learningrate", data=df)
+    .plot_joint(sns.kdeplot, n_levels=6))
+    g = (sns.jointplot("acc", "dropout", data=df)
+    .plot_joint(sns.kdeplot, n_levels=6))
+    g = (sns.jointplot("acc", "epoch", data=df)
+    .plot_joint(sns.kdeplot, n_levels=6))
+    g = (sns.jointplot("acc", "batchsize", data=df)
+    .plot_joint(sns.kdeplot, n_levels=6))
+    g = (sns.jointplot("acc", "optimizer", data=df)
+    .plot_joint(sns.kdeplot, n_levels=6))
+    g = (sns.jointplot("acc", "variables", data=df)
+    .plot_joint(sns.kdeplot, n_levels=6))
+
+    plt.show()
+
+
+def box_plot(save_file):
+    with open(save_file, "r") as f:
+        data = json.load(f)
+    learningrate = []
+    dropout = []
+    epoch = []
+    batchsize = []
+    optimizer = []
+    acc = []
+    loss = []
+    variables = []
+
+    for i in data["generation"]["Winner"]:
+        learningrate.append(float(data["generation"]["Winner"][i]["learningrate"]))
+        dropout.append(float(data["generation"]["Winner"][i]["dropout"]))
+        epoch.append(float(data["generation"]["Winner"][i]["epoch"]))
+        batchsize.append(float(data["generation"]["Winner"][i]["batchsize"]))
+        optimizer.append(float(data["generation"]["Winner"][i]["optimizer"]))
+        acc.append(float(data["generation"]["Winner"][i]["acc"]))
+        loss.append(float(data["generation"]["Winner"][i]["loss"]))
+        variables.append(float(data["generation"]["Winner"][i]["variables"]))
+  
+    auswertungsdaten = {"learningrate":learningrate,
+                        "dropout":dropout,
+                        "epoch":epoch,
+                        "batchsize":batchsize,
+                        "optimizer":optimizer,
+                        "acc": acc,
+                        "loss":loss,
+                        "variables": variables
+                        }
+
+    df = pd.DataFrame(auswertungsdaten,columns = ["learningrate","dropout","epoch","batchsize","optimizer"
+                            ,"acc","loss","variables"])
+    stats_df = pd.DataFrame(auswertungsdaten,columns = ["learningrate"])
+    g = (sns.boxplot(data=stats_df)
+    .plot_joint(sns.kdeplot, n_levels=6))
+
+    plt.show()
+
+
 if __name__ == "__main__":
 
     save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
                                        datetime.datetime.now().month,
                                        datetime.datetime.now().day)
     save_file = "ergebnisse_hyper.json"
+    save_file = "2019.10.30-1.json"
 
-    plot_fitness(save_file)
-    plot_histogram_all(save_file)
-
+    #joint_plot(save_file)
+    #plot_fitness(save_file)
+    #scatterplot_zoom(save_file)
+    #scatterplot(save_file)
+    #plot_winner(save_file)
+    box_plot(save_file)
