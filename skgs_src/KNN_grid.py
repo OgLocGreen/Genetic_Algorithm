@@ -17,11 +17,25 @@ import os
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-def train_and_evalu(var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer):
+def train_and_evalu(gene,dataset = "mnist_fashion",knn_size = "small" ,small_dataset = False ,gpu = False):
+   var_learningrate,var_dropout,var_epoch,var_batch_size,optimizer = gene[0],gene[1],gene[2],gene[3],gene[4]
     #%%
     ### Daten
     print("var_learningrate", var_learningrate, "var_dropout", var_dropout, "var_epoch", var_epoch, "var_batch_size", var_batch_size)
-    (train_images, train_labels), (test_images, test_labels) = keras.datasets.fashion_mnist.load_data()
+    if dataset == "mnist_fashion": 
+        (train_images, train_labels), (test_images, test_labels) = keras.datasets.fashion_mnist.load_data()
+        fully = True
+    elif dataset == "mnist_digits":
+        (train_images, train_labels), (test_images, test_labels) = keras.datasets.mnist.load_data()
+        fully = True
+    elif dataset == "cifar10":
+        (train_images, train_labels), (test_images, test_labels) = keras.datasets.cifar10.load_data()
+        train_labels = keras.utils.to_categorical(train_labels, 10)
+        test_labels = keras.utils.to_categorical(test_labels, 10)
+        train_images = train_images.astype('float32')
+        test_images = test_images.astype('float32')
+        cnn = True
+
     train_images = train_images / 255.0
     test_images = test_images / 255.0
 

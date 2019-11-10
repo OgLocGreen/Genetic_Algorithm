@@ -9,7 +9,7 @@ import datetime
 import time
 import os
 
-from plotting import plot_winner, plot_all, plot_histogram_all, scatterplot
+import plotting
 import KNN
 import crossover
 import mutation
@@ -19,7 +19,7 @@ import argparse
 import sys
 
 
-def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,pop_size_arg = 50, generations_arg = 5 ,gpu_arg = False, multiprocessing_arg = 2):
+def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,pop_size_arg = 10, generations_arg = 2,gpu_arg = False, multiprocessing_arg = 2):
     pop_size = pop_size_arg
     mutate_prob = 0.1 #sigma for random.gauss()
     retain = 0.8
@@ -76,8 +76,8 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,pop_size_arg = 50
         plt.title('Fitness - pop_size {} mutate_prob {} retain {} random_retain {}'.format(pop_size, mutate_prob, retain, random_retain))
         plt.show()
 
-        scatterplot(pop.save_file)
-        plot_histogram_all(pop.save_file)
+        plotting.scatterplot(pop.save_file)
+        plotting.joint_plot(pop.save_file)
     print("FINISCHED!!! after ", end_2-start, "seconds")
     print(round_time)
 
@@ -86,12 +86,12 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,pop_size_arg = 50
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Genetic Algorithm")
-    parser.add_argument('dataset', help='which dataset: mnist_fashion, mnist_digits, cifar10 ' , type=str)
-    parser.add_argument("knn_size", help='which size of KNN: small, medium, big ' ,type=str)
-    parser.add_argument("pop_size", help='Populationsize ',type=int)
-    parser.add_argument("generations", help='how many Generations ',type=int)    
-    parser.add_argument("gpu", help='if gpu enable True or False ',type=bool)
-    parser.add_argument("multiprocessing", help='How many parallel processes: 2, 4, if 0 then no multiprocess',type=int)
+    parser.add_argument('dataset', help='which dataset: mnist_fashion, mnist_digits, cifar10 ' , type=str, default= "mnist_fashion")
+    parser.add_argument("knn_size", help='which size of KNN: small, medium, big ' ,type=str, default= "small")
+    parser.add_argument("pop_size", help='Populationsize ',type=int, default= 10)
+    parser.add_argument("generations", help='how many Generations ',type=int, default= 3)    
+    parser.add_argument("gpu", help='if gpu enable True or False ',type=bool, default= False)
+    parser.add_argument("multiprocessing", help='How many parallel processes: 2, 4, if 0 then no multiprocess',type=int, default= 2)
     args = parser.parse_args()
 
     main(dataset_arg = args.dataset, knn_size_arg= args.knn_size, pop_size_arg= args.pop_size, generations_arg=args.generations, 

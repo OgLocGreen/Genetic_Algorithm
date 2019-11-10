@@ -13,56 +13,6 @@ import datetime
 
 sns.set(color_codes=True)
 
-def plot_winner(save_file):
-    with open(save_file, "r") as f:
-        data = json.load(f)
-    x = []
-    y = []
-    xmin = 0.8
-    xmax = 0.9
-    ymin = 0.8
-    ymax = 0.2
-
-    for gen in data["generation"]["Winner"]:
-        x.append(data["generation"]["Winner"][gen]["acc"])
-        y.append(data["generation"]["Winner"][gen]["loss"])
-
-    plt.scatter(x, y, s=80, marker="+")
-    plt.xlabel('acc', fontsize=18)
-    plt.ylabel('loss', fontsize=16)
-    plt.gca().invert_yaxis(),
-    axes = plt.gca()
-    axes.set_xlim([xmin, xmax])
-    axes.set_ylim([ymin, ymax])
-    plt.show()
-
-def plot_histogram(title,werteliste):
-    sns.distplot(werteliste, bins=10, kde=True, fit=stats.norm, rug=True)
-    plt.title(title)
-
-    # Get the fitted parameters used by sns
-    (mu, sigma) = stats.norm.fit(werteliste)
-
-    # Legend and labels
-    plt.ylabel('Frequency')
-    plt.legend(["normal dist. fit ($\mu=${0:.2g}, $\sigma=${1:.2f})".format(mu, sigma),
-                "Gaußsche Kerneldichteabchätzung"])
-    plt.show()
-
-
-def plot_small_histogram(title, werteliste):
-    sns.distplot(werteliste, bins=10, kde= False)
-    plt.title(title)
-
-    # Get the fitted parameters used by sns
-    (mu, sigma) = stats.norm.fit(werteliste)
-
-    # Legend and labels
-    plt.ylabel('Frequency')
-    plt.legend(["normal dist. fit ($\mu=${0:.2g}, $\sigma=${1:.2f})".format(mu, sigma),
-                "Gaußsche Kerneldichteabchätzung"])
-    plt.show()
-
 
 def scatterplot(file,yscale_log=False):
     x_label = "acc"
@@ -186,16 +136,22 @@ def joint_plot(save_file):
     acc = []
     loss = []
     variables = []
-
+    xmin = 0.8
+    xmax = 0.9
+    ymax= 0.8
+    ymin = 0.2
     for i in data["generation"]["Winner"]:
-        learningrate.append(float(data["generation"]["Winner"][i]["learningrate"]))
-        dropout.append(float(data["generation"]["Winner"][i]["dropout"]))
-        epoch.append(float(data["generation"]["Winner"][i]["epoch"]))
-        batchsize.append(float(data["generation"]["Winner"][i]["batchsize"]))
-        optimizer.append(float(data["generation"]["Winner"][i]["optimizer"]))
-        acc.append(float(data["generation"]["Winner"][i]["acc"]))
-        loss.append(float(data["generation"]["Winner"][i]["loss"]))
-        variables.append(float(data["generation"]["Winner"][i]["variables"]))
+        if float(data["generation"]["Winner"][i]["acc"]) > float(data["generation"]["Winner"]["0"]["acc"]) * 0.8:
+            learningrate.append(float(data["generation"]["Winner"][i]["learningrate"]))
+            dropout.append(float(data["generation"]["Winner"][i]["dropout"]))
+            epoch.append(float(data["generation"]["Winner"][i]["epoch"]))
+            batchsize.append(float(data["generation"]["Winner"][i]["batchsize"]))
+            optimizer.append(float(data["generation"]["Winner"][i]["optimizer"]))
+            acc.append(float(data["generation"]["Winner"][i]["acc"]))
+            loss.append(float(data["generation"]["Winner"][i]["loss"]))
+            variables.append(float(data["generation"]["Winner"][i]["variables"]))
+        else:
+            pass
   
     auswertungsdaten = {"learningrate":learningrate,
                         "dropout":dropout,
@@ -218,11 +174,85 @@ def joint_plot(save_file):
     .plot_joint(sns.kdeplot, n_levels=6))
     g = (sns.jointplot("acc", "batchsize", data=df)
     .plot_joint(sns.kdeplot, n_levels=6))
+    g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
+    .plot_joint(sns.kdeplot, n_levels=6))
     g = (sns.jointplot("acc", "optimizer", data=df)
     .plot_joint(sns.kdeplot, n_levels=6))
     g = (sns.jointplot("acc", "variables", data=df)
     .plot_joint(sns.kdeplot, n_levels=6))
+    plt.show()
 
+
+
+
+if __name__ == "__main__":
+
+    save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
+                                       datetime.datetime.now().month,
+                                       datetime.datetime.now().day)
+    save_file = "ergebnisse_hyper.json"
+    save_file = "2019.11.7.json"
+
+    joint_plot(save_file)
+    plot_fitness(save_file)
+    scatterplot_zoom(save_file)
+    scatterplot(save_file)
+
+
+
+
+
+
+
+
+def plot_winner(save_file):
+    with open(save_file, "r") as f:
+        data = json.load(f)
+    x = []
+    y = []
+    xmin = 0.8
+    xmax = 0.9
+    ymin = 0.8
+    ymax = 0.2
+
+    for gen in data["generation"]["Winner"]:
+        x.append(data["generation"]["Winner"][gen]["acc"])
+        y.append(data["generation"]["Winner"][gen]["loss"])
+
+    plt.scatter(x, y, s=80, marker="+")
+    plt.xlabel('acc', fontsize=18)
+    plt.ylabel('loss', fontsize=16)
+    plt.gca().invert_yaxis(),
+    axes = plt.gca()
+    axes.set_xlim([xmin, xmax])
+    axes.set_ylim([ymin, ymax])
+    plt.show()
+
+def plot_histogram(title,werteliste):
+    sns.distplot(werteliste, bins=10, kde=True, fit=stats.norm, rug=True)
+    plt.title(title)
+
+    # Get the fitted parameters used by sns
+    (mu, sigma) = stats.norm.fit(werteliste)
+
+    # Legend and labels
+    plt.ylabel('Frequency')
+    plt.legend(["normal dist. fit ($\mu=${0:.2g}, $\sigma=${1:.2f})".format(mu, sigma),
+                "Gaußsche Kerneldichteabchätzung"])
+    plt.show()
+
+
+def plot_small_histogram(title, werteliste):
+    sns.distplot(werteliste, bins=10, kde= False)
+    plt.title(title)
+
+    # Get the fitted parameters used by sns
+    (mu, sigma) = stats.norm.fit(werteliste)
+
+    # Legend and labels
+    plt.ylabel('Frequency')
+    plt.legend(["normal dist. fit ($\mu=${0:.2g}, $\sigma=${1:.2f})".format(mu, sigma),
+                "Gaußsche Kerneldichteabchätzung"])
     plt.show()
 
 
@@ -265,19 +295,3 @@ def box_plot(save_file):
     .plot_joint(sns.kdeplot, n_levels=6))
 
     plt.show()
-
-
-if __name__ == "__main__":
-
-    save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
-                                       datetime.datetime.now().month,
-                                       datetime.datetime.now().day)
-    save_file = "ergebnisse_hyper.json"
-    save_file = "2019.10.30-1.json"
-
-    #joint_plot(save_file)
-    #plot_fitness(save_file)
-    #scatterplot_zoom(save_file)
-    #scatterplot(save_file)
-    #plot_winner(save_file)
-    box_plot(save_file)

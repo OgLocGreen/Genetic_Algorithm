@@ -17,7 +17,7 @@ import selection
 import sys 
 
 sys.path.append('../')
-from src_evaluation.evaluation import write_cell
+from src_evaluation.evaluation import write_cell 
 
 class Population(object):
 
@@ -43,30 +43,19 @@ class Population(object):
         self.small_dataset = False
         self.dataset = dataset
         self.multiprocessing = multiprocessing
-        self.save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
+        self.save_file = "../data/{}.{}.{}.json".format(datetime.datetime.now().year,
                                                 datetime.datetime.now().month,
                                                 datetime.datetime.now().day)
 
         if os.path.isfile(self.save_file):
             for i in range(1, 10):
-                self.save_file = "{}.{}.{}-{}.json".format(datetime.datetime.now().year,
+                self.save_file = "../data/{}.{}.{}-{}.json".format(datetime.datetime.now().year,
                                                            datetime.datetime.now().month,
                                                            datetime.datetime.now().day,
                                                            i)
                 if os.path.isfile(self.save_file) == False:
                     break
 
-        self.save_file_log = "{}.{}.{}-log.txt".format(datetime.datetime.now().year,
-                                                datetime.datetime.now().month,
-                                                datetime.datetime.now().day)        
-        if os.path.isfile(self.save_file_log):
-            for i in range(1, 10):
-                self.save_file_log = "{}.{}.{}-{}-log.txt".format(datetime.datetime.now().year,
-                                                           datetime.datetime.now().month,
-                                                           datetime.datetime.now().day,
-                                                           i)
-                if os.path.isfile(self.save_file_log)== False:
-                    break
         # Create individuals
         self.individuals = []
         for x in range(pop_size):
@@ -235,7 +224,9 @@ class Population(object):
         family_tree = {"Winner": {}}
         for x in self.individuals:
             if i == 0:
-                write_cell(path_to_file ="evaluation.xlsx" ,small_dataset = self.small_dataset, dataset = self.dataset, knn_size = self.knn_size,iterations = (self.generations * self.pop_size), algorithmus = "GA", acc = x.var_acc)
+                write_cell(path_to_file ="../data/evaluation.xlsx" ,small_dataset = self.small_dataset, 
+                dataset = self.dataset, knn_size = self.knn_size,iterations = (self.generations * self.pop_size), 
+                algorithmus = "GA", acc = x.var_acc)
             generation = {
                 "name": i,
                 "learningrate": str(x.gene[0]),
@@ -303,7 +294,8 @@ class Population(object):
             json.dump(data, outfile, indent=2)
 
     def fitness_multi(self,individuum):
-        var_loss, var_acc, variables = KNN.train_and_evalu(gene=individuum.gene, dataset=self.dataset, knn_size=self.knn_size, small_dataset=self.small_dataset, gpu = self.gpu)
+        var_loss, var_acc, variables = KNN.train_and_evalu(gene=individuum.gene, dataset=self.dataset,
+         knn_size=self.knn_size, small_dataset=self.small_dataset, gpu = self.gpu)
         return var_loss, var_acc, variables
 
 """

@@ -55,7 +55,7 @@ def train_and_evalu(gene,dataset = "mnist_fashion",knn_size = "small" ,small_dat
     #extra feature um Datenset künstlich zu verkleinern
     small_train_images, small_test_images, small_train_labels, small_test_labels = train_test_split(
         train_images, train_labels, test_size=0.9, shuffle=False)
-
+    print(train_images.shape[1:])
     #%%
     ### Model
     try:
@@ -77,13 +77,15 @@ def train_and_evalu(gene,dataset = "mnist_fashion",knn_size = "small" ,small_dat
             keras.layers.Dropout(var_dropout),
             keras.layers.Dense(128, activation='relu'),
             keras.layers.Dropout(var_dropout),
-            keras.layers.Dense(128, activation='relu'),
-            keras.layers.Dropout(var_dropout),
             keras.layers.Dense(10, activation='softmax')
             ])
         elif knn_size == "big":
             model = keras.models.Sequential([
             keras.layers.Flatten(input_shape=train_images.shape[1:]),
+            keras.layers.Dense(128, activation='relu'),
+            keras.layers.Dropout(var_dropout),
+            keras.layers.Dense(128, activation='relu'),
+            keras.layers.Dropout(var_dropout),
             keras.layers.Dense(128, activation='relu'),
             keras.layers.Dropout(var_dropout),
             keras.layers.Dense(10, activation='softmax')
@@ -120,16 +122,17 @@ def train_and_evalu(gene,dataset = "mnist_fashion",knn_size = "small" ,small_dat
     Adagrad = keras.optimizers.Adagrad(lr=var_learningrate)
     RMSprop = keras.optimizers.RMSprop(lr=var_learningrate)
     SGD = keras.optimizers.SGD(lr=var_learningrate)
-
-
-    optimizerarray = [adam, SGD, RMSprop, Adagrad]
-
+    adadelta = keras.optimizers.Adadelta(learning_rate=var_learningrate)
+    adammax = keras.optimizers.Adamax(learning_rate=var_learningrate)
+    nadam = keras.optimizers.Nadam(learning_rate=var_learningrate)
+    ftrl = keras.optimizers.Ftrl(learning_rate=var_learningrate)
+    optimizerarray = [adam, SGD, RMSprop, Adagrad, adadelta,adammax,nadam,ftrl]
 
     if round(optimizer) < -0.5:
         optimizer = 0
-    elif round(optimizer) > 3.5:
-        optimizer = 3
-
+    elif round(optimizer) > 7.5:
+        optimizer = 7
+        
     if fully == True:
         model.compile(optimizer=optimizerarray[round(optimizer)],
                     loss='sparse_categorical_crossentropy',
@@ -141,12 +144,30 @@ def train_and_evalu(gene,dataset = "mnist_fashion",knn_size = "small" ,small_dat
 
     #%%
     ### Model fit and Evaluate
+    # mitteln der Evaluattion
+    mittel = 3
+    loss = 0
+    acc = 0
     if small_dataset is True:
-       model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2,verbose=0)
-       test_loss, test_acc = model.evaluate(small_test_images, small_test_labels,verbose=0)
+        model.fit(small_train_images, small_train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2,verbose=0)
+        for x in range(mittel):
+            test_loss, test_acc = model.evaluate(small_test_images, small_test_labels,verbose=0)
+            loss += test_loss
+            acc += test_acc
+        test_acc = acc/mittel
+        test_loss = loss/mittel
     else:
         model.fit(train_images, train_labels, epochs=int(var_epoch),batch_size=int(var_batch_size),use_multiprocessing=True, workers=2,verbose=0)
-        test_loss, test_acc = model.evaluate(test_images, test_labels,verbose=0)
+        for x in range(mittel):
+            test_loss, test_acc = model.evaluate(test_images, test_labels,verbose=0)
+            loss += test_loss
+            acc += test_acc
+
+        test_acc = acc/mittel
+        test_loss = loss/mittel
+
+
+
     variables = 0
     print(variables)
     variables = np.sum([np.prod(v.get_shape().as_list()) for v in tf.compat.v1.trainable_variables()])

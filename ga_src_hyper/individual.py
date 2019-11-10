@@ -4,16 +4,16 @@ import random
 
 class Individual(object):
     def __init__(self, learningrate, dropout, epoch, batchsize, optimizer):
-        if not (0.0005 < learningrate < 0.1):
-            learningrate = random.uniform(0.0005, 0.1)
-        if not (0.05 < dropout < 0.5):
+        if not (0.00005 < learningrate < 0.1):
+            learningrate = random.uniform(0.00005, 0.1)
+        if not (0.05 < dropout < 0.8):
             dropout = random.uniform(0.05, 0.5)
-        if not (50 < epoch < 100):
-            epoch = random.randint(50, 100)
-        if not (16 < batchsize < 64): 
-            batchsize = random.randint(32, 64)
-        if not (-0.5 < optimizer < 3.5):
-            optimizer = random.uniform(-0.5, 3.5)
+        if not (20 < epoch < 110):
+            epoch = random.randint(30, 100)
+        if not (0 < batchsize < 80): 
+            batchsize = random.randint(8, 72)
+        if not (-0.5 < optimizer < 7.5):
+            optimizer = random.uniform(-0.5, 7.5)
         self.gene = [learningrate, dropout, epoch, batchsize, optimizer]
         print("gene: ", self.gene)
         self.var_acc = 0
