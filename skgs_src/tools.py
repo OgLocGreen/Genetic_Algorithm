@@ -16,7 +16,7 @@ def create_model(optimizer,learningrate, dropout):
     model = keras.Sequential([
       keras.layers.Flatten(input_shape=(28, 28)),
       keras.layers.Dense(128, activation='relu'),
-      keras.layers.Dropout(dropout),
+      keras.layers.Dropout(rate = dropout),
       keras.layers.Dense(10, activation='softmax')
     ])
     adam = keras.optimizers.Adam(lr=learningrate)
@@ -46,7 +46,7 @@ def create_model_small(optimizer,learningrate, dropout):
     model = keras.Sequential([
       keras.layers.Flatten(input_shape=(28, 28)),
       keras.layers.Dense(128, activation='relu'),
-      keras.layers.Dropout(dropout),
+      keras.layers.Dropout(rate = dropout),
       keras.layers.Dense(10, activation='softmax')
     ])
 
@@ -79,11 +79,11 @@ def create_model_medium(optimizer,learningrate, dropout):
     model = keras.models.Sequential([
             keras.layers.Flatten(input_shape=(28,28)),
             keras.layers.Dense(128, activation='relu'),
-            keras.layers.Dropout(dropout),
+            keras.layers.Dropout(rate = dropout),
             keras.layers.Dense(128, activation='relu'),
-            keras.layers.Dropout(dropout),
+            keras.layers.Dropout(rate = dropout),
             keras.layers.Dense(128, activation='relu'),
-            keras.layers.Dropout(dropout),
+            keras.layers.Dropout(rate = dropout),
             keras.layers.Dense(10, activation='softmax')
             ])
 
@@ -117,11 +117,11 @@ def create_model_big(optimizer,learningrate, dropout):
     model = keras.models.Sequential([
             keras.layers.Flatten(input_shape=(28,28)),
             keras.layers.Dense(128, activation='relu'),
-            keras.layers.Dropout(dropout),
+            keras.layers.Dropout(rate = dropout),
             keras.layers.Dense(128, activation='relu'),
-            keras.layers.Dropout(dropout),
+            keras.layers.Dropout(rate = dropout),
             keras.layers.Dense(128, activation='relu'),
-            keras.layers.Dropout(dropout),
+            keras.layers.Dropout(rate = dropout),
             keras.layers.Dense(10, activation='softmax')
             ])
 
@@ -156,19 +156,19 @@ def create_model_cnn(optimizer,learningrate, dropout):
     model.add(keras.layers.Conv2D(32, (3, 3)))
     model.add(keras.layers.Activation('relu'))
     model.add(keras.layers.MaxPooling2D(pool_size=(2, 2)))
-    model.add(keras.layers.Dropout(dropout))
+    model.add(keras.layers.Dropout(rate = dropout))
 
     model.add(keras.layers.Conv2D(64, (3, 3), padding='same'))
     model.add(keras.layers.Activation('relu'))
     model.add(keras.layers.Conv2D(64, (3, 3)))
     model.add(keras.layers.Activation('relu'))
     model.add(keras.layers.MaxPooling2D(pool_size=(2, 2)))
-    model.add(keras.layers.Dropout(dropout))
+    model.add(keras.layers.Dropout(rate = dropout))
 
     model.add(keras.layers.Flatten())
     model.add(keras.layers.Dense(512))
     model.add(keras.layers.Activation('relu'))
-    model.add(keras.layers.Dropout(dropout))
+    model.add(keras.layers.Dropout(rate = dropout))
     model.add(keras.layers.Dense(10))
     model.add(keras.layers.Activation('softmax')) 
 

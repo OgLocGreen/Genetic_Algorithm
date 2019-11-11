@@ -38,12 +38,14 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,iteration = 50 ,g
 
     if multiprocessing == 0:
         multiprocessing_flag = False
+
     if gpu == True:
-        config = tf.ConfigProto()
+        config = tf.tf.compat.v1.ConfigProto()
         config.gpu_options.per_process_gpu_memory_fraction = 0.3
         config.gpu_options.allow_growth = False
         session = tf.Session(config=config)
         keras.backend.set_session(session)
+
     else:
         ##zwingen auf cpu
         os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
@@ -115,7 +117,7 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,iteration = 50 ,g
     if small_dataset:
         random_search.fit(small_train_images, small_train_labels,use_multiprocessing=multiprocessing_flag, workers=multiprocessing)
     else:
-        random_search.fit(train_images, train_labels,use_multiprocessing=False, workers=1)  ##Momentanes Problem
+        random_search.fit(train_images, train_labels,use_multiprocessing=True, workers=2)  ##Momentanes Problem
 
     print("Best: %f using %s" % (random_search.best_score_, random_search.best_params_))
     means = random_search.cv_results_['mean_test_score']
