@@ -40,10 +40,10 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,iteration = 50 ,g
         multiprocessing_flag = False
 
     if gpu == True:
-        config = tf.tf.compat.v1.ConfigProto()
+        config = tf.compat.v1.ConfigProto()
         config.gpu_options.per_process_gpu_memory_fraction = 0.3
         config.gpu_options.allow_growth = False
-        session = tf.Session(config=config)
+        session = tf..compat.v1.Session(config=config)
         keras.backend.set_session(session)
 
     else:
