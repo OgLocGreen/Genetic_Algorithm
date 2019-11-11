@@ -1,6 +1,7 @@
 # coding=utf-8
 import numpy as np
 import os
+import tensorflow as tf
 from tensorflow import keras
 from time import time
 from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
@@ -37,12 +38,16 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,iteration = 50 ,g
 
     if multiprocessing == 0:
         multiprocessing_flag = False
-    if gpu ==False:
+    if gpu == True:
+        config = tf.ConfigProto()
+        config.gpu_options.per_process_gpu_memory_fraction = 0.3
+        config.gpu_options.allow_growth = False
+        session = tf.Session(config=config)
+        keras.backend.set_session(session)
+    else:
         ##zwingen auf cpu
         os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-    else:
-        pass
 
     
 
