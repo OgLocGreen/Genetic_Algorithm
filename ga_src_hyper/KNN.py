@@ -23,7 +23,7 @@ def train_and_evalu(gene,dataset = "mnist_fashion",knn_size = "small" ,small_dat
         config = tf.compat.v1.ConfigProto()
         config.gpu_options.per_process_gpu_memory_fraction = 0.3
         config.gpu_options.allow_growth = False
-        session = tf.Session(config=config)
+        session = tf.compat.v1.Session(config=config)
         keras.backend.set_session(session)
     else:
         os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
