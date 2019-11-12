@@ -8,22 +8,24 @@ import numpy as np
 
 
 # GPU auf maximal 30% Leistung
-"""
-import tensorflow as tf
-
-config = tf.ConfigProto()
+config = tf.compat.v1.ConfigProto()
 config.gpu_options.per_process_gpu_memory_fraction = 0.3
 config.gpu_options.allow_growth = False
 session = tf.Session(config=config)
 keras.backend.set_session(session)
-"""
 
 
 import os
 
 def train_and_evalu(gene,dataset = "mnist_fashion",knn_size = "small" ,small_dataset = False ,gpu = False):
 
-    if gpu == False:
+    if gpu:
+        config = tf.compat.v1.ConfigProto()
+        config.gpu_options.per_process_gpu_memory_fraction = 0.3
+        config.gpu_options.allow_growth = False
+        session = tf.compat.v1.Session(config=config)
+        keras.backend.set_session(session)
+    else:
         os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 

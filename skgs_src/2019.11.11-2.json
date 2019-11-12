@@ -1,0 +1,22 @@
+{
+  "0": {
+    "name": 0,
+    "learningrate": "5e-05",
+    "dropout": "0.3",
+    "epoch": "30",
+    "batchsize": "72",
+    "optimizer": "2",
+    "acc": "0.8697666724522909",
+    "loss": "0"
+  },
+  "1": {
+    "name": 1,
+    "learningrate": "0.1",
+    "dropout": "0.1",
+    "epoch": "40",
+    "batchsize": "72",
+    "optimizer": "6",
+    "acc": "0.1758000006278356",
+    "loss": "0"
+  }
+}

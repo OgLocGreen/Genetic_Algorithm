@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "config": {
     "dataset": "mnist_fashion",
@@ -10,4 +11,18 @@
   },
   "generation": {},
   "fitness_history": {}
+=======
+{
+  "config": {
+    "dataset": "mnist_fashion",
+    "knn_size": "small",
+    "small_dataset": false,
+    "iteration": 50,
+    "PC_name": "ess-altovar",
+    "Multiprocessing": 2,
+    "gpu": true
+  },
+  "generation": {},
+  "fitness_history": {}
+>>>>>>> master
 }
