@@ -227,7 +227,6 @@ def save_params(save_file, means, params, datenset, iterations, knn_size,small_d
             family_tree[i] = generation 
             i += 1
         del i
-
         data.update(family_tree)
         with open(save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)
@@ -253,7 +252,6 @@ def save_init_data(save_file,dataset, iteration, knn_size,small_dataset,algorith
         }
         generation = {"generation":{}}
         round_time = {"round_time":{}}
-        round_time = {"fitness_history":{}}
         data.update(configurations)
         data.update(generation)
         data.update(round_time)

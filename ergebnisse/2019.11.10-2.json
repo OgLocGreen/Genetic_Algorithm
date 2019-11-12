@@ -4,7 +4,7 @@
     "knn_size": "small",
     "small_dataset": false,
     "iteration": 50,
-    "PC_name": "ess-altovar",
+    "PC_name": "DESKTOP-OTTFUTT",
     "Multiprocessing": 2,
     "gpu": true
   },
