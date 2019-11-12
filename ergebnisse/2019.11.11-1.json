@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+{
+  "config": {
+    "dataset": "mnist_fashion",
+    "knn_size": "small",
+    "small_dataset": false,
+    "iteration": 250,
+    "PC_name": "DESKTOP-OTTFUTT",
+    "Multiprocessing": 2,
+    "gpu": true
+  },
+  "generation": {},
+  "fitness_history": {}
+=======
 {
   "config": {
     "dataset": "mnist_fashion",
@@ -10,4 +24,5 @@
   },
   "generation": {},
   "fitness_history": {}
+>>>>>>> master
 }
