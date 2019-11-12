@@ -44,10 +44,7 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,pop_size_arg = 10
     round_time = []
     pop.save_init_data()
     for x in range(GENERATIONS):
-        if multiprocessing_flag:
-            pop.grade_multi(generation=x)
-        else:
-            pop.grade_single(generation=x)
+        pop.grade(generation=x)
         if pop.done:
             end = time.time()
             print("Finished at generation:", x, ", Population fistness:", pop.fitness_history[-1])

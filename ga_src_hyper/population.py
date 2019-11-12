@@ -22,7 +22,7 @@ from src_evaluation.evaluation import write_cell
 class Population(object):
 
     def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03,
-            generations=5,dataset="mnist_fashion",knn_size = "small",small_dataset=False, gpu = False, multiprocessing = 2):
+            generations=5,dataset="mnist_fashion",knn_size = "small",small_dataset=False, gpu = False,multiprocessing_flag = True, multiprocessing = 2):
         """
             Args
                 pop_size: size of population
@@ -40,6 +40,7 @@ class Population(object):
         self.fitness_history = []
         self.parents = []
         self.done = False
+        self.multiprocessing_flag = multiprocessing_flag
         self.small_dataset = False
         self.dataset = dataset
         self.multiprocessing = multiprocessing
@@ -61,46 +62,20 @@ class Population(object):
         for x in range(pop_size):
             self.individuals.append(individual.Individual(learningrate = -1, dropout = -1, epoch= -1, batchsize = -1, optimizer = -1))
 
-    def grade_single(self, generation=None):
-
-        # Grade the generation by getting the average fitness of its individuals
-
-        fitness_sum = 0
-        i = 0
-        for x in self.individuals:
-            accloss = x.fitness()
-            self.var_loss, self.var_acc = accloss[0], accloss[1]
-            fitness_sum += self.var_acc
-            print("individual: ", i)
-            print("fitness: ", x.var_acc)
-            i = i + 1
-        del i
-        pop_fitness = fitness_sum / self.pop_size
-        self.fitness_history.append(pop_fitness)
-        self.save_gens(generation)
-        # Set Done flag if we hit target
-        if pop_fitness >= 0.90:
-            self.done = True
-
-        if generation is not None:
-            if generation % 5 == 0:
-                print("Episode", generation, "Population fitness:", pop_fitness)
-                print("----------------------------------------")
-                print("----------------------------------------")
-        gc.collect()
-
-    def grade_multi(self, generation=None):
+    def grade(self, generation=None):
         """
             Grade the generation by getting the average fitness of its individuals with multiprocessing
         """
-        p = multiprocessing.Pool(processes= self.multiprocessing)
-        
-        
-        accloss = p.map(self.fitness_multi, self.individuals)
+        if self.multiprocessing_flag:
+            p = multiprocessing.Pool(processes= self.multiprocessing)
+            accloss = p.map(self.fitness, self.individuals)
+        else:
+            for x in self.individuals:
+                x.var_loss, x.var_acc, x.variables = self.fitness(x)
+                fitness_sum += x.var_acc
 
         i = 0
         fitness_sum = 0
-
         for x in self.individuals:
             x.var_loss, x.var_acc, x.variables = accloss[i][0], accloss[i][1], accloss[i][2]
             fitness_sum += x.var_acc
@@ -218,7 +193,7 @@ class Population(object):
     def save_gens_winner(self):
         with open(self.save_file, "r") as f:
             data = json.load(f)
-        self.grade_multi()  # damit alle induviduals noch auf fittnes überprüft werden
+        self.grade()  # damit alle induviduals noch auf fittnes überprüft werden
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))
         i = 0
         family_tree = {"Winner": {}}
@@ -293,7 +268,7 @@ class Population(object):
         with open(self.save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)
 
-    def fitness_multi(self,individuum):
+    def fitness(self,individuum):
         var_loss, var_acc, variables = KNN.train_and_evalu(gene=individuum.gene, dataset=self.dataset,
          knn_size=self.knn_size, small_dataset=self.small_dataset, gpu = self.gpu)
         return var_loss, var_acc, variables
