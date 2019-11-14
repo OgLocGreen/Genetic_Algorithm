@@ -20,8 +20,6 @@ class Individual(object):
         self.var_loss = 0
         self.variables = 0
 
-    
-
     def fitness(self):
         """
             Returns fitness of individual

@@ -66,21 +66,20 @@ class Population(object):
         """
             Grade the generation by getting the average fitness of its individuals with multiprocessing
         """
+        i = 0
+        fitness_sum = 0
         if self.multiprocessing_flag:
             p = multiprocessing.Pool(processes= self.multiprocessing)
             accloss = p.map(self.fitness, self.individuals)
+            for x in self.individuals:
+                x.var_loss, x.var_acc, x.variables = accloss[i][0], accloss[i][1], accloss[i][2]
+                fitness_sum += x.var_acc
+                i += 1
+            del i
         else:
             for x in self.individuals:
                 x.var_loss, x.var_acc, x.variables = self.fitness(x)
-                fitness_sum += x.var_acc
-
-        i = 0
-        fitness_sum = 0
-        for x in self.individuals:
-            x.var_loss, x.var_acc, x.variables = accloss[i][0], accloss[i][1], accloss[i][2]
-            fitness_sum += x.var_acc
-            i += 1
-        del i
+                fitness_sum += x.var_acc   
         pop_fitness = fitness_sum / self.pop_size
         self.fitness_history.append(pop_fitness)
         self.save_gens(generation)
