@@ -22,7 +22,7 @@ from src_evaluation.evaluation import write_cell
 class Population(object):
 
     def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03,
-            generations=5,dataset="mnist_fashion",knn_size = "small",small_dataset=False, gpu = False,multiprocessing_flag = True, multiprocessing = 2):
+            generations=5,dataset="mnist_fashion",knn_size = "small",small_dataset=False, gpu = False, multiprocessing = 2,multiprocessing_flag = True):
         """
             Args
                 pop_size: size of population

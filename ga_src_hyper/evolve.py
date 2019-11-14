@@ -34,11 +34,11 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,pop_size_arg = 10
     multiprocessing_var = multiprocessing_arg
     SHOW_PLOT = False
 
-    if multiprocessing == 0:
+    if multiprocessing_var < 1:
         multiprocessing_flag = False
 
     pop = population.Population(pop_size=pop_size, mutate_prob=mutate_prob, retain=retain, random_retain=random_retain,
-                                        generations=GENERATIONS,dataset=dataset,small_dataset=small_dataset,knn_size=knn_size, gpu=gpu , multiprocessing= multiprocessing_var)
+                                        generations=GENERATIONS,dataset=dataset,small_dataset=small_dataset,knn_size=knn_size, gpu=gpu , multiprocessing= multiprocessing_var , multiprocessing_flag= multiprocessing_flag)
     start = time.time()
     lastround = start
     round_time = []
