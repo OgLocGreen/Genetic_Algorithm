@@ -149,7 +149,7 @@ def joint_plot(save_file):
             optimizer.append(float(data["generation"]["Winner"][i]["optimizer"]))
             acc.append(float(data["generation"]["Winner"][i]["acc"]))
             loss.append(float(data["generation"]["Winner"][i]["loss"]))
-            variables.append(float(data["generation"]["Winner"][i]["variables"]))
+            #variables.append(float(data["generation"]["Winner"][i]["variables"]))
         else:
             pass
   
@@ -166,23 +166,76 @@ def joint_plot(save_file):
     df = pd.DataFrame(auswertungsdaten,columns = ["learningrate","dropout","epoch","batchsize","optimizer"
                             ,"acc","loss","variables"])
 
-    g = (sns.jointplot("acc", "learningrate", data=df)
+    g = (sns.jointplot("acc", "learningrate", data=df, kind="kde")
     .plot_joint(sns.kdeplot, n_levels=6))
-    g = (sns.jointplot("acc", "dropout", data=df)
+    g = (sns.jointplot("acc", "dropout", data=df, kind="kde")
     .plot_joint(sns.kdeplot, n_levels=6))
-    g = (sns.jointplot("acc", "epoch", data=df)
+    g = (sns.jointplot("acc", "epoch", data=df, kind="kde")
     .plot_joint(sns.kdeplot, n_levels=6))
-    g = (sns.jointplot("acc", "batchsize", data=df)
+    g = (sns.jointplot("acc", "batchsize", data=df, kind="kde")
     .plot_joint(sns.kdeplot, n_levels=6))
     g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
     .plot_joint(sns.kdeplot, n_levels=6))
-    g = (sns.jointplot("acc", "optimizer", data=df)
+    g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
     .plot_joint(sns.kdeplot, n_levels=6))
-    g = (sns.jointplot("acc", "variables", data=df)
+    g = (sns.jointplot("acc", "variables", data=df, kind="kde")
     .plot_joint(sns.kdeplot, n_levels=6))
     plt.show()
 
 
+def joint_plot(save_file):
+    with open(save_file, "r") as f:
+        data = json.load(f)
+    learningrate = []
+    dropout = []
+    epoch = []
+    batchsize = []
+    optimizer = []
+    acc = []
+    loss = []
+    variables = []
+    xmin = 0.8
+    xmax = 0.9
+    ymax= 0.8
+    ymin = 0.2
+    for i in data["generation"]["Winner"]:
+        if float(data["generation"]["Winner"][i]["acc"]) > float(data["generation"]["Winner"]["0"]["acc"]) * 0.8:
+            learningrate.append(float(data["generation"]["Winner"][i]["learningrate"]))
+            dropout.append(float(data["generation"]["Winner"][i]["dropout"]))
+            epoch.append(float(data["generation"]["Winner"][i]["epoch"]))
+            batchsize.append(float(data["generation"]["Winner"][i]["batchsize"]))
+            optimizer.append(float(data["generation"]["Winner"][i]["optimizer"]))
+            acc.append(float(data["generation"]["Winner"][i]["acc"]))
+            loss.append(float(data["generation"]["Winner"][i]["loss"]))
+            #variables.append(float(data["generation"]["Winner"][i]["variables"]))
+        else:
+            pass
+  
+    auswertungsdaten = {"learningrate":learningrate,
+                        "dropout":dropout,
+                        "epoch":epoch,
+                        "batchsize":batchsize,
+                        "optimizer":optimizer,
+                        "acc": acc,
+                        "loss":loss
+                        }
+
+    df = pd.DataFrame(auswertungsdaten,columns = ["learningrate","dropout","epoch","batchsize","optimizer"
+                            ,"acc","loss"])
+
+    g = (sns.jointplot("acc", "learningrate", data=df, kind="kde")
+    .plot_joint(sns.kdeplot, n_levels=6))
+    g = (sns.jointplot("acc", "dropout", data=df, kind="kde")
+    .plot_joint(sns.kdeplot, n_levels=6))
+    g = (sns.jointplot("acc", "epoch", data=df, kind="kde")
+    .plot_joint(sns.kdeplot, n_levels=6))
+    g = (sns.jointplot("acc", "batchsize", data=df, kind="kde")
+    .plot_joint(sns.kdeplot, n_levels=6))
+    g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
+    .plot_joint(sns.kdeplot, n_levels=6))
+    g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
+    .plot_joint(sns.kdeplot, n_levels=6))
+    plt.show()
 
 
 if __name__ == "__main__":
@@ -191,7 +244,9 @@ if __name__ == "__main__":
                                        datetime.datetime.now().month,
                                        datetime.datetime.now().day)
     save_file = "ergebnisse_hyper.json"
-    save_file = "2019.11.7.json"
+    save_file = "../data/2019.11.14.json"
+    save_file = "../data/2019.11.12-1.json"
+    save_file = "2019.11.12-1.json"
 
     joint_plot(save_file)
     plot_fitness(save_file)

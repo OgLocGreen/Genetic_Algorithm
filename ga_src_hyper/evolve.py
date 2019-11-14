@@ -15,6 +15,7 @@ import crossover
 import mutation
 import individual
 import population
+
 import argparse 
 import sys
 
