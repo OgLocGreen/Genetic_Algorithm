@@ -160,11 +160,12 @@ def train_and_evalu(gene,dataset = "mnist_fashion",knn_size = "small" ,small_dat
     variables = 0
     variables = np.sum([np.prod(v.get_shape().as_list()) for v in tf.compat.v1.trainable_variables()])
     
+
     f1_score_var = 0
     if f1:
         label_predict = []
-        for i in test_images:
-            label_predict.append(model.predict_classes(i,batch_size=1))
+        #for i in test_images:
+        label_predict.append(model.predict_classes(test_images,batch_size=32))
         f1_score_var = f1_score(test_labels,label_predict,average=None)
         print("test_loss: ",test_loss , "test_acc: ", test_acc, "variables",variables, "f1_score",f1_score_var)
         return test_loss, test_acc, variables, f1_score
