@@ -187,7 +187,7 @@ def train_and_evalu(gene,dataset = "mnist_fashion",knn_size = "small" ,small_dat
         else:
             y_pred = model.predict(test_images)
             y_pred_bool = np.argmax(y_pred, axis=1)
-            print(test_labels,y_pred_bool)
+            print(test_labels,y_pred, y_pred_bool)
             precision_score_var = precision_score(test_labels, y_pred_bool , average="macro")
             recall_score_var = recall_score(test_labels, y_pred_bool , average="macro")
             f1_score_var = f1_score(test_labels, y_pred_bool , average="macro")
@@ -207,7 +207,7 @@ if __name__ == "__main__":
     #%%
     #gene = [var_learningrate = 0.05,var_dropout=0.25,var_epoch=100,var_batch_size=16,optimizer=3]
     
-    gene= [0.05,0.25,80,16,3]
+    gene= [0.05,0.25,10,16,3]
     start = time.time()
     test_loss, test_acc, variables, precision_score_var, recall_score_var, f1_score_var, cm = train_and_evalu(gene,f1 = True)
     end = time.time() - start
