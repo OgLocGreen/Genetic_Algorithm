@@ -103,8 +103,8 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,iteration = 50 ,g
         model = KerasClassifier(build_fn=tools.create_model_cnn,verbose=0,use_multiprocessing=multiprocessing_flag, workers=multiprocessing)
 
     optimizers = np.array([0, 1, 2, 3, 4 ,5 ,6 ,7 ])
-    epochs = np.array([30,40,50, 60, 70, 80,90, 100])
-    batchsize = np.array([8,16,32,40,48,56, 64,72])
+    epochs = np.array([10, 20, 30, 40,50, 60, 70, 80])
+    batchsize = np.array([8, 16, 32, 40, 48, 56, 64,72])
     learningrate = np.array([0.00005, 0.0001 ,0.0005, 0.001, 0.005, 0.01, 0.05, 0.1])
     dropout = np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6,0.7])
 
