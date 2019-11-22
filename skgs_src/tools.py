@@ -7,6 +7,7 @@ import socket
 
 sys.path.append('../')
 from src_evaluation.evaluation import write_cell
+from ga_src_hyper import KNN
 
 def create_model(optimizer,learningrate, dropout):
     try:
@@ -142,7 +143,6 @@ def create_model_big(optimizer,learningrate, dropout):
         optimizer = 7
     model.compile(loss='sparse_categorical_crossentropy', optimizer=optimizerarray[optimizer], metrics=['accuracy'])
     return model
-
     
 def create_model_cnn(optimizer,learningrate, dropout):
     try:
@@ -194,9 +194,9 @@ def create_model_cnn(optimizer,learningrate, dropout):
 def re_acc(tree):
     return tree["acc"]
 
-def save_params(save_file, means, params, datenset, iterations, knn_size,small_dataset,algorithmus,acc):
+def save_params(dir_path, save_file, means, params, dataset, iteration, knn_size, small_dataset, algorithmus, acc, precision_score_var, recall_score_var, f1_score_var, cm):
         try:
-            with open(self.save_file, "r") as f:
+            with open(save_file, "r") as f:
                 data = json.load(f)
         except:
             data = {}
@@ -212,8 +212,10 @@ def save_params(save_file, means, params, datenset, iterations, knn_size,small_d
         i = 0
         for param in pop:
             if i == 0:
-                write_cell(path_to_file = "../data/evaluation.xlsx",dataset = datenset ,iterations = iterations,
-                knn_size = knn_size,small_dataset =small_dataset,algorithmus= algorithmus,acc = acc)
+                write_cell(path_to_file = str(dir_path  + "../data/evaluation.xlsx"), small_dataset=small_dataset, 
+                dataset=dataset, knn_size=knn_size, iterations=iteration, 
+                algorithmus=algorithmus, acc=acc, precision_score_var=precision_score_var, 
+                recall_score_var=recall_score_var, f1_score_var=f1_score_var)
             generation = {
                 "name": i,
                 "learningrate": str(param["learningrate"]),

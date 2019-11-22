@@ -44,19 +44,20 @@ class Population(object):
         self.small_dataset = False
         self.dataset = dataset
         self.multiprocessing = multiprocessing
-        self.save_file = "../data/{}.{}.{}.json".format(datetime.datetime.now().year,
+        self.dir_path = os.path.dirname(os.path.realpath(__file__))
+        self.save_file = os.path.join(self.dir_path, "../data/{}.{}.{}_ga.json".format(datetime.datetime.now().year,
                                                 datetime.datetime.now().month,
-                                                datetime.datetime.now().day)
+                                                datetime.datetime.now().day))
 
         if os.path.isfile(self.save_file):
             for i in range(1, 10):
-                self.save_file = "../data/{}.{}.{}-{}.json".format(datetime.datetime.now().year,
+                self.save_file = os.path.join(self.dir_path, "../data/{}.{}.{}-{}_ga.json".format(datetime.datetime.now().year,
                                                            datetime.datetime.now().month,
                                                            datetime.datetime.now().day,
-                                                           i)
+                                                           i))
                 if os.path.isfile(self.save_file) == False:
                     break
-
+        self.save_file = filename = os.path.abspath(os.path.realpath(self.save_file))
         # Create individuals
         self.individuals = []
         for x in range(pop_size):
@@ -198,9 +199,12 @@ class Population(object):
         family_tree = {"Winner": {}}
         for x in self.individuals:
             if i == 0:
-                write_cell(path_to_file ="../data/evaluation.xlsx" ,small_dataset = self.small_dataset, 
-                dataset = self.dataset, knn_size = self.knn_size,iterations = (self.generations * self.pop_size), 
-                algorithmus = "GA", acc = x.var_acc)
+                test_loss, test_acc, variables, precision_score_var, recall_score_var, f1_score_var, cm = KNN.train_and_evalu(gene=x.gene, dataset=self.dataset,
+                                                                        knn_size=self.knn_size, small_dataset=self.small_dataset, gpu = self.gpu, f1=True)
+                exel_path = os.path.join(self.dir_path, "../data/evaluation.xlsx")                                                 
+                write_cell(path_to_file = os.path.abspath(os.path.realpath(exel_path)), small_dataset=self.small_dataset, 
+                dataset=self.dataset, knn_size=self.knn_size, iterations=(self.generations * self.pop_size), 
+                algorithmus="GA", acc=test_acc, precision_score_var=precision_score_var, recall_score_var=recall_score_var, f1_score_var=f1_score_var)
             generation = {
                 "name": i,
                 "learningrate": str(x.gene[0]),
@@ -271,18 +275,4 @@ class Population(object):
         var_loss, var_acc, variables = KNN.train_and_evalu(gene=individuum.gene, dataset=self.dataset,
          knn_size=self.knn_size, small_dataset=self.small_dataset, gpu = self.gpu)
         return var_loss, var_acc, variables
-
-"""
-    def fitness_multi(self,individuum):
-        if self.dataset == "cifar10":
-            var_loss, var_acc, variables = KNN.train_and_evalu_cifar10(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
-            return var_acc, var_loss, variables
-        elif self.dataset == "mnist_fashion":
-            var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu_mnist_fashion(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
-            return var_loss_mean, var_acc_mean, variables_mean
-        elif dataset == "mnist_digits":
-            var_loss_mean, var_acc_mean,variables_mean = KNN.train_and_evalu(individuum.gene[0], individuum.gene[1], individuum.gene[2],individuum.gene[3],individuum.gene[4])
-            return var_loss_mean, var_acc_mean, variables_mean
-    """
-
 

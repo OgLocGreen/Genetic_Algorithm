@@ -14,24 +14,23 @@ import socket
 import sys
 import argparse
 
-import plotting
 import tools
 sys.path.append('../')
 from src_evaluation.evaluation import write_cell
 from ga_src_hyper.KNN import train_and_evalu
+from ga_src_hyper import plotting
 
 
 
 
-def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,iteration = 50 ,gpu_arg = False, multiprocessing_arg = 2):
+def main(dataset_arg="mnist_fashion", knn_size_arg="small", iteration=50, gpu_arg = False, multiprocessing_arg=2, small_dataset_arg=False):
     algorithmus = "RS"
     start_time = time.time()
     iteration = iteration
     gpu = gpu_arg
     dataset = dataset_arg
-    small_dataset = False
+    small_dataset = small_dataset_arg
     knn_size = knn_size_arg
-
     multiprocessing_flag = True
     multiprocessing = multiprocessing_arg
     SHOW_PLOT = False
@@ -45,24 +44,21 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,iteration = 50 ,g
         config.gpu_options.allow_growth = False
         session = tf.compat.v1.Session(config=config)
         keras.backend.set_session(session)
-
     else:
         ##zwingen auf cpu
         os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
-    
-
-    save_file = "{}.{}.{}.json".format(datetime.datetime.now().year,
-                                                    datetime.datetime.now().month,
-                                                    datetime.datetime.now().day)
-
+  
+    dir_path = os.path.dirname(os.path.abspath(__file__))
+    save_file = os.path.join(dir_path, "../data/{}.{}.{}_rs.json".format(datetime.datetime.now()
+                                                        .year,datetime.datetime.now()
+                                                        .month,datetime.datetime.now().day))
     if os.path.isfile(save_file):
         for i in range(1, 10):
-            save_file = "{}.{}.{}-{}.json".format(datetime.datetime.now().year,
+            save_file = os.path.join(dir_path, "../data/{}.{}.{}-{}_rs.json".format(datetime.datetime.now().year,
                                                         datetime.datetime.now().month,
                                                         datetime.datetime.now().day,
-                                                        i)
+                                                        i))
             if os.path.isfile(save_file) == False:
                 break
 
@@ -106,7 +102,7 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,iteration = 50 ,g
     epochs = np.array([10, 20, 30, 40,50, 60, 70, 80])
     batchsize = np.array([8, 16, 32, 40, 48, 56, 64,72])
     learningrate = np.array([0.00005, 0.0001 ,0.0005, 0.001, 0.005, 0.01, 0.05, 0.1])
-    dropout = np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6,0.7])
+    dropout = np.array([0.05,0.1, 0.2, 0.3, 0.4, 0.5, 0.6,0.7])
 
     param_grid = dict(optimizer=optimizers, epochs=epochs, batch_size=batchsize, learningrate=learningrate, dropout=dropout)
 
@@ -138,22 +134,19 @@ def main(dataset_arg= "mnist_fashion", knn_size_arg = "small" ,iteration = 50 ,g
     learningrate = best["learningrate"]
     dropout = best["dropout"]
     gene=[learningrate,dropout,epochs,batchsize,optimizer]
-
-    test_loss, test_acc, variables =  train_and_evalu(gene=gene,dataset = dataset, knn_size= knn_size, small_dataset = small_dataset, gpu = gpu)
-
-    tools.save_params(save_file, means, params,dataset, iteration, knn_size,small_dataset,algorithmus,test_acc)
-
+    test_loss, test_acc, variables, precision_score_var, recall_score_var, f1_score_var, cmatrix = train_and_evalu(gene=gene, dataset=dataset, knn_size=knn_size, small_dataset=small_dataset, gpu=gpu, f1=True)
+    tools.save_params(dir_path, save_file, means, params, dataset, iteration, knn_size, small_dataset, algorithmus, test_acc, precision_score_var, recall_score_var, f1_score_var, cm)
 
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description = "Grid/Random Search")
-    parser.add_argument('dataset', help='which dataset: mnist_fashion, mnist_digits, cifar10 ' , type=str, default = "mnist_fashion" )
-    parser.add_argument("knn_size", help='which size of KNN: small, medium, big ' ,type=str, default = "small")
-    parser.add_argument("iteration", help='iteration ',type=int, default = 50)   
-    parser.add_argument("gpu", help='if gpu enable True or False ',type=bool, default = False)
-    parser.add_argument("multiprocessing", help='How many parallel processes: 2, 4, if 0 then no multiprocess',type=int, default = 2 )
-    args = parser.parse_args()
+    PARSER = argparse.ArgumentParser(description = "Grid/Random Search")
+    PARSER.add_argument('dataset', help='which dataset: mnist_fashion, mnist_digits, cifar10 ' , type=str, default="mnist_fashion" )
+    PARSER.add_argument("knn_size", help='which size of KNN: small, big ' ,type=str, default="small")
+    PARSER.add_argument("iteration", help='iteration ', type=int, default=50)   
+    PARSER.add_argument("gpu", help='if gpu enable True or False ',type=bool, default=False)
+    PARSER.add_argument("multiprocessing", help='How many parallel processes: 2, 4, if 0 then no multiprocess',type=int, default=2)
+    PARSER.add_argument("small_dataset", help="to train with only 0.1 of the original Dataset", type=bool, default=False)
+    ARGS = PARSER.parse_args()
 
-    main(dataset_arg = args.dataset, knn_size_arg= args.knn_size,  iteration=args.iteration, 
-        	gpu_arg= args.gpu, multiprocessing_arg = args.multiprocessing)
+    main(dataset_arg = ARGS.dataset, knn_size_arg= ARGS.knn_size,  iteration=ARGS.iteration, gpu_arg= ARGS.gpu, multiprocessing_arg = ARGS.multiprocessing, small_dataset_arg= ARGS.small_dataset)

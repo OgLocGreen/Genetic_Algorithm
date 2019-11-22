@@ -1,0 +1,167 @@
+{
+  "config": {
+    "dataset": "mnist_fashion",
+    "knn_size": "small",
+    "small_dataset": false,
+    "pop_size": 5,
+    "Muationrate": 0.1,
+    "Retain": 0.8,
+    "random_retain": 0.05,
+    "generations": 2,
+    "PC_name": "ess-altovar",
+    "Multiprocessing": 2,
+    "gpu": true
+  },
+  "generation": {
+    "0": {
+      "0": {
+        "name": 0,
+        "learningrate": "0.04090624250579753",
+        "dropout": "0.23327791085187977",
+        "epoch": "30",
+        "batchsize": "68",
+        "optimizer": "3.4979732349557286",
+        "acc": "0.8878999948501587",
+        "loss": "0.3146386427283287",
+        "variables": "101770"
+      },
+      "1": {
+        "name": 1,
+        "learningrate": "0.043875326473463816",
+        "dropout": "0.6414048431555854",
+        "epoch": "53",
+        "batchsize": "19",
+        "optimizer": "2.697592115569739",
+        "acc": "0.882099986076355",
+        "loss": "0.34639592342376707",
+        "variables": "203540"
+      },
+      "2": {
+        "name": 2,
+        "learningrate": "0.0040012228025974195",
+        "dropout": "0.30689073733694777",
+        "epoch": "15",
+        "batchsize": "14",
+        "optimizer": "1.4680660293523244",
+        "acc": "0.8616999983787537",
+        "loss": "0.3857063047647476",
+        "variables": "101770"
+      },
+      "3": {
+        "name": 3,
+        "learningrate": "0.06757632140868425",
+        "dropout": "0.5856804367622068",
+        "epoch": "57",
+        "batchsize": "54",
+        "optimizer": "2.4598629959071197",
+        "acc": "0.3837999999523163",
+        "loss": "2.0720045331954955",
+        "variables": "305310"
+      },
+      "4": {
+        "name": 4,
+        "learningrate": "0.0639841082541781",
+        "dropout": "0.27578864902317374",
+        "epoch": "12",
+        "batchsize": "10",
+        "optimizer": "5.854716299325455",
+        "acc": "0.18459999561309814",
+        "loss": "2.104361485671997",
+        "variables": "203540"
+      }
+    },
+    "1": {
+      "0": {
+        "name": 0,
+        "learningrate": "0.03658",
+        "dropout": "0.31793",
+        "epoch": "15.5426",
+        "batchsize": "74.08259",
+        "optimizer": "3.33674",
+        "acc": "0.881600022315979",
+        "loss": "0.3389646305322647",
+        "variables": "305310"
+      },
+      "1": {
+        "name": 1,
+        "learningrate": "0.043875326473463816",
+        "dropout": "0.6414048431555854",
+        "epoch": "53",
+        "batchsize": "19",
+        "optimizer": "2.697592115569739",
+        "acc": "0.8792999982833862",
+        "loss": "0.3447352668404579",
+        "variables": "101770"
+      },
+      "2": {
+        "name": 2,
+        "learningrate": "0.03658",
+        "dropout": "0.31793",
+        "epoch": "15.5426",
+        "batchsize": "74.08259",
+        "optimizer": "3.33674",
+        "acc": "0.8787000179290771",
+        "loss": "0.3397293670415878",
+        "variables": "101770"
+      },
+      "3": {
+        "name": 3,
+        "learningrate": "0.00384",
+        "dropout": "0.21855",
+        "epoch": "31.02143",
+        "batchsize": "12.30021",
+        "optimizer": "1.37111",
+        "acc": "0.8747000098228455",
+        "loss": "0.3480046604394913",
+        "variables": "203540"
+      }
+    },
+    "null": {
+      "0": {
+        "name": 0,
+        "learningrate": "0.03767",
+        "dropout": "0.30245",
+        "epoch": "15.13549",
+        "batchsize": "19.35903",
+        "optimizer": "3.59114",
+        "acc": "0.8521000146865845",
+        "loss": "0.4119651823997497",
+        "variables": "101770"
+      },
+      "1": {
+        "name": 1,
+        "learningrate": "0.03767",
+        "dropout": "0.30245",
+        "epoch": "15.13549",
+        "batchsize": "19.35903",
+        "optimizer": "3.59114",
+        "acc": "0.8514999747276306",
+        "loss": "0.41421735856533043",
+        "variables": "203540"
+      },
+      "2": {
+        "name": 2,
+        "learningrate": "0.03673",
+        "dropout": "0.63175",
+        "epoch": "48.10838",
+        "batchsize": "93.85528",
+        "optimizer": "2.16031",
+        "acc": "0.5794000029563904",
+        "loss": "2.029078523731232",
+        "variables": "101770"
+      },
+      "3": {
+        "name": 3,
+        "learningrate": "0.03673",
+        "dropout": "0.63175",
+        "epoch": "48.10838",
+        "batchsize": "17",
+        "optimizer": "2.16031",
+        "acc": "0.39800000190734863",
+        "loss": "2.2613004974365234",
+        "variables": "203540"
+      }
+    }
+  },
+  "fitness_history": {}
+}

@@ -9,10 +9,21 @@ def write_cell(path_to_file,dataset,iterations,knn_size,small_dataset,algorithmu
     #sheetX = book.active
     if small_dataset == True:
         dataset = str(dataset + "_small")
-
     if os.path.isfile(path_to_file):
         for sheet in book:   
             if sheet.title ==  dataset:
+                if iterations == 10:
+                  if knn_size == "small":
+                        if algorithmus == "GA":
+                            sheet["J3"] = acc
+                            sheet["J4"] = recall_score_var
+                            sheet["K3"] = precision_score_var
+                            sheet["K4"] = f1_score_var 
+                        if algorithmus == "RS":
+                            sheet["J5"] = acc
+                            sheet["J5"] = recall_score_var
+                            sheet["K6"] = precision_score_var
+                            sheet["K6"] = f1_score_var 
                 if iterations == 50:
                     if knn_size == "small":
                         if algorithmus == "GA":

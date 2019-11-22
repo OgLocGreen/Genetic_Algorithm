@@ -10,24 +10,25 @@ import matplotlib as mpl
 from scipy import stats
 
 import datetime
+import os
 
 sns.set(color_codes=True)
 
 
-def scatterplot(file,yscale_log=False):
+def scatterplot(dir_path, save_file, yscale_log=False, save=False):
     x_label = "acc"
     y_label = "loss"
 
     # Create the plot object
     _, ax = plt.subplots()
-
-    with open(file, "r") as f:
+    save_file = os.path.join(dir_path, "../data/",save_file)
+    with open(save_file, "r") as f:
         data = json.load(f)
 
     for pop in data["generation"]:
         x = []
         y = []
-        if pop in ("2", "4", "8", "Winner"):
+        if pop in ("0", "2", "Winner"):
             for individum in data["generation"][pop]:
                 try:
                     x.append(float(data["generation"][pop][individum]["acc"])) ## hier dürfte noch ein fehler sein
@@ -41,7 +42,7 @@ def scatterplot(file,yscale_log=False):
 
             if yscale_log == True:
                 ax.set_yscale('log')
-
+    
     # Label the axes and provide a title
     ax.set_title("Some example Generations and their Accuracy and Loss")
     ax.set_xlabel(x_label)
@@ -51,81 +52,16 @@ def scatterplot(file,yscale_log=False):
     axes.set_ylim([0, 2])
     axes.set_xlim([0.5, 0.95])
     plt.gca().invert_yaxis()
-    plt.show()
 
-def scatterplot_zoom(file, yscale_log=False):
-    x_label = "acc"
-    y_label = "loss"
-    xmin = 0.8
-    xmax = 0.9
-    ymax= 0.8
-    ymin = 0.2
-    # Create the plot object
-    _, ax = plt.subplots()
+    if save:
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_scaterplot.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        plt.savefig(filename)
 
-    with open(file, "r") as f:
-        data = json.load(f)
-
-    for pop in data["generation"]:
-        x = []
-        y = []
-        if pop in ("2", "4", "8", "Winner"):
-            for individum in data["generation"][pop]:
-                try:
-                    x.append(float(data["generation"][pop][individum]["acc"])) ## hier dürfte noch ein fehler sein
-                    y.append(float(data["generation"][pop][individum]["loss"]))  ## hier dürfte noch ein feheler sein
-                except:
-                    print("error")
-
-            # Plot the data, set the size (s), color and transparency (alpha)
-            # of the points
-            ax.scatter(x, y, s=60, alpha=0.7)
-
-            if yscale_log == True:
-                ax.set_yscale('log')
-
-    # Label the axes and provide a title
-    ax.set_title("Some example Generations and their Accuracy and Loss Zoomed in")
-    ax.set_xlabel(x_label)
-    ax.set_ylabel(y_label)
-    ax.legend(["2 Generation", "4 Generation", "8 Generation", "Winner"], loc="upper left")
-    axes = plt.gca()
-    axes.set_xlim([xmin, xmax])
-    axes.set_ylim([ymin, ymax])
-    plt.gca().invert_yaxis()
-    plt.show()
-
-def plot_fitness(file):
-    with open(file, "r") as f:
-        data = json.load(f)
-
-    title = "Fitness of Population"
-    x_label = "Generations"
-    y_label = "Fitness"
-    acc_pop =[]
-
-    for population in data["generation"]:
-        acc = 0
-        anzahl = 0
-        for individum in data["generation"][population]:
-            acc += float(data["generation"][population][individum]["acc"])
-            anzahl += 1
-        acc = acc / anzahl
-        acc_pop.append(acc)
-
-    print(acc_pop)
-
-    plt.plot(np.arange(len(acc_pop)), acc_pop)
-
-    data = (np.arange(len(acc_pop)), acc_pop)
-
-    #sns.lineplot(data=data)
-    plt.title(title)
-    plt.xlabel(x_label)
-    plt.ylabel(y_label)
-    plt.show()
-
-def joint_plot(save_file):
+def joint_plot(dir_path, save_file, save=False):
+    save_file = os.path.join(dir_path, "../data/",save_file)
     with open(save_file, "r") as f:
         data = json.load(f)
     learningrate = []
@@ -166,21 +102,67 @@ def joint_plot(save_file):
     df = pd.DataFrame(auswertungsdaten,columns = ["learningrate","dropout","epoch","batchsize","optimizer"
                             ,"acc","loss","variables"])
 
-    g = (sns.jointplot("acc", "learningrate", data=df)
-    .plot_joint(sns.kdeplot, n_levels=6))
-    g = (sns.jointplot("acc", "dropout", data=df)
-    .plot_joint(sns.kdeplot, n_levels=6))
-    g = (sns.jointplot("acc", "epoch", data=df)
-    .plot_joint(sns.kdeplot, n_levels=6))
-    g = (sns.jointplot("acc", "batchsize", data=df)
-    .plot_joint(sns.kdeplot, n_levels=6))
-    g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
-    .plot_joint(sns.kdeplot, n_levels=6))
-    g = (sns.jointplot("acc", "optimizer", data=df)
-    .plot_joint(sns.kdeplot, n_levels=6))
-    g = (sns.jointplot("acc", "variables", data=df)
-    .plot_joint(sns.kdeplot, n_levels=6))
-    plt.show()
+    if save:
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        g = (sns.jointplot("acc", "learningrate", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.title("learningrate")
+        filename = filename + "_jointplot_learningrate.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        plt.savefig(filename)
+        g = (sns.jointplot("acc", "dropout", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.title("dropout")
+        filename = filename + "_jointplot_dropout.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        plt.savefig(filename)
+        g = (sns.jointplot("acc", "epoch", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.title("epoch")
+        filename = filename + "_jointplot_epoch.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        plt.savefig(filename)
+        g = (sns.jointplot("acc", "batchsize", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.title("batchsize")
+        filename = filename + "_jointplot_batchsize.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        plt.savefig(filename)
+        g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.title("optimizer")
+        filename = filename + "_jointplot_optimizer_kde.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        plt.savefig(filename)
+        g = (sns.jointplot("acc", "optimizer", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.title("optimizer")
+        filename = filename + "_jointplot_optimizer.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        plt.savefig(filename)
+        g = (sns.jointplot("acc", "variables", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.title("variables")
+        filename = filename + "_jointplot_variables.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        plt.savefig(filename)
+    else:
+        g = (sns.jointplot("acc", "learningrate", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "dropout", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "epoch", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "batchsize", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "optimizer", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "variables", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.show()
 
 
 
@@ -192,16 +174,95 @@ if __name__ == "__main__":
                                        datetime.datetime.now().day)
     save_file = "ergebnisse_hyper.json"
     save_file = "2019.11.7.json"
-
-    joint_plot(save_file)
-    plot_fitness(save_file)
-    scatterplot_zoom(save_file)
-    scatterplot(save_file)
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    scatterplot(dir_path= dir_path, save_file=save_file, save = True)
+    joint_plot(dir_path= dir_path, save_file=save_file, save = True)
 
 
 
 
+def scatterplot_zoom(dir_path, save_file, yscale_log=False, save=False):
+    x_label = "acc"
+    y_label = "loss"
+    xmin = 0.8
+    xmax = 0.9
+    ymax= 0.8
+    ymin = 0.2
+    # Create the plot object
+    _, ax = plt.subplots()
+    save_file = os.path.join(dir_path, "../data/",save_file)
+    with open(save_file, "r") as f:
+        data = json.load(f)
 
+    for pop in data["generation"]:
+        x = []
+        y = []
+        if pop in ("0", "2", "Winner"):
+            for individum in data["generation"][pop]:
+                try:
+                    x.append(float(data["generation"][pop][individum]["acc"])) ## hier dürfte noch ein fehler sein
+                    y.append(float(data["generation"][pop][individum]["loss"]))  ## hier dürfte noch ein feheler sein
+                except:
+                    print("error")
+
+            # Plot the data, set the size (s), color and transparency (alpha)
+            # of the points
+            ax.scatter(x, y, s=60, alpha=0.7)
+
+            if yscale_log == True:
+                ax.set_yscale('log')
+    
+    # Label the axes and provide a title
+    ax.set_title("Some example Generations and their Accuracy and Loss")
+    ax.set_xlabel(x_label)
+    ax.set_ylabel(y_label)
+    ax.legend(["0 Generation", "2 Generation", "Winner"], loc="upper left")
+    axes = plt.gca()
+    axes.set_xlim([xmin, xmax])
+    axes.set_ylim([ymin, ymax])
+    plt.gca().invert_yaxis()
+    plt.show()
+
+    if save:
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_scaterplot_zoom.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        plt.savefig(filename)
+
+def plot_fitness(dir_path, save_file, save=False):
+    save_file = os.path.join(dir_path, "../data/",save_file)
+    with open(save_file, "r") as f:
+        data = json.load(f)
+
+    title = "Fitness of Population"
+    x_label = "Generations"
+    y_label = "Fitness"
+    acc_pop =[]
+
+    for population in data["generation"]:
+        acc = 0
+        anzahl = 0
+        for individum in data["generation"][population]:
+            acc += float(data["generation"][population][individum]["acc"])
+            anzahl += 1
+        acc = acc / anzahl
+        acc_pop.append(acc)
+    plt.plot(np.arange(len(acc_pop)), acc_pop)
+    data = (np.arange(len(acc_pop)), acc_pop)
+
+    #sns.lineplot(data=data)
+    plt.title(title)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.show()
+
+    if save:
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_fitness.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        plt.savefig(filename)
 
 
 

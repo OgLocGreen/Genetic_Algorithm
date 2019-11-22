@@ -1,0 +1,13 @@
+{
+  "config": {
+    "dataset": "mnist_digits",
+    "knn_size": "small",
+    "small_dataset": true,
+    "iteration": 5,
+    "PC_name": "ess-altovar",
+    "Multiprocessing": 2,
+    "gpu": true
+  },
+  "generation": {},
+  "round_time": {}
+}

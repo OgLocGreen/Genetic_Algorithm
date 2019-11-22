@@ -7,7 +7,7 @@ class Individual(object):
         if not (0.00005 < learningrate < 0.1):
             learningrate = random.uniform(0.00005, 0.1)
         if not (0.05 < dropout < 0.8):
-            dropout = random.uniform(0.05, 0.5)
+            dropout = random.uniform(0.05, 0.7)
         if not (0 < epoch < 100):
             epoch = random.randint(10, 80)
         if not (0 < batchsize < 80): 
