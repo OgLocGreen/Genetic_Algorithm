@@ -203,7 +203,7 @@ def train_and_evalu(gene,dataset="mnist_fashion", knn_size="small", small_datase
 
             print("test_loss: ",test_loss , "test_acc: ", test_acc, "variables",variables, "precision_score_var", precision_score_var,"recall_score_var", recall_score_var,"f1_score_var", f1_score_var)
             
-            return test_loss, test_acc, variables, precision_score_var, recall_score_var, f1_score_var
+            return test_loss, test_acc, variables, precision_score_var, recall_score_var, f1_score_var, cm
 
     print("test_loss: ",test_loss , "test_acc: ", test_acc, "variables",variables)
     gc.collect()

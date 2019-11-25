@@ -15,10 +15,11 @@ import mutation
 import individual
 import selection
 import sys 
-
+import evaluation
+"""
 sys.path.append('../')
 from src_evaluation.evaluation import write_cell 
-
+"""
 class Population(object):
 
     def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03,
@@ -202,7 +203,7 @@ class Population(object):
                 test_loss, test_acc, variables, precision_score_var, recall_score_var, f1_score_var, cm = KNN.train_and_evalu(gene=x.gene, dataset=self.dataset,
                                                                         knn_size=self.knn_size, small_dataset=self.small_dataset, gpu = self.gpu, f1=True)
                 exel_path = os.path.join(self.dir_path, "../data/evaluation.xlsx")                                                 
-                write_cell(path_to_file = os.path.abspath(os.path.realpath(exel_path)), small_dataset=self.small_dataset, 
+                evaluation.write_cell(path_to_file = os.path.abspath(os.path.realpath(exel_path)), small_dataset=self.small_dataset, 
                 dataset=self.dataset, knn_size=self.knn_size, iterations=(self.generations * self.pop_size), 
                 algorithmus="GA", acc=test_acc, precision_score_var=precision_score_var, recall_score_var=recall_score_var, f1_score_var=f1_score_var)
             generation = {
