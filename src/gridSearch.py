@@ -11,7 +11,7 @@ import numpy as np
 from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 import tensorflow as tf
 from tensorflow import keras
-
+from sklearn.model_selection import train_test_split
 from tools import gs_tools
 from tools.KNN import train_and_evalu
 from tools import plotting
@@ -32,16 +32,12 @@ def main(dataset_arg="mnist_fashion", knn_size_arg="small", iteration=50,
     if multiprocessing == 0:
         multiprocessing_flag = False
 
-    if gpu == True:
-        config = tf.compat.v1.ConfigProto()
-        config.gpu_options.per_process_gpu_memory_fraction = 0.3
-        config.gpu_options.allow_growth = False
-        session = tf.compat.v1.Session(config=config)
-        keras.backend.set_session(session)
+    if gpu:
+        pass
     else:
-        ##zwingen auf cpu
-        os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+        os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"   # see issue #152
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
     dir_path = os.path.dirname(os.path.abspath(__file__))
     save_file = os.path.join(dir_path,
                              "../data/{}.{}.{}_rs.json".format(datetime.datetime.now().year,
@@ -82,9 +78,14 @@ def main(dataset_arg="mnist_fashion", knn_size_arg="small", iteration=50,
     train_images = train_images / 255.0
     test_images = test_images / 255.0
 
-     #extra feature um Datenset künstlich zu verkleinern
-    small_train_images, small_test_images, small_train_labels, small_test_labels = sklearn.model_selection.train_test_split(
-        train_images, train_labels, test_size=0.9, shuffle=False)
+    if small_dataset:
+    # extra feature um Datenset künstlich zu verkleinern
+        small_train_images , small_test_images, small_train_labels, small_test_labels = train_test_split(
+                                train_images, train_labels, test_size=0.9, shuffle=False)
+        train_images, eval_images, train_labels, eval_labels = train_test_split(small_train_images , small_train_labels , test_size= 0.2, shuffle=False)
+    else:
+        train_images, eval_images, train_labels, eval_labels = train_test_split(train_images , train_labels , test_size= 0.2, shuffle=False)
+
     if fully:
         if knn_size == "small":
             model = KerasClassifier(build_fn=gs_tools.create_model_small, verbose=0,
@@ -111,11 +112,8 @@ def main(dataset_arg="mnist_fashion", knn_size_arg="small", iteration=50,
     random_search = sklearn.model_selection.RandomizedSearchCV(estimator=model,
                                                                param_distributions=param_grid,
                                                                n_iter=iteration, n_jobs=multiprocessing)
-    if small_dataset:
-        random_search.fit(small_train_images, small_train_labels,
-                          use_multiprocessing=multiprocessing_flag, workers=multiprocessing)
-    else:
-        random_search.fit(train_images, train_labels, use_multiprocessing=True, workers=2)
+    
+    random_search.fit(train_images, train_labels, use_multiprocessing=True, workers=2)
 
     print("Best: %f using %s" % (random_search.best_score_, random_search.best_params_))
     means = random_search.cv_results_['mean_test_score']

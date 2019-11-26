@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\heinzman\\.conda\\envs\\Ga\\python.exe"
+    "python.pythonPath": "C:\\Users\\heinzman\\.conda\\envs\\Ga\\python.exe",
+    "python.linting.enabled": true
 }

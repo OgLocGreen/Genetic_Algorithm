@@ -18,7 +18,6 @@ from tools import selection
 
 from tools import evaluation
 
-
 class Population(object):
 
     def __init__(self, pop_size=50, mutate_prob=0.01, retain=0.2, random_retain=0.03,
@@ -165,10 +164,9 @@ class Population(object):
         except:
             data = {}
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc,
-                                       reverse=True))  ##indiviuen noch mal nach fitness sotierten
-        i = 0
+                                       reverse=True))  ##indiviuen noch mal nach fitness sotierte
         family_tree = {generations: {}}
-        for x in self.individuals:
+        for i, x in enumerate(self.individuals):
             generation = {
                 "name": i,
                 "learningrate": str(x.gene[0]),
@@ -181,8 +179,6 @@ class Population(object):
                 "variables" : str(x.variables)
             }
             family_tree[generations][i] = generation
-            i += 1
-        del i
         data["generation"].update(family_tree)
         with open(self.save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)
@@ -197,9 +193,8 @@ class Population(object):
             data = json.load(f)
         self.grade()  # damit alle induviduals noch auf fittnes überprüft werden
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))
-        i = 0
         family_tree = {"Winner": {}}
-        for x in self.individuals:
+        for i, x in self.individuals:
             if i == 0:
                 test_loss, test_acc, variables, precision_score_var, recall_score_var, f1_score_var, cm = KNN.train_and_evalu(gene=x.gene, dataset=self.dataset,
                                                                         knn_size=self.knn_size, small_dataset=self.small_dataset, gpu = self.gpu, f1=True)
@@ -220,8 +215,6 @@ class Population(object):
                 "variables" : str(x.variables)
             }
             family_tree["Winner"][i] = generation
-            i += 1
-        del i
         data["generation"].update(family_tree)
         with open(self.save_file, "w") as outfile:
             json.dump(data, outfile, indent=2)

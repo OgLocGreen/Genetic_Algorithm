@@ -72,10 +72,6 @@ def joint_plot(dir_path, save_file, save=False):
     acc = []
     loss = []
     variables = []
-    xmin = 0.8
-    xmax = 0.9
-    ymax= 0.8
-    ymin = 0.2
     for i in data["generation"]["Winner"]:
         if float(data["generation"]["Winner"][i]["acc"]) > float(data["generation"]["Winner"]["0"]["acc"]) * 0.8:
             learningrate.append(float(data["generation"]["Winner"][i]["learningrate"]))
@@ -105,47 +101,65 @@ def joint_plot(dir_path, save_file, save=False):
     if save:
         filename = os.path.join(dir_path, "../data/",save_file)
         filename = filename[:-5]
+        filename = filename + "_jointplot_learningrate.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "learningrate", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
         plt.title("learningrate")
-        filename = filename + "_jointplot_learningrate.pdf"
-        filename = os.path.abspath(os.path.realpath(filename))
         plt.savefig(filename)
+
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_dropout.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "dropout", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
         plt.title("dropout")
-        filename = filename + "_jointplot_dropout.pdf"
-        filename = os.path.abspath(os.path.realpath(filename))
         plt.savefig(filename)
+
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_epoch.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "epoch", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
         plt.title("epoch")
-        filename = filename + "_jointplot_epoch.pdf"
-        filename = os.path.abspath(os.path.realpath(filename))
         plt.savefig(filename)
+
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_batchsize.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "batchsize", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
         plt.title("batchsize")
-        filename = filename + "_jointplot_batchsize.pdf"
-        filename = os.path.abspath(os.path.realpath(filename))
         plt.savefig(filename)
+
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_optimizer_kde.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
         .plot_joint(sns.kdeplot, n_levels=6))
         plt.title("optimizer")
-        filename = filename + "_jointplot_optimizer_kde.pdf"
-        filename = os.path.abspath(os.path.realpath(filename))
         plt.savefig(filename)
+
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_optimizer.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "optimizer", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
         plt.title("optimizer")
-        filename = filename + "_jointplot_optimizer.pdf"
-        filename = os.path.abspath(os.path.realpath(filename))
         plt.savefig(filename)
+
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_variables.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "variables", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
         plt.title("variables")
-        filename = filename + "_jointplot_variables.pdf"
-        filename = os.path.abspath(os.path.realpath(filename))
         plt.savefig(filename)
     else:
         g = (sns.jointplot("acc", "learningrate", data=df)

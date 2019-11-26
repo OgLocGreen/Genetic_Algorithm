@@ -6,8 +6,7 @@ from sklearn.model_selection import train_test_split
 import gc
 from sklearn.metrics import classification_report
 from sklearn.metrics import f1_score, precision_score, recall_score, confusion_matrix
-from tensorflow.keras import backend as K
-from tensorflow.keras.utils import plot_model
+#from tensorflow.keras.utils import plot_model
 import pydotplus
 import pydot
 
@@ -171,11 +170,9 @@ def train_and_evalu(gene,dataset="mnist_fashion", knn_size="small", small_datase
         acc += test_acc
     test_acc = acc/mittel
     test_loss = loss/mittel
-
+    #plot_model(model, to_file='model_cnn.png')
     variables = 0
     variables = np.sum([np.prod(v.get_shape().as_list()) for v in tf.compat.v1.trainable_variables()])
-
-    plot_model(model, to_file='model_cnn.png')
 
 #%%
     if f1:

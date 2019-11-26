@@ -63,8 +63,8 @@ def main(dataset_arg="mnist_fashion", knn_size_arg="small", pop_size_arg=10,
         gc.collect()
         
     pop.save_gens_winner()
-    for i in range(0, len(round_time)):
-        print("Round: ", i, " Time: ", round_time[i])
+    for x, i in enumerate(round_time):
+        print("Round: ", x, " Time: ", i)
     pop.save_end_data(round_time)
 
 #%%
@@ -80,7 +80,7 @@ def main(dataset_arg="mnist_fashion", knn_size_arg="small", pop_size_arg=10,
     if save_plot:
         plotting.scatterplot(dir_path=pop.dir_path, save_file=pop.save_file, save = True)
         plotting.joint_plot(dir_path=pop.dir_path, save_file=pop.save_file, save = True)
-    print("FINISCHED!!! after ", end_2-start, "seconds")
+    print("FINISCHED!!!")
     print(round_time)
 
 
