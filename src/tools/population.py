@@ -46,16 +46,20 @@ class Population(object):
         self.multiprocessing = multiprocessing
         self.dir_path = os.path.dirname(os.path.realpath(__file__))
         self.save_file = os.path.join(self.dir_path,
-                                      "../../data/{}.{}.{}_ga.json".format(datetime.datetime.now().year,
+                                      "../../data/{}.{}.{}.{}.{}.{}.{}.{}.json".format(datetime.datetime.now().year,
                                                                         datetime.datetime.now().month,
-                                                                        datetime.datetime.now().day))
+                                                                        datetime.datetime.now().day,
+                                                                        "GA", self.pop_size*self.generations,
+                                                                        self.dataset, self.small_dataset, self.knn_size))
 
         if os.path.isfile(self.save_file):
             for i in range(1, 10):
                 self.save_file = os.path.join(self.dir_path,
-                                              "../../data/{}.{}.{}-{}_ga.json".format(datetime.datetime.now().year,
-                                                                                   datetime.datetime.now().month,
-                                                                                   datetime.datetime.now().day, i))
+                                              "../../data/{}.{}.{}.{}.{}.{}.{}.{}-{}.json".format(datetime.datetime.now().year,
+                                                                        datetime.datetime.now().month,
+                                                                        datetime.datetime.now().day,
+                                                                        "GA", self.pop_size*self.generations,
+                                                                        self.dataset, self.small_dataset, self.knn_size, i))
                 if os.path.isfile(self.save_file) == False:
                     break
         #self.save_file = filename = os.path.abspath(os.path.realpath(self.save_file))
@@ -166,6 +170,7 @@ class Population(object):
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc,
                                        reverse=True))  ##indiviuen noch mal nach fitness sotierte
         family_tree = {generations: {}}
+        i = 0
         for i, x in enumerate(self.individuals):
             generation = {
                 "name": i,
@@ -194,7 +199,7 @@ class Population(object):
         self.grade()  # damit alle induviduals noch auf fittnes überprüft werden
         self.individuals = list(sorted(self.individuals, key=lambda x: x.var_acc, reverse=True))
         family_tree = {"Winner": {}}
-        for i, x in self.individuals:
+        for i, x in enumerate(self.individuals):
             if i == 0:
                 test_loss, test_acc, variables, precision_score_var, recall_score_var, f1_score_var, cm = KNN.train_and_evalu(gene=x.gene, dataset=self.dataset,
                                                                         knn_size=self.knn_size, small_dataset=self.small_dataset, gpu = self.gpu, f1=True)
@@ -214,6 +219,7 @@ class Population(object):
                 "loss": str(x.var_loss),
                 "variables" : str(x.variables)
             }
+            
             family_tree["Winner"][i] = generation
         data["generation"].update(family_tree)
         with open(self.save_file, "w") as outfile:

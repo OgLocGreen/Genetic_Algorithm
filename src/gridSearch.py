@@ -40,19 +40,21 @@ def main(dataset_arg="mnist_fashion", knn_size_arg="small", iteration=50,
 
     dir_path = os.path.dirname(os.path.abspath(__file__))
     save_file = os.path.join(dir_path,
-                             "../data/{}.{}.{}_rs.json".format(datetime.datetime.now().year,
-                                                               datetime.datetime.now().month,
-                                                               datetime.datetime.now().day))
+                                      "../data/{}.{}.{}.{}.{}.{}.{}.{}.json".format(datetime.datetime.now().year,
+                                                                        datetime.datetime.now().month,
+                                                                        datetime.datetime.now().day,
+                                                                        "RS", iteration,
+                                                                        dataset, small_dataset, knn_size))
     if os.path.isfile(save_file):
         for i in range(1, 10):
             save_file = os.path.join(dir_path,
-                                     "../data/{}.{}.{}-{}_rs.json"
-                                     .format(datetime.datetime.now().year,
-                                             datetime.datetime.now().month,
-                                             datetime.datetime.now().day, i))
+                                              "../data/{}.{}.{}.{}.{}.{}.{}.{}-{}.json".format(datetime.datetime.now().year,
+                                                                        datetime.datetime.now().month,
+                                                                        datetime.datetime.now().day,
+                                                                        "RS", iteration,
+                                                                        dataset,small_dataset, knn_size, i))
             if os.path.isfile(save_file) == False:
                 break
-
     gs_tools.save_init_data(save_file=save_file, dataset=dataset, iteration=iteration,
                          knn_size=knn_size, small_dataset=small_dataset, algorithmus=algorithmus,
                          multiprocessing=multiprocessing, gpu=gpu)
@@ -93,7 +95,7 @@ def main(dataset_arg="mnist_fashion", knn_size_arg="small", iteration=50,
         elif knn_size == "medium":
             model = KerasClassifier(build_fn=gs_tools.create_model_medium, verbose=0,
                                     use_multiprocessing=multiprocessing_flag, workers=multiprocessing)
-        elif knn_size == "medium":
+        elif knn_size == "big":
             model = KerasClassifier(build_fn=gs_tools.create_model_big, verbose=0,
                                     use_multiprocessing=multiprocessing_flag, workers=multiprocessing)
     elif cnn:

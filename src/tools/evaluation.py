@@ -7,7 +7,7 @@ from openpyxl import load_workbook
 def write_cell(path_to_file,dataset,iterations,knn_size,small_dataset,algorithmus,acc,recall_score_var,precision_score_var,f1_score_var):
     book = load_workbook(path_to_file)
     #sheetX = book.active
-    if small_dataset == True:
+    if small_dataset:
         dataset = str(dataset + "_small")
     if os.path.isfile(path_to_file):
         for sheet in book:   
@@ -76,9 +76,11 @@ def write_cell(path_to_file,dataset,iterations,knn_size,small_dataset,algorithmu
 
 if __name__ == "__main__":
 
-    excel_file = "/evaluation.xlsx"
+    excel_file = "/../../data/evaluation.xlsx"
     dataset = "mnist_fashion"
     path_to_file = os.path.join(os.path.dirname(os.path.abspath(__file__))+ excel_file)
 
-    #excel_file(path_to_file = path_to_file, sheet="mnist_fashion")
+    write_cell(path_to_file= path_to_file,dataset= dataset, iterations = 250,small_dataset =True, knn_size = "small", algorithmus= "GA", acc = 0.9 , recall_score_var = 0.8,precision_score_var= 0.8,f1_score_var =0.9)
     write_cell(path_to_file= path_to_file,dataset= dataset, iterations = 250,small_dataset =False, knn_size = "small", algorithmus= "GA", acc = 0.9 , recall_score_var = 0.8,precision_score_var= 0.8,f1_score_var =0.9)
+    write_cell(path_to_file= path_to_file,dataset= dataset, iterations = 250,small_dataset =False, knn_size = "small", algorithmus= "RS", acc = 0.9 , recall_score_var = 0.8,precision_score_var= 0.8,f1_score_var =0.9)
+    write_cell(path_to_file= path_to_file,dataset= dataset, iterations = 250,small_dataset =True, knn_size = "small", algorithmus= "RS", acc = 0.9 , recall_score_var = 0.8,precision_score_var= 0.8,f1_score_var =0.9)

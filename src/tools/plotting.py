@@ -152,7 +152,7 @@ def joint_plot(dir_path, save_file, save=False):
         .plot_joint(sns.kdeplot, n_levels=6))
         plt.title("optimizer")
         plt.savefig(filename)
-
+        """
         filename = os.path.join(dir_path, "../data/",save_file)
         filename = filename[:-5]
         filename = filename + "_jointplot_variables.pdf"
@@ -161,6 +161,7 @@ def joint_plot(dir_path, save_file, save=False):
         .plot_joint(sns.kdeplot, n_levels=6))
         plt.title("variables")
         plt.savefig(filename)
+        """
     else:
         g = (sns.jointplot("acc", "learningrate", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
