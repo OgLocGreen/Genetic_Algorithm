@@ -28,7 +28,7 @@ def main(dataset_arg="mnist_fashion", knn_size_arg="small", pop_size_arg=10,
     generations = generations_arg
     gpu = gpu_arg
     dataset = dataset_arg
-    small_dataset = False
+    small_dataset = small_dataset_args
     knn_size = knn_size_arg
 
     multiprocessing_flag = True

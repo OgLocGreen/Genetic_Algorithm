@@ -9,6 +9,8 @@ def write_cell(path_to_file,dataset,iterations,knn_size,small_dataset,algorithmu
     #sheetX = book.active
     if small_dataset:
         dataset = str(dataset + "_small")
+    else:
+        pass
     if os.path.isfile(path_to_file):
         for sheet in book:   
             if sheet.title ==  dataset:

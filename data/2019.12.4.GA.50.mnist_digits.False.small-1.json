@@ -2,12 +2,16 @@
   "config": {
     "dataset": "mnist_digits",
     "knn_size": "small",
-    "small_dataset": true,
-    "iteration": 50,
+    "small_dataset": false,
+    "pop_size": 25,
+    "Muationrate": 0.1,
+    "Retain": 0.8,
+    "random_retain": 0.05,
+    "generations": 2,
     "PC_name": "ess-altovar",
     "Multiprocessing": 2,
     "gpu": true
   },
   "generation": {},
-  "round_time": 10
+  "fitness_history": {}
 }
