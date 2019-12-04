@@ -137,9 +137,9 @@ def main(dataset_arg="mnist_fashion", knn_size_arg="small", iteration=50,
     dropout = best["dropout"]
     gene = [learningrate, dropout, epochs, batchsize, optimizer]
     test_loss, test_acc, variables, precision_score_var, recall_score_var, f1_score_var, cm = train_and_evalu(gene=gene, dataset=dataset, knn_size=knn_size, small_dataset=small_dataset, gpu=gpu, f1=True)
-    gs_tools.save_params(dir_path, save_file,all_time, means, params, dataset, iteration,
-                      knn_size, small_dataset, algorithmus, test_acc, 
-                      precision_score_var, recall_score_var, f1_score_var, cm)
+    gs_tools.save_params(dir_path=dir_path, save_file=save_file,all_time=all_time, means=means, params=params, dataset=dataset, iteration=iteration,
+                      knn_size=knn_size, small_dataset=small_dataset, algorithmus=algorithmus, acc=test_acc, 
+                      precision_score_var=precision_score_var, recall_score_var=recall_score_var, f1_score_var=f1_score_var, cm=cm)
 
 
 

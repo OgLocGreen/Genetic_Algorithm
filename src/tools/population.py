@@ -41,7 +41,7 @@ class Population(object):
         self.parents = []
         self.done = False
         self.multiprocessing_flag = multiprocessing_flag
-        self.small_dataset = False
+        self.small_dataset = small_dataset
         self.dataset = dataset
         self.multiprocessing = multiprocessing
         self.dir_path = os.path.dirname(os.path.realpath(__file__))
