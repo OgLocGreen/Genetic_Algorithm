@@ -2,8 +2,8 @@
   "config": {
     "dataset": "mnist_digits",
     "knn_size": "small",
-    "small_dataset": true,
-    "iteration": 50,
+    "small_dataset": false,
+    "iteration": 250,
     "PC_name": "ess-altovar",
     "Multiprocessing": 2,
     "gpu": false

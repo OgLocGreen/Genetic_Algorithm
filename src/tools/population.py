@@ -29,6 +29,13 @@ class Population(object):
                 mutate_pron: standard deviation of random.gauss()
                 retain: parents = polupation[:retain]
                 random_retain: how many of the unfittest are retained
+                generations: how many generations to train
+                dataset: which dataset to train on
+                knn_size: size of the nn 
+                small_dataset: should the dataset get downsized
+                gpu: if u wanna train on the GPU
+                multiprocessing: how many processes -> GPU is only one possible#
+                multiprocessing_flag: do u wanna use multiprocessing 
         """
         self.gpu = gpu
         self.pop_size = pop_size
