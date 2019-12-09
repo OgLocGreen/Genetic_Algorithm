@@ -152,8 +152,7 @@ def create_model_cnn(optimizer,learningrate, dropout):
         tf.random.set_seed(1)
 
     model = keras.models.Sequential()
-    model.add(keras.layers.Conv2D(32, (3, 3), padding='same',
-                        input_shape=train_images.shape[1:]))
+    model.add(keras.layers.Conv2D(32, (3, 3), padding='same',input_shape=[32,32,3]))
     model.add(keras.layers.Activation('relu'))
     model.add(keras.layers.Conv2D(32, (3, 3)))
     model.add(keras.layers.Activation('relu'))
