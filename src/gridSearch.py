@@ -59,7 +59,7 @@ def main(dataset_arg="mnist_fashion", knn_size_arg="small", iteration=50,
                          knn_size=knn_size, small_dataset=small_dataset, algorithmus=algorithmus,
                          multiprocessing=multiprocessing, gpu=gpu)
 
-    fully = True
+    fully = False
     cnn = False
     if dataset == "mnist_fashion":
         (train_images, train_labels), (test_images, test_labels) = keras.datasets.fashion_mnist.load_data()

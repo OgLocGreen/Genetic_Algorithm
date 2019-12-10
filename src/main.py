@@ -12,7 +12,7 @@ if __name__ == '__main__':
     gc.collect()
     geneticAlgorithm.main("mnist_digits", "small", 25, 2, False, 2, False)
     gc.collect()
-    """
+
     gridSearch.main("mnist_digits", "big", 50, False, 2, True)
     gc.collect()
     gridSearch.main("mnist_digits", "big", 50, False, 2, False)
@@ -40,24 +40,23 @@ if __name__ == '__main__':
     geneticAlgorithm.main("mnist_digits", "big", 50, 5, False, 2, False)
     gc.collect()
     """
-    gridSearch.main("cifar10", "big", 50, True, 2, True)
+    gridSearch.main("cifar10", "big", 50, False, 2, True)
     gc.collect()
-    gridSearch.main("cifar10", "big", 50, True, 2, False)
+    gridSearch.main("cifar10", "big", 50, False, 2, False)
     gc.collect()
-    geneticAlgorithm.main("cifar10", "big", 25, 2, True, 2, True)
+    geneticAlgorithm.main("cifar10", "big", 25, 2, False, 2, True)
     gc.collect()
-    geneticAlgorithm.main("cifar10", "big", 25, 2, True, 2, False)
+    geneticAlgorithm.main("cifar10", "big", 25, 2, False, 2, False)
     gc.collect()
 
-    gridSearch.main("cifar10", "small", 250, True, 2, True)
+    gridSearch.main("cifar10", "small", 250, False, 2, True)
     gc.collect()
-    gridSearch.main("cifar10", "small", 250, True, 2, False)
+    gridSearch.main("cifar10", "small", 250, False, 2, False)
     gc.collect()
-    geneticAlgorithm.main("cifar10", "small", 50, 5, True, 2, True)
+    geneticAlgorithm.main("cifar10", "small", 50, 5, False, 2, True)
     gc.collect()
-    geneticAlgorithm.main("cifar10", "small", 50, 5, True, 2, False)
+    geneticAlgorithm.main("cifar10", "small", 50, 5, False, 2, False)
     gc.collect()
-    """
 
 
     print("finished")
