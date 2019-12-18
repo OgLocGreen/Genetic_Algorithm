@@ -1,0 +1,13 @@
+{
+  "config": {
+    "dataset": "cifar10",
+    "knn_size": "big",
+    "small_dataset": false,
+    "iteration": 50,
+    "PC_name": "ess-altovar",
+    "Multiprocessing": 2,
+    "gpu": false
+  },
+  "generation": {},
+  "round_time": 10
+}

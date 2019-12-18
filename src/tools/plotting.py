@@ -105,7 +105,6 @@ def joint_plot(dir_path, save_file, save=False):
         filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "learningrate", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
-        plt.title("learningrate")
         plt.savefig(filename)
 
         filename = os.path.join(dir_path, "../data/",save_file)
@@ -114,7 +113,6 @@ def joint_plot(dir_path, save_file, save=False):
         filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "dropout", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
-        plt.title("dropout")
         plt.savefig(filename)
 
         filename = os.path.join(dir_path, "../data/",save_file)
@@ -123,7 +121,6 @@ def joint_plot(dir_path, save_file, save=False):
         filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "epoch", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
-        plt.title("epoch")
         plt.savefig(filename)
 
         filename = os.path.join(dir_path, "../data/",save_file)
@@ -132,7 +129,6 @@ def joint_plot(dir_path, save_file, save=False):
         filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "batchsize", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
-        plt.title("batchsize")
         plt.savefig(filename)
 
         filename = os.path.join(dir_path, "../data/",save_file)
@@ -141,7 +137,6 @@ def joint_plot(dir_path, save_file, save=False):
         filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
         .plot_joint(sns.kdeplot, n_levels=6))
-        plt.title("optimizer")
         plt.savefig(filename)
 
         filename = os.path.join(dir_path, "../data/",save_file)
@@ -150,7 +145,6 @@ def joint_plot(dir_path, save_file, save=False):
         filename = os.path.abspath(os.path.realpath(filename))
         g = (sns.jointplot("acc", "optimizer", data=df)
         .plot_joint(sns.kdeplot, n_levels=6))
-        plt.title("optimizer")
         plt.savefig(filename)
         """
         filename = os.path.join(dir_path, "../data/",save_file)

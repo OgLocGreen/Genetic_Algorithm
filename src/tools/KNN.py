@@ -99,7 +99,7 @@ def train_and_evalu(gene,dataset="mnist_fashion", knn_size="small", small_datase
             ])
         elif knn_size == "big":
             model = keras.models.Sequential([
-            keras.layers.Flatten(input_shape=train_images.shape[32,32,3]),
+            keras.layers.Flatten(input_shape=train_images.shape[1:]),
             keras.layers.Dense(128, activation='relu'),
             keras.layers.Dropout(var_dropout),
             keras.layers.Dense(128, activation='relu'),
