@@ -174,6 +174,118 @@ def joint_plot(dir_path, save_file, save=False):
         plt.show()
 
 
+def joint_plot_2(dir_path, save_file, save=False):
+    save_file = os.path.join(dir_path, "../../data/",save_file)
+    with open(save_file, "r") as f:
+        data = json.load(f)
+    learningrate = []
+    dropout = []
+    epoch = []
+    batchsize = []
+    optimizer = []
+    acc = []
+    loss = []
+    variables = []
+    for i in data["generation"]["3"]:
+        if float(data["generation"]["3"][i]["acc"]) > float(data["generation"]["3"]["0"]["acc"]) * 0.8:
+            learningrate.append(float(data["generation"]["3"][i]["learningrate"]))
+            dropout.append(float(data["generation"]["3"][i]["dropout"]))
+            epoch.append(float(data["generation"]["3"][i]["epoch"]))
+            batchsize.append(float(data["generation"]["3"][i]["batchsize"]))
+            optimizer.append(float(data["generation"]["3"][i]["optimizer"]))
+            acc.append(float(data["generation"]["3"][i]["acc"]))
+            loss.append(float(data["generation"]["3"][i]["loss"]))
+            variables.append(float(data["generation"]["3"][i]["variables"]))
+        else:
+            pass
+  
+    auswertungsdaten = {"learningrate":learningrate,
+                        "dropout":dropout,
+                        "epoch":epoch,
+                        "batchsize":batchsize,
+                        "optimizer":optimizer,
+                        "acc": acc,
+                        "loss":loss,
+                        "variables": variables
+                        }
+
+    df = pd.DataFrame(auswertungsdaten,columns = ["learningrate","dropout","epoch","batchsize","optimizer"
+                            ,"acc","loss","variables"])
+
+    if save:
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_learningrate.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        g = (sns.jointplot("acc", "learningrate", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.savefig(filename)
+
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_dropout.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        g = (sns.jointplot("acc", "dropout", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.savefig(filename)
+
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_epoch.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        g = (sns.jointplot("acc", "epoch", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.savefig(filename)
+
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_batchsize.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        g = (sns.jointplot("acc", "batchsize", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.savefig(filename)
+
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_optimizer_kde.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.savefig(filename)
+
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_optimizer.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        g = (sns.jointplot("acc", "optimizer", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.savefig(filename)
+        """
+        filename = os.path.join(dir_path, "../data/",save_file)
+        filename = filename[:-5]
+        filename = filename + "_jointplot_variables.pdf"
+        filename = os.path.abspath(os.path.realpath(filename))
+        g = (sns.jointplot("acc", "variables", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.title("variables")
+        plt.savefig(filename)
+        """
+    else:
+        g = (sns.jointplot("acc", "learningrate", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "dropout", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "epoch", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "batchsize", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "optimizer", data=df, kind="kde")
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "optimizer", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        g = (sns.jointplot("acc", "variables", data=df)
+        .plot_joint(sns.kdeplot, n_levels=6))
+        plt.show()
 
 
 if __name__ == "__main__":
@@ -182,10 +294,9 @@ if __name__ == "__main__":
                                        datetime.datetime.now().month,
                                        datetime.datetime.now().day)
     save_file = "ergebnisse_hyper.json"
-    save_file = "2019.11.7.json"
+    save_file = "2020.1.12.GA.250.cifar10.False.big.json"
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    scatterplot(dir_path= dir_path, save_file=save_file, save = True)
-    joint_plot(dir_path= dir_path, save_file=save_file, save = True)
+    joint_plot_2(dir_path= dir_path, save_file=save_file, save = True)
 
 
 

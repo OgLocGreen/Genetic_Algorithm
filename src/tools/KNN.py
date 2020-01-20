@@ -210,11 +210,13 @@ if __name__ == "__main__":
     end = time.time() - start
     print(end)
 
-    """
-    gene= [0.05,0.25,10,16,3]
     start = time.time()
-    test_loss, test_acc, variables, precision_score_var, recall_score_var, f1_score_var, cm = train_and_evalu(gene,dataset = "mnist_fashion",knn_size="small",f1 = True)
-    """
+    gene= [0.05,0.25,80,16,3]
+    start = time.time()
+    test_loss, test_acc, variables, precision_score_var, recall_score_var, f1_score_var, cm = train_and_evalu(gene,dataset = "cifar10",f1 = True)
+    end = time.time() - start
+    print(end)
+
     #%%
     df_cm = pd.DataFrame(cm)
     plt.figure()
