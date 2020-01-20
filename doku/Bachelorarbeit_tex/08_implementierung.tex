@@ -215,7 +215,7 @@ _______________________________________________________________
 Es wurde ein faltendes neuronales Netz (engl. Convolutional Neural Network - CNN) zur Klassifizierung von kleinen RGB Bildern aus dem Cifar10 Datensatz implementiert. Die exakte Modell-Architekturen ist in der nachfolgenden Auflistung zusehen.
 Beim CNN werden die Pixel nicht flachgedrückt, sondern können als Matrix geladen werden. Anschließend kommen verschiedene Kombinationen aus Convolutionalschicht, Activationschicht, Dropoutschicht und Maxpoolingschicht. Diese Schichten besitzen deutlich mehr Parameter. Dieses CNN besitzt 1.250.858 trainierbare Parameter und besitzt damit fast 10 Fach so viele trainierbaren Parametern wie die FCN.
 
-Beispielhaft wird die Trainingsdauer des CNN-Netzes für 10 Epochen und 80 Epochen evaluiert. Bei 10 dauerte der Trainingsvorgang 15 Minuten und für 80 Epochen 125 Minuten. Diese Werte wurden auf einem Intel i7-7700 3,6 GHz erreicht. 
+Beispielhaft wird die Trainingsdauer des CNN-Netzes für 10 und 80 Epochen evaluiert. Bei 10 Epochen dauerte der Trainingsvorgang 15 Minuten und für 80 Epochen 125 Minuten. Diese Werte wurden auf einem Intel i7-7700 3,6 GHz erreicht. 
 
 {\small
 \begin{lstlisting}[language=C,caption=Exakte Modell-Architektur des Convolutional Neural Network ,label=auflistung_cnn]
