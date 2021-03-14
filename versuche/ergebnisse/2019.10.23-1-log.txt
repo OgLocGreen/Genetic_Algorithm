@@ -1,7 +1,0 @@
-RandomSearch
-Iterations 50
-Jasonfile 2019.10.23-1.json
-Time for all: 652.219789981842
-PC-name: ess-altovar
-Multiprocess: 2
-fashion data set + 1 Layer 128 Neuronen

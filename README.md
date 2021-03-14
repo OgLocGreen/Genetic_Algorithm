@@ -1,4 +1,9 @@
-Genetic Algorithm
+# Genetic Algorithm
 
-I made this Projekt as my bachelorthesis.
-It is an attempt at hyperparameter optimization using Genetic Algorithms. Furthermore, the random search was compared to the Genetic Algorithms. 
+This work was implemented as part of the bachelor thesis. 
+
+The topic was: "Genetic Algorithms for the Optimization of Hyperparameters for Artificial Neural Networks".
+
+The task was a comparison of Genetic Algorithms and Grid Search and Random Search was performed.
+
+For the genetic algorithm no library was used. It was tested on various Artificial Neural Networks programmed in Python and Tensorflow.
