@@ -27,7 +27,7 @@ mccabe==0.6.1
 mock==3.0.5
 nbformat==4.4.0
 numpy==1.16.4
-opencv-python==4.1.0.25
+opencv-python==4.1.1.26
 pandas==0.24.2
 Pillow==8.3.2
 plotly==3.10.0
